@@ -1,0 +1,31 @@
+
+state={
+	id=362
+	name="STATE_362"
+
+	history={
+		owner = CSA
+		buildings = {
+			infrastructure = 7
+			industrial_complex = 3
+			arms_factory = 3
+			dockyard = 1
+			788 = {
+				naval_base = 10
+			}
+
+		}
+		add_core_of = CSA
+		victory_points = {
+			3823 35 
+		}
+
+	}
+
+	provinces={
+		788 1506 3925 7558 9779 9931 10412 10439 11738 11841 
+	}
+	manpower=2206938
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+}
