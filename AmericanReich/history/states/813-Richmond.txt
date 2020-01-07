@@ -1,0 +1,23 @@
+state={
+	id=813
+	name="STATE_813"
+	history={
+		owner = CSA
+		buildings = {
+			infrastructure = 7
+			industrial_complex = 3
+			air_base = 10
+		}
+		add_core_of = CSA
+		victory_points = {
+			3823 35 
+		}
+		set_demilitarized_zone = yes
+	}
+	provinces={
+		865 3823 6846 10343 11873 
+	}
+	manpower=560432
+	buildings_max_level_factor=1.000
+	state_category=city
+}
