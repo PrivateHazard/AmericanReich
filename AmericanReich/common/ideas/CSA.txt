@@ -1,0 +1,1723 @@
+ideas = {
+
+	country = {
+		CSA_sour_loser = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			rule = {
+				can_create_factions = yes
+			}
+		}
+		CSA_bill_of_rights = {
+			picture = generic_constitutional_guarantee
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = -0.25
+				decryption_factor = -0.01
+				encryption_factor = -0.01
+			}
+			
+			rule = {
+				can_send_volunteers = no
+			}
+		}
+		CSA_begin_the_purges = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = -0.1
+				stability_weekly = 0.005
+			}
+		}
+		CSA_within_the_party = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				populist_drift = -0.02
+			}
+		}
+		CSA_purge_patton = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			research_bonus = { land_doctrine = -0.25 }
+		}
+		CSA_purge_eaker = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			research_bonus = {  air_doctrine = -0.25 }
+		}
+		CSA_officers_purged = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_org_factor = -0.2
+				max_planning = -0.2
+				army_morale_factor = -0.2
+				army_attack_factor = -0.2
+				army_defence_factor = -0.2
+			}
+		}
+		CSA_oaths_of_loyalty = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_org_factor = 0.1
+				max_planning = 0.1
+				army_morale_factor = 0.1
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+				political_power_factor = 0.1
+			}
+		}
+		CSA_expand_the_DSS = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				enemy_partisan_effect = -0.5
+				encryption_factor = 0.005
+			}
+		}
+		CSA_segregation = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = -0.1
+			}
+		}
+		CSA_protection_act = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+					generate_wargoal_tension = 1
+					enemy_justify_war_goal_time = 0.25
+			}
+		}
+		CSA_fire_decree = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+					stability_weekly = -0.003
+					political_power_factor = -0.3
+			}
+		}
+		CSA_fire_decree2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+					stability_weekly = -0.002
+					political_power_factor = -0.2
+			}
+		}
+		CSA_fire_decree3 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+					stability_weekly = -0.001
+					political_power_factor = -0.1
+			}
+		}
+		CSA_congress = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+			}
+		}
+		
+		CSA_congress2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = 0.2
+			}
+		}
+		CSA_silver_shirts = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				populist_drift = 0.02
+				political_power_factor = 0.1
+			}
+		}
+		CSA_community_projects = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				local_building_slots_factor = 0.2
+			}
+		}
+		CSA_industrial_standards = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				industrial_capacity_factory = 0.1
+			}
+		}
+		CSA_infantry_equipment_standards = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					soft_attack = 0.1 
+					instant = yes
+				}
+			}
+		}
+		CSA_artillery_equipment_standards = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			equipment_bonus = {
+				artillery_equipment = {
+					soft_attack = 0.1 
+					instant = yes
+				}
+			}
+		}
+		CSA_support_equipment_standards = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			equipment_bonus = {
+				support_equipment = {
+					build_cost_ic = -0.1 
+					instant = yes
+				}
+			}
+		}
+		CSA_autarky = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				local_resources_factor = 0.1
+			}
+		}
+		CSA_autarky2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				local_resources_factor = 0.2
+			}
+		}
+		CSA_new_resources = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				local_resources_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+			}
+		}
+		CSA_fuel_effort = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				local_resources_factor = 0.05
+				fuel_gain_factor = 0.1
+				max_fuel_factor = 0.1
+				production_speed_fuel_silo_factor = 0.1
+			}
+		}
+		CSA_rubber_effort = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_synthetic_refinery_factor = 0.1
+			}
+		}
+		CSA_new_factories = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+		CSA_civilian_factory_effort = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+			}
+		}
+		CSA_military_factory_effort = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_arms_factory_factor = 0.1
+			}
+		}
+		CSA_labor_standards = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		CSA_rebuild_the_nation = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			available = {
+				OR = {
+					has_idea = high_taxes
+					has_idea = higher_taxes
+				}
+			}
+			
+			modifier = {
+				production_speed_infrastructure_factor = 0.1
+				industry_repair_factor = 0.5
+			}
+		}
+		CSA_fort_investments = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			available = {
+				OR = {
+					has_idea = high_taxes
+					has_idea = higher_taxes
+				}
+			}
+			
+			modifier = {
+				production_speed_bunker_factor = 0.2
+			}
+		}
+		CSA_public_education = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			available = {
+				OR = {
+					has_idea = high_taxes
+					has_idea = higher_taxes
+				}
+			}
+			
+			modifier = {
+				research_speed_factor = 0.07
+			}
+		}
+		CSA_higher_public_education = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			available = {
+				OR = {
+					has_idea = high_taxes
+					has_idea = higher_taxes
+				}
+			}
+			
+			modifier = {
+				research_speed_factor = 0.15
+				consumer_goods_factor = 0.03
+			}
+		}
+		CSA_women_in_the_workforce = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			available = {
+				has_idea = tot_economic_mobilisation
+			}
+			
+			modifier = {
+				conscription = 0.03
+			}
+		}
+		CSA_maternity_services = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+				MONTHLY_POPULATION = 0.15
+			}
+		}
+		CSA_dixie_spirit = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				mobilization_speed = 0.1
+				offensive_war_stability_factor = 0.1
+				defensive_war_stability_factor = 0.1
+			}
+		}
+		CSA_homeless_shelters = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_weekly = 0.005
+				consumer_goods_factor = 0.05
+			}
+		}
+		CSA_homeless_jobs = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_weekly = 0.003
+				consumer_goods_factor = 0.05
+			}
+		}
+		CSA_family_farms = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				supply_consumption_factor = -0.1
+			}
+		}
+		CSA_longs_youth = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				enemy_partisan_effect = -0.1
+				partisan_effect = 0.1
+			}
+		}
+		CSA_longs_youth2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				enemy_partisan_effect = -0.1
+				partisan_effect = 0.1
+				conscription = 0.02
+			}
+		}
+		CSA_longs_youth3 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				enemy_partisan_effect = -0.1
+				partisan_effect = 0.1
+				conscription = 0.02
+				training_time_factor = -0.2
+			}
+		}
+		CSA_factory_youth = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_factory_start_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		CSA_barrel_tactics = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_armor_speed_factor = 0.1
+			}
+		}
+		CSA_defensive_focus = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				max_planning = 0.25
+			}
+		}
+		CSA_defensive_focus1 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				max_planning = 0.25
+				army_defence_factor = 0.1
+			}
+		}
+		CSA_defensive_focus2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				max_planning = 0.25
+				army_defence_factor = 0.1
+				dig_in_speed_factor = 0.25
+				max_dig_in = 5
+			}
+		}
+		CSA_superior_firepower = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_attack_factor = 0.1
+			}
+		}
+		CSA_superior_firepower1 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					soft_attack = 0.1
+					reliability = 0.1
+				}
+				artillery_equipment = {
+					soft_attack = 0.1
+					reliability = 0.1
+				}
+			}
+			
+			modifier = {
+				army_attack_factor = 0.1
+				land_reinforce_rate = 0.1
+			}
+		}
+		CSA_new_confederate_army = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				experience_gain_army = 0.05
+				conscription = 0.015
+				army_org_factor = 0.05
+			}
+		}
+		CSA_populist_propaganda = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+				mobilization_speed = 0.1
+			}
+		}
+	}
+	
+	head_minister = {
+		CSA_Huey_Long = {
+			
+			picture = USA_harry_white
+			allowed = {
+				original_tag = "CSA"
+			}
+
+			removal_cost = -1
+			
+			traits = {
+				silent_workhorse
+				populist_trait
+			}
+			
+			modifier = {
+			}
+			cost = 50
+			do_effect = {
+		
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+			
+			allowed_to_remove = {
+				always = no
+			}
+		}
+		CSA_Herbert_Hoover = {
+			
+			picture = USA_harry_white
+			allowed = {
+				original_tag = "CSA"
+			}
+			
+			available = {
+			}
+
+			traits = {
+				financial_expert
+				libertarian_trait
+			}
+			
+			cost = 50
+			
+			do_effect = {
+		
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+			
+			allowed_to_remove = {
+				always = no
+			}
+		}
+	}
+	
+	foreign_minister = {
+		CSA_charles_coughlin = {
+			
+			allowed = {
+				original_tag = "CSA"
+			}
+
+			modifier = {
+			}
+		
+			traits = {
+				propaganda_expert
+				populist_trait
+			}
+			
+			ai_will_do = {
+				factor = 10
+			}
+		
+			allowed_to_remove = {
+				always = no
+			}
+		}
+		CSA_john_winant = {
+			
+			picture = generic_political_advisor_europe_5
+			
+			allowed = {
+				original_tag = CSA
+			}
+			available = {
+			}
+			
+			traits = {
+				compassionate_gentleman
+				liberal_trait
+			}
+		}
+		CSA_cordell_hull = {
+			
+			picture = generic_political_advisor_europe_6
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			available = {
+			}
+			
+			traits = {
+				smooth_talking_charmer
+				libertarian_trait
+			}
+			
+			allowed_to_remove = {
+				always = no
+			}
+		}	
+		CSA_whittaker_chambers = {
+			
+			picture = USA_whittaker_chambers
+			allowed = {
+				original_tag = "CSA"
+			}
+			
+			traits = { 
+				editor
+				populist_trait
+			}
+			cost = 50
+			do_effect = {
+			}
+			
+			available = {
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+			
+			allowed_to_remove = {
+				always = no
+			}
+		}
+	}
+	
+	economic_minister = {
+	 
+		CSA_gerald_smith = {
+			picture = generic_political_advisor_europe_6
+			
+			allowed = {
+				original_tag = CSA
+			}
+			available = {
+			}
+			
+			traits = {
+				economist
+				populist_trait
+			}
+			
+			allowed_to_remove = {
+				always = no
+			}
+		}
+		CSA_john_hammer = {
+			
+			picture = generic_political_advisor_europe_1
+			allowed = {
+				original_tag = "CSA"
+			}
+			available = {
+			}
+
+			traits = {
+				financial_expert
+				libertarian_trait
+			}
+			cost = 50
+			do_effect = {
+		
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+			
+			allowed_to_remove = {
+				always = no
+			}
+		}	
+	}
+	
+	interior_minister = {
+		CSA_donald_nelson = {
+			
+			picture = generic_political_advisor_europe_3
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			available = {
+			}
+			
+			traits = { 
+				armaments_organizer
+				populist_trait
+			}
+			
+			allowed_to_remove = {
+				always = no
+			}
+		}
+		CSA_william_regnery = {
+			
+			picture = generic_political_advisor_europe_2
+			allowed = {
+				original_tag = "CSA"
+			}
+			available = {
+			}
+
+			traits = {
+				captain_of_industry
+				libertarian_trait
+			}
+			cost = 50
+			do_effect = {
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+			
+			allowed_to_remove = {
+				always = no
+			}
+		}
+	}
+	
+	intelligence_minister = {
+		CSA_joseph_mccarthy = {
+			picture = generic_political_advisor_europe_1
+			
+			allowed = {
+				original_tag = CSA
+			}
+			available = {
+			}
+			
+			modifier = {
+			}
+			
+			traits = {
+				encryptor
+				populist_trait
+			}
+		}
+		CSA_joseph_mccarthy2 = {
+			picture = generic_political_advisor_europe_1
+			
+			allowed = {
+				original_tag = CSA
+			}
+			available = {
+			}
+			
+			modifier = {
+			}
+			
+			traits = {
+				balanced_cryptographer
+				populist_trait
+			}
+		}
+	}
+
+	army_chief = {
+		
+	
+		douglas_macarthur = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			available = {
+				not = {
+					has_country_leader = { ruling_only = yes name = "Douglas MacArthur"}
+				}
+			}
+
+			
+			traits = { army_chief_morale_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		george_marshall = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { army_chief_drill_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		dwight_eisenhower = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { army_chief_offensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		walter_krueger = {
+			
+			picture = USA_walter_krueger
+			allowed = {
+				original_tag = CSA
+			}
+			available = {
+				has_completed_focus = USA_war_plans_division
+			}
+			
+
+			
+			traits = { army_chief_planning_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}	
+	}
+	
+	air_chief = {
+		
+		
+		henry_arnold = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { air_chief_reform_3 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		carl_spaatz = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { air_chief_night_operations_2 }
+			# TODO Strategic bombing secondary trait?
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		george_kenney = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { air_chief_safety_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		USA_charles_lindbergh = {
+			
+			picture = generic_air_europe_3
+			allowed = {
+				original_tag = CSA
+			}
+			available = {
+				has_completed_focus = USA_send_lindbergh_to_germany
+			}
+
+			cost = 50
+
+			equipment_bonus = {
+				fighter_equipment = {
+					instant = yes
+					fuel_consumption = -0.1
+				}
+				heavy_fighter_equipment = {
+					instant = yes
+					fuel_consumption = -0.1
+				}
+			}
+
+			traits = { air_pilot_training_3 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}	
+	}
+	
+	navy_chief = {
+	
+		ernest_king = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { navy_chief_reform_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		chester_nimitz = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { navy_chief_commerce_raiding_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		william_halsey = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { navy_chief_naval_aviation_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}	
+	}
+	
+	
+	high_command = {
+		courtney_hodges = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { army_commando_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		joseph_stilwell = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+			available = {
+				NOT = { has_country_flag = joseph_stilwell_sent_to_china }
+			}
+
+			
+			traits = { army_logistics_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		mark_clark = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { army_infantry_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}	
+		
+		jimmy_doolittle = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { air_strategic_bombing_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		john_cannon = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { air_close_air_support_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		claire_lee_chennault = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { air_tactical_bombing_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		raymond_spruance = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { navy_naval_air_defense_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		frank_jack_fletcher = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { navy_carrier_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		thomas_kinkaid = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			
+
+			
+			traits = { navy_amphibious_assault_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}	
+	
+	theorist = {
+		omar_bradley = {
+			
+			
+			allowed = {
+				original_tag = USA
+			}
+			
+			cost = 250
+			
+			research_bonus = {
+				cat_superior_firepower = 0.10
+			}
+			
+			traits = { superior_firepower_expert }
+		}
+		
+		CSA_george_patton = {
+			
+			
+			allowed = {
+				original_tag = CSA
+			}
+			available = { has_completed_focus = CSA_pattonsreform }
+			cost = 150
+			
+			research_bonus = {
+				land_doctrine = 0.10
+			}
+			
+			
+			traits = { blitzkrieg_theorist }
+		}
+		
+		dewitt_clinton_ramsey = {
+			
+			
+			allowed = {
+				original_tag = USA
+			}
+			
+
+			
+			research_bonus = {
+				naval_doctrine = 0.07
+			}
+			
+			traits = { naval_theorist }
+		}
+		
+		marc_mitscher = {
+			
+			
+			allowed = {
+				original_tag = USA
+			}
+			
+			cost = 250
+			
+			research_bonus = {
+				cat_base_strike = 0.10
+			}
+			
+			traits = { naval_aviation_pioneer }
+		}
+		
+		curtis_lemay = {
+			
+			
+			allowed = {
+				original_tag = USA
+			}
+			
+			cost = 250
+			
+			research_bonus = {
+				cat_strategic_destruction = 0.10
+			}
+			
+			traits = { victory_through_airpower }
+		}
+		
+		harold_mcclelland = {
+			
+			
+			allowed = {
+				original_tag = USA
+			}
+			
+
+			
+			research_bonus = {
+				air_doctrine = 0.07
+			}
+			
+			traits = { air_warfare_theorist }
+		}
+		
+		robert_oppenheimer = {
+			
+			
+			allowed = {
+				original_tag = USA
+			}
+			
+
+			
+			research_bonus = {
+				nuclear = 0.10
+			}
+			
+			traits = { nuclear_scientist }
+		}
+		
+		robert_goddard = {
+			
+			
+			allowed = {
+				original_tag = USA
+			}
+			
+
+			
+			research_bonus = {
+				rocketry = 0.10
+			}
+			
+			traits = { rocket_scientist }
+		}
+	}
+}
