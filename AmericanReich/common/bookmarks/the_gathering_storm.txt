@@ -1,0 +1,139 @@
+bookmarks = {
+	bookmark = {
+		name = "GATHERING_STORM_NAME"
+		desc = "GATHERING_STORM_DESC"
+		date = 1936.1.1.1
+		picture = "GFX_select_date_1936"
+		default = yes
+		
+		"GER"={
+			history = "GER_GATHERING_STORM_DESC"
+			ideology = authoritarian
+			ideas = {
+				GER_victors_of_the_weltkrieg
+				GER_a_peaceful_world
+				GER_mitteleuropa
+				GER_imperial_pride
+				GER_an_uneasy_market
+			}
+			focuses = {
+				GER_theaftermathofblackfriday
+				GER_endthethreat
+				GER_onecurrencyformitteleuropa
+			}
+		}
+		"AUS"={
+			history = ""
+			ideology = conservative
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"USA"={
+			history = "USA_GATHERING_STORM_DESC"
+			ideology = socialist
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"CSA"={
+			history = ""
+			ideology = populist
+			ideas = {
+			}	
+			focuses = {
+			}		
+		}
+		"FRA"={
+			history = "FRA_GATHERING_STORM_DESC"
+			ideology = syndicalist
+			ideas = {
+				FRA_legacy_of_the_old_republic
+				FRA_communard_spirit
+			}
+			focuses = {
+				FRA_libert
+				FRA_galit
+				FRA_fraternit
+			}
+		}
+		"ENG"={
+			history = "ENG_GATHERING_STORM_DESC"
+			ideology = nationalist
+			ideas = {
+				stiff_upper_lip
+			}
+			focuses = {
+			}
+		}
+		"JAP"={
+			history = "JAP_GATHERING_STORM_DESC"
+			ideology = conservative
+			ideas = {
+			}	
+			focuses = {
+			}			
+		}
+		"SOV"={
+			history = "SOV_GATHERING_STORM_DESC"
+			ideology = socialist
+			ideas = {
+			}
+			focuses = {
+			}	
+		}
+
+
+		# minors from DLC ####
+		"CHI" = {
+			minor = yes
+			history = ""
+			ideology = authoritarian
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+
+		"AST" = {
+			minor = yes
+			history = ""
+			ideology = libertarian
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+
+		"RAJ" = {
+			minor = yes
+			history = ""
+			ideology = socialist
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+
+		"MEX" = {
+			minor = yes
+			history = ""
+			ideology = populist
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+
+		"---" = {
+			history = "OTHER_GATHERING_STORM_DESC"
+		}
+		
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}
