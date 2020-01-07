@@ -1,0 +1,433 @@
+add_namespace = csa
+
+#template
+
+country_event = {
+	id = csa.1
+	title = csa.1.t
+	desc = csa.1.desc
+	#picture = GFX_report_event_usa_election_generic
+
+   is_triggered_only = yes
+
+	option = { 	#Oh no...
+		name = csa.1.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1
+			}
+		}
+	add_stability = -0.15
+	add_political_power = -150
+	add_ideas = { CSA_fire_decree }
+	complete_national_focus = CSA_thecapitolfiredecree
+set_global_flag = CSA_Capitol_Fire
+	}
+}
+
+# Election of 1936
+country_event = {
+	id = csa.2
+	title = csa.2.t
+	desc = csa.2.desc
+	#picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+immediate = { 
+	complete_national_focus = CSA_electionsof1936
+	set_global_flag = CSA_1936_Elections
+}
+
+option = { 
+		name = csa.2.a #Long Shall Reign!
+		ai_chance = {
+			factor = 35
+		}
+		complete_national_focus = CSA_nationalfreedomslandslide
+		set_global_flag = CSA_1936_Elections_Freedom
+		add_popularity = {
+			ideology = populist
+			popularity = 0.01
+		}
+
+		swap_ideas = {
+			remove_idea = CSA_congress2
+			add_idea = CSA_congress
+		}
+		set_politics = {
+			ruling_party = populist
+			elections_allowed = yes
+		}
+		add_ideas = CSA_donald_nelson
+	}
+}
+
+country_event = {
+	id = csa.3
+	title = csa.3.t
+	desc = csa.3.desc
+	#picture = GFX_report_event_usa_election_generic
+
+   is_triggered_only = yes
+
+	option = { 	#Gerald Smith for Dixie!
+		name = csa.3.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1
+			}
+		}
+		complete_national_focus =  CSA_appointsmithaseconomicminister
+	add_ideas = { CSA_gerald_smith }
+set_global_flag = CSA_Smith_Appointed
+	}
+}
+
+country_event = {
+	id = csa.4
+	title = csa.4.t
+	desc = csa.4.desc
+	#picture = 
+
+   is_triggered_only = yes
+   fire_only_once = yes
+   
+   trigger = {
+		tag = USA
+		has_global_flag = CSA_Return_Land
+	}
+
+	option = { 	#There's not much we can do.
+		name = csa.4.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = csa.5
+	title = csa.5.t
+	desc = csa.5.desc
+	#picture = 
+
+   is_triggered_only = yes
+   fire_only_once = yes
+   
+   trigger = {
+		tag = USA
+		has_global_flag = CSA_Return_Land2
+	}
+
+	option = { 	#Fine, they can have their Election...
+		name = csa.5.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 1
+			}
+		}
+		CSA = {
+			country_event = { id = csa.6 days = 1 }
+			set_global_flag = CSA_Return_Land3
+		}
+	}
+}
+country_event = {
+	id = csa.6
+	title = csa.6.t
+	desc = csa.6.desc
+	#picture = 
+
+   is_triggered_only = yes
+   fire_only_once = yes
+   
+   trigger = {
+		tag = CSA
+		has_global_flag = CSA_Return_Land3
+	}
+
+	option = { 	#Good, Let Us Continue as Planned.
+		name = csa.6.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 1
+			}
+		}
+		CSA = {
+			country_event = { id = csa.7 days = 1 }
+			set_global_flag = CSA_Return_Land4
+		}
+	}
+}
+country_event = {
+	id = csa.7
+	title = csa.7.t
+	desc = csa.7.desc
+	#picture = 
+
+   is_triggered_only = yes
+   fire_only_once = yes
+   
+   trigger = {
+		tag = CSA
+		has_global_flag = CSA_Return_Land4
+	}
+
+	option = { 	#The South in Nearly United!
+		name = csa.7.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 1
+			}
+		}
+		CSA = { transfer_state = 369 }
+		CSA = { transfer_state = 377 }
+		CSA = { transfer_state = 789 }
+	}
+}
+country_event = {
+	id = csa.8
+	title = csa.8.t
+	desc = csa.8.desc
+	#picture = 
+
+   is_triggered_only = yes
+   fire_only_once = yes
+   
+   trigger = {
+		tag = MEX
+		has_global_flag = CSA_MEX_Invitation
+	}
+
+	option = { 	#Good Friends in Dixie!
+		name = csa.8.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 1
+			}
+		}
+		CSA = {
+			country_event = { id = csa.9 days = 1 }
+		}
+	}
+}
+country_event = {
+	id = csa.9
+	title = csa.9.t
+	desc = csa.9.desc
+	#picture = 
+
+   is_triggered_only = yes
+   fire_only_once = yes
+   trigger = {
+		tag = CSA
+		has_global_flag = CSA_MEX_Invitation
+	}
+
+	option = { 	#Good Friends in Mexico!
+		name = csa.9.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 1
+			}
+		}
+		CSA = { add_to_faction = MEX }
+		MEX = {
+			add_ai_strategy = { type = alliance id = "CSA" value = 200 } 
+		}
+	}
+}
+country_event = {
+	id = csa.10
+	title = csa.10.t
+	desc = csa.10.desc
+	#picture = 
+
+   is_triggered_only = yes
+   fire_only_once = yes
+   
+   trigger = {
+		tag = USA
+		has_global_flag = CSA_Oklahoma
+	}
+
+	option = { 	#No, they've gone to far!
+		name = csa.10.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 1
+			}
+		}
+		CSA = {
+			country_event = { id = csa.11 days = 1 }
+		}
+	}
+}
+country_event = {
+	id = csa.11
+	title = csa.11.t
+	desc = csa.11.desc
+	#picture = 
+
+   is_triggered_only = yes
+   fire_only_once = yes
+   
+   trigger = {
+		tag = CSA
+		has_global_flag = CSA_Oklahoma
+	}
+
+	option = { 	#This means War!
+		name = csa.11.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 1
+			}
+		}
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = USA
+		}
+	}
+}
+country_event = {
+	id = csa.12
+	title = csa.12.t
+	desc = csa.12.desc
+	#picture = 
+
+   is_triggered_only = yes
+   fire_only_once = yes
+   
+   trigger = {
+		tag = CUB
+		has_global_flag = CSA_CUB_Invitation
+	}
+
+	option = { 	#Good Friends in Dixie!
+		name = csa.12.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 1
+			}
+		}
+		CSA = {
+			country_event = { id = csa.13 days = 1 }
+		}
+	}
+}
+country_event = {
+	id = csa.13
+	title = csa.13.t
+	desc = csa.13.desc
+	#picture = 
+
+   is_triggered_only = yes
+   fire_only_once = yes
+   trigger = {
+		tag = CSA
+		has_global_flag = CSA_CUB_Invitation
+	}
+
+	option = { 	#Good Friends in Cuba!
+		name = csa.13.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 1
+			}
+		}
+		CSA = { add_to_faction = CUB }
+		CUB = {
+			add_ai_strategy = { type = alliance id = "CSA" value = 200 } 
+		}
+	}
+}
+country_event = {
+	id = csa.14
+	title = csa.14.t
+	desc = csa.14.desc
+	#picture = 
+
+   is_triggered_only = yes
+   fire_only_once = yes
+   
+   trigger = {
+		tag = ENG
+		has_global_flag = CSA_ENG_Invitation
+	}
+
+	option = { 	#Good Friends in Dixie!
+		name = csa.14.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 1
+			}
+		}
+		CSA = {
+			country_event = { id = csa.15 days = 1 }
+		}
+	}
+}
+country_event = {
+	id = csa.15
+	title = csa.15.t
+	desc = csa.15.desc
+	#picture = 
+
+   is_triggered_only = yes
+   fire_only_once = yes
+   trigger = {
+		tag = CSA
+		has_global_flag = CSA_ENG_Invitation
+	}
+
+	option = { 	#Good Friends in Britainia!
+		name = csa.15.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 1
+			}
+		}
+		CSA = { add_to_faction = ENG }
+		ENG = {
+			add_ai_strategy = { type = alliance id = "CSA" value = 200 } 
+		}
+	}
+}
+country_event = {
+	id = csa.16
+	title = csa.16.t
+	desc = csa.16.desc
+
+   is_triggered_only = yes
+
+	option = { 	#Within the Party...
+		name = csa.16.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1
+			}
+		}
+		add_timed_idea = { idea = CSA_within_the_party days = 70 }
+		set_country_flag = CSA_within_the_party
+		complete_national_focus = CSA_withintheparty
+	}
+}

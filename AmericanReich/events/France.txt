@@ -1,0 +1,731 @@
+﻿###########################
+# French Events
+###########################
+
+add_namespace = fra
+
+# Elections Day 1: Government Direction
+country_event = {
+	id = fra.1
+	title = fra.1.t
+	desc = fra.1.desc
+	#picture = GFX_report_event_japan_army_mountainside
+	
+	trigger = {
+        original_tag = FRA
+		has_elections = yes
+        date > 1936.02.01
+    }
+	
+	mean_time_to_happen = {
+        days = 0
+    }
+
+	fire_only_once = yes
+	
+	option = { # Equality!
+		name = fra.1.a
+		ai_chance = {
+			factor = 50
+		} 
+		set_country_flag = FRA_equality
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.02
+		}
+		complete_national_focus = FRA_thecommuneselections
+		hidden_effect = {
+			country_event = { 
+				id = fra.2
+				days = 2
+			}
+		}
+	}
+	option = { # Liberty!
+		name = fra.1.b
+		ai_chance = { 
+			factor = 25 
+		}
+		set_country_flag = FRA_liberty
+		add_popularity = {
+			ideology = anarchist
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = marketist
+			popularity = 0.05
+		}
+		complete_national_focus = FRA_thecommuneselections
+		add_ideas = FRA_gaston_henry_haye
+		hidden_effect = {
+			country_event = { 
+				id = fra.2
+				days = 2
+			}
+		}
+	}
+	option = { # Fraternity!
+		name = fra.1.c
+		ai_chance = {
+			factor = 25
+		}
+		add_ideas = FRA_maurice_thorez
+		set_country_flag = FRA_fraternity
+		complete_national_focus = FRA_thecommuneselections
+		hidden_effect = {
+			country_event = { 
+				id = fra.2
+				days = 2
+			}
+		}
+	}
+}
+# Elections Day 2: Our Trade
+country_event = {
+	id = fra.2
+	title = fra.2.t
+	desc = fra.2.desc
+	#picture = GFX_report_event_japan_army_mountainside
+	
+	trigger = {
+        original_tag = FRA
+		has_elections = yes
+    }
+	
+	mean_time_to_happen = {
+        days = 0
+    }
+	
+	is_triggered_only = yes
+	
+	option = { # Self Sufficiency
+		name = fra.2.a
+		ai_chance = {
+			factor = 25
+		} 
+		set_country_flag = FRA_Totalist_Trade_Policy
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.02
+		}
+		add_popularity = {
+			ideology = anarchist
+			popularity = 0.05
+		}
+		add_ideas = FRA_marcel_bucard
+		hidden_effect = {
+			country_event = { 
+				id = fra.3
+				days = 2
+			}
+		}
+	}
+	option = { # Expand Trade
+		name = fra.2.b
+		ai_chance = { 
+			factor = 25 
+		}
+		set_country_flag = FRA_Marketist_Trade_Policy
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.02
+		}
+		add_popularity = {
+			ideology = marketist
+			popularity = 0.05
+		}
+		hidden_effect = {
+			country_event = { 
+				id = fra.3
+				days = 2
+			}
+		}
+	}
+}
+# Elections Day 3: Our Economic Direction
+country_event = {
+	id = fra.3
+	title = fra.3.t
+	desc = fra.3.desc
+	#picture = GFX_report_event_japan_army_mountainside
+	
+	trigger = {
+        original_tag = FRA
+		has_elections = yes
+    }
+	
+	mean_time_to_happen = {
+        days = 0
+    }
+	
+	is_triggered_only = yes
+	
+	option = { # Side with the ST
+		name = fra.3.a
+		ai_chance = {
+			factor = 25
+		} 
+		set_country_flag = FRA_syndicalist_economics
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.02
+		}
+		hidden_effect = {
+			country_event = { 
+				id = fra.4
+				days = 2
+			}
+		}
+	}
+	option = { # Side with the Sorelians
+		name = fra.3.b
+		ai_chance = { 
+			factor = 25 
+		}
+		set_country_flag = FRA_totalist_economics
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.05
+		}
+		add_ideas = FRA_zivony_peshkov
+		hidden_effect = {
+			country_event = { 
+				id = fra.4
+				days = 2
+			}
+		}
+	}
+	option = { # Side with the Anarchistes
+		name = fra.3.c
+		ai_chance = { 
+			factor = 25 
+		}
+		set_country_flag = FRA_anarchist_economics
+		add_popularity = {
+			ideology = anarchist
+			popularity = 0.05
+		}
+		add_ideas = FRA_paul_reynaud
+		hidden_effect = {
+			country_event = { 
+				id = fra.4
+				days = 2
+			}
+		}
+	}
+	option = { # Side with UML
+		name = fra.3.d
+		ai_chance = { 
+			factor = 25 
+		}
+		set_country_flag = FRA_marketist_economics
+		add_popularity = {
+			ideology = marketist
+			popularity = 0.05
+		}
+		add_ideas = FRA_felix_gouin
+		hidden_effect = {
+			country_event = { 
+				id = fra.4
+				days = 2
+			}
+		}
+	}
+}
+# Elections Day 4: Education Direction
+country_event = {
+	id = fra.4
+	title = fra.4.t
+	desc = fra.4.desc
+	#picture = GFX_report_event_japan_army_mountainside
+	
+	trigger = {
+        original_tag = FRA
+		has_elections = yes
+    }
+	
+	mean_time_to_happen = {
+        days = 0
+    }
+	
+	is_triggered_only = yes
+	
+	option = { # Indoctrination
+		name = fra.4.a
+		ai_chance = {
+			factor = 25
+		} 
+		set_country_flag = FRA_indoctrination
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.02
+		}
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.05
+		}
+		hidden_effect = {
+			country_event = { 
+				id = fra.5
+				days = 2
+			}
+		}
+	}
+	option = { # Techological Pursuit
+		name = fra.4.b
+		ai_chance = { 
+			factor = 25 
+		}
+		set_country_flag = FRA_technology
+		add_popularity = {
+			ideology = anarchist
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = marketist
+			popularity = 0.05
+		}
+		hidden_effect = {
+			country_event = { 
+				id = fra.5
+				days = 2
+			}
+		}
+	}
+}
+# Elections Day 5: Our Military Direction
+country_event = {
+	id = fra.5
+	title = fra.5.t
+	desc = fra.5.desc
+	#picture = GFX_report_event_japan_army_mountainside
+	
+	trigger = {
+        original_tag = FRA
+		has_elections = yes
+    }
+	
+	mean_time_to_happen = {
+        days = 0
+    }
+	
+	is_triggered_only = yes
+	
+	option = { # Side with the ST
+		name = fra.5.a
+		ai_chance = {
+			factor = 25
+		} 
+		set_country_flag = FRA_syndicalist_military
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.02
+		}
+		hidden_effect = {
+			country_event = { 
+				id = fra.6
+				days = 2
+			}
+		}
+	}
+	option = { # Side with the Sorelians
+		name = fra.5.b
+		ai_chance = { 
+			factor = 25 
+		}
+		set_country_flag = FRA_totalist_military
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.05
+		}
+		hidden_effect = {
+			country_event = { 
+				id = fra.6
+				days = 2
+			}
+		}
+	}
+	option = { # Side with the Anarchistes
+		name = fra.5.c
+		ai_chance = { 
+			factor = 25 
+		}
+		set_country_flag = FRA_anarchist_military
+		add_popularity = {
+			ideology = anarchist
+			popularity = 0.05
+		}
+		hidden_effect = {
+			country_event = { 
+				id = fra.6
+				days = 2
+			}
+		}
+	}
+	option = { # Side with UML
+		name = fra.5.d
+		ai_chance = { 
+			factor = 25 
+		}
+		set_country_flag = FRA_marketist_military
+		add_popularity = {
+			ideology = marketist
+			popularity = 0.05
+		}
+		hidden_effect = {
+			country_event = { 
+				id = fra.6
+				days = 2
+			}
+		}
+	}
+}
+# Elections Day 6: Our Interior Direction
+country_event = {
+	id = fra.6
+	title = fra.6.t
+	desc = fra.6.desc
+	#picture = GFX_report_event_japan_army_mountainside
+	
+	trigger = {
+        original_tag = FRA
+		has_elections = yes
+    }
+	
+	mean_time_to_happen = {
+        days = 0
+    }
+	
+	is_triggered_only = yes
+	
+	option = { # Keep Dormoy
+		name = fra.6.a
+		ai_chance = {
+			factor = 25
+		} 
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.07
+		}
+		hidden_effect = {
+			country_event = { 
+				id = fra.7
+				days = 2
+			}
+		}
+	}
+	option = { # Vote in Duclos
+		name = fra.6.b
+		ai_chance = { 
+			factor = 25 
+		}
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.05
+		}
+		add_ideas = FRA_jacques_duclos
+		hidden_effect = {
+			country_event = { 
+				id = fra.7
+				days = 2
+			}
+		}
+	}
+	option = { # Vote in Laval
+		name = fra.6.c
+		ai_chance = { 
+			factor = 25 
+		}
+		add_popularity = {
+			ideology = anarchist
+			popularity = 0.05
+		}
+		add_ideas = FRA_pierre_laval
+		hidden_effect = {
+			country_event = { 
+				id = fra.7
+				days = 2
+			}
+		}
+	}
+	option = { # Vote in Tillon
+		name = fra.6.d
+		ai_chance = { 
+			factor = 25 
+		}
+		add_popularity = {
+			ideology = marketist
+			popularity = 0.05
+		}
+		add_ideas = FRA_charles_tillon
+		hidden_effect = {
+			country_event = { 
+				id = fra.7
+				days = 2
+			}
+		}
+	}
+}
+# Elections Day 7: Status of the Revolution
+country_event = {
+	id = fra.7
+	title = fra.7.t
+	desc = fra.7.desc
+	#picture = GFX_report_event_japan_army_mountainside
+	
+	trigger = {
+        original_tag = FRA
+		has_elections = yes
+    }
+	
+	mean_time_to_happen = {
+        days = 0
+    }
+	
+	is_triggered_only = yes
+	
+	option = { # World Revolution
+		name = fra.7.c
+		ai_chance = {
+			factor = 25
+		} 
+		set_country_flag = FRA_world_revolution
+		add_popularity = {
+			ideology = anarchist
+			popularity = 0.05
+		}
+		hidden_effect = {
+			country_event = { 
+				id = fra.8
+				days = 2
+			}
+		}
+	}
+}
+# Elections Day 8: The Final Vote
+country_event = {
+	id = fra.8
+	title = fra.8.t
+	desc = fra.8.desc
+	#picture = GFX_report_event_japan_army_mountainside
+	
+	trigger = {
+        original_tag = FRA
+		has_elections = yes
+    }
+	
+	mean_time_to_happen = {
+        days = 0
+    }
+	
+	is_triggered_only = yes
+	
+	option = { # Keep ST
+		name = fra.8.a
+		ai_chance = {
+			factor = 25
+		}
+		add_stability = 0.05
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.1
+		}
+	}
+	option = { # Vote in the Sorelians
+		name = fra.8.b
+		ai_chance = { 
+			factor = 25 
+		}
+		add_war_support = 0.05
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.15
+		}
+		set_politics = {
+			ruling_party = totalist
+			elections_allowed = yes
+		}
+	}
+	option = { # Vote in the Anarchistes
+		name = fra.8.c
+		ai_chance = { 
+			factor = 25 
+		}
+		add_political_power = 50
+		add_popularity = {
+			ideology = anarchist
+			popularity = 0.15
+		}
+		set_politics = {
+			ruling_party = anarchist
+			elections_allowed = yes
+		}
+	}
+	option = { # Vote in UML
+		name = fra.8.d
+		ai_chance = { 
+			factor = 25 
+		}
+		add_offsite_building = {
+			type = industrial_complex
+			level = 1 
+		}
+		add_popularity = {
+			ideology = marketist
+			popularity = 0.15
+		}
+		set_politics = {
+			ruling_party = marketist
+			elections_allowed = yes
+		}
+	}
+}
+# France Demands Alsace
+country_event = {
+	id = fra.9
+	title = fra.9.t
+	desc = fra.9.desc
+	#picture = GFX_report_event_japan_army_mountainside
+	
+	trigger = {
+        original_tag = GER
+    }
+	
+	mean_time_to_happen = {
+        days = 0
+    }
+	
+	is_triggered_only = yes
+	
+	option = { # No, we shall not concede to Socialists!
+		name = fra.9.a
+		ai_chance = {
+			factor = 25
+		} 
+		add_political_power = 100
+		FRA = {
+			country_event = { 
+				id = fra.10
+				days = 1
+			}
+		}
+	}
+}
+# France Demands Alsace
+country_event = {
+	id = fra.10
+	title = fra.10.t
+	desc = fra.10.desc
+	#picture = GFX_report_event_japan_army_mountainside
+	
+	trigger = {
+        original_tag = FRA
+    }
+	
+	mean_time_to_happen = {
+        days = 0
+    }
+	
+	is_triggered_only = yes
+	
+	option = { # This means war!
+		name = fra.10.a
+		ai_chance = {
+			factor = 25
+		} 
+		add_war_support = 0.1
+		declare_war_on = {
+			target = GER
+			type = annex_everything
+		}
+	}
+}
+# The Future of Our Army
+country_event = {
+	id = fra.11
+	title = fra.11.t
+	desc = fra.11.desc
+	#picture = GFX_report_event_japan_army_mountainside
+	
+	trigger = {
+        original_tag = FRA
+    }
+	
+	mean_time_to_happen = {
+        days = 0
+    }
+	
+	is_triggered_only = yes
+	
+	option = { # Light Armor
+		name = fra.11.a
+		ai_chance = {
+			factor = 25
+		}
+		add_tech_bonus = {
+			bonus = 1
+			uses = 1
+			category = cat_light_armor
+		}
+	}
+	option = { # Medium Armor
+		name = fra.11.b
+		ai_chance = {
+			factor = 25
+		}
+		add_tech_bonus = {
+			bonus = 1
+			uses = 1
+			category = cat_medium_armor
+		}
+	}
+	option = { # Heavy Armor
+		name = fra.11.c
+		ai_chance = {
+			factor = 25
+		}
+		add_tech_bonus = {
+			bonus = 1
+			uses = 1
+			category = cat_heavy_armor
+		}
+	}
+}
+# The Future of Our Army
+country_event = {
+	id = fra.12
+	title = fra.12.t
+	desc = fra.12.desc
+	#picture = GFX_report_event_japan_army_mountainside
+	
+	trigger = {
+        original_tag = FRA
+    }
+	
+	mean_time_to_happen = {
+        days = 0
+    }
+	
+	is_triggered_only = yes
+	
+	option = { # Quality Focus
+		name = fra.12.a
+		ai_chance = {
+			factor = 25
+		}
+		swap_ideas = {
+			remove_idea = FRA_armored_breakthrough2
+			add_idea = FRA_armored_breakthrough3_quality
+		}
+	}
+	option = { # Quantity Focus
+		name = fra.12.b
+		ai_chance = {
+			factor = 25
+		}
+		swap_ideas = {
+			remove_idea = FRA_armored_breakthrough2
+			add_idea = FRA_armored_breakthrough3_production
+		}
+	}
+}

@@ -1,0 +1,104 @@
+add_namespace = aus
+
+#template
+
+country_event = {
+	id = aus.1
+	title = aus.1.t
+	desc = aus.1.desc
+	#picture = 
+
+   is_triggered_only = yes
+
+	option = { 
+		name = aus.1.a #CS Victory
+		ai_chance = {
+			factor = 50
+		}
+		add_popularity = {
+			ideology = conservative
+			popularity = 0.05
+		}
+		add_stability = 0.05
+		add_ideas = {
+			AUS_socialist_promises
+		}
+		complete_national_focus = AUS_electionsof1936
+	}
+	
+	option = { 
+		name = aus.1.b #SDAPÖ Victory
+		ai_chance = {
+			factor = 50
+		}
+		add_popularity = {
+			ideology = socialist
+			popularity = 0.2
+		}
+		set_politics = {
+			ruling_party = socialist
+			elections_allowed = yes
+		}
+		add_stability = 0.05
+		add_ideas = {
+			AUS_conservative_promises
+			AUS_leopold_figl1
+		}
+		complete_national_focus = AUS_electionsof1936
+	}
+}
+	country_event = {
+		id = aus.2
+		title = aus.2.t
+		desc = aus.2.desc
+		#picture = 
+	
+		is_triggered_only = yes
+
+		option = { 	#Oh no...
+			name = aus.2.a
+			ai_chance = { factor = 100 }
+			set_country_flag = AUS_black_friday
+			add_stability = -0.2
+			add_ideas = AUS_black_friday1
+		}
+	}
+	country_event = {
+		id = aus.3
+		title = aus.3.t
+		desc = aus.3.desc
+		#picture = 
+
+		is_triggered_only = yes
+
+		option = { 	#Abandon the Gold Standard!
+			name = aus.3.a
+			ai_chance = { factor = 100 }
+			set_country_flag = AUS_abandoned_gold_standard
+			add_ideas = AUS_kurt_schuss
+		}
+		option = { 	#We must preserve the Standard!
+			name = aus.3.b
+			ai_chance = { factor = 100 }
+		}
+	}
+	country_event = {
+		id = aus.4
+		title = aus.4.t
+		desc = aus.4.desc
+		#picture = 
+
+		is_triggered_only = yes
+
+		option = { 	#We must keep the nation united!
+			name = aus.4.a
+			ai_chance = { factor = 100 }
+			remove_ideas = AUS_conservative_promises
+			add_political_power = -50
+		}
+		option = { 	#We have other plans...
+			name = aus.4.b
+			ai_chance = { factor = 0 }
+			add_political_power = -10
+		}
+	}
