@@ -1,0 +1,12 @@
+focus_tree = {
+	id = mexico_focus_tree
+	
+	country = {
+		factor = 0
+		modifier = {
+			original_tag = MEX
+		}
+	}
+	
+	default = no		
+}

@@ -1,0 +1,3442 @@
+focus_tree = { 
+	id = CSA
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+		tag = CSA 
+		}
+		modifier = {
+			add = 10
+			original_tag = CSA
+		}
+	}
+	continuous_focus_position = { x = 50 y = 2100 }
+	default = no 
+	#Focus for Dixie CAS Co.
+	focus = { 
+		id = CSA_dixiecasco
+		icon = GFX_goal_unknown
+		x = 16
+		y = 16
+		cost = 9
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_controlthebattlefield } 
+		ai_will_do = { 
+			factor = 1
+		} 
+	} 
+
+#Focus for Call for Early Elections
+focus = { 
+id = CSA_callforearlyelections
+icon = GFX_focus_generic_treaty
+x = 13
+y = 6
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_bansocialistpartiesfromgovernment } 
+prerequisite = { focus = CSA_intimidatetheoposistion } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		country_event = { 
+			id = csa.2 
+			days = 3
+		}
+	}
+} 
+
+#Focus for Anti-Socialist Propaganda
+focus = { 
+id = CSA_antisocialistpropaganda
+icon = GFX_goal_unknown
+x = 34
+y = 18
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_antiamericanpropaganda } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for CAS Focus
+focus = { 
+id = CSA_casfocus
+icon = GFX_goal_generic_CAS
+x = 16
+y = 14
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_airbaseconstruction } 
+mutually_exclusive = { focus = CSA_bomberfocus } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Bomber Focus
+focus = { 
+id = CSA_bomberfocus
+icon = GFX_goal_generic_air_bomber
+x = 20
+y = 14
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_airbaseconstruction } 
+mutually_exclusive = { focus = CSA_casfocus } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Fighter Focus
+focus = { 
+id = CSA_fighterfocus
+icon = GFX_goal_generic_air_fighter2
+x = 18
+y = 15
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_casfocus focus = CSA_bomberfocus } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Repeal the National Protection Act
+focus = { 
+id = CSA_repealthenationalprotectionact
+icon = GFX_goal_generic_major_war
+x = 30
+y = 4
+cost = 4
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_themarchonthesupremecourt } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		remove_ideas = CSA_protection_act
+		add_war_support = 0.05
+	}
+ } 
+
+#Focus for Ban Socialist Parties from Government
+focus = { 
+id = CSA_bansocialistpartiesfromgovernment
+icon = GFX_goal_generic_war_with_comintern
+x = 14
+y = 5
+cost = 4
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_legalizethesilvershirts } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_stability = 0.03
+		add_political_power = 50
+		add_popularity = {
+			ideology = anarchist
+			popularity = -0.05
+		}
+		add_popularity = {
+			ideology = totalist
+			popularity = -0.05
+		}
+	}
+ } 
+
+#Focus for Elections of 1936
+focus = { 
+	id = CSA_electionsof1936
+	icon = GFX_goal_support_democracy
+	x = 26
+	y = 1
+	cost = 0
+	available_if_capitulated = yes 
+	ai_will_do = { 
+		factor = 1
+	} 
+	available = {
+		always = no
+	}
+	bypass = {
+		has_global_flag = CSA_1936_Elections
+	}
+	completion_reward = {
+		custom_effect_tooltip = bypass_tooltip
+	}
+} 
+
+#Focus for National Freedom's Landslide
+focus = { 
+	id = CSA_nationalfreedomslandslide
+	icon = GFX_goal_support_fascism
+	x = 32
+	y = 2
+	cost = 5
+	available_if_capitulated = yes 
+	prerequisite = { focus = CSA_electionsof1936 } 
+	mutually_exclusive = { focus = CSA_nationalunityfrontsupset } 
+	ai_will_do = { 
+		factor = 1
+	}
+	available = {
+		has_global_flag = CSA_1936_Elections_Freedom
+	}
+	completion_reward = {
+		add_stability = 0.05
+	}
+} 
+
+#Focus for Permanently Postpone Congress
+focus = { 
+id = CSA_permanentlypostponecongress
+icon = GFX_focus_generic_strike_at_democracy2
+x = 34
+y = 4
+cost = 4
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_themarchonthesupremecourt } 
+ai_will_do = { 
+ factor = 1
+ } 
+ completion_reward = {
+		add_political_power = 25
+		remove_ideas = CSA_congress
+	}
+ } 
+
+#Focus for The March on the Supreme Court
+focus = { 
+id = CSA_themarchonthesupremecourt
+icon = GFX_focus_usa_voter_registration_act
+x = 32
+y = 3
+cost = 4
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_nationalfreedomslandslide } 
+ai_will_do = { 
+ factor = 1
+ } 
+ completion_reward = {
+		remove_ideas = CSA_fire_decree3
+		add_stability = 0.03
+	}
+ } 
+
+#Focus for Intimidate the Oposistion
+focus = { 
+id = CSA_intimidatetheoposistion
+icon = GFX_goal_generic_demand_territory
+x = 12
+y = 5
+cost = 4
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_legalizethesilvershirts } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_stability = 0.03
+		add_popularity = {
+		ideology = conservative
+		popularity = -0.03
+		}
+		add_popularity = {
+		ideology = libertarian
+		popularity = -0.03
+		}
+		add_popularity = {
+		ideology = anarchist
+		popularity = -0.03
+		}
+		add_popularity = {
+		ideology = totalist
+		popularity = -0.03
+		}
+	}
+ } 
+
+#Focus for Ban Political Organizations
+focus = { 
+id = CSA_banpoliticalorganizations
+icon = GFX_goal_generic_political_pressure
+x = 41
+y = 5
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_purgethesocialistcoalition focus = CSA_purgethedemocraticcoalition } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Purge the Socialist Coalition
+focus = { 
+id = CSA_purgethesocialistcoalition
+icon = GFX_goal_support_communism
+x = 42
+y = 4
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_withintheopposition } 
+mutually_exclusive = { focus = CSA_purgethedemocraticcoalition } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Purge the Democratic Coalition
+focus = { 
+id = CSA_purgethedemocraticcoalition
+icon = GFX_goal_support_democracy
+x = 40
+y = 4
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_withintheopposition } 
+mutually_exclusive = { focus = CSA_purgethesocialistcoalition } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Within the Party
+focus = { 
+	id = CSA_withintheparty
+	icon = GFX_goal_support_fascism
+	x = 47
+	y = 3
+	cost = 0
+	available_if_capitulated = yes 
+	prerequisite = { focus = CSA_beginthepurges } 
+	mutually_exclusive = { focus = CSA_withintheopposition } 
+	ai_will_do = { 
+		factor = 2
+	}
+	available = {
+		always = no
+	}
+	bypass = {
+		has_country_flag = CSA_within_the_party
+	}
+	completion_reward = {
+		custom_effect_tooltip = bypass_tooltip
+	}
+} 
+
+#Focus for Begin the Purges
+focus = { 
+id = CSA_beginthepurges
+icon = GFX_goal_demand_sudetenland
+x = 44
+y = 2
+cost = 4
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_strengthenourgovernment } 
+ai_will_do = { 
+ factor = 2
+ } 
+	completion_reward = { 
+		country_event = { id = csa.16 }
+		add_timed_idea = { idea = CSA_begin_the_purges days = 70 }
+	}
+ } 
+
+#Focus for Strengthen our Government
+focus = { 
+id = CSA_strengthenourgovernment
+icon = GFX_focus_usa_honor_the_confederacy
+x = 44
+y = 1
+cost = 4
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 2
+ } 
+	available = {
+		has_elections = no
+		has_government = populist
+	}
+	completion_reward = {
+		add_stability = 0.05
+	}
+ } 
+
+#Focus for Within the Opposition
+focus = { 
+id = CSA_withintheopposition
+icon = GFX_focus_generic_strike_at_democracy2
+x = 41
+y = 3
+cost = 2
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_beginthepurges } 
+mutually_exclusive = { focus = CSA_withintheparty } 
+ai_will_do = { 
+ factor = 1
+ }
+	available = {
+		always = no
+	} 
+
+ } 
+
+#Focus for Purge Eaker
+focus = { 
+id = CSA_purgeeaker
+icon = GFX_goal_generic_air_fighter2
+x = 48
+y = 4
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_withintheparty } 
+mutually_exclusive = { focus = CSA_purgepatton } 
+ai_will_do = { 
+ factor = 3
+ } 
+	completion_reward = {
+		add_timed_idea = { idea = CSA_purge_eaker days = 360 }
+		set_global_flag = CSA_Eaker_Purged
+		add_popularity = {
+			ideology = nationalist
+			popularity = -0.05
+		}
+	}
+ } 
+
+#Focus for Support Standards
+focus = { 
+id = CSA_supportstandards
+icon = GFX_goal_generic_construction2
+x = 23
+y = 11
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_industrialstandards } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_ideas = CSA_support_equipment_standards
+	}
+ } 
+
+#Focus for Infantry Equipment Standards
+focus = { 
+id = CSA_infantryequipmentstandards
+icon = GFX_goal_generic_small_arms
+x = 24
+y = 10
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_industrialstandards } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_ideas = CSA_infantry_equipment_standards
+	}
+ } 
+
+#Focus for Industrial Standards
+focus = { 
+id = CSA_industrialstandards
+icon = GFX_goal_generic_military_sphere
+x = 23
+y = 9
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_industrialeffort } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_ideas = CSA_industrial_standards
+	}
+ } 
+
+	#Focus for Industrial Effort
+	focus = { 
+		id = CSA_industrialeffort
+		icon = GFX_goal_generic_construction2
+		x = 26
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { 
+			focus = CSA_appointhammeraseconomicminister 
+			focus = CSA_appointsmithaseconomicminister 
+		} 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = industry
+			}
+			371 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	} 
+
+#Focus for Invest in Public Education
+focus = { 
+id = CSA_investinpubliceducation
+icon = GFX_focus_research2
+x = 36
+y = 10
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_thedixiehighway } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		OR = {
+			has_idea = high_taxes
+			has_idea = higher_taxes
+		}
+	}
+	completion_reward = {
+		add_ideas = CSA_public_education
+	}
+ } 
+
+#Focus for Publicly Funded Higher Education
+focus = { 
+id = CSA_publiclyfundedhighereducation
+icon = GFX_focus_research2
+x = 37
+y = 11
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_womeninscience } 
+prerequisite = { focus = CSA_investinpubliceducation } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		OR = {
+			has_idea = high_taxes
+			has_idea = higher_taxes
+		}
+	}
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = CSA_public_education
+			add_idea = CSA_higher_public_education
+		}
+	}
+ } 
+
+#Focus for Rebuild the Nation
+focus = { 
+id = CSA_rebuildthenation
+icon = GFX_goal_generic_construct_infrastructure
+x = 34
+y = 10
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_thedixiehighway } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		OR = {
+			has_idea = high_taxes
+			has_idea = higher_taxes
+		}
+	}
+	completion_reward = {
+		add_ideas = CSA_rebuild_the_nation
+	}
+ } 
+
+#Focus for Women in Science
+focus = { 
+id = CSA_womeninscience
+icon = GFX_focus_research2
+x = 38
+y = 10
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_publicmaternityservices } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_research_slot = 1
+	}
+ } 
+
+#Focus for The Dixie Highway
+focus = { 
+id = CSA_thedixiehighway
+icon = GFX_goal_unknown
+x = 35
+y = 9
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_shareourwealth } 
+ai_will_do = { 
+ factor = 1
+ }
+	available = {
+		OR = {
+			has_idea = high_taxes
+			has_idea = higher_taxes
+		}
+		OR = {
+			has_full_control_of_state = 364
+			has_full_control_of_state = 813
+			has_full_control_of_state = 362
+			has_full_control_of_state = 363
+			has_full_control_of_state = 368
+		}
+	}
+	
+	completion_reward = {
+		364 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 10
+						instant_build = yes
+					}
+				}
+			}
+		813 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 10
+						instant_build = yes
+					}
+				}
+			}
+				362 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = infrastructure
+							level = 10
+							instant_build = yes
+						}
+					}
+				}
+				363 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = infrastructure
+							level = 10
+							instant_build = yes
+						}
+					}
+				368 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
+						add_building_construction = {
+							type = infrastructure
+							level = 10
+							instant_build = yes
+					}
+				}
+			}
+		}
+	}
+ } 
+
+#Focus for Share Our Wealth!
+focus = { 
+id = CSA_shareourwealth
+icon = GFX_goal_generic_national_unity
+x = 37
+y = 8
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_appointsmithaseconomicminister } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_political_power = 120
+	}
+ } 
+
+#Focus for Fort Investments
+focus = { 
+id = CSA_fortinvestments
+icon = GFX_goal_generic_construct_military
+x = 34
+y = 11
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_rebuildthenation } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		OR = {
+			has_idea = high_taxes
+			has_idea = higher_taxes
+		}
+	}
+	completion_reward = {
+		add_ideas = CSA_fort_investments
+	}
+ } 
+
+#Focus for Air Production Effort
+focus = { 
+id = CSA_airproductioneffort
+icon = GFX_goal_generic_air_production
+x = 19
+y = 17
+cost = 8
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_dixiecasco focus = CSA_controltheskies focus = CSA_bluebonnetbombers } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Mining Effort
+focus = { 
+id = CSA_miningeffort
+icon = GFX_focus_generic_industry_1
+x = 31
+y = 13
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_tungsteneffort focus = CSA_steeleffort focus = CSA_aluminumeffort } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = CSA_autarky
+			add_idea = CSA_autarky2
+		}
+	}
+ } 
+
+	#Focus for Steel Effort
+	focus = { 
+		id = CSA_steeleffort
+		icon = GFX_focus_generic_steel
+		x = 33
+		y = 12
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = CSA_syntheticrubbereffort 
+			focus = CSA_fuelcontainmenteffort 
+		} 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			368 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = steel
+					amount = 24
+				}
+			}
+		}
+	} 
+
+#Focus for Resession Congress
+focus = { 
+id = CSA_resessioncongress
+icon = GFX_goal_generic_propaganda
+x = 20
+y = 3
+cost = 2
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_nationalunityfrontsupset } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Proclaim Greater Dixieland!
+focus = { 
+id = CSA_proclaimgreaterdixieland
+icon = GFX_goal_unknown
+x = 39
+y = 17
+cost = 15
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_ultimatumtocuba focus = CSA_ultimatumtooklahoma } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		always = no
+	}
+ } 
+
+#Focus for Call Upon the SoD
+focus = { 
+id = CSA_calluponthesod
+icon = GFX_goal_generic_war_with_comintern
+x = 3
+y = 4
+cost = 4
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_resistlongscall } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Force Oaths of Loyalty
+focus = { 
+id = CSA_forceoathsofloyalty
+icon = GFX_focus_generic_military_academy
+x = 47
+y = 6
+cost = 4
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_thelongestnight } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_ideas = CSA_oaths_of_loyalty
+	}
+ } 
+
+#Focus for Expand the DSS
+focus = { 
+id = CSA_expandthedss
+icon = GFX_goal_generic_secret_weapon
+x = 44
+y = 7
+cost = 4
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_forceoathsofloyalty focus = CSA_banpoliticalorganizations } 
+ai_will_do = { 
+ factor = 3
+ } 
+	completion_reward = {
+		add_ideas = CSA_expand_the_DSS
+		set_global_flag = CSA_Expanded_The_DSS
+		add_popularity = {
+			ideology = populist
+			popularity = 0.1
+		}
+	}
+ } 
+
+#Focus for Pro-Populist Propaganda
+focus = { 
+id = CSA_propopulistpropaganda
+icon = GFX_goal_generic_propaganda
+x = 34
+y = 16
+cost = 8
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_aradioineveryhome } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_ideas = CSA_populist_propaganda
+	}
+ } 
+
+#Focus for Ministry of Propaganda
+focus = { 
+	id = CSA_ministryofpropaganda
+	icon = GFX_goal_generic_propaganda
+	x = 34
+	y = 14
+	cost = 5
+	available_if_capitulated = yes 
+	prerequisite = { focus = CSA_thesouthshallriseagain } 
+	ai_will_do = { 
+		factor = 1
+	}
+	available = {
+		threat > 0.049
+	}
+	completion_reward = {
+		add_ideas = CSA_charles_coughlin
+	}
+ } 
+
+#Focus for Appoint Hammer as Economic Minister
+focus = { 
+id = CSA_appointhammeraseconomicminister
+icon = GFX_goal_unknown
+x = 20
+y = 7
+cost = 0
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_continueeconomicreforms } 
+mutually_exclusive = { focus = CSA_appointsmithaseconomicminister } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		always = no
+	}
+	bypass = {
+		has_global_flag = CSA_Hammer_Appointed
+	}
+	completion_reward = {
+		custom_effect_tooltip = bypass_tooltip
+	}
+ } 
+
+#Focus for Appoint Smith As Economic Minister
+focus = { 
+id = CSA_appointsmithaseconomicminister
+icon = GFX_goal_unknown
+x = 32
+y = 7
+cost = 0
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_continueeconomicreforms } 
+mutually_exclusive = { focus = CSA_appointhammeraseconomicminister } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		always = no
+	}
+	bypass = {
+		has_global_flag = CSA_Smith_Appointed
+	}
+	completion_reward = {
+		custom_effect_tooltip = bypass_tooltip
+	}
+ } 
+
+#Focus for Anti-German Propaganda
+focus = { 
+id = CSA_antigermanpropaganda
+icon = GFX_goal_unknown
+x = 32
+y = 17
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_propopulistpropaganda } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		always = no
+	}
+ } 
+
+#Focus for Anti-Entente Propaganda
+focus = { 
+id = CSA_antiententepropaganda
+icon = GFX_goal_unknown
+x = 36
+y = 17
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_propopulistpropaganda } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		always = no
+	}
+ } 
+
+#Focus for Anti-American Propaganda
+focus = { 
+id = CSA_antiamericanpropaganda
+icon = GFX_focus_generic_strike_at_democracy3
+x = 34
+y = 17
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_propopulistpropaganda } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		always = no
+	}
+ } 
+
+#Focus for Deal with the Germans
+focus = { 
+id = CSA_dealwiththegermans
+icon = GFX_focus_attack_germany
+x = 52
+y = 18
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_adealwiththeentente focus = CSA_adealwiththecommune } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for A Deal with the Entente
+focus = { 
+id = CSA_adealwiththeentente
+icon = GFX_goal_unknown
+x = 53
+y = 17
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_sidewithaustralasia focus = CSA_sidewithbritain } 
+mutually_exclusive = { focus = CSA_adealwiththecommune } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		always = no
+	}
+ } 
+
+#Focus for Form the Golden Circle
+focus = { 
+id = CSA_formthegoldencircle
+icon = GFX_goal_unknown
+x = 46
+y = 18
+cost = 8
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_warwithcentroamerica } 
+prerequisite = { focus = CSA_invasionofthecaribbean } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Side with Australasia
+focus = { 
+id = CSA_sidewithaustralasia
+icon = GFX_goal_unknown
+x = 53
+y = 16
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_diplomacyineurope } 
+mutually_exclusive = { focus = CSA_sidewithbritain } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		always = no
+	}
+ } 
+
+#Focus for Ally Mexico
+focus = { 
+id = CSA_allymexico
+icon = GFX_goal_unknown
+x = 47
+y = 16
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_diplomacyincentralamerica } 
+mutually_exclusive = { focus = CSA_takeoutthemexicanos } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		is_in_faction = yes
+		MEX = {
+			is_in_faction = no
+			Not = { has_war_with = CSA }
+		}
+	}
+	bypass = {
+		MEX = {
+			OR = {
+				is_in_faction_with = CSA
+				exists = no
+			}
+		}
+	}
+	completion_reward = {
+		set_global_flag = CSA_MEX_Invitation
+		MEX = {
+			country_event = { id = csa.8 days = 1}
+		}
+	}
+ } 
+
+#Focus for Take Out the Mexicanos
+focus = { 
+id = CSA_takeoutthemexicanos
+icon = GFX_focus_mex_jefe_maximo
+x = 49
+y = 16
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_diplomacyincentralamerica } 
+mutually_exclusive = { focus = CSA_allymexico } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		MEX = {
+			exists = yes
+			Not = { has_war_with = CSA }
+		}
+	}
+	bypass = {
+		MEX = {
+			has_war_with = CSA
+			OR = {
+				exists = no
+			}
+		}
+	}
+	completion_reward = {
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = MEX
+		}
+	}
+ } 
+
+#Focus for War with Centroamerica
+focus = { 
+id = CSA_warwithcentroamerica
+icon = GFX_goal_unknown
+x = 48
+y = 17
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_allymexico focus = CSA_takeoutthemexicanos } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		always = no
+	}
+ } 
+
+#Focus for Invasion of the Caribbean
+focus = { 
+id = CSA_invasionofthecaribbean
+icon = GFX_goal_unknown
+x = 44
+y = 17
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_winoverthefederation focus = CSA_thegreatercubaagreement } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		always = no
+	}
+ } 
+
+#Focus for Diplomacy in Central America
+focus = { 
+id = CSA_diplomacyincentralamerica
+icon = GFX_goal_unknown
+x = 48
+y = 15
+cost = 0
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_globaldiplomacy } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for The Greater Cuba Agreement
+focus = { 
+id = CSA_thegreatercubaagreement
+icon = GFX_goal_unknown
+x = 43
+y = 16
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_diplomacyinthecaribbean } 
+mutually_exclusive = { focus = CSA_winoverthefederation } 
+mutually_exclusive = { focus = CSA_ultimatumtocuba } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		is_in_faction = yes
+		CUB = {
+			is_in_faction = no
+			Not = { has_war_with = CSA }
+		}
+	}
+	bypass = {
+		CUB = {
+			OR = {
+				is_in_faction_with = CSA
+				exists = no
+			}
+		}
+	}
+	completion_reward = {
+		set_global_flag = CSA_CUB_Invitation
+		CUB = {
+			country_event = { id = csa.12 days = 1}
+		}
+	}
+ } 
+
+#Focus for Demand a Referendum
+focus = { 
+id = CSA_demandareferendum
+icon = GFX_focus_usa_voter_registration_act
+x = 39
+y = 15
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_theremilitarizationofrichmond } 
+ai_will_do = { 
+ factor = 3
+ }
+	available = {
+		has_army_manpower = { size > 399999 }
+	}
+	bypass = {
+		USA = { is_puppet = yes }
+		has_war_with = USA
+	}
+	completion_reward = {
+		add_threat = 5
+		USA = {
+			country_event = { id = csa.5 days = 1 }
+			custom_effect_tooltip = may_provoke_hostility
+		}
+		set_global_flag = CSA_Return_Land2
+	}
+ } 
+
+#Focus for A Radio in Every Home!
+focus = { 
+id = CSA_aradioineveryhome
+icon = GFX_goal_generic_radar
+x = 34
+y = 15
+cost = 8
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_ministryofpropaganda } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_war_support = 0.03
+		add_tech_bonus = {
+			bonus = 1
+			uses = 2
+			category = electronics
+		}
+	}
+ } 
+
+#Focus for Global Diplomacy
+focus = { 
+id = CSA_globaldiplomacy
+icon = GFX_goal_generic_intelligence_exchange
+x = 48
+y = 14
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_thesouthshallriseagain } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		complete_national_focus = CSA_diplomacyinthecaribbean
+		complete_national_focus = CSA_diplomacyineurope
+		complete_national_focus = CSA_diplomacyincentralamerica
+		add_war_support = 0.05
+		add_stability = 0.05
+	}
+ } 
+
+#Focus for Diplomacy in the Caribbean
+focus = { 
+id = CSA_diplomacyinthecaribbean
+icon = GFX_goal_unknown
+x = 44
+y = 15
+cost = 0
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_globaldiplomacy } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Win Over the Federation
+focus = { 
+id = CSA_winoverthefederation
+icon = GFX_goal_unknown
+x = 45
+y = 16
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_diplomacyinthecaribbean } 
+mutually_exclusive = { focus = CSA_thegreatercubaagreement } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		always = no
+	}
+ } 
+
+#Focus for The Remilitarization of Richmond
+focus = { 
+id = CSA_theremilitarizationofrichmond
+icon = GFX_goal_generic_military_sphere
+x = 39
+y = 14
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_thesouthshallriseagain } 
+ai_will_do = { 
+ factor = 3
+ } 
+	bypass = {
+		813 = { is_demilitarized_zone = no }
+	}
+	available = {
+		has_army_manpower = { size > 299999 }
+	}
+	completion_reward = {
+		813 = { set_demilitarized_zone = no }
+		has_global_flag = CSA_Return_Land
+		add_political_power = 60
+		add_threat = 5
+		if = {
+			limit = { USA = { is_puppet = no } }
+			USA = {
+				country_event = { id = csa.4 }
+				custom_effect_tooltip = may_provoke_hostility
+			}
+		}
+	}
+ } 
+
+#Focus for The South Shall Rise Again!
+focus = { 
+id = CSA_thesouthshallriseagain
+icon = GFX_focus_usa_honor_the_confederacy
+x = 43
+y = 13
+cost = 5
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 3
+ } 
+	available = {
+		has_global_flag = CSA_Expanded_The_DSS
+		has_army_manpower = { size > 299999 }
+	}
+	completion_reward = {
+		add_ideas = { CSA_sour_loser }
+		create_faction = CSA_national_front
+	}
+ } 
+
+#Focus for Military Technology Research Funding
+focus = { 
+id = CSA_militarytechnologyresearchfunding
+icon = GFX_focus_research2
+x = 12
+y = 13
+cost = 8
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_ministryofarmaments } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Emergency Total Mobilization
+focus = { 
+id = CSA_emergencytotalmobilization
+icon = GFX_focus_generic_support_the_left_right
+x = 2
+y = 13
+cost = 4
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_ministryofarmaments } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Defence of Dixie
+focus = { 
+id = CSA_defenceofdixie
+icon = GFX_goal_generic_defence
+x = 9
+y = 13
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_ministryofarmaments } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Move Industry South
+focus = { 
+id = CSA_moveindustrysouth
+icon = GFX_goal_unknown
+x = 8
+y = 14
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_defenceofdixie } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Move Industry West
+focus = { 
+id = CSA_moveindustrywest
+icon = GFX_goal_unknown
+x = 10
+y = 14
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_defenceofdixie } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Underground Industry
+focus = { 
+id = CSA_undergroundindustry
+icon = GFX_goal_generic_fortify_city
+x = 9
+y = 15
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_moveindustrysouth focus = CSA_moveindustrywest } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Ministry of Armaments
+focus = { 
+id = CSA_ministryofarmaments
+icon = GFX_goal_generic_construct_mil_factory
+x = 7
+y = 12
+cost = 5
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 1
+ } 
+available = {
+has_war = yes
+has_global_flag = CSA_Hammer_Appointed
+}
+ } 
+
+#Focus for Factory Specialization
+focus = { 
+id = CSA_factoryspecialization
+icon = GFX_focus_generic_industry_3
+x = 5
+y = 13
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_ministryofarmaments } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Flexible Lines
+focus = { 
+id = CSA_flexiblelines
+icon = GFX_goal_generic_construct_civ_factory
+x = 4
+y = 14
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_factoryspecialization } 
+mutually_exclusive = { focus = CSA_streamlinedlines } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+	#Focus for Dixie Army Structure
+	focus = { 
+		id = CSA_dixiearmystructure
+		icon = GFX_focus_generic_military_mission
+		x = 10
+		y = 7
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_jacksonsreform } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CSA_defensive_focus
+				add_idea = CSA_defensive_focus1
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = engineers_tech
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = logistics_tech
+			}
+		}
+	} 
+
+	#Focus for The New Confederate Army
+	focus = { 
+		id = CSA_thenewconfederatearmy
+		icon = GFX_focus_usa_honor_the_confederacy
+		x = 8
+		y = 10
+		cost = 8
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_wareconomy } 
+		prerequisite = { focus = CSA_extensiveconscription } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = CSA_new_confederate_army
+		}
+	} 
+
+#Focus for Extensive Conscription
+focus = { 
+id = CSA_extensiveconscription
+icon = GFX_focus_generic_little_entente
+x = 9
+y = 9
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_teVDdKLf focus = CSA_improveproductionstandards focus = CSA_barreltactis } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_ideas = extensive_conscription
+	}
+	bypass = {
+		OR = {
+			has_idea = extensive_conscription
+			has_idea = service_by_requirement
+			has_idea = all_adults_serve
+			has_idea = scraping_the_barrel
+		}
+	}
+ } 
+
+	#Focus for Standardize Equipment
+	focus = { 
+		id = CSA_standardizeequipment
+		icon = GFX_goal_generic_small_arms
+		x = 8
+		y = 7
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_leesreform } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = artillery
+			}
+			add_tech_bonus = {
+				bonus = 0.55
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	} 
+
+	#Focus for Improve Production Standards
+	focus = { 
+		id = CSA_improveproductionstandards
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 8
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_standardizeequipment } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CSA_superior_firepower
+				add_idea = CSA_superior_firepower1
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	} 
+
+	#Focus for General Staff Wargaming
+	focus = { 
+		id = CSA_generalstaffwargaming
+		icon = GFX_goal_generic_position_armies
+		x = 10
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_dixiearmystructure } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CSA_defensive_focus1
+				add_idea = CSA_defensive_focus2
+			}
+			add_tech_bonus = {
+				bonus = 0.55
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	} 
+
+#Focus for War Economy
+focus = { 
+id = CSA_wareconomy
+icon = GFX_goal_generic_build_tank
+x = 7
+y = 9
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_barreltactis focus = CSA_improveproductionstandards focus = CSA_generalstaffwargaming } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_ideas = war_economy
+	}
+	bypass = {
+		OR = {
+		has_idea = war_economy
+		has_idea = tot_economic_mobilisation
+		}
+	}
+ } 
+
+#Focus for Civilian Economy Efforts
+focus = { 
+id = CSA_civilianeconomyefforts
+icon = GFX_goal_generic_construct_civilian
+x = 15
+y = 8
+cost = 8
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_appointhammeraseconomicminister } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Decrease Regulations
+focus = { 
+id = CSA_decreaseregulations
+icon = GFX_focus_hol_the_foundations_of_defense
+x = 18
+y = 9
+cost = 6
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_civilianeconomyefforts } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Naval Base Construction
+focus = { 
+id = CSA_navalbaseconstruction
+icon = GFX_goal_generic_construct_naval_dockyard
+x = 25
+y = 13
+cost = 8
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 1
+ } 
+available = {
+has_global_flag = CSA_Expanded_The_DSS
+always = no
+}
+completion_reward = {
+navy_experience = 50
+}
+ } 
+
+#Focus for Dockyards in the West
+focus = { 
+id = CSA_dockyardsinthewest
+icon = GFX_goal_unknown
+x = 23
+y = 14
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_navalbaseconstruction } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Dockyards in the East
+focus = { 
+id = CSA_dockyardsintheeast
+icon = GFX_goal_unknown
+x = 27
+y = 14
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_navalbaseconstruction } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Submarine Effort
+focus = { 
+id = CSA_submarineeffort
+icon = GFX_goal_generic_navy_submarine
+x = 27
+y = 15
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_dockyardsintheeast } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Destroyer Effort
+focus = { 
+id = CSA_destroyereffort
+icon = GFX_focus_generic_destroyer
+x = 23
+y = 15
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_dockyardsinthewest } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Marine Effort
+focus = { 
+id = CSA_marineeffort
+icon = GFX_goal_generic_amphibious_assault
+x = 25
+y = 15
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_dockyardsinthewest focus = CSA_dockyardsintheeast } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Creating Jobs for the People
+focus = { 
+id = CSA_creatingjobsforthepeople
+icon = GFX_goal_generic_production2
+x = 12
+y = 9
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_civilianeconomyefforts } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Eliminate Segregation
+focus = { 
+id = CSA_eliminatesegregation
+icon = GFX_goal_generic_national_unity
+x = 20
+y = 5
+cost = 9
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_securedemocracy focus = CSA_blacksintheplantationhouse } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Redistribution of Land
+focus = { 
+id = CSA_redistributionofland
+icon = GFX_focus_usa_guarantee_the_american_dream
+x = 23
+y = 5
+cost = 8
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_blacksintheplantationhouse } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Decrease Segregation?
+focus = { 
+id = CSA_decreasesegregation
+icon = GFX_focus_generic_diplomatic_treaty
+x = 18
+y = 12
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_decreaseimmigrationregulations } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+	#Focus for Increase Labor Standards
+	focus = { 
+		id = CSA_increaselaborstandards
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 27
+		y = 12
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = CSA_civilianfactoryeffort 
+			focus = CSA_militaryfactoryeffort 
+		} 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = CSA_labor_standards
+			368 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			371 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	} 
+
+#Focus for Lessen Building Standards
+focus = { 
+id = CSA_lessenbuildingstandards
+icon = GFX_goal_generic_construction2
+x = 19
+y = 10
+cost = 8
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_decreaseregulations } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Decrease Tax Burdens
+focus = { 
+id = CSA_decreasetaxburdens
+icon = GFX_focus_renounce_the_treaty_of_trianon
+x = 17
+y = 10
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_decreaseregulations } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Science Workers
+focus = { 
+id = CSA_scienceworkers
+icon = GFX_focus_research2
+x = 12
+y = 11
+cost = 8
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_factoryworkers focus = CSA_constructionworkers } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Factory Workers
+focus = { 
+id = CSA_factoryworkers
+icon = GFX_goal_generic_construct_mil_factory
+x = 11
+y = 10
+cost = 9
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_creatingjobsforthepeople } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Encourage Entrepreneurship
+focus = { 
+id = CSA_encourageentrepreneurship
+icon = GFX_focus_generic_self_management
+x = 14
+y = 11
+cost = 8
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_factoryworkers focus = CSA_constructionworkers } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Agricultural Workers
+focus = { 
+id = CSA_agriculturalworkers
+icon = GFX_focus_generic_industry_2
+x = 10
+y = 11
+cost = 9
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_factoryworkers focus = CSA_constructionworkers } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Construction Workers
+focus = { 
+id = CSA_constructionworkers
+icon = GFX_goal_generic_construct_civ_factory
+x = 13
+y = 10
+cost = 9
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_creatingjobsforthepeople } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Decrease Welfare Benefits
+focus = { 
+id = CSA_decreasewelfarebenefits
+icon = GFX_focus_generic_treaty
+x = 16
+y = 11
+cost = 8
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_decreasetaxburdens } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Bluebonnet Bombers
+focus = { 
+id = CSA_bluebonnetbombers
+icon = GFX_goal_unknown
+x = 20
+y = 16
+cost = 9
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_controltheproduction } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Air Doctrine Effort
+focus = { 
+id = CSA_airdoctrineeffort
+icon = GFX_goal_generic_army_doctrines
+x = 17
+y = 17
+cost = 8
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_controltheskies focus = CSA_bluebonnetbombers focus = CSA_dixiecasco } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Ultimatum to Cuba
+focus = { 
+id = CSA_ultimatumtocuba
+icon = GFX_goal_generic_forceful_treaty
+x = 40
+y = 16
+cost = 8
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_demandareferendum } 
+mutually_exclusive = { focus = CSA_thegreatercubaagreement } 
+mutually_exclusive = { focus = CSA_ultimatumtooklahoma } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		always = no
+	}
+ } 
+
+#Focus for Ultimatum to Oklahoma
+focus = { 
+id = CSA_ultimatumtooklahoma
+icon = GFX_goal_unknown
+x = 38
+y = 16
+cost = 8
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_demandareferendum } 
+mutually_exclusive = { focus = CSA_ultimatumtocuba } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		has_army_manpower = { size > 549999 }
+		date > 1939.07.15
+	}
+	bypass = {
+		USA = { is_puppet = yes }
+	}
+	completion_reward = {
+		set_global_flag = CSA_Oklahoma
+		add_threat = 10
+		USA = {
+			country_event = { id = csa.10 }
+			custom_effect_tooltip = may_provoke_hostility
+		}
+	}
+ } 
+
+#Focus for Women's Rights
+focus = { 
+id = CSA_womensrights
+icon = GFX_goal_generic_demand_territory
+x = 20
+y = 6
+cost = 9
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_eliminatesegregation } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Full Integration of Blacks
+focus = { 
+id = CSA_fullintegrationofblacks
+icon = GFX_goal_generic_improve_relations
+x = 17
+y = 6
+cost = 15
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_jobsforblacks } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Jobs for Blacks
+focus = { 
+id = CSA_jobsforblacks
+icon = GFX_goal_tripartite_pact
+x = 17
+y = 5
+cost = 9
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_securedemocracy } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for A Black Takeover
+focus = { 
+id = CSA_ablacktakeover
+icon = GFX_goal_generic_war_with_comintern
+x = 22
+y = 6
+cost = 15
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_redistributionofland } 
+mutually_exclusive = { focus = CSA_socialisminallcolors } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Socialism in All Colors
+focus = { 
+id = CSA_socialisminallcolors
+icon = GFX_goal_generic_dangerous_deal
+x = 24
+y = 6
+cost = 15
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_redistributionofland } 
+mutually_exclusive = { focus = CSA_ablacktakeover } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for The Longest Night
+focus = { 
+id = CSA_thelongestnight
+icon = GFX_goal_generic_major_war
+x = 47
+y = 5
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_purgeeaker focus = CSA_purgepatton } 
+ai_will_do = { 
+ factor = 2
+ } 
+	completion_reward = {
+		add_timed_idea = { idea = CSA_officers_purged days = 180 }
+	}
+ } 
+
+#Focus for Secure Democracy
+focus = { 
+id = CSA_securedemocracy
+icon = GFX_goal_support_democracy
+x = 18
+y = 4
+cost = 2
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_resessioncongress } 
+mutually_exclusive = { focus = CSA_blacksintheplantationhouse } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Blacks in the Plantation House
+focus = { 
+id = CSA_blacksintheplantationhouse
+icon = GFX_focus_eng_crush_the_dream
+x = 22
+y = 4
+cost = 2
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_resessioncongress } 
+mutually_exclusive = { focus = CSA_securedemocracy } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Prepare for Early Elections
+focus = { 
+id = CSA_prepareforearlyelections
+icon = GFX_goal_generic_propaganda
+x = 3
+y = 6
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_fullyformthenationalunityfront } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Fully Form the National Unity Front
+focus = { 
+id = CSA_fullyformthenationalunityfront
+icon = GFX_goal_generic_national_unity
+x = 3
+y = 5
+cost = 8
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_calluponthedixiecrats } 
+prerequisite = { focus = CSA_calluponthesod } 
+prerequisite = { focus = CSA_calluponthewhigs } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Call Upon the Dixiecrats
+focus = { 
+id = CSA_calluponthedixiecrats
+icon = GFX_goal_generic_defence
+x = 5
+y = 4
+cost = 4
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_resistlongscall } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Resist Long's Call
+focus = { 
+id = CSA_resistlongscall
+icon = GFX_goal_generic_defence
+x = 3
+y = 3
+cost = 4
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_thefireofresistance } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Call Upon the Whigs
+focus = { 
+id = CSA_calluponthewhigs
+icon = GFX_goal_unknown
+x = 1
+y = 4
+cost = 4
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_resistlongscall } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for National Unity Front's Upset
+focus = { 
+id = CSA_nationalunityfrontsupset
+icon = GFX_goal_generic_war_with_comintern
+x = 20
+y = 2
+cost = 2
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_electionsof1936 } 
+mutually_exclusive = { focus = CSA_nationalfreedomslandslide } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = {
+always = no
+}
+ } 
+
+	#Focus for Barrel Tactis
+	focus = { 
+		id = CSA_barreltactis
+		icon = GFX_focus_generic_tank_production
+		x = 6
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_barrelinvestments } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = CSA_barrel_tactics
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	} 
+
+	#Focus for Jackson's Reform
+	focus = { 
+		id = CSA_jacksonsreform
+		icon = GFX_goal_unknown
+		x = 10
+		y = 6
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_legacyoftheweltkrieg } 
+		mutually_exclusive = { focus = CSA_pattonsreform } 
+		mutually_exclusive = { focus = CSA_leesreform } 
+		mutually_exclusive = { focus = CSA_ } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_global_flag = CSA_Expanded_The_DSS
+		}
+		completion_reward = {
+			add_ideas = CSA_defensive_focus
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	} 
+
+#Focus for Homeless Shelters of Dixie
+focus = { 
+id = CSA_homelesssheltersofdixie
+icon = GFX_focus_generic_concessions
+x = 45
+y = 10
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_communityprojects } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_timed_idea = { idea = CSA_homeless_shelters days = 84}
+	}
+ } 
+
+	#Focus for Lee's Reform
+	focus = { 
+		id = CSA_leesreform
+		icon = GFX_goal_unknown
+		x = 8
+		y = 6
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_legacyoftheweltkrieg } 
+		mutually_exclusive = { focus = CSA_pattonsreform } 
+		mutually_exclusive = { focus = CSA_jacksonsreform } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_global_flag = CSA_Expanded_The_DSS
+		}
+		completion_reward = {
+			add_ideas = CSA_superior_firepower
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	} 
+
+#Focus for Legacy of The Weltkrieg
+focus = { 
+	id = CSA_legacyoftheweltkrieg
+	icon = GFX_focus_generic_commonwealth_build_infantry
+	x = 8
+	y = 5
+	cost = 5
+	available_if_capitulated = yes 
+	ai_will_do = { 
+		factor = 1
+	} 
+	completion_reward = {
+		army_experience = 25
+	}
+} 
+
+#Focus for Youth in the Factories
+focus = { 
+id = CSA_youthinthefactories
+icon = GFX_goal_generic_construct_mil_factory
+x = 47
+y = 10
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_longsyouth } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_ideas = CSA_factory_youth
+	}
+ } 
+
+#Focus for The Union of Dixie Youths
+focus = { 
+id = CSA_theunionofdixieyouths
+icon = GFX_focus_generic_military_academy
+x = 48
+y = 11
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_youthinthefactories } 
+prerequisite = { focus = CSA_youthinthemilitary } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = CSA_longs_youth2
+			add_idea = CSA_longs_youth3
+		}
+	}
+ } 
+
+#Focus for Youth in the Military
+focus = { 
+id = CSA_youthinthemilitary
+icon = GFX_focus_generic_little_entente
+x = 49
+y = 10
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_longsyouth } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = CSA_longs_youth
+			add_idea = CSA_longs_youth2
+		}
+	}
+ } 
+#Focus for Long's Youth
+focus = { 
+id = CSA_longsyouth
+icon = GFX_focus_usa_honor_the_confederacy
+x = 48
+y = 9
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_thedixiespirit } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_ideas = CSA_longs_youth
+	}
+ } 
+
+	#Focus for Farm Investments
+	focus = { 
+		id = CSA_farminvestments
+		icon = GFX_goal_generic_scientific_exchange
+		x = 43
+		y = 11
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_familyfarms } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			482 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			483 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			375 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			372 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			368 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			364 = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}		
+	}
+
+#Focus for Family Farms
+focus = { 
+id = CSA_familyfarms
+icon = GFX_focus_generic_industry_1
+x = 43
+y = 10
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_communityprojects } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_ideas = CSA_family_farms
+	}
+ } 
+
+#Focus for Ally Quebec
+focus = { 
+id = CSA_allyquebec
+icon = GFX_goal_tfv_can_compromise_with_quebec
+x = 50
+y = 18
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_adealwiththecommune } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+	#Focus for Community Projects
+	focus = { 
+		id = CSA_communityprojects
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 44
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = CSA_thedixiespirit
+		} 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = CSA_community_projects
+			484 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			368 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	} 
+
+	#Focus for The Dixie Spirit
+	focus = { 
+		id = CSA_thedixiespirit
+		icon = GFX_focus_usa_honor_the_confederacy
+		x = 46
+		y = 8
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_appointsmithaseconomicminister } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = CSA_dixie_spirit
+		}
+	} 
+
+#Focus for Synthetic Rubber Effort
+focus = { 
+id = CSA_syntheticrubbereffort
+icon = GFX_focus_generic_rubber
+x = 32
+y = 11
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_newresources } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_ideas = CSA_rubber_effort
+		modify_building_resources = {
+			building = synthetic_refinery
+			resource = rubber
+			amount = 2
+        }
+	}
+ } 
+
+#Focus for Fuel Containment Effort
+focus = { 
+id = CSA_fuelcontainmenteffort
+icon = GFX_goal_generic_oil_refinery
+x = 30
+y = 11
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_newresources } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_ideas = CSA_fuel_effort
+	}
+ } 
+
+#Focus for New Factories
+focus = { 
+id = CSA_newfactories
+icon = GFX_goal_generic_soviet_construction
+x = 27
+y = 10
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_autarky } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_ideas = CSA_new_factories
+	}
+ } 
+
+#Focus for Civilian Factory Effort
+focus = { 
+id = CSA_civilianfactoryeffort
+icon = GFX_goal_generic_construct_civ_factory
+x = 26
+y = 11
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_newfactories } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_ideas = CSA_civilian_factory_effort
+	}
+ } 
+
+#Focus for Legalize the Silver Shirts
+focus = { 
+id = CSA_legalizethesilvershirts
+icon = GFX_goal_unknown
+x = 13
+y = 4
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_dissolvecongess } 
+prerequisite = { focus = CSA_dissolvethecabinet } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = CSA_fire_decree2
+			add_idea = CSA_fire_decree3
+		}
+		add_timed_idea = { idea = CSA_silver_shirts days = 180 }
+	}
+ } 
+
+#Focus for Dissolve Congess
+focus = { 
+id = CSA_dissolvecongess
+icon = GFX_goal_unknown
+x = 14
+y = 3
+cost = 4
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_passtheenablingact } 
+ai_will_do = { 
+ factor = 1
+ }
+	completion_reward = {
+		add_popularity = {
+			ideology = populist
+			popularity = 0.05
+		}
+		swap_ideas = {
+			remove_idea = CSA_congress
+			add_idea = CSA_congress2
+		}
+	}
+ } 
+
+	#Focus for Dissolve the Cabinet
+	focus = { 
+		id = CSA_dissolvethecabinet
+		icon = GFX_goal_unknown
+		x = 12
+		y = 3
+		cost = 4
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_passtheenablingact } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_stability = 0.05
+			custom_effect_tooltip = CSA_dissolvethecabinet_tooltip
+			hidden_effect = {
+				add_ideas = {
+					vacant_foreign_minister
+					vacant_economic_minister
+					vacant_interior_minister
+				}
+			}
+		}
+	} 
+
+#Focus for Pass the Enabling Act
+focus = { 
+id = CSA_passtheenablingact
+icon = GFX_goal_generic_political_pressure
+x = 13
+y = 2
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_thecapitolfiredecree } 
+mutually_exclusive = { focus = CSA_thefireofresistance } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = {
+}
+	completion_reward = {
+	swap_ideas = {
+		remove_idea = CSA_fire_decree
+		add_idea = CSA_fire_decree2
+		}
+	}
+ } 
+
+	#Focus for Tungsten Effort
+	focus = { 
+		id = CSA_tungsteneffort
+		icon = GFX_focus_generic_tungsten
+		x = 29
+		y = 12
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_fuelcontainmenteffort focus = CSA_syntheticrubbereffort } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			482 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = tungsten
+					amount = 24
+				}
+			}
+		}
+	} 
+
+#Focus for The Fire of Resistance
+focus = { 
+id = CSA_thefireofresistance
+icon = GFX_goal_generic_war_with_comintern
+x = 3
+y = 2
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_thecapitolfiredecree } 
+mutually_exclusive = { focus = CSA_passtheenablingact } 
+ai_will_do = { 
+ factor = 1
+ } 
+ available = {
+ always = no
+ }
+ } 
+
+#Focus for The Capitol Fire Decree
+focus = { 
+id = CSA_thecapitolfiredecree
+icon = GFX_focus_renounce_the_treaty_of_trianon
+x = 8
+y = 1
+cost = 0
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 1
+ } 
+  available = {
+   always = no
+  }
+  bypass = {
+   has_global_flag = CSA_Capitol_Fire
+  }
+ } 
+
+#Focus for Purge Patton
+focus = { 
+id = CSA_purgepatton
+icon = GFX_goal_generic_axis_build_infantry
+x = 46
+y = 4
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_withintheparty } 
+mutually_exclusive = { focus = CSA_purgeeaker } 
+ai_will_do = { 
+ factor = 2
+ } 
+	completion_reward = {
+		add_timed_idea = { idea = CSA_purge_patton days = 360 }
+		set_global_flag = CSA_Patton_Purged
+		add_stability = 0.03
+	}
+ } 
+
+#Focus for Continue Economic Reforms
+focus = { 
+id = CSA_continueeconomicreforms
+icon = GFX_goal_generic_production2
+x = 26
+y = 6
+cost = 5
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		has_elections = no
+	}
+	completion_reward = {
+		country_event = { 
+			id = csa.3
+			days = 2
+		}
+	}
+ } 
+
+#Focus for Public Maternity Services
+focus = { 
+id = CSA_publicmaternityservices
+icon = GFX_focus_generic_concessions
+x = 39
+y = 9
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_shareourwealth } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_ideas = CSA_maternity_services
+	}
+ } 
+
+#Focus for Women in the Workforce
+focus = { 
+id = CSA_womenintheworkforce
+icon = GFX_goal_generic_demand_territory
+x = 40
+y = 10
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_publicmaternityservices } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		has_idea = tot_economic_mobilisation
+	}
+	completion_reward = {
+		add_ideas = CSA_women_in_the_workforce
+	}
+ } 
+
+	#Focus for Autarky
+	focus = { 
+		id = CSA_autarky
+		icon = GFX_goal_generic_construct_civilian
+		x = 29
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_industrialeffort } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = CSA_autarky
+			365 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			375 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	} 
+
+#Focus for Artillery Standards
+focus = { 
+id = CSA_artillerystandards
+icon = GFX_goal_generic_army_artillery2
+x = 22
+y = 10
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_industrialstandards } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_ideas = CSA_artillery_equipment_standards
+	}
+ } 
+
+#Focus for Military Factory Effort
+focus = { 
+id = CSA_militaryfactoryeffort
+icon = GFX_goal_generic_construct_mil_factory
+x = 28
+y = 11
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_newfactories } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_ideas = CSA_military_factory_effort
+	}
+ } 
+
+#Focus for New Resources
+focus = { 
+id = CSA_newresources
+icon = GFX_goal_generic_construction2
+x = 31
+y = 10
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_autarky } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_ideas = CSA_new_resources
+	}
+ } 
+
+	#Focus for Aluminum Effort
+	focus = { 
+		id = CSA_aluminumeffort
+		icon = GFX_focus_generic_aluminum
+		x = 31
+		y = 12
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_fuelcontainmenteffort focus = CSA_syntheticrubbereffort } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			375 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = aluminium
+					amount = 24
+				}
+			}
+		}
+	} 
+
+#Focus for Repeal the Bill of Rights
+focus = { 
+id = CSA_repealthebillofrights
+icon = GFX_focus_renounce_the_treaty_of_trianon
+x = 32
+y = 5
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_repealthenationalprotectionact } 
+prerequisite = { focus = CSA_permanentlypostponecongress } 
+ai_will_do = { 
+ factor = 1
+ } 
+ completion_reward = {
+		remove_ideas = CSA_bill_of_rights
+		add_political_power = 50
+		add_stability = -0.03
+		set_politics = {
+			ruling_party = populist
+			elections_allowed = no
+		}
+	}
+ } 
+
+	#Focus for Jobs for the Poor
+	focus = { 
+		id = CSA_jobsforthepoor
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 45
+		y = 11
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = CSA_homelesssheltersofdixie
+		} 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_timed_idea = {
+				idea = CSA_homeless_jobs
+				days = 70
+			}
+			add_tech_bonus = {
+				bonus = 0.55
+				uses = 2
+				category = industry
+			}
+		}
+	} 
+
+#Focus for Patton's Reform
+focus = { 
+id = CSA_pattonsreform
+icon = GFX_goal_unknown
+x = 6
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_legacyoftheweltkrieg } 
+mutually_exclusive = { focus = CSA_leesreform } 
+mutually_exclusive = { focus = CSA_jacksonsreform } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		has_global_flag = CSA_Expanded_The_DSS
+		NOT = { has_global_flag = CSA_Patton_Purged }
+	}
+	completion_reward = {
+		create_corps_commander = {
+			name = "George S. Patton"
+			picture = "Portrait_CSA_George_S_Patton.dds"
+			traits = {  trickster armor_officer panzer_leader war_hero trait_reckless }
+			skill = 5
+			attack_skill = 7 
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 4
+		}
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 2
+			category = land_doctrine
+		}
+	}
+ } 
+
+#Focus for Barrel Investments
+focus = { 
+id = CSA_barrelinvestments
+icon = GFX_goal_generic_army_tanks
+x = 6
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_pattonsreform } 
+ai_will_do = { 
+ factor = 1
+ } 
+	completion_reward = {
+		add_tech_bonus = {
+			name = med_armor_bonus
+			bonus = 1.0
+			ahead_reduction = 2
+			uses = 1
+			category = cat_medium_armor
+		}
+		add_tech_bonus = {
+			name = armor_bonus
+			bonus = 1.0
+			uses = 1
+			category = armor
+		}
+	}
+ } 
+
+#Focus for Control the Production
+focus = { 
+id = CSA_controltheproduction
+icon = GFX_goal_generic_production
+x = 20
+y = 15
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_bomberfocus } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Control the Battlefield
+focus = { 
+id = CSA_controlthebattlefield
+icon = GFX_goal_generic_position_armies
+x = 16
+y = 15
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_casfocus } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Decrease Immigration Regulations
+focus = { 
+id = CSA_decreaseimmigrationregulations
+icon = GFX_goal_generic_propaganda
+x = 18
+y = 11
+cost = 8
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_decreasetaxburdens focus = CSA_lessenbuildingstandards } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Reduce Trade Regulations
+focus = { 
+id = CSA_reducetraderegulations
+icon = GFX_goal_generic_positive_trade_relations
+x = 20
+y = 11
+cost = 8
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_lessenbuildingstandards } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Streamlined Lines
+focus = { 
+id = CSA_streamlinedlines
+icon = GFX_goal_generic_construct_civilian
+x = 6
+y = 14
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_factoryspecialization } 
+mutually_exclusive = { focus = CSA_flexiblelines } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Diplomacy in Europe
+focus = { 
+id = CSA_diplomacyineurope
+icon = GFX_focus_usa_focus_on_europe
+x = 52
+y = 15
+cost = 0
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_globaldiplomacy } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Side With Britain
+focus = { 
+id = CSA_sidewithbritain
+icon = GFX_focus_chi_british_cooperation
+x = 51
+y = 16
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_diplomacyineurope } 
+mutually_exclusive = { focus = CSA_sidewithaustralasia } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		is_in_faction = yes
+		ENG = {
+			is_in_faction = no
+			Not = { has_war_with = CSA }
+		}
+	}
+	bypass = {
+		ENG = {
+			OR = {
+				is_in_faction_with = CSA
+				exists = no
+			}
+		}
+	}
+	completion_reward = {
+		set_global_flag = CSA_ENG_Invitation
+		ENG = {
+			country_event = { id = csa.14 days = 1}
+		}
+	}
+ } 
+
+#Focus for A Deal with the Commune
+focus = { 
+id = CSA_adealwiththecommune
+icon = GFX_focus_chi_reach_out_to_france
+x = 51
+y = 17
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_sidewithbritain } 
+mutually_exclusive = { focus = CSA_adealwiththeentente } 
+ai_will_do = { 
+ factor = 1
+ } 
+	available = {
+		always = no
+	}
+ } 
+
+#Focus for Air Base Construction
+focus = { 
+id = CSA_airbaseconstruction
+icon = GFX_goal_generic_build_airforce
+x = 18
+y = 13
+cost = 8
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 1
+ }
+available = {
+has_global_flag = CSA_Expanded_The_DSS
+always = no
+}
+completion_reward = {
+air_experience = 50
+}
+ } 
+
+#Focus for Control the Skies
+focus = { 
+id = CSA_controltheskies
+icon = GFX_goal_generic_cavalry
+x = 18
+y = 16
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_fighterfocus } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Naval Doctrine Effort
+focus = { 
+id = CSA_navaldoctrineeffort
+icon = GFX_goal_generic_navy_doctrines_tactics
+x = 25
+y = 16
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_marineeffort } 
+ai_will_do = { 
+ factor = 1
+ } 
+ } 
+
+#Focus for Naval Doctrine Effort 2
+focus = { 
+id = CSA_navaldoctrineeffort2
+icon = GFX_goal_generic_navy_doctrines_tactics
+x = 25
+y = 17
+cost = 8
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_navaldoctrineeffort } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Air Doctrine Effort 2
+focus = { 
+id = CSA_airdoctrineeffort2
+icon = GFX_goal_generic_army_doctrines
+x = 18
+y = 19
+cost = 8
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_aircorps } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Air Corps
+focus = { 
+id = CSA_aircorps
+icon = GFX_focus_generic_paratrooper
+x = 18
+y = 18
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = CSA_airproductioneffort focus = CSA_airdoctrineeffort } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#End of focuses 
+ }

@@ -1,0 +1,2938 @@
+focus_tree = {
+	id = AUS
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = AUS
+		}
+	}
+	continuous_focus_position = { x = 50 y = 2100 }
+	#Focus for Austrian Naval Bases
+	focus = {
+		id = AUS_austriannavalbases
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 52
+		y = 5
+		cost = 9
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_smallshipplan 
+			focus = AUS_capitalshipplan 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Capital Ship Plan
+	focus = {
+		id = AUS_capitalshipplan
+		icon = GFX_focus_generic_navy_battleship2
+		x = 53
+		y = 4
+		cost = 9
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_streamlinednavy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Small Ship Plan
+	focus = {
+		id = AUS_smallshipplan
+		icon = GFX_focus_generic_destroyer
+		x = 51
+		y = 4
+		cost = 9
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_flexiblenavy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for A Modern k.u.k Armee
+	focus = {
+		id = AUS_amodernkukarmee
+		icon = GFX_focus_generic_little_entente
+		x = 35
+		y = 7
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_improvethegebirgstruppe 
+		}
+		prerequisite = { 
+			focus = AUS_moderntactics 
+		}
+		available = {
+			NOT = {
+				has_idea = AUS_black_friday1
+				has_idea = AUS_black_friday2
+				has_idea = AUS_black_friday3
+				has_idea = AUS_black_friday4
+			}
+		}
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			army_experience = 10
+			if = {
+				limit = { has_idea = AUS_modern_tactics2 }
+				swap_ideas = {
+					remove_idea = AUS_modern_tactics2
+					add_idea = AUS_modern_tactics3
+				}
+			}
+			if = {
+				limit = { has_idea = AUS_modern_tactics }
+				swap_ideas = {
+					remove_idea = AUS_modern_tactics
+					add_idea = AUS_modern_tactics2
+				}
+			}
+			if = {
+				limit = { has_idea = AUS_outdated_military }
+				swap_ideas = {
+					remove_idea = AUS_outdated_military
+					add_idea = AUS_modern_tactics
+				}
+			}
+		}
+	}
+
+	#Focus for Streamlined Navy
+	focus = {
+		id = AUS_streamlinednavy
+		icon = GFX_focus_generic_cruiser2
+		x = 53
+		y = 3
+		cost = 9
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_kukkriegsmarine }
+		mutually_exclusive = { focus = AUS_flexiblenavy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Flexible Navy
+	focus = {
+		id = AUS_flexiblenavy
+		icon = GFX_goal_generic_navy_submarine
+		x = 51
+		y = 3
+		cost = 9
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_kukkriegsmarine }
+		mutually_exclusive = { focus = AUS_streamlinednavy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for k.u.k Kriegsmarine
+	focus = {
+		id = AUS_kukkriegsmarine
+		icon = GFX_goal_generic_amphibious_assault
+		x = 52
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_improvethekukmilitary }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			always = no
+			NOT = {
+				has_idea = AUS_black_friday1
+				has_idea = AUS_black_friday2
+				has_idea = AUS_black_friday3
+				has_idea = AUS_black_friday4
+			}
+		}
+	}
+
+	#Focus for Appease the Nations
+	focus = {
+		id = AUS_appeasethenations
+		icon = GFX_goal_generic_alliance
+		x = 5
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_1937ausgleichpreparations }
+		mutually_exclusive = { focus = AUS_revisittheempire }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Light Bomber Trials
+	focus = {
+		id = AUS_lightbombertrials
+		icon = GFX_goal_generic_CAS
+		x = 43
+		y = 5
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_groundsupport }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				ahead_reduction = 2
+				technology = CAS2
+			}
+		}
+	}
+
+	#Focus for The Doctrinal Question
+	focus = {
+		id = AUS_thedoctrinalquestion
+		icon = GFX_goal_generic_air_doctrine
+		x = 46
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_airsupport 
+			focus = AUS_groundsupport 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+
+	#Focus for Revisit the Empire
+	focus = {
+		id = AUS_revisittheempire
+		icon = GFX_focus_proclaim_the_restauration_of_Austria_Hungary
+		x = 19
+		y = 10
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_1937ausgleichpreparations }
+		mutually_exclusive = { focus = AUS_appeasethenations }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for 1937 Ausgleich Preparations
+	focus = {
+		id = AUS_1937ausgleichpreparations
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 12
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			always = no
+		}
+	}
+
+	#Focus for CS Victory
+	focus = {
+		id = AUS_socialconservativevictory
+		icon = GFX_goal_generic_defence
+		x = 11
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_electionsof1936 }
+		mutually_exclusive = { focus = AUS_socialdemocraticvictory }
+		ai_will_do = {
+			factor = 4
+		}
+		available = {
+			has_government = conservative
+		}
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+
+	#Focus for Industrial Investments
+	focus = {
+		id = AUS_industrialinvestments
+		icon = GFX_goal_generic_production
+		x = 2
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_expandthetradeunions }
+		ai_will_do = {
+			factor = 3
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	#Focus for The Workers' Liberation
+	focus = {
+		id = AUS_theworkersliberation
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 3
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_imperialhousingact 
+		}
+		prerequisite = { 
+			focus = AUS_industrialinvestments 
+		}
+		ai_will_do = {
+			factor = 4
+		}
+		completion_reward = {
+			remove_ideas = AUS_black_friday4
+			add_timed_idea = {
+				idea = AUS_the_workers_liberation
+				days = 270
+			}
+		}
+	}
+
+	#Focus for Expand the Trade Unions
+	focus = {
+		id = AUS_expandthetradeunions
+		icon = GFX_goal_generic_soviet_construction
+		x = 2
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_conservativecompromise }
+		ai_will_do = {
+			factor = 3
+		}
+		completion_reward = {
+			add_ideas = AUS_expanded_the_trade_unions
+		}
+	}
+
+	#Focus for Jobs for the Poor
+	focus = {
+		id = AUS_jobsforthepoor
+		icon = GFX_goal_generic_construction2
+		x = 4
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_socialdemocraticvictory }
+		ai_will_do = {
+			factor = 4
+		}
+		available = {
+			has_idea = AUS_black_friday1
+		}
+		completion_reward = {
+			add_political_power = 50
+			swap_ideas = {
+				remove_idea = AUS_black_friday1
+				add_idea = AUS_black_friday2
+			}
+		}
+	}
+
+	#Focus for Economic Revival
+	focus = {
+		id = AUS_economicrevival
+		icon = GFX_focus_generic_industry_3
+		x = 11
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_restarttheindustry 
+		}
+		prerequisite = { 
+			focus = AUS_savingthechurch 
+		}
+		ai_will_do = {
+			factor = 4
+		}
+		completion_reward = {
+			remove_ideas = AUS_black_friday4
+			add_timed_idea = {
+				idea = AUS_economic_revival
+				days = 180
+			}
+		}
+	}
+
+	#Focus for Calm the Hysteria
+	focus = {
+		id = AUS_calmthehysteria
+		icon = GFX_goal_generic_propaganda
+		x = 10
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_liquidateunprofitableassests }
+		ai_will_do = {
+			factor = 4
+		}
+		completion_reward = {
+			add_political_power = -50
+			swap_ideas = {
+				remove_idea = AUS_black_friday2
+				add_idea = AUS_black_friday3
+			}
+		}
+	}
+
+	#Focus for Restart the Industry
+	focus = {
+		id = AUS_restarttheindustry
+		icon = GFX_focus_generic_industry_2
+		x = 10
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_calmthehysteria }
+		ai_will_do = {
+			factor = 4
+		}
+		completion_reward = {
+			4 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			9 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			swap_ideas = {
+				remove_idea = AUS_black_friday3
+				add_idea = AUS_black_friday4
+			}
+		}
+	}
+
+	#Focus for Improve the k.u.k Military
+	focus = {
+		id = AUS_improvethekukmilitary
+		icon = GFX_goal_generic_military_sphere
+		x = 42
+		y = 1
+		cost = 8
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 3
+		}
+		available = {
+			NOT = {
+				has_idea = AUS_black_friday1
+				has_idea = AUS_black_friday2
+				has_idea = AUS_black_friday3
+				has_idea = AUS_black_friday4
+			}
+		}
+		completion_reward = {
+			army_experience = 20
+			air_experience = 20
+			navy_experience = 10
+		}
+	}
+
+	#Focus for SDAPO Victory
+	focus = {
+		id = AUS_socialdemocraticvictory
+		icon = GFX_goal_generic_war_with_comintern
+		x = 3
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_electionsof1936 }
+		mutually_exclusive = { focus = AUS_socialconservativevictory }
+		ai_will_do = {
+			factor = 4
+		}
+		available = {
+			has_government = socialist
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	#Focus for Bill A-1
+	focus = {
+		id = AUS_billa1
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 7
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_convenetheimperialcouncil }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			always = no
+		}
+	}
+
+	#Focus for The Bill Passes
+	focus = {
+		id = AUS_thebillpasses
+		icon = GFX_focus_rom_handle_king
+		x = 6
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_billa1 }
+		mutually_exclusive = { focus = AUS_thebillfails }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Bill Fails
+	focus = {
+		id = AUS_thebillfails
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 8
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_billa1 }
+		mutually_exclusive = { focus = AUS_thebillpasses }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Prepare for a New Republic
+	focus = {
+		id = AUS_prepareforanewrepublic
+		icon = GFX_goal_support_democracy
+		x = 6
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_thebillpasses }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Power of the Emperor
+	focus = {
+		id = AUS_thepoweroftheemperor
+		icon = GFX_goal_generic_political_pressure
+		x = 8
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_thebillfails }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Future of Our Government
+	focus = {
+		id = AUS_thefutureofourgovernment
+		icon = GFX_focus_generic_treaty
+		x = 7
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_prepareforanewrepublic 
+			focus = AUS_thepoweroftheemperor 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Bailout Act
+	focus = {
+		id = AUS_bailoutact
+		icon = GFX_focus_generic_treaty
+		x = 4
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_jobsforthepoor }
+		ai_will_do = {
+			factor = 4
+		}
+		completion_reward = {
+			add_stability = 0.03
+			add_timed_idea = {
+				idea = AUS_bail_outs
+				days = 180
+			}
+			swap_ideas = {
+				remove_idea = AUS_black_friday2
+				add_idea = AUS_black_friday3
+			}
+		}
+	}
+
+	#Focus for Conservative Compromise?
+	focus = {
+		id = AUS_conservativecompromise
+		icon = GFX_goal_generic_defence
+		x = 2
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_socialdemocraticvictory }
+		ai_will_do = {
+			factor = 3
+		}
+		completion_reward = {
+			country_event = { 
+				id = aus.4
+			}
+		}
+	}
+
+	#Focus for Saving the Church
+	focus = {
+		id = AUS_savingthechurch
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 12
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_subsidiesforfarmers }
+		ai_will_do = {
+			factor = 3
+		}
+		completion_reward = {
+			remove_ideas = {
+				AUS_fading_church
+			}
+		}
+	}
+
+	#Focus for Liquidate Unprofitable Assests
+	focus = {
+		id = AUS_liquidateunprofitableassests
+		icon = GFX_focus_generic_industry_1
+		x = 10
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_socialconservativevictory }
+		ai_will_do = {
+			factor = 4
+		}
+		available = {
+			has_idea = AUS_black_friday1
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = AUS_black_friday1
+				add_idea = AUS_black_friday2
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+			random_owned_controlled_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+		}
+	}
+
+	#Focus for Mend the Ties
+	focus = {
+		id = AUS_mendtheties
+		icon = GFX_goal_generic_improve_relations
+		x = 12
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_socialconservativevictory }
+		ai_will_do = {
+			factor = 3
+		}
+		completion_reward = {
+			remove_ideas = AUS_socialist_promises
+		}
+	}
+
+	#Focus for Subsidies for Farmers
+	focus = {
+		id = AUS_subsidiesforfarmers
+		icon = GFX_goal_generic_consumer_goods
+		x = 12
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_mendtheties }
+		ai_will_do = {
+			factor = 3
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+
+	#Focus for Reformation of the Economy
+	focus = {
+		id = AUS_reformationoftheeconomy
+		icon = GFX_goal_generic_production2
+		x = 20
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+			has_country_flag = AUS_black_friday
+			NOT = {
+				has_idea = AUS_black_friday1
+				has_idea = AUS_black_friday2
+				has_idea = AUS_black_friday3
+				has_idea = AUS_black_friday4
+			}
+		}
+		completion_reward = {
+			country_event = {
+				id = aus.3
+			}
+		}
+	}
+
+	#Focus for Keep the Gold Standard
+	focus = {
+		id = AUS_keepthegoldstandard
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 17
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_reformationoftheeconomy }
+		mutually_exclusive = { focus = AUS_abandonthegoldstandard }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_country_flag = AUS_abandoned_gold_standard
+			}
+			has_idea = AUS_julius_raab
+		}
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+
+	#Focus for Rebuild the University of Vienna
+	focus = {
+		id = AUS_rebuildtheuniversityofvienna
+		icon = GFX_goal_tfv_generic_tech_sharing
+		x = 20
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_keepthegoldstandard 
+			focus = AUS_abandonthegoldstandard 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_idea = AUS_vienna_school_burns
+		}
+		completion_reward = {
+			remove_ideas = AUS_vienna_school_burns
+		}
+	}
+
+	#Focus for Imperial Research Grants
+	focus = {
+		id = AUS_imperialresearchgrants
+		icon = GFX_focus_research2
+		x = 20
+		y = 4
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_rebuildtheuniversityofvienna }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = AUS_foreign_research
+			add_research_slot = 1
+		}
+	}
+
+	#Focus for The Language Question
+	focus = {
+		id = AUS_thelanguagequestion
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 11
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_forminganationalidentity }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Liberty Question
+	focus = {
+		id = AUS_thelibertyquestion
+		icon = GFX_goal_support_democracy
+		x = 13
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_forminganationalidentity }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Forming a National Identity
+	focus = {
+		id = AUS_forminganationalidentity
+		icon = GFX_focus_proclaim_the_restauration_of_Austria_Hungary
+		x = 12
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_appeasethenations 
+			focus = AUS_revisittheempire 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Elections of 1936
+	focus = {
+		id = AUS_electionsof1936
+		icon = GFX_goal_support_democracy
+		x = 7
+		y = 1
+		cost = 0
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			always = no
+		}
+	}
+
+	#Focus for Imperial Housing Act
+	focus = {
+		id = AUS_imperialhousingact
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		x = 4
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_bailoutact }
+		ai_will_do = {
+			factor = 4
+		}
+		completion_reward = {
+			4 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			43 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			104 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			9 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			88 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			swap_ideas = {
+				remove_idea = AUS_black_friday3
+				add_idea = AUS_black_friday4
+			}
+		}
+	}
+
+	#Focus for Convene the Imperial Council
+	focus = {
+		id = AUS_convenetheimperialcouncil
+		icon = GFX_focus_generic_home_defense
+		x = 7
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_socialdemocraticvictory 
+			focus = AUS_socialconservativevictory 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			always = no
+		}
+	}
+
+	#Focus for Unite the Economy
+	focus = {
+		id = AUS_unitetheeconomy
+		icon = GFX_goal_generic_production2
+		x = 19
+		y = 12
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_aunitednation 
+			focus = AUS_rulefromvienna 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Gold Business Incentives
+	focus = {
+		id = AUS_goldbusinessincentives
+		icon = GFX_goal_generic_consumer_goods
+		x = 18
+		y = 3
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_keepthegoldstandard }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = AUS_entrepreneurial_rush
+				days = 270
+			}
+			if = {
+				limit = { has_idea = lower_taxes }
+				swap_ideas = {
+					remove_idea = lower_taxes
+					add_idea = low_taxes
+				}
+			}
+			if = {
+				limit = { has_idea = low_taxes }
+				swap_ideas = {
+					remove_idea = low_taxes
+					add_idea = medium_taxes
+				}
+			}
+			if = {
+				limit = { has_idea = medium_taxes }
+				swap_ideas = {
+					remove_idea = medium_taxes
+					add_idea = high_taxes
+				}
+			}
+			if = {
+				limit = { has_idea = high_taxes }
+				swap_ideas = {
+					remove_idea = high_taxes
+					add_idea = higher_taxes
+				}
+			}
+		}
+	}
+
+	#Focus for Decrease Imports
+	focus = {
+		id = AUS_decreaseimports
+		icon = GFX_goal_generic_trade
+		x = 16
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_keepthegoldstandard }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			4 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+			}
+			152 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+			}
+			153 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+			}
+			swap_ideas = {
+				remove_idea = AUS_gold_standard
+				add_idea = AUS_gold_standard2
+			}
+		}
+	}
+
+	#Focus for Guarantee Military Contracts
+	focus = {
+		id = AUS_guaranteemilitarycontracts
+		icon = GFX_focus_generic_tank_production
+		x = 18
+		y = 4
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_goldbusinessincentives }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 25
+			4 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+			}
+			736 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+			}
+			808 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+			}
+		}
+	}
+
+	#Focus for Increase Autarky
+	focus = {
+		id = AUS_increaseautarky
+		icon = GFX_goal_generic_construct_civilian
+		x = 16
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_decreaseimports }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			if = {
+				limit = { has_idea = AUS_expanded_the_trade_unions }
+				swap_ideas = {
+					remove_idea = AUS_expanded_the_trade_unions
+					add_idea = AUS_expanded_the_trade_unions2
+				}
+			}
+			swap_ideas = {
+				remove_idea = AUS_gold_standard2
+				add_idea = AUS_gold_standard3
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = excavation_tech
+			}
+		}
+	}
+
+	#Focus for A Resourceful Empire
+	focus = {
+		id = AUS_austriansteelmills
+		icon = GFX_focus_generic_steel
+		x = 16
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_increaseautarky }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			152 = {
+				is_fully_controlled_by = AUS
+			}
+		}
+		completion_reward = {
+			152 = {
+				add_resource = {
+					type = steel
+					amount = 32
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Focus for Industrial Research Grants
+	focus = {
+		id = AUS_industrialresearchgrants
+		icon = GFX_goal_generic_build_tank
+		x = 18
+		y = 5
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_guaranteemilitarycontracts }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = AUS_industrial_research
+		}
+	}
+
+	#Focus for Imperial Economy
+	focus = {
+		id = AUS_imperialeconomy
+		icon = GFX_focus_generic_home_defense
+		x = 17
+		y = 6
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_austriansteelmills 
+		}
+		prerequisite = { 
+			focus = AUS_industrialresearchgrants 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			154 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			152 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			9 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			swap_ideas = {
+				remove_idea = AUS_gold_standard3
+				add_idea = AUS_gold_standard4
+			}
+		}
+	}
+
+	#Focus for Increase Exports
+	focus = {
+		id = AUS_increaseexports
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 24
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_abandonthegoldstandard }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 1 }
+			swap_ideas = {
+				remove_idea = AUS_abandoned_gold_standard
+				add_idea = AUS_abandoned_gold_standard2
+			}
+			if = {
+				limit = { has_idea = export_focus }
+				swap_ideas = {
+					remove_idea = export_focus
+					add_idea = free_trade
+				}
+			}
+			if = {
+				limit = { has_idea = limited_exports }
+				swap_ideas = {
+					remove_idea = limited_exports
+					add_idea = export_focus
+				}
+			}
+			if = {
+				limit = { has_idea = closed_economy }
+				swap_ideas = {
+					remove_idea = closed_economy
+					add_idea = limited_exports
+				}
+			}
+		}
+	}
+
+	#Focus for Encourage Foreign Companies
+	focus = {
+		id = AUS_encourageforeigncompanies
+		icon = GFX_goal_generic_build_tank
+		x = 22
+		y = 3
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_abandonthegoldstandard }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = .03
+			add_offsite_building = { type = industrial_complex level = 2 }
+		}
+	}
+
+	#Focus for Foreign Research Companies
+	focus = {
+		id = AUS_foreignindustrialcompanies
+		icon = GFX_goal_generic_construction2
+		x = 22
+		y = 4
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_encourageforeigncompanies }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = industry
+			}
+		}
+	}
+
+	#Focus for Austro-Hungarian Production Plants
+	focus = {
+		id = AUS_austrohungarianproductionplants
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 24
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_increaseexports }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			4 = {
+				is_fully_controlled_by = AUS
+			}
+			43 = {
+				is_fully_controlled_by = AUS
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = AUS_abandoned_gold_standard2
+				add_idea = AUS_abandoned_gold_standard3
+			}
+			if = {
+				limit = { has_idea = AUS_expanded_the_trade_unions }
+				swap_ideas = {
+					remove_idea = AUS_expanded_the_trade_unions
+					add_idea = AUS_expanded_the_trade_unions2
+				}
+			}
+			4 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+			}
+			43 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+			}
+		}
+	}
+
+	#Focus for Austro-Daimler Contract
+	focus = {
+		id = AUS_austrodaimlercontract
+		icon = GFX_goal_unknown
+		x = 24
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_austrohungarianproductionplants }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = AUS_austro_daimler
+		}
+	}
+
+	#Focus for Global Economy
+	focus = {
+		id = AUS_globaleconomy
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 23
+		y = 6
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_decidingthebudget 
+		}
+		prerequisite = { 
+			focus = AUS_austrodaimlercontract 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 3 }
+			swap_ideas = {
+				remove_idea = AUS_abandoned_gold_standard3
+				add_idea = AUS_abandoned_gold_standard4
+			}
+		}
+	}
+
+	#Focus for Reform the k.u.k Armee
+	focus = {
+		id = AUS_reformthekukarmee
+		icon = GFX_focus_generic_little_entente
+		x = 31
+		y = 2
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_improvethekukmilitary }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_war_support > 0.15
+			NOT = {
+				has_idea = AUS_black_friday1
+				has_idea = AUS_black_friday2
+				has_idea = AUS_black_friday3
+				has_idea = AUS_black_friday4
+			}
+		}
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+
+	#Focus for Abandon the Gold Standard
+	focus = {
+		id = AUS_abandonthegoldstandard
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		x = 23
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_reformationoftheeconomy }
+		mutually_exclusive = { focus = AUS_keepthegoldstandard }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_country_flag = AUS_abandoned_gold_standard
+			has_idea = AUS_kurt_schuss
+		}
+		completion_reward = {
+			
+			swap_ideas = {
+				remove_idea = AUS_gold_standard
+				add_idea = AUS_abandoned_gold_standard
+			}
+		}
+	}
+
+	#Focus for Deciding the Budget
+	focus = {
+		id = AUS_decidingthebudget
+		icon = GFX_focus_mex_privatisation
+		x = 22
+		y = 5
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_foreignindustrialcompanies }
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			has_idea = lower_taxes
+		}
+		completion_reward = {
+			add_stability = 0.05
+			if = {
+				limit = { has_idea = low_taxes }
+				swap_ideas = {
+					remove_idea = low_taxes
+					add_idea = lower_taxes
+				}
+			}
+			if = {
+				limit = { has_idea = medium_taxes }
+				swap_ideas = {
+					remove_idea = medium_taxes
+					add_idea = low_taxes
+				}
+			}
+			if = {
+				limit = { has_idea = high_taxes }
+				swap_ideas = {
+					remove_idea = high_taxes
+					add_idea = medium_taxes
+				}
+			}
+			if = {
+				limit = { has_idea = higher_taxes }
+				swap_ideas = {
+					remove_idea = higher_taxes
+					add_idea = high_taxes
+				}
+			}
+		}
+	}
+
+	#Focus for Preserving the Status Quo
+	focus = {
+		id = AUS_preservingthestatusquo
+		icon = GFX_goal_generic_propaganda
+		x = 6
+		y = 11
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_appeasethenations }
+		mutually_exclusive = { focus = AUS_afederationofautonomousstates }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for A United Nation
+	focus = {
+		id = AUS_aunitednation
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 18
+		y = 11
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_revisittheempire }
+		mutually_exclusive = { focus = AUS_rulefromvienna }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Centralize the Government
+	focus = {
+		id = AUS_centralizethegovernment
+		icon = GFX_goal_generic_cavalry
+		x = 22
+		y = 12
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_rulefromvienna }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for A Federation of Autonomous States
+	focus = {
+		id = AUS_afederationofautonomousstates
+		icon = GFX_goal_unknown
+		x = 4
+		y = 11
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_appeasethenations }
+		mutually_exclusive = { focus = AUS_preservingthestatusquo }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Radio Trials
+	focus = {
+		id = AUS_radiotrials
+		icon = GFX_goal_generic_radar
+		x = 41
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_kukmilitrtechnik }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_idea = AUS_black_friday1
+				has_idea = AUS_black_friday2
+				has_idea = AUS_black_friday3
+				has_idea = AUS_black_friday4
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.55
+				uses = 2
+				category = electronics
+			}
+		}
+	}
+
+	#Focus for Austrian Military Factories
+	focus = {
+		id = AUS_austrianmilitaryfactories
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 34
+		y = 11
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_rallythepeople }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The National Speech
+	focus = {
+		id = AUS_thenationalspeech
+		icon = GFX_goal_generic_propaganda
+		x = 36
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_rallythepeople }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Air Support
+	focus = {
+		id = AUS_airsupport
+		icon = GFX_goal_generic_occupy_start_war
+		x = 47
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_kukfliegerkorps }
+		mutually_exclusive = { focus = AUS_groundsupport }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_idea = AUS_black_friday1
+				has_idea = AUS_black_friday2
+				has_idea = AUS_black_friday3
+				has_idea = AUS_black_friday4
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = air_sup_bonus
+				bonus = 1.5
+				uses = 2
+				category = cat_strategic_destruction
+			}
+		}
+	}
+
+	#Focus for Approaching the Romanians
+	focus = {
+		id = AUS_approachingtheromanians
+		icon = GFX_focus_rom_preserve_romania
+		x = 28
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_theserbianquestion }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Old Friends in Bulgaria
+	focus = {
+		id = AUS_oldfriendsinbulgaria
+		icon = GFX_goal_unknown
+		x = 27
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_approachthealbanians 
+			focus = AUS_approachingtheromanians 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#Focus for Return to the Fray
+	focus = {
+		id = AUS_returntothefray
+		icon = GFX_goal_unknown
+		x = 27
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_oldfriendsinbulgaria
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Save the Empire!
+	focus = {
+		id = AUS_savetheempire
+		icon = GFX_focus_proclaim_the_restauration_of_Austria_Hungary
+		x = 35
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			OR = {
+				has_civil_war = yes
+				OR = {
+					has_war_with = HUN
+					has_war_with = GAL
+					has_war_with = CZE
+					has_war_with = CRO
+					has_war_with = MON
+				}
+			}
+		}
+	}
+
+	#Focus for Rally the People
+	focus = {
+		id = AUS_rallythepeople
+		icon = GFX_focus_generic_little_entente
+		x = 35
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_savetheempire }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Cryptologic Bomb
+	focus = {
+		id = AUS_cryptologicbomb
+		icon = GFX_focus_generic_cryptologic_bomb
+		x = 41
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_radiotrials }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.55
+				uses = 3
+				category = decryption_tech
+			}
+		}
+	}
+
+	#Focus for The Serbian Question
+	focus = {
+		id = AUS_theserbianquestion
+		icon = GFX_goal_unknown
+		x = 28
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_protectorofthebalkans }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			always = no
+		}
+	}
+
+	#Focus for Protector of the Balkans
+	focus = {
+		id = AUS_protectorofthebalkans
+		icon = GFX_goal_generic_military_sphere
+		x = 27
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+			has_country_flag = AUS_black_friday
+			NOT = {
+				has_idea = AUS_black_friday1
+				has_idea = AUS_black_friday2
+				has_idea = AUS_black_friday3
+				has_idea = AUS_black_friday4
+			}
+		}
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.05
+			set_rule = {
+			can_create_factions = yes
+			}
+			create_faction = AUS_danube_block
+		}
+	}
+
+	#Focus for Ground Support
+	focus = {
+		id = AUS_groundsupport
+		icon = GFX_goal_generic_air_fighter2
+		x = 43
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_kukfliegerkorps }
+		mutually_exclusive = { focus = AUS_airsupport }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_idea = AUS_black_friday1
+				has_idea = AUS_black_friday2
+				has_idea = AUS_black_friday3
+				has_idea = AUS_black_friday4
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = air_sup_bonus
+				bonus = 1.5
+				uses = 2
+				category = cat_battlefield_support
+			}
+		}
+	}
+
+	#Focus for Rule from Vienna
+	focus = {
+		id = AUS_rulefromvienna
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 20
+		y = 11
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_revisittheempire }
+		mutually_exclusive = { focus = AUS_aunitednation }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Hire Danube Manufacturing Co.
+	focus = {
+		id = AUS_hiredanubemanufacturingco
+		icon = GFX_goal_unknown
+		x = 19
+		y = 13
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_unitetheeconomy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Vienna Circle
+	focus = {
+		id = AUS_theviennacircle
+		icon = GFX_goal_tfv_generic_tech_sharing
+		x = 5
+		y = 14
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_nationalindustrialgrants }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Disperse the Economy
+	focus = {
+		id = AUS_dispersetheeconomy
+		icon = GFX_focus_generic_industry_1
+		x = 5
+		y = 12
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_preservingthestatusquo 
+			focus = AUS_afederationofautonomousstates 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Deal with Transleithania
+	focus = {
+		id = AUS_dealwithtransleithania
+		icon = GFX_goal_unknown
+		x = 21
+		y = 13
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_centralizethegovernment }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Autonomize Cisleithania
+	focus = {
+		id = AUS_autonomizecisleithania
+		icon = GFX_goal_unknown
+		x = 1
+		y = 13
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_decentralizethegovernment }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Autonomize Transleithania
+	focus = {
+		id = AUS_autonomizetransleithania
+		icon = GFX_goal_unknown
+		x = 3
+		y = 13
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_decentralizethegovernment }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Deal with Cisleithania
+	focus = {
+		id = AUS_dealwithcisleithania
+		icon = GFX_goal_unknown
+		x = 23
+		y = 13
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_centralizethegovernment }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Proclaim Danubia!
+	focus = {
+		id = AUS_proclaimdanubia
+		icon = GFX_goal_unknown
+		x = 16
+		y = 14
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_draftafederalconstitution 
+		}
+		prerequisite = { 
+			focus = AUS_combattheopposition 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Decentralize the Government
+	focus = {
+		id = AUS_decentralizethegovernment
+		icon = GFX_focus_generic_self_management
+		x = 2
+		y = 12
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_afederationofautonomousstates }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Combat the Opposition
+	focus = {
+		id = AUS_combattheopposition
+		icon = GFX_goal_generic_forceful_treaty
+		x = 17
+		y = 13
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_federalizethegovernment }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Draft a Federal Constitution
+	focus = {
+		id = AUS_draftafederalconstitution
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		x = 15
+		y = 13
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_federalizethegovernment }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Stabilize the Empire
+	focus = {
+		id = AUS_stabilizetheempire
+		icon = GFX_goal_generic_propaganda
+		x = 8
+		y = 14
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_autonomyfortheempire 
+		}
+		prerequisite = { 
+			focus = AUS_appeasethehungarians 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Convene the Danube Conference
+	focus = {
+		id = AUS_convenethedanubeconference
+		icon = GFX_goal_unknown
+		x = 8
+		y = 12
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_preservingthestatusquo }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Appease the Hungarians
+	focus = {
+		id = AUS_appeasethehungarians
+		icon = GFX_goal_unknown
+		x = 7
+		y = 13
+		cost = 15
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_convenethedanubeconference }
+		mutually_exclusive = { focus = AUS_autonomyfortheempire }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Autonomy for the Empire
+	focus = {
+		id = AUS_autonomyfortheempire
+		icon = GFX_goal_unknown
+		x = 9
+		y = 13
+		cost = 15
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_convenethedanubeconference }
+		mutually_exclusive = { focus = AUS_appeasethehungarians }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Unite the Crown
+	focus = {
+		id = AUS_unitethecrown
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 22
+		y = 14
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_dealwithtransleithania 
+		}
+		prerequisite = { 
+			focus = AUS_dealwithcisleithania 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for National Industrial Grants
+	focus = {
+		id = AUS_nationalindustrialgrants
+		icon = GFX_goal_generic_production
+		x = 5
+		y = 13
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_dispersetheeconomy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Federalize the Government
+	focus = {
+		id = AUS_federalizethegovernment
+		icon = GFX_goal_support_democracy
+		x = 16
+		y = 12
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_aunitednation }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Proclaim the Greater Austrian Empire
+	focus = {
+		id = AUS_proclaimthegreateraustrianempire
+		icon = GFX_goal_unknown
+		x = 22
+		y = 15
+		cost = 15
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_unitethecrown }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Danube Block
+	focus = {
+		id = AUS_thedanubeblock
+		icon = GFX_goal_unknown
+		x = 2
+		y = 14
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_autonomizecisleithania 
+		}
+		prerequisite = { 
+			focus = AUS_autonomizetransleithania 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Education Question
+	focus = {
+		id = AUS_theeducationquestion
+		icon = GFX_focus_research2
+		x = 12
+		y = 13
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_thelanguagequestion 
+		}
+		prerequisite = { 
+			focus = AUS_thelibertyquestion 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The National Question
+	focus = {
+		id = AUS_thenationalquestion
+		icon = GFX_goal_generic_alliance
+		x = 12
+		y = 14
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_theeducationquestion }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Medium Panzer Project
+	focus = {
+		id = AUS_mediumpanzerproject
+		icon = GFX_goal_generic_army_tanks
+		x = 32
+		y = 5
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_revisethesupplychain 
+			focus = AUS_thenewcalvarycharge
+		}
+		mutually_exclusive = { focus = AUS_heavypanzerproject }
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				ahead_reduction = 2
+				bonus = 1
+				uses = 1
+				category = cat_medium_armor
+			}
+		}
+	}
+
+	#Focus for Heavy Panzer Project
+	focus = {
+		id = AUS_heavypanzerproject
+		icon = GFX_goal_generic_army_tanks
+		x = 30
+		y = 5
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_revisethesupplychain 
+			focus = AUS_communicationonthefront 
+		}
+		mutually_exclusive = { focus = AUS_mediumpanzerproject }
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				ahead_reduction = 2
+				bonus = 1
+				uses = 1
+				category = cat_heavy_armor
+			}
+		}
+	}
+
+	#Focus for Modern Tactics
+	focus = {
+		id = AUS_moderntactics
+		icon = GFX_goal_generic_army_doctrines
+		x = 31
+		y = 6
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_heavypanzerproject 
+			focus = AUS_mediumpanzerproject 
+		}
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			army_experience = 5
+			if = {
+				limit = { has_idea = AUS_modern_tactics2 }
+				swap_ideas = {
+					remove_idea = AUS_modern_tactics2
+					add_idea = AUS_modern_tactics3
+				}
+			}
+			if = {
+				limit = { has_idea = AUS_modern_tactics }
+				swap_ideas = {
+					remove_idea = AUS_modern_tactics
+					add_idea = AUS_modern_tactics2
+				}
+			}
+			if = {
+				limit = { has_idea = AUS_outdated_military }
+				swap_ideas = {
+					remove_idea = AUS_outdated_military
+					add_idea = AUS_modern_tactics
+				}
+			}
+		}
+	}
+
+	#Focus for Tank Trials
+	focus = {
+		id = AUS_tanktrials
+		icon = GFX_goal_generic_army_tanks
+		x = 37
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_kukmilitrtechnik }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_idea = AUS_black_friday1
+				has_idea = AUS_black_friday2
+				has_idea = AUS_black_friday3
+				has_idea = AUS_black_friday4
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	#Focus for Artillery Trials
+	focus = {
+		id = AUS_artillerytrials
+		icon = GFX_goal_generic_army_artillery2
+		x = 39
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_rifletrials }
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				ahead_reduction = 2
+				technology = artillery1
+			}
+		}
+	}
+
+	#Focus for k.u.k Fliegerkorps
+	focus = {
+		id = AUS_kukfliegerkorps
+		icon = GFX_goal_generic_build_airforce
+		x = 45
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_improvethekukmilitary }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_idea = AUS_black_friday1
+				has_idea = AUS_black_friday2
+				has_idea = AUS_black_friday3
+				has_idea = AUS_black_friday4
+			}
+		}
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+
+	#Focus for Approach the Albanians
+	focus = {
+		id = AUS_approachthealbanians
+		icon = GFX_goal_unknown
+		x = 26
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_approachthegreeks }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			always = no
+		}
+	}
+
+	#Focus for Approach the Greeks
+	focus = {
+		id = AUS_approachthegreeks
+		icon = GFX_goal_tfv_can_compromise_with_quebec
+		x = 26
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_protectorofthebalkans }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			always = no
+		}
+	}
+
+	#Focus for Superior Firepower
+	focus = {
+		id = AUS_superiorfirepower
+		icon = GFX_goal_generic_army_artillery2
+		x = 31
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_reformthekukarmee }
+		mutually_exclusive = { 
+			focus = AUS_grandbattleplanning 
+		}
+		mutually_exclusive = { 
+			focus = AUS_revisethesupplychain 
+		}
+		mutually_exclusive = { 
+			focus = AUS_bewegungskrieg 
+		}
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+			NOT = {
+				has_idea = AUS_black_friday1
+				has_idea = AUS_black_friday2
+				has_idea = AUS_black_friday3
+				has_idea = AUS_black_friday4
+			}
+		}
+		completion_reward = {
+			add_ideas = AUS_superior_firepower
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cat_superior_firepower
+			}
+		}
+	}
+
+	#Focus for Revise the Supply Chain
+	focus = {
+		id = AUS_revisethesupplychain
+		icon = GFX_goal_generic_consumer_goods
+		x = 31
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_superiorfirepower }
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+			NOT = {
+				has_idea = AUS_black_friday1
+				has_idea = AUS_black_friday2
+				has_idea = AUS_black_friday3
+				has_idea = AUS_black_friday4
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.55
+				uses = 2
+				category = logistics_tech
+			}
+			swap_ideas = {
+				remove_idea = AUS_superior_firepower
+				add_idea = AUS_superior_firepower2
+			}
+		}
+	}
+
+	#Focus for Emergency Total Mobilization!
+	focus = {
+		id = AUS_emergencytotalmobilization
+		icon = GFX_focus_generic_tank_production
+		x = 35
+		y = 13
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_preparethewarplans }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Reintegrate Cisleithania
+	focus = {
+		id = AUS_reintegratecisleithania
+		icon = GFX_goal_unknown
+		x = 34
+		y = 14
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_emergencytotalmobilization }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Reintegrate Transleithania
+	focus = {
+		id = AUS_reintegratetransleithania
+		icon = GFX_goal_unknown
+		x = 36
+		y = 14
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_emergencytotalmobilization }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Bewegungskrieg
+	focus = {
+		id = AUS_bewegungskrieg
+		icon = GFX_focus_generic_tank_production
+		x = 33
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_reformthekukarmee }
+		mutually_exclusive = { 
+			focus = AUS_superiorfirepower 
+		}
+		mutually_exclusive = { 
+			focus = AUS_grandbattleplanning 
+		}
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+			NOT = {
+				has_idea = AUS_black_friday1
+				has_idea = AUS_black_friday2
+				has_idea = AUS_black_friday3
+				has_idea = AUS_black_friday4
+			}
+		}
+		completion_reward = {
+			add_ideas = {
+				AUS_bewegungskrieg
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cat_mobile_warfare
+			}
+		}
+	}
+
+	#Focus for The Industrial Question
+	focus = {
+		id = AUS_theindustrialquestion
+		icon = GFX_goal_generic_construct_civilian
+		x = 19
+		y = 14
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_hiredanubemanufacturingco }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Grand Battle Planning
+	focus = {
+		id = AUS_grandbattleplanning
+		icon = GFX_goal_generic_position_armies
+		x = 29
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_reformthekukarmee }
+		mutually_exclusive = { 
+			focus = AUS_superiorfirepower 
+		}
+		mutually_exclusive = { 
+			focus = AUS_revisethesupplychain 
+		}
+		mutually_exclusive = { 
+			focus = AUS_bewegungskrieg 
+		}
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+			NOT = {
+				has_idea = AUS_black_friday1
+				has_idea = AUS_black_friday2
+				has_idea = AUS_black_friday3
+				has_idea = AUS_black_friday4
+			}
+		}
+		completion_reward = {
+			add_ideas = AUS_grand_battle_planning
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cat_grand_battle_plan
+			}
+		}
+	}
+
+	#Focus for Communication on the Front
+	focus = {
+		id = AUS_communicationonthefront
+		icon = GFX_focus_generic_cryptologic_bomb
+		x = 29
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_grandbattleplanning }
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+			NOT = {
+				has_idea = AUS_black_friday1
+				has_idea = AUS_black_friday2
+				has_idea = AUS_black_friday3
+				has_idea = AUS_black_friday4
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+			remove_idea =AUS_grand_battle_planning
+			add_idea = AUS_grand_battle_planning2
+			}
+			add_tech_bonus = {
+				bonus = 0.55
+				uses = 1
+				category = recon_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.55
+				uses = 1
+				category = signal_company_tech
+			}
+		}
+	}
+
+	#Focus for Mechanized Infantry
+	focus = {
+		id = AUS_mechanizedinfantry
+		icon = GFX_goal_generic_build_tank
+		x = 37
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_tanktrials }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.55
+				uses = 2
+				category = cat_mechanized_equipment
+			}
+		}
+	}
+
+	#Focus for k.u.k Militärtechnik
+	focus = {
+		id = AUS_kukmilitrtechnik
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 39
+		y = 2
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_improvethekukmilitary }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_idea = AUS_black_friday1
+				has_idea = AUS_black_friday2
+				has_idea = AUS_black_friday3
+				has_idea = AUS_black_friday4
+			}
+		}
+		completion_reward = {
+			army_experience = 5
+			if = {
+				limit = { has_idea = AUS_modern_tactics2 }
+				swap_ideas = {
+					remove_idea = AUS_modern_tactics2
+					add_idea = AUS_modern_tactics3
+				}
+			}
+			if = {
+				limit = { has_idea = AUS_modern_tactics }
+				swap_ideas = {
+					remove_idea = AUS_modern_tactics
+					add_idea = AUS_modern_tactics2
+				}
+			}
+			if = {
+				limit = { has_idea = AUS_outdated_military }
+				swap_ideas = {
+					remove_idea = AUS_outdated_military
+					add_idea = AUS_modern_tactics
+				}
+			}
+		}
+	}
+
+	#Focus for Rifle Trials
+	focus = {
+		id = AUS_rifletrials
+		icon = GFX_goal_generic_small_arms
+		x = 39
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_kukmilitrtechnik }
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+			NOT = {
+				has_idea = AUS_black_friday1
+				has_idea = AUS_black_friday2
+				has_idea = AUS_black_friday3
+				has_idea = AUS_black_friday4
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.55
+				uses = 2
+				category = infantry_tech
+			}
+		}
+	}
+
+	#Focus for The New Calvary Charge
+	focus = {
+		id = AUS_thenewcalvarycharge
+		icon = GFX_goal_generic_cavalry
+		x = 33
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_bewegungskrieg }
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = AUS_bewegungskrieg
+				add_idea = AUS_bewegungskrieg2
+			}
+			add_tech_bonus = {
+				bonus = 0.55
+				uses = 2
+				category = maintenance_company_tech
+			}
+		}
+	}
+
+	#Focus for Improve the Gebirgstruppe
+	focus = {
+		id = AUS_improvethegebirgstruppe
+		icon = GFX_goal_generic_special_forces
+		x = 39
+		y = 6
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_artillerytrials }
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = mountaineers_tech
+			}
+		}
+	}
+
+	#Focus for Danubian Airbases
+	focus = {
+		id = AUS_danubianairbases
+		icon = GFX_goal_generic_air_production
+		x = 44
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_groundsupport 
+			focus = AUS_airsupport 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Heavy Bomber Trials
+	focus = {
+		id = AUS_heavybombertrials
+		icon = GFX_goal_generic_air_bomber
+		x = 47
+		y = 5
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = AUS_airsupport }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				ahead_reduction = 2
+				technology = strategic_bomber2
+			}
+		}
+	}
+
+	#Focus for Fighter Trials
+	focus = {
+		id = AUS_fightertrials
+		icon = GFX_goal_generic_air_fighter2
+		x = 45
+		y = 5
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_danubianairbases 
+		}
+		prerequisite = { 
+			focus = AUS_thedoctrinalquestion 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				ahead_reduction = 2
+				technology = fighter2
+			}
+		}
+	}
+
+	#Focus for Prepare the War Plans
+	focus = {
+		id = AUS_preparethewarplans
+		icon = GFX_goal_unknown
+		x = 35
+		y = 12
+		cost = 9
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_austrianmilitaryfactories 
+			focus = AUS_thenationalspeech 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for United Once More!
+	focus = {
+		id = AUS_unitedoncemore
+		icon = GFX_focus_proclaim_the_restauration_of_Austria_Hungary
+		x = 35
+		y = 15
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = AUS_reintegratecisleithania 
+		}
+		prerequisite = { 
+			focus = AUS_reintegratetransleithania 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+#End of focuses 
+ }
