@@ -1,0 +1,22 @@
+
+state={
+	id=482
+	name="STATE_482"
+	manpower = 770751
+	
+	state_category = large_town
+
+	history={
+		owner = CSA
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+		}
+		add_core_of = CSA
+	}
+
+	provinces={
+		2037 4898 7935 8097 10809 10830 10916 12745 12827 12850 12897 
+	}
+	
+}
