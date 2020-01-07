@@ -1,0 +1,94 @@
+political_actions = {
+	
+	institute_press_censorship_fascist_state = {
+
+		icon = generic_political_discourse
+
+		visible = {
+			has_government = fascism
+		}
+	
+		modifier = {
+			communism_drift = -0.01
+			fascism_drift = 0.03
+			democratic_drift = -0.01
+			neutrality_drift = -0.01
+		}
+	
+		days_remove = 360
+		cost = 150
+	
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	institute_press_censorship_democratic_state = {
+
+		icon = generic_political_discourse
+
+		visible = {
+			has_government = democratic
+		}
+		
+		modifier = {
+			communism_drift = -0.01
+			fascism_drift = -0.01
+			democratic_drift = 0.03
+			neutrality_drift = -0.01
+		}
+	
+		days_remove = 360
+		cost = 150
+	
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	institute_press_censorship_communist_state = {
+
+		icon = generic_political_discourse
+
+		visible = {
+			has_government = communism
+		}
+	
+		modifier = {
+			communism_drift = 0.03
+			fascism_drift = -0.01
+			democratic_drift = -0.01
+			neutrality_drift = -0.01
+		}
+	
+		days_remove = 360
+		cost = 150
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	institute_press_censorship_neutrality_state = {
+
+		icon = generic_political_discourse
+
+		visible = {
+			has_government = neutrality
+		}
+	
+		modifier = {
+			communism_drift = -0.01
+			fascism_drift = -0.01
+			democratic_drift = -0.01
+			neutrality_drift = 0.03
+		}
+	
+		days_remove = 360
+		cost = 150
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
