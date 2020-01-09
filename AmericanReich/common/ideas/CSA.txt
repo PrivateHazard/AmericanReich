@@ -305,7 +305,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				local_building_slots_factor = 0.2
+				local_building_slots_factor = 0.1
 			}
 		}
 		CSA_industrial_standards = {
@@ -949,6 +949,192 @@ ideas = {
 				army_core_attack_factor = 0.1
 				army_core_defence_factor = 0.1
 				mobilization_speed = 0.1
+			}
+		}
+		CSA_ministry_of_armaments = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				industrial_capacity_factory = 0.05
+				conversion_cost_civ_to_mil_factor = -0.25
+				conversion_cost_mil_to_civ_factor = -0.25
+			}
+		}
+		CSA_factory_workers = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				industrial_capacity_factory = 0.1
+			}
+		}
+		CSA_construction_workers = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		CSA_agricultural_workers = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				local_building_slots_factor = 0.2
+			}
+		}
+		CSA_entrepreneurship_encouraged = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			available = {
+				NOT = {
+					has_idea = lower_taxes
+				}
+			}
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		CSA_decreased_building_regulations = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			available = {
+			}
+			
+			modifier = {
+				political_power_cost = 0.1
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		CSA_military_research = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			available = {
+			}
+			
+			modifier = {
+				research_speed_factor = 0.05
+			}
+		}
+		CSA_factory_specialization = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			available = {
+			}
+			
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		CSA_factory_specialization1 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			available = {
+			}
+			
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+			}
+		}
+		CSA_factory_specialization2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			available = {
+			}
+			
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				line_change_production_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
 			}
 		}
 	}
