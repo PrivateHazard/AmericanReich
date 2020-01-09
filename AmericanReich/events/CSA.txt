@@ -65,27 +65,36 @@ option = {
 	}
 }
 
-country_event = {
-	id = csa.3
-	title = csa.3.t
-	desc = csa.3.desc
-	#picture = GFX_report_event_usa_election_generic
+	country_event = {
+		id = csa.3
+		title = csa.3.t
+		desc = csa.3.desc
+		#picture = GFX_report_event_usa_election_generic
 
-   is_triggered_only = yes
+		is_triggered_only = yes
 
-	option = { 	#Gerald Smith for Dixie!
-		name = csa.3.a
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 1
+		option = { 	#Gerald Smith for Dixie!
+			name = csa.3.a
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1
+				}
 			}
+			add_ideas = CSA_gerald_smith
 		}
-		complete_national_focus =  CSA_appointsmithaseconomicminister
-	add_ideas = { CSA_gerald_smith }
-set_global_flag = CSA_Smith_Appointed
+		
+		option = { 	#John Hammer for Dixie!
+			name = csa.3.b
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1
+				}
+			}
+			add_ideas = CSA_john_hammer
+		}
 	}
-}
 
 country_event = {
 	id = csa.4
