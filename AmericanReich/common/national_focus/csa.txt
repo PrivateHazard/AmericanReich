@@ -474,7 +474,7 @@ ai_will_do = {
 		icon = GFX_goal_generic_construction2
 		x = 26
 		y = 8
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes 
 		prerequisite = { 
 			focus = CSA_appointhammeraseconomicminister 
@@ -484,16 +484,27 @@ ai_will_do = {
 			factor = 1
 		} 
 		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				category = industry
-			}
-			371 = {
-				add_extra_state_shared_building_slots = 2
+			363 = {
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
-					level = 2
+					level = 1
+					instant_build = yes
+				}
+			}
+			483 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			372 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -899,53 +910,53 @@ focus = {
 	}
  } 
 
-#Focus for Appoint Hammer as Economic Minister
-focus = { 
-id = CSA_appointhammeraseconomicminister
-icon = GFX_goal_unknown
-x = 20
-y = 7
-cost = 0
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_continueeconomicreforms } 
-mutually_exclusive = { focus = CSA_appointsmithaseconomicminister } 
-ai_will_do = { 
- factor = 1
- } 
-	available = {
-		always = no
-	}
-	bypass = {
-		has_global_flag = CSA_Hammer_Appointed
-	}
-	completion_reward = {
-		custom_effect_tooltip = bypass_tooltip
-	}
- } 
+	#Focus for Appoint Hammer as Economic Minister
+	focus = { 
+		id = CSA_appointhammeraseconomicminister
+		icon = GFX_goal_unknown
+		x = 20
+		y = 7
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_continueeconomicreforms } 
+		mutually_exclusive = { focus = CSA_appointsmithaseconomicminister } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_idea = CSA_john_hammer
+		}
+		completion_reward = {
+			add_offsite_building = { 
+				type = industrial_complex 
+				level = 2
+			}
+		}
+	} 
 
-#Focus for Appoint Smith As Economic Minister
-focus = { 
-id = CSA_appointsmithaseconomicminister
-icon = GFX_goal_unknown
-x = 32
-y = 7
-cost = 0
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_continueeconomicreforms } 
-mutually_exclusive = { focus = CSA_appointhammeraseconomicminister } 
-ai_will_do = { 
- factor = 1
- } 
-	available = {
-		always = no
-	}
-	bypass = {
-		has_global_flag = CSA_Smith_Appointed
-	}
-	completion_reward = {
-		custom_effect_tooltip = bypass_tooltip
-	}
- } 
+	#Focus for Appoint Smith As Economic Minister
+	focus = { 
+		id = CSA_appointsmithaseconomicminister
+		icon = GFX_goal_unknown
+		x = 32
+		y = 7
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_continueeconomicreforms } 
+		mutually_exclusive = { focus = CSA_appointhammeraseconomicminister } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_idea = CSA_gerald_smith
+		}
+		completion_reward = {
+			add_offsite_building = { 
+				type = arms_factory 
+				level = 3
+			}
+		}
+	} 
 
 #Focus for Anti-German Propaganda
 focus = { 
@@ -1381,50 +1392,66 @@ ai_will_do = {
 	}
  } 
 
-#Focus for Military Technology Research Funding
-focus = { 
-id = CSA_militarytechnologyresearchfunding
-icon = GFX_focus_research2
-x = 12
-y = 13
-cost = 8
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_ministryofarmaments } 
-ai_will_do = { 
- factor = 1
- } 
+	#Focus for Military Technology Research Funding
+	focus = { 
+		id = CSA_militarytechnologyresearchfunding
+		icon = GFX_focus_research2
+		x = 12
+		y = 13
+		cost = 8
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_ministryofarmaments } 
+		ai_will_do = { 
+			factor = 1
+		}
+		available = {
+			has_war = yes
+		}
+		completion_reward = {
+			add_ideas = CSA_military_research
+		}
+	}	 
 
- } 
+	#Focus for Emergency Total Mobilization
+	focus = { 
+		id = CSA_emergencytotalmobilization
+		icon = GFX_focus_generic_support_the_left_right
+		x = 2
+		y = 13
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_ministryofarmaments } 
+		ai_will_do = { 
+			factor = 1
+		}
+		available = {
+			has_war = yes
+		}
+		completion_reward = {
+			add_war_support = 0.05
+			add_ideas = tot_economic_mobilisation
+		}
+	} 
 
-#Focus for Emergency Total Mobilization
-focus = { 
-id = CSA_emergencytotalmobilization
-icon = GFX_focus_generic_support_the_left_right
-x = 2
-y = 13
-cost = 4
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_ministryofarmaments } 
-ai_will_do = { 
- factor = 1
- } 
-
- } 
-
-#Focus for Defence of Dixie
-focus = { 
-id = CSA_defenceofdixie
-icon = GFX_goal_generic_defence
-x = 9
-y = 13
-cost = 5
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_ministryofarmaments } 
-ai_will_do = { 
- factor = 1
- } 
-
- } 
+	#Focus for Defence of Dixie
+	focus = { 
+		id = CSA_defenceofdixie
+		icon = GFX_goal_generic_defence
+		x = 9
+		y = 13
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_ministryofarmaments } 
+		ai_will_do = { 
+			factor = 1
+		}
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = unfinished_tooltip
+		}
+	} 
 
 #Focus for Move Industry South
 focus = { 
@@ -1471,53 +1498,71 @@ ai_will_do = {
 
  } 
 
-#Focus for Ministry of Armaments
-focus = { 
-id = CSA_ministryofarmaments
-icon = GFX_goal_generic_construct_mil_factory
-x = 7
-y = 12
-cost = 5
-available_if_capitulated = yes 
-ai_will_do = { 
- factor = 1
- } 
-available = {
-has_war = yes
-has_global_flag = CSA_Hammer_Appointed
-}
- } 
+	#Focus for Ministry of Armaments
+	focus = { 
+		id = CSA_ministryofarmaments
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 7
+		y = 12
+		cost = 5
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = yes
+			has_idea = CSA_john_hammer
+		}
+		completion_reward = {
+			add_ideas = {
+				CSA_ministry_of_armaments
+			}
+		}
+	} 
 
-#Focus for Factory Specialization
-focus = { 
-id = CSA_factoryspecialization
-icon = GFX_focus_generic_industry_3
-x = 5
-y = 13
-cost = 5
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_ministryofarmaments } 
-ai_will_do = { 
- factor = 1
- } 
+	#Focus for Factory Specialization
+	focus = { 
+		id = CSA_factoryspecialization
+		icon = GFX_focus_generic_industry_3
+		x = 5
+		y = 13
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_ministryofarmaments } 
+		ai_will_do = { 
+			factor = 1
+		}
+		available = {
+			has_war = yes
+		}
+		completion_reward = {
+			add_ideas = CSA_factory_specialization
+		}
+	} 
 
- } 
-
-#Focus for Flexible Lines
-focus = { 
-id = CSA_flexiblelines
-icon = GFX_goal_generic_construct_civ_factory
-x = 4
-y = 14
-cost = 5
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_factoryspecialization } 
-mutually_exclusive = { focus = CSA_streamlinedlines } 
-ai_will_do = { 
- factor = 1
- } 
-
- } 
+	#Focus for Flexible Lines
+	focus = { 
+		id = CSA_flexiblelines
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 4
+		y = 14
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_factoryspecialization } 
+		mutually_exclusive = { focus = CSA_streamlinedlines } 
+		ai_will_do = { 
+			factor = 1
+		}
+		available = {
+			has_war = yes
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CSA_factory_specialization
+				add_idea = CSA_factory_specialization2
+			}
+		}
+	}
 
 	#Focus for Dixie Army Structure
 	focus = { 
@@ -1696,35 +1741,62 @@ ai_will_do = {
 	}
  } 
 
-#Focus for Civilian Economy Efforts
-focus = { 
-id = CSA_civilianeconomyefforts
-icon = GFX_goal_generic_construct_civilian
-x = 15
-y = 8
-cost = 8
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_appointhammeraseconomicminister } 
-ai_will_do = { 
- factor = 1
- } 
+	#Focus for Civilian Economy Efforts
+	focus = { 
+		id = CSA_civilianeconomyefforts
+		icon = GFX_goal_generic_construct_civilian
+		x = 15
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_appointhammeraseconomicminister } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			375 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			362 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			366 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	} 
 
- } 
-
-#Focus for Decrease Regulations
-focus = { 
-id = CSA_decreaseregulations
-icon = GFX_focus_hol_the_foundations_of_defense
-x = 18
-y = 9
-cost = 6
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_civilianeconomyefforts } 
-ai_will_do = { 
- factor = 1
- } 
-
- } 
+	#Focus for Decrease Regulations
+	focus = { 
+		id = CSA_decreaseregulations
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 18
+		y = 9
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_civilianeconomyefforts } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_stability = 0.05
+		}
+	} 
 
 #Focus for Naval Base Construction
 focus = { 
@@ -1821,20 +1893,34 @@ ai_will_do = {
 
  } 
 
-#Focus for Creating Jobs for the People
-focus = { 
-id = CSA_creatingjobsforthepeople
-icon = GFX_goal_generic_production2
-x = 12
-y = 9
-cost = 5
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_civilianeconomyefforts } 
-ai_will_do = { 
- factor = 1
- } 
-
- } 
+	#Focus for Creating Jobs for the People
+	focus = { 
+		id = CSA_creatingjobsforthepeople
+		icon = GFX_goal_generic_production2
+		x = 12
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_civilianeconomyefforts } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = industry
+			}
+			484 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	} 
 
 #Focus for Eliminate Segregation
 focus = { 
@@ -1866,20 +1952,23 @@ ai_will_do = {
 
  } 
 
-#Focus for Decrease Segregation?
-focus = { 
-id = CSA_decreasesegregation
-icon = GFX_focus_generic_diplomatic_treaty
-x = 18
-y = 12
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_decreaseimmigrationregulations } 
-ai_will_do = { 
- factor = 1
- } 
-
- } 
+	#Focus for Decrease Segregation?
+	focus = { 
+		id = CSA_decreasesegregation
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 18
+		y = 12
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_decreaseimmigrationregulations } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			remove_ideas = CSA_segregation
+			add_stability = -0.1
+		}
+	}	 
 
 	#Focus for Increase Labor Standards
 	focus = { 
@@ -1927,125 +2016,169 @@ ai_will_do = {
 		}
 	} 
 
-#Focus for Lessen Building Standards
-focus = { 
-id = CSA_lessenbuildingstandards
-icon = GFX_goal_generic_construction2
-x = 19
-y = 10
-cost = 8
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_decreaseregulations } 
-ai_will_do = { 
- factor = 1
- } 
+	#Focus for Lessen Building Standards
+	focus = { 
+		id = CSA_lessenbuildingstandards
+		icon = GFX_goal_generic_construction2
+		x = 19
+		y = 10
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_decreaseregulations } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = CSA_decreased_building_regulations
+		}
+	} 
 
- } 
+	#Focus for Decrease Tax Burdens
+	focus = { 
+		id = CSA_decreasetaxburdens
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		x = 17
+		y = 10
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_decreaseregulations } 
+		ai_will_do = { 
+			factor = 1
+		}
+		bypass = {
+			OR = {
+				has_idea = low_taxes
+				has_idea = lower_taxes
+			}
+		}
+		completion_reward = {
+			add_ideas = low_taxes
+		}
+	} 
 
-#Focus for Decrease Tax Burdens
-focus = { 
-id = CSA_decreasetaxburdens
-icon = GFX_focus_renounce_the_treaty_of_trianon
-x = 17
-y = 10
-cost = 5
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_decreaseregulations } 
-ai_will_do = { 
- factor = 1
- } 
+	#Focus for Science Workers
+	focus = { 
+		id = CSA_scienceworkers
+		icon = GFX_focus_research2
+		x = 12
+		y = 11
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_factoryworkers focus = CSA_constructionworkers } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_research_slot = 1
+		}
+	} 
 
- } 
+	#Focus for Factory Workers
+	focus = { 
+		id = CSA_factoryworkers
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 11
+		y = 10
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_creatingjobsforthepeople } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = CSA_factory_workers
+			364 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	} 
 
-#Focus for Science Workers
-focus = { 
-id = CSA_scienceworkers
-icon = GFX_focus_research2
-x = 12
-y = 11
-cost = 8
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_factoryworkers focus = CSA_constructionworkers } 
-ai_will_do = { 
- factor = 1
- } 
+	#Focus for Encourage Entrepreneurship
+	focus = { 
+		id = CSA_encourageentrepreneurship
+		icon = GFX_focus_generic_self_management
+		x = 14
+		y = 11
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_factoryworkers focus = CSA_constructionworkers } 
+		ai_will_do = { 
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_idea = lower_taxes
+			}
+		}
+		completion_reward = {
+			add_ideas = CSA_entrepreneurship_encouraged
+		}
+	} 
 
- } 
+	#Focus for Agricultural Workers
+	focus = { 
+		id = CSA_agriculturalworkers
+		icon = GFX_focus_generic_industry_2
+		x = 10
+		y = 11
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_factoryworkers focus = CSA_constructionworkers } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = CSA_agricultural_workers
+		}
+	} 
 
-#Focus for Factory Workers
-focus = { 
-id = CSA_factoryworkers
-icon = GFX_goal_generic_construct_mil_factory
-x = 11
-y = 10
-cost = 9
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_creatingjobsforthepeople } 
-ai_will_do = { 
- factor = 1
- } 
+	#Focus for Construction Workers
+	focus = { 
+		id = CSA_constructionworkers
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 13
+		y = 10
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_creatingjobsforthepeople } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = CSA_construction_workers
+			367 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	} 
 
- } 
-
-#Focus for Encourage Entrepreneurship
-focus = { 
-id = CSA_encourageentrepreneurship
-icon = GFX_focus_generic_self_management
-x = 14
-y = 11
-cost = 8
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_factoryworkers focus = CSA_constructionworkers } 
-ai_will_do = { 
- factor = 1
- } 
-
- } 
-
-#Focus for Agricultural Workers
-focus = { 
-id = CSA_agriculturalworkers
-icon = GFX_focus_generic_industry_2
-x = 10
-y = 11
-cost = 9
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_factoryworkers focus = CSA_constructionworkers } 
-ai_will_do = { 
- factor = 1
- } 
-
- } 
-
-#Focus for Construction Workers
-focus = { 
-id = CSA_constructionworkers
-icon = GFX_goal_generic_construct_civ_factory
-x = 13
-y = 10
-cost = 9
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_creatingjobsforthepeople } 
-ai_will_do = { 
- factor = 1
- } 
-
- } 
-
-#Focus for Decrease Welfare Benefits
-focus = { 
-id = CSA_decreasewelfarebenefits
-icon = GFX_focus_generic_treaty
-x = 16
-y = 11
-cost = 8
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_decreasetaxburdens } 
-ai_will_do = { 
- factor = 1
- } 
-
- } 
+	#Focus for Decrease Welfare Benefits
+	focus = { 
+		id = CSA_decreasewelfarebenefits
+		icon = GFX_focus_generic_treaty
+		x = 16
+		y = 11
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_decreasetaxburdens } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = -100
+		}
+	} 
 
 #Focus for Bluebonnet Bombers
 focus = { 
@@ -3229,51 +3362,68 @@ ai_will_do = {
 
  } 
 
-#Focus for Decrease Immigration Regulations
-focus = { 
-id = CSA_decreaseimmigrationregulations
-icon = GFX_goal_generic_propaganda
-x = 18
-y = 11
-cost = 8
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_decreasetaxburdens focus = CSA_lessenbuildingstandards } 
-ai_will_do = { 
- factor = 1
- } 
+	#Focus for Decrease Immigration Regulations
+	focus = { 
+		id = CSA_decreaseimmigrationregulations
+		icon = GFX_goal_generic_propaganda
+		x = 18
+		y = 11
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_decreasetaxburdens focus = CSA_lessenbuildingstandards } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = high_immigration
+		}
+	} 
 
- } 
+	#Focus for Reduce Trade Regulations
+	focus = { 
+		id = CSA_reducetraderegulations
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 20
+		y = 11
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_lessenbuildingstandards } 
+		ai_will_do = { 
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_idea = free_trade
+			}
+		}
+		completion_reward = {
+			add_ideas = free_trade
+		}
+	} 
 
-#Focus for Reduce Trade Regulations
-focus = { 
-id = CSA_reducetraderegulations
-icon = GFX_goal_generic_positive_trade_relations
-x = 20
-y = 11
-cost = 8
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_lessenbuildingstandards } 
-ai_will_do = { 
- factor = 1
- } 
-
- } 
-
-#Focus for Streamlined Lines
-focus = { 
-id = CSA_streamlinedlines
-icon = GFX_goal_generic_construct_civilian
-x = 6
-y = 14
-cost = 5
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_factoryspecialization } 
-mutually_exclusive = { focus = CSA_flexiblelines } 
-ai_will_do = { 
- factor = 1
- } 
-
- } 
+	#Focus for Streamlined Lines
+	focus = { 
+		id = CSA_streamlinedlines
+		icon = GFX_goal_generic_construct_civilian
+		x = 6
+		y = 14
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_factoryspecialization } 
+		mutually_exclusive = { focus = CSA_flexiblelines } 
+		ai_will_do = { 
+			factor = 1
+		}
+		available = {
+			has_war = yes
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CSA_factory_specialization
+				add_idea = CSA_factory_specialization1
+			}
+		}
+	} 
 
 #Focus for Diplomacy in Europe
 focus = { 
