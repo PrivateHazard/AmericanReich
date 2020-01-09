@@ -2555,7 +2555,7 @@
  CSA_eliminatesegregation_desc:0 ""
  CSA_redistributionofland:0 "Redistribution of Land"
  CSA_redistributionofland_desc:0 ""
- CSA_decreasesegregation:0 "Decrease Segregation?"
+ CSA_decreasesegregation:0 "Decrease Segregation"
  CSA_decreasesegregation_desc:0 ""
  CSA_increaselaborstandards:0 "Increase Labor Standards"
  CSA_increaselaborstandards_desc:0 ""
