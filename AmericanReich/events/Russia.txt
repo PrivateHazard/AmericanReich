@@ -1,0 +1,93 @@
+﻿###########################
+#Russian Events
+###########################
+
+add_namespace = russia
+
+#Introduction
+country_event = {
+	id = russia.1
+	title = russia.1.t
+	desc = russia.1.desc
+	#picture = GFX_report_event_japanese_transport_soldiers
+	
+	is_triggered_only = yes 
+	
+	option = { # S nami Bog!
+		name = russia.1.a
+		ai_chance = { factor = 75 }
+		set_country_flag = introductory_event_recieved
+	}
+}
+#Death of the Tsar
+country_event = {
+	id = russia.2
+	title = russia.2.t
+	desc = russia.2.desc
+	#picture = GFX_report_event_japanese_transport_soldiers
+	
+	is_triggered_only = yes 
+	
+	option = { #May he rest in peace...
+		name = russia.2.a
+		ai_chance = { factor = 75 }
+		kill_country_leader = yes
+		create_country_leader = {
+			name = "Regency Council"
+			desc = "POLITICS_KONSTANTIN_RODZAEVSKY_DESC"
+			picture = "portrait_eng_fallen_government.dds"
+			expire = "1965.1.1"
+			ideology = authoritarianism
+			traits = {
+			}
+		}
+	}
+}
+#The Coucil's Vote
+country_event = {
+	id = russia.3
+	title = russia.3.t
+	desc = russia.3.desc
+	#picture = GFX_report_event_japanese_transport_soldiers
+	
+	is_triggered_only = yes 
+	
+	option = { #Vote for a Republic
+		name = russia.3.a
+		ai_chance = { factor = 100 }
+		set_country_flag = SOV_republic
+		add_political_power = 120
+	}
+	
+	option = { #Vote to Continue the Monarchy
+		name = russia.3.b
+		ai_chance = { factor = 0 }
+		set_country_flag = SOV_continue_the_monarchy
+		add_stability = 0.05
+	}
+}
+#Deciding the New Government
+country_event = {
+	id = russia.4
+	title = russia.4.t
+	desc = russia.4.desc
+	#picture = GFX_report_event_japanese_transport_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		
+	}
+	
+	option = { #Vote for a Republic
+		name = russia.4.a
+		ai_chance = { factor = 100 }
+		
+	}
+	
+	option = { #Vote to Continue the Monarchy
+		name = russia.4.b
+		ai_chance = { factor = 0 }
+		
+	}
+}
