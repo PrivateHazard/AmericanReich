@@ -1,4 +1,5 @@
 ﻿l_english:
+ introductory_event_recieved:0 "Introductory Event Received"
  CSA_within_the_party:0 "Within the Party"
  AUS_black_friday:0 "Black Friday has Happened"
  AUS_abandoned_gold_standard:0 "Abandoned the Gold Standard"
@@ -26,3 +27,5 @@
  ENG_king_not_welcomed:0 "Edward was Turned Away from Britain"
  ENG_revolutionary_congress_finished:0 "The Revolutionary Congress is Over"
  ENG_edward_intelligence_minister:0 ""
+ SOV_republic:0 "The Senate Voted for a Republic"
+ SOV_continue_the_monarchy:0 "The Senate Voted to continue the Monarchy"
