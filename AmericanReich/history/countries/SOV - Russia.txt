@@ -79,9 +79,19 @@ set_research_slots = 4
 set_stability = 0.4
 set_war_support = 0.22
 add_ideas = {
+	high_taxes
 	SOV_brain_drain
 	SOV_republican_resistance
 	SOV_divided_military
+}
+
+country_event = {
+	id = russia.1
+	days = 1
+}
+country_event = {
+	id = russia.2
+	days = 6
 }
 
 set_politics = {
