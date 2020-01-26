@@ -1,6 +1,11 @@
 ﻿l_english:
  ###################
  ENG_kingdom_autocratic:0 "Kingdom of Britain"
+ SOV_republic_authoritarian:0 "Russian Republic"
+ SOV_republic_liberal:0 "Russian Republic"
+ SOV_republic_conservative:0 "Russian Republic"
+ SOV_republic_socialist:0 "Russian Republic"
+ SOV_republic_libertarian:0 "Russian Republic"
  INS_HOL_liberal:0 "Dutch East Indies"
  INS_HOL_liberal_DEF:0 "the Dutch East Indies"
  INS_HOL_conservative:0 "Dutch East Indies"
