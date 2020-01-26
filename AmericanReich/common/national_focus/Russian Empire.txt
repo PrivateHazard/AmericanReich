@@ -20,6 +20,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas = SOV_officers_initiative
+		}
 	}
 
 	#Focus for Novaya Golgofa
@@ -30,9 +33,16 @@ focus_tree = {
 		y = 3
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = SOV_mobilewarefare }
+		prerequisite = { focus = SOV_mobilewarfare }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cat_mechanized_equipment
+			}
 		}
 	}
 
@@ -44,9 +54,12 @@ focus_tree = {
 		y = 4
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = SOV_mobilewarefare }
+		prerequisite = { focus = SOV_mobilewarfare }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_ideas = SOV_armored_pilot_training
 		}
 	}
 
@@ -62,6 +75,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = infantry_weapons
+			}
+		}
 	}
 
 	#Focus for Support Research
@@ -75,6 +95,13 @@ focus_tree = {
 		prerequisite = { focus = SOV_grandbattleplan }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = support_tech
+			}
 		}
 	}
 
@@ -90,6 +117,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas = SOV_anti_tank_brigades
+		}
 	}
 
 	#Focus for National Planning School
@@ -103,6 +133,9 @@ focus_tree = {
 		prerequisite = { focus = SOV_grandbattleplan }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_ideas = SOV_national_planning_school
 		}
 	}
 
@@ -118,6 +151,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas = SOV_mobilize_the_masses
+		}
 	}
 
 	#Focus for Standardized Weapons
@@ -132,6 +168,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas = SOV_standarized_weapons
+		}
 	}
 
 	#Focus for Standardized Supply
@@ -145,6 +184,9 @@ focus_tree = {
 		prerequisite = { focus = SOV_massassault }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_ideas = SOV_standarized_supply
 		}
 	}
 
@@ -174,6 +216,15 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				ahead_reduction = 2
+				bonus = 1
+				uses = 1
+				category = armor
+			}
+		}
+		
 	}
 
 	#Focus for National Formation School
@@ -202,6 +253,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas = SOV_national_formation_school
+		}
 	}
 
 	#Focus for Dominant Defence
@@ -225,13 +279,13 @@ focus_tree = {
 			focus = SOV_nationalformationschool 
 		}
 		mutually_exclusive = { 
-			focus = SOV_ 
-		}
-		mutually_exclusive = { 
 			focus = SOV_barracksofthepeople 
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_ideas = SOV_dominant_defence
 		}
 	}
 
@@ -258,11 +312,11 @@ focus_tree = {
 		mutually_exclusive = { 
 			focus = SOV_mashinysmerti 
 		}
-		mutually_exclusive = { 
-			focus = SOV_ 
-		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_ideas = SOV_barracks_of_the_people
 		}
 	}
 
@@ -278,6 +332,27 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			custom_effect_tooltip = SOV_reintroduceohranka_tooltip
+			if = {
+				limit = {
+					has_idea = SOV_ohranka
+				}
+				swap_ideas = {
+					remove_idea = SOV_ohranka
+					add_idea = SOV_ohranka1
+				}
+			}
+			if = {
+				limit = {
+					has_idea = SOV_ohranka2
+				}
+				swap_ideas = {
+					remove_idea = SOV_ohranka2
+					add_idea = SOV_ohranka4
+				}
+			}
+		}
 	}
 
 	#Focus for Computing Warfare
@@ -292,6 +367,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = electronics
+			}
+		}
 	}
 
 	#Focus for Partisan Warfare
@@ -305,6 +387,27 @@ focus_tree = {
 		prerequisite = { focus = SOV_reintroduceohranka }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = SOV_reintroduceohranka_tooltip
+			if = {
+				limit = {
+					has_idea = SOV_ohranka
+				}
+				swap_ideas = {
+					remove_idea = SOV_ohranka
+					add_idea = SOV_ohranka2
+				}
+			}
+			if = {
+				limit = {
+					has_idea = SOV_ohranka1
+				}
+				swap_ideas = {
+					remove_idea = SOV_ohranka1
+					add_idea = SOV_ohranka3
+				}
+			}
 		}
 	}
 
@@ -321,6 +424,14 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = light_fighter
+				category = cat_heavy_fighter
+			}
+		}
 	}
 
 	#Focus for Control the Ground
@@ -335,6 +446,14 @@ focus_tree = {
 		mutually_exclusive = { focus = SOV_controltheair }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cas_bomber
+				category = tactical_bomber
+			}
 		}
 	}
 
@@ -353,6 +472,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			air_experience = 50
+		}
 	}
 
 	#Focus for Naval Bomber Research
@@ -367,6 +489,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = naval_bomber
+			}
+		}
 	}
 
 	#Focus for Paratroopers
@@ -380,6 +509,13 @@ focus_tree = {
 		prerequisite = { focus = SOV_pilottraining }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = para_tech
+			}
 		}
 	}
 
@@ -403,6 +539,21 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			always = no
+			custom_trigger_tooltip = {
+				tooltip = SOV_divided_military_tooltip		
+				NOT = {
+					OR = {
+						has_idea = SOV_divided_military
+						has_idea = SOV_divided_military1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = unfinished_tooltip
 		}
 	}
 
@@ -544,11 +695,17 @@ focus_tree = {
 		icon = GFX_goal_generic_war_with_comintern
 		x = 103
 		y = 8
-		cost = 10
+		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_fareasterndirection }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = TRM
+			}
 		}
 	}
 
@@ -558,11 +715,25 @@ focus_tree = {
 		icon = GFX_goal_generic_war_with_comintern
 		x = 94
 		y = 8
-		cost = 10
+		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_theeuropeandirection }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = BLR
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = UKR
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = BAL
+			}
 		}
 	}
 
@@ -572,11 +743,17 @@ focus_tree = {
 		icon = GFX_focus_ger_oppose_hitler
 		x = 94
 		y = 9
-		cost = 10
+		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_returnourlands }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = GER
+			}
 		}
 	}
 
@@ -634,11 +811,14 @@ focus_tree = {
 		mutually_exclusive = { 
 			focus = SOV_anaristocraticrepublic 
 		}
-		mutually_exclusive = { 
-			focus = SOV_ 
-		}
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = unfinished_tooltip
 		}
 	}
 
@@ -667,13 +847,13 @@ focus_tree = {
 			focus = SOV_theoldways 
 		}
 		mutually_exclusive = { 
-			focus = SOV_ 
-		}
-		mutually_exclusive = { 
 			focus = SOV_sakinovscoup 
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			has_government = conservative
 		}
 	}
 
@@ -705,9 +885,6 @@ focus_tree = {
 			focus = SOV_theoldways 
 		}
 		mutually_exclusive = { 
-			focus = SOV_ 
-		}
-		mutually_exclusive = { 
 			focus = SOV_anaristocraticrepublic 
 		}
 		mutually_exclusive = { 
@@ -715,6 +892,12 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = unfinished_tooltip
 		}
 	}
 
@@ -724,11 +907,17 @@ focus_tree = {
 		icon = GFX_focus_jap_cast_the_die
 		x = 105
 		y = 8
-		cost = 10
+		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_fareasterndirection }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = MAN
+			}
 		}
 	}
 
@@ -822,6 +1011,7 @@ focus_tree = {
 			has_country_flag = SOV_republic
 		}
 		completion_reward = {
+			custom_effect_tooltip = SOV_endthetsardom_tooltip
 			swap_ideas = {
 				remove_idea = SOV_republican_resistance
 				add_idea = SOV_a_new_government
@@ -898,7 +1088,57 @@ focus_tree = {
 			focus = SOV_sakinovscoup 
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 2
+		}
+		available = {
+			OR = {
+				has_government = socialist
+				has_government = liberal
+				has_government = libertarian
+				has_government = conservative
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = socialist
+				}
+				add_popularity = {
+					ideology = socialist
+					popularity = 0.1
+				}
+			}
+			if = {
+				limit = {
+					has_government = conservative
+				}
+				add_popularity = {
+					ideology = conservative
+					popularity = 0.1
+				}
+			}
+			if = {
+				limit = {
+					has_government = libertarian
+				}
+				add_popularity = {
+					ideology = libertarian
+					popularity = 0.1
+				}
+			}
+			if = {
+				limit = {
+					has_government = liberal
+				}
+				add_popularity = {
+					ideology = liberal
+					popularity = 0.1
+				}
+			}
+			swap_ideas = {
+				remove_idea = SOV_a_new_government
+				add_idea = SOV_a_new_government1
+			}
 		}
 	}
 
@@ -914,6 +1154,53 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = excavation_tech
+			}
+			219 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			195 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			223 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			248 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			253 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 
 	#Focus for Invite Private Companies
@@ -928,6 +1215,33 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_stability = 0.05
+			248 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			253 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			254 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
 
 	#Focus for Private Research Companies
@@ -941,6 +1255,10 @@ focus_tree = {
 		prerequisite = { focus = SOV_privatizethevodkaindustry }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_ideas = SOV_private_research_companies
+			remove_ideas = SOV_brain_drain
 		}
 	}
 
@@ -991,6 +1309,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_stability = 0.1
+			remove_ideas = SOV_a_new_government1
+		}
 	}
 
 	#Focus for Write a Bill of Rights
@@ -1004,6 +1326,9 @@ focus_tree = {
 		prerequisite = { focus = SOV_reinforcetheduma }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_ideas = SOV_bill_of_rights
 		}
 	}
 
@@ -1019,6 +1344,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas = SOV_free_thought
+		}
 	}
 
 	#Focus for Defence of Democracy
@@ -1032,6 +1360,9 @@ focus_tree = {
 		prerequisite = { focus = SOV_encouragefreethought }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_ideas = SOV_defence_of_democracy
 		}
 	}
 
@@ -1265,12 +1596,13 @@ focus_tree = {
 		icon = GFX_goal_generic_production2
 		x = 29
 		y = 1
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		available = {
+			has_idea = SOV_black_friday
 			OR = {
 				has_completed_focus = SOV_aconstitutionalmonarchy
 				has_completed_focus = SOV_theoldways
@@ -1278,6 +1610,13 @@ focus_tree = {
 				has_completed_focus = SOV_amilitarydictatorship
 				has_completed_focus = SOV_anaristocraticrepublic
 				has_completed_focus = SOV_aliberalrepublic
+			}
+		}
+		completion_reward = {
+			add_stability = 0.05
+			swap_ideas = {
+				remove_idea = SOV_black_friday
+				add_idea = SOV_black_friday1
 			}
 		}
 	}
@@ -1303,6 +1642,11 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			OR = {
+				has_completed_focus = SOV_sakinovscoup
+			}
+		}
 	}
 
 	#Focus for Embrace Capitalism
@@ -1326,6 +1670,18 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			OR = {
+				has_completed_focus = SOV_aliberalrepublic
+				has_completed_focus = SOV_anaristocraticrepublic
+				has_completed_focus = SOV_amilitarydictatorship
+				has_completed_focus = SOV_theoldways
+				has_completed_focus = SOV_aconstitutionalmonarchy
+			}
+		}
+		completion_reward = {
+			add_stability = 0.1
+		}
 	}
 
 	#Focus for Village Communes
@@ -1344,13 +1700,19 @@ focus_tree = {
 			focus = SOV_embracecapitalism 
 		}
 		mutually_exclusive = { 
-			focus = SOV_ 
-		}
-		mutually_exclusive = { 
 			focus = SOV_bureaucraticeconomy 
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			OR = {
+				has_completed_focus = SOV_aliberalrepublic
+			}
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_ideas = SOV_communal_economy
 		}
 	}
 
@@ -1372,11 +1734,16 @@ focus_tree = {
 		mutually_exclusive = { 
 			focus = SOV_rekonstruktsiya 
 		}
-		mutually_exclusive = { 
-			focus = SOV_ 
-		}
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			OR = {
+				has_completed_focus = SOV_anaristocraticrepublic
+				has_completed_focus = SOV_amilitarydictatorship
+				has_completed_focus = SOV_theoldways
+				has_completed_focus = SOV_aconstitutionalmonarchy
+			}
 		}
 	}
 
@@ -1400,11 +1767,25 @@ focus_tree = {
 		icon = GFX_goal_generic_position_armies
 		x = 94
 		y = 2
-		cost = 10
+		cost = 3
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_russianforeignpolicy }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			233 = {
+				add_core_of = SOV
+			}
+			231 = {
+				add_core_of = SOV
+			}
+			229 = {
+				add_core_of = SOV
+			}
+			230 = {
+				add_core_of = SOV
+			}
 		}
 	}
 
@@ -1565,6 +1946,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas = free_trade
+			add_offsite_building = {
+				type = industrial_complex 
+				level = 2
+			}
+		}
 	}
 
 	#Focus for Industrial Communes
@@ -1578,6 +1966,40 @@ focus_tree = {
 		prerequisite = { focus = SOV_villagecommunes }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			247 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			248 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			217 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			249 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -1626,6 +2048,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_stability = 0.05
+			add_ideas = SOV_privatized_vodka_industry
+		}
 	}
 
 	#Focus for Research Communes
@@ -1639,6 +2065,14 @@ focus_tree = {
 		prerequisite = { focus = SOV_industrialcommunes }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = industry
+			}
+			remove_ideas = SOV_brain_drain
 		}
 	}
 
@@ -1659,6 +2093,11 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_stability = 0.1
+			add_ideas = SOV_russian_enrichment
+			remove_ideas = SOV_black_friday1
+		}
 	}
 
 	#Focus for Modern Economy
@@ -1678,6 +2117,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas = SOV_modern_economy
+		}
 	}
 
 	#Focus for Mining Effort
@@ -1692,6 +2134,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = excavation_tech
+			}
+		}
 	}
 
 	#Focus for Production Communes
@@ -1705,6 +2154,10 @@ focus_tree = {
 		prerequisite = { focus = SOV_agriculturalcommunes }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_ideas = SOV_production_communes
 		}
 	}
 
@@ -1725,6 +2178,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_research_slot = 1
+		}
 	}
 
 	#Focus for Nuclear Effort
@@ -1738,6 +2194,13 @@ focus_tree = {
 		prerequisite = { focus = SOV_nationalresearchfunding }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = nuclear
+			}
 		}
 	}
 
@@ -1753,6 +2216,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = rocketry
+			}
+		}
 	}
 
 	#Focus for Infrastructure Effort
@@ -1767,6 +2237,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas = SOV_infrastructure_effort
+		}
 	}
 
 	#Focus for Deal with Georgia
@@ -1775,11 +2248,17 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		x = 93
 		y = 3
-		cost = 10
+		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_caucusdirection }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = GEO
+			}
 		}
 	}
 
@@ -1789,7 +2268,7 @@ focus_tree = {
 		icon = GFX_focus_attack_australia
 		x = 98
 		y = 2
-		cost = 10
+		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_russianforeignpolicy }
 		mutually_exclusive = { focus = SOV_ourownpath }
@@ -1804,12 +2283,18 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		x = 102
 		y = 2
-		cost = 10
+		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_russianforeignpolicy }
 		mutually_exclusive = { focus = SOV_jointheentente }
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = unfinished_tooltip
 		}
 	}
 
@@ -1829,13 +2314,28 @@ focus_tree = {
 			focus = SOV_grandbattleplan 
 		}
 		mutually_exclusive = { 
-			focus = SOV_mobilewarefare 
-		}
-		mutually_exclusive = { 
-			focus = SOV_ 
+			focus = SOV_mobilewarfare 
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SOV_divided_military_tooltip		
+				NOT = {
+					OR = {
+						has_idea = SOV_divided_military
+						has_idea = SOV_divided_military1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cat_mass_assault
+			}
 		}
 	}
 
@@ -1849,7 +2349,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_reviewthemilitary }
 		mutually_exclusive = { 
-			focus = SOV_mobilewarefare 
+			focus = SOV_mobilewarfare 
 		}
 		mutually_exclusive = { 
 			focus = SOV_JheoRbin 
@@ -1863,6 +2363,24 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SOV_divided_military_tooltip		
+				NOT = {
+					OR = {
+						has_idea = SOV_divided_military
+						has_idea = SOV_divided_military1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cat_grand_battle_plan
+			}
+		}
 	}
 
 	#Focus for Review the Military
@@ -1871,7 +2389,7 @@ focus_tree = {
 		icon = GFX_goal_generic_military_sphere
 		x = 65
 		y = 1
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
@@ -1883,7 +2401,14 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			
+			army_experience = 10
+			air_experience = 10
+			navy_experience = 10
+			remove_ideas = SOV_divided_military
+			add_timed_idea = {
+				idea = SOV_divided_military1
+				days = 175
+			}
 		}
 	}
 
@@ -1897,7 +2422,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_reviewthemilitary }
 		mutually_exclusive = { 
-			focus = SOV_mobilewarefare 
+			focus = SOV_mobilewarfare 
 		}
 		mutually_exclusive = { 
 			focus = SOV_grandbattleplan 
@@ -1908,11 +2433,29 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SOV_divided_military_tooltip		
+				NOT = {
+					OR = {
+						has_idea = SOV_divided_military
+						has_idea = SOV_divided_military1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cat_superior_firepower
+			}
+		}
 	}
 
-	#Focus for Mobile Warefare
+	#Focus for Mobile Warfare
 	focus = {
-		id = SOV_mobilewarefare
+		id = SOV_mobilewarfare
 		icon = GFX_focus_generic_license_production
 		x = 44
 		y = 2
@@ -1931,6 +2474,24 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SOV_divided_military_tooltip		
+				NOT = {
+					OR = {
+						has_idea = SOV_divided_military
+						has_idea = SOV_divided_military1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cat_mobile_warfare
+			}
+		}
 	}
 
 	#Focus for Begin Tank Development
@@ -1941,9 +2502,17 @@ focus_tree = {
 		y = 3
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = SOV_mobilewarefare }
+		prerequisite = { focus = SOV_mobilewarfare }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = armor
+			}
 		}
 	}
 
@@ -1959,6 +2528,14 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				ahead_reduction = 2
+				bonus = 1
+				uses = 1
+				category = artillery
+			}
+		}
 	}
 
 	#Focus for Reintroduce Ohranka
@@ -1973,6 +2550,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_stability = 0.05
+			add_ideas = SOV_ohranka
+		}
 	}
 
 	#Focus for Reform the IVVF
@@ -1986,6 +2567,24 @@ focus_tree = {
 		prerequisite = { focus = SOV_reviewthemilitary }
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SOV_divided_military_tooltip		
+				NOT = {
+					OR = {
+						has_idea = SOV_divided_military
+						has_idea = SOV_divided_military1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = air_doctrine
+			}
 		}
 	}
 
@@ -2007,6 +2606,21 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			always = no
+			custom_trigger_tooltip = {
+				tooltip = SOV_divided_military_tooltip		
+				NOT = {
+					OR = {
+						has_idea = SOV_divided_military
+						has_idea = SOV_divided_military1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = unfinished_tooltip
+		}
 	}
 
 	#Focus for Trade Interdiction
@@ -2026,6 +2640,21 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			always = no
+			custom_trigger_tooltip = {
+				tooltip = SOV_divided_military_tooltip		
+				NOT = {
+					OR = {
+						has_idea = SOV_divided_military
+						has_idea = SOV_divided_military1
+					}
+				}
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = unfinished_tooltip
 		}
 	}
 
@@ -2053,11 +2682,17 @@ focus_tree = {
 		icon = GFX_goal_generic_oil_refinery
 		x = 95
 		y = 3
-		cost = 10
+		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_caucusdirection }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = AZR
+			}
 		}
 	}
 
@@ -2067,7 +2702,7 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		x = 94
 		y = 4
-		cost = 10
+		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = SOV_dealwithgeorgia 
@@ -2075,6 +2710,12 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = ARM
+			}
 		}
 	}
 
@@ -2084,7 +2725,7 @@ focus_tree = {
 		icon = GFX_goal_generic_more_territorial_claims
 		x = 104
 		y = 7
-		cost = 10
+		cost = 3
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = SOV_tothesea 
@@ -2092,6 +2733,35 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			564 = {
+				add_core_of = SOV
+			}
+			563 = {
+				add_core_of = SOV
+			}
+			565 = {
+				add_core_of = SOV
+			}
+			561 = {
+				add_core_of = SOV
+			}
+			657 = {
+				add_core_of = SOV
+			}
+			560 = {
+				add_core_of = SOV
+			}
+			564 = {
+				add_core_of = SOV
+			}
+			409 = {
+				add_core_of = SOV
+			}
+			408 = {
+				add_core_of = SOV
+			}
 		}
 	}
 
@@ -2101,7 +2771,7 @@ focus_tree = {
 		icon = GFX_focus_usa_focus_on_europe
 		x = 96
 		y = 7
-		cost = 10
+		cost = 3
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = SOV_allytheturks 
@@ -2109,6 +2779,90 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_war_support = 0.05
+			207 = {
+				add_core_of = SOV
+			}
+			206 = {
+				add_core_of = SOV
+			}
+			204 = {
+				add_core_of = SOV
+			}
+			194 = {
+				add_core_of = SOV
+			}
+			96 = {
+				add_core_of = SOV
+			}
+			95 = {
+				add_core_of = SOV
+			}
+			94 = {
+				add_core_of = SOV
+			}
+			255 = {
+				add_core_of = SOV
+			}
+			221 = {
+				add_core_of = SOV
+			}
+			228 = {
+				add_core_of = SOV
+			}
+			227 = {
+				add_core_of = SOV
+			}
+			200 = {
+				add_core_of = SOV
+			}
+			196 = {
+				add_core_of = SOV
+			}
+			197 = {
+				add_core_of = SOV
+			}
+			192 = {
+				add_core_of = SOV
+			}
+			198 = {
+				add_core_of = SOV
+			}
+			199 = {
+				add_core_of = SOV
+			}
+			93 = {
+				add_core_of = SOV
+			}
+			201 = {
+				add_core_of = SOV
+			}
+			202 = {
+				add_core_of = SOV
+			}
+			193 = {
+				add_core_of = SOV
+			}
+			226 = {
+				add_core_of = SOV
+			}
+			203 = {
+				add_core_of = SOV
+			}
+			259 = {
+				add_core_of = SOV
+			}
+			146 = {
+				add_core_of = SOV
+			}
+			149 = {
+				add_core_of = SOV
+			}
+			722 = {
+				add_core_of = SOV
+			}
 		}
 	}
 
@@ -2118,12 +2872,18 @@ focus_tree = {
 		icon = GFX_goal_support_democracy
 		x = 106
 		y = 6
-		cost = 10
+		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_themiddleeasterndirection }
 		mutually_exclusive = { focus = SOV_tothesea }
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = unfinished_tooltip
 		}
 	}
 
@@ -2133,7 +2893,7 @@ focus_tree = {
 		icon = GFX_goal_generic_major_alliance
 		x = 94
 		y = 6
-		cost = 10
+		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_themiddleeasterndirection }
 		mutually_exclusive = { 
@@ -2145,6 +2905,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = unfinished_tooltip
+		}
 	}
 
 	#Focus for To the Sea!
@@ -2153,12 +2919,18 @@ focus_tree = {
 		icon = GFX_goal_generic_build_navy
 		x = 102
 		y = 6
-		cost = 10
+		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_themiddleeasterndirection }
 		mutually_exclusive = { focus = SOV_liberatethepersians }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = PER
+			}
 		}
 	}
 
@@ -2168,12 +2940,18 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		x = 98
 		y = 6
-		cost = 10
+		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_themiddleeasterndirection }
 		mutually_exclusive = { focus = SOV_allytheturks }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = TUR
+			}
 		}
 	}
 
@@ -2183,11 +2961,61 @@ focus_tree = {
 		icon = GFX_goal_generic_more_territorial_claims
 		x = 106
 		y = 2
-		cost = 10
+		cost = 3
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_russianforeignpolicy }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			407 = {
+				add_core_of = SOV
+			}
+			406 = {
+				add_core_of = SOV
+			}
+			402 = {
+				add_core_of = SOV
+			}
+			587 = {
+				add_core_of = SOV
+			}
+			585 = {
+				add_core_of = SOV
+			}
+			407 = {
+				add_core_of = SOV
+			}
+			584 = {
+				add_core_of = SOV
+			}
+			407 = {
+				add_core_of = SOV
+			}
+			405 = {
+				add_core_of = SOV
+			}
+			407 = {
+				add_core_of = SOV
+			}
+			742 = {
+				add_core_of = SOV
+			}
+			407 = {
+				add_core_of = SOV
+			}
+			732 = {
+				add_core_of = SOV
+			}
+			586 = {
+				add_core_of = SOV
+			}
+			589 = {
+				add_core_of = SOV
+			}
+			404 = {
+				add_core_of = SOV
+			}
 		}
 	}
 
@@ -2197,12 +3025,18 @@ focus_tree = {
 		icon = GFX_goal_generic_major_war
 		x = 107
 		y = 3
-		cost = 10
+		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_centralasiandirection }
 		mutually_exclusive = { focus = SOV_allythekazahks }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = KAZ
+			}
 		}
 	}
 
@@ -2212,7 +3046,7 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		x = 106
 		y = 4
-		cost = 10
+		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = SOV_destroythekazakhs 
@@ -2220,6 +3054,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_war_support = 0.03
 		}
 	}
 
@@ -2237,6 +3074,9 @@ focus_tree = {
 		available = {
 			date > 1937.6.1
 		}
+		completion_reward = {
+			add_stability = 0.1
+		}
 	}
 
 	#Focus for Ally the Kazahks
@@ -2245,12 +3085,15 @@ focus_tree = {
 		icon = GFX_goal_generic_military_deal
 		x = 105
 		y = 3
-		cost = 10
+		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_centralasiandirection }
 		mutually_exclusive = { focus = SOV_destroythekazakhs }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			puppet = KAZ
 		}
 	}
 
@@ -2260,7 +3103,7 @@ focus_tree = {
 		icon = GFX_goal_generic_attack_allies
 		x = 100
 		y = 5
-		cost = 10
+		cost = 3
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = SOV_destroythewarlords 
@@ -2271,6 +3114,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_stability = 0.05
+		}
 	}
 
 	#Focus for Deal with the Fins
@@ -2279,11 +3125,17 @@ focus_tree = {
 		icon = GFX_goal_generic_major_war
 		x = 98
 		y = 8
-		cost = 10
+		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_theeuropeandirection }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = FIN
+			}
 		}
 	}
 
@@ -2293,11 +3145,21 @@ focus_tree = {
 		icon = GFX_goal_generic_occupy_states_ongoing_war
 		x = 98
 		y = 9
-		cost = 10
+		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_theeuropeandirection }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = SWE
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = NOR
+			}
 		}
 	}
 
@@ -2307,11 +3169,17 @@ focus_tree = {
 		icon = GFX_goal_molotov_ribbentrop_pact
 		x = 96
 		y = 8
-		cost = 10
+		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_theeuropeandirection }
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = unfinished_tooltip
 		}
 	}
 
@@ -2321,11 +3189,17 @@ focus_tree = {
 		icon = GFX_goal_demand_sudetenland
 		x = 105
 		y = 9
-		cost = 10
+		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_themanchurianprecedent }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = JAP
+			}
 		}
 	}
 
