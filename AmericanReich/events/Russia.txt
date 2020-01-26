@@ -41,6 +41,10 @@ country_event = {
 			traits = {
 			}
 		}
+		add_popularity = {
+			ideology = authoritarian
+			popularity = -0.1
+		}
 	}
 }
 #The Coucil's Vote
@@ -57,11 +61,15 @@ country_event = {
 		ai_chance = { factor = 100 }
 		set_country_flag = SOV_republic
 		add_political_power = 120
+		set_cosmetic_tag = SOV_republic
 	}
 	
 	option = { #Vote to Continue the Monarchy
 		name = russia.3.b
 		ai_chance = { factor = 0 }
+		trigger = {
+			always = no
+		}
 		set_country_flag = SOV_continue_the_monarchy
 		add_stability = 0.05
 	}
@@ -74,20 +82,85 @@ country_event = {
 	#picture = GFX_report_event_japanese_transport_soldiers
 	
 	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 5
+	}
 	
 	trigger = {
-		
+		original_tag = SOV
+		has_completed_focus = SOV_endthetsardom
 	}
 	
-	option = { #Vote for a Republic
+	option = { #Kerensky's Government
 		name = russia.4.a
 		ai_chance = { factor = 100 }
-		
+		set_politics = {
+			ruling_party = liberal
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = liberal
+			popularity = 0.2
+		}
+		add_ideas = {
+			SOV_viktor_chernov
+			SOV_mikhail_tereshchenko
+			SOV_aleksandr_konovalov
+			SOV_nikolai_avksentiev
+		}
 	}
 	
-	option = { #Vote to Continue the Monarchy
+	option = { #Maklakov's Government
 		name = russia.4.b
 		ai_chance = { factor = 0 }
-		
+		set_politics = {
+			ruling_party = libertarian
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = libertarian
+			popularity = 0.2
+		}
+		add_ideas = {
+			SOV_konstatin_balmont
+			SOV_pavel_milyukow
+			SOV_nikolai_nekrasov
+			SOV_andrei_shingarev
+		}
+	}
+	
+	option = { #Zhordania's Government
+		name = russia.4.c
+		ai_chance = { factor = 0 }
+		set_politics = {
+			ruling_party = socialist
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = socialist
+			popularity = 0.2
+		}
+		add_ideas = {
+			mikhail_kalinin
+			SOV_vyacheslav_molotov
+			SOV_matvey_skobelev
+			SOV_irakli_tsereteli
+		}
+	}
+}
+#Black Friday Hits Russia
+country_event = {
+	id = russia.5
+	title = russia.5.t
+	desc = russia.5.desc
+	#picture = GFX_report_event_japanese_transport_soldiers
+	
+	is_triggered_only = yes 
+	
+	option = { #Moy Bog!
+		name = russia.5.a
+		ai_chance = { factor = 100 }
+		add_ideas = SOV_black_friday
+		add_stability = -0.2
 	}
 }
