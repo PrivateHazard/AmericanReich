@@ -42,6 +42,29 @@ ideas = {
 			modifier = {
 			}
 		}
+		SOV_divided_military1 = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+				land_doctrine = -0.5
+				air_doctrine = -0.5
+				naval_doctrine = -0.5
+			}
+
+			picture = chi_incompetent_officers
+			
+			modifier = {
+				political_power_cost = 0.2
+			}
+		}
 		SOV_republican_resistance = {
 		
 			removal_cost = -1
@@ -98,12 +121,656 @@ ideas = {
 			research_bonus = {
 			}
 
-			picture = disjointed_gov
+			picture = generic_disjointed_gov
 			
 			modifier = {
 				stability_factor = -0.1
 				war_support_factor = -0.1
 				political_power_cost = 0.2
+			}
+		}
+		SOV_a_new_government1 = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+
+			picture = generic_disjointed_gov
+			
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = -0.05
+				political_power_cost = 0.1
+			}
+		}
+		SOV_bill_of_rights = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+
+			picture = hun_treaty_of_trianon
+			
+			modifier = {
+				political_power_factor = 0.1
+				stability_factor = 0.1
+			}
+		}
+		SOV_free_thought = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+
+			picture = jap_supremacy_of_will
+			
+			modifier = {
+				political_power_factor = 0.05
+				research_speed_factor = 0.05
+			}
+		}
+		SOV_defence_of_democracy = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+
+			picture = democratic_drift_bonus
+			
+			modifier = {
+				justify_war_goal_time = -0.25
+				army_core_defence_factor = 0.1
+			}
+		}
+		SOV_black_friday = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+
+			picture = rom_carol_emptied_accounts
+			
+			modifier = {
+				consumer_goods_factor = 0.20
+				local_resources_factor = -0.20
+				production_factory_max_efficiency_factor = -0.20
+				production_speed_buildings_factor = -0.20
+				industrial_capacity_factory = -0.20
+				industrial_capacity_dockyard = -0.20
+				stability_weekly = -0.002
+				min_export = -0.20
+			}
+		}
+		SOV_black_friday1 = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+
+			picture = rom_carol_emptied_accounts
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+				local_resources_factor = -0.1
+				production_factory_max_efficiency_factor = -0.1
+				production_speed_buildings_factor = -0.1
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
+				stability_weekly = -0.001
+				min_export = -0.1
+			}
+		}
+		SOV_communal_economy = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+
+			picture = generic_local_self_management
+			
+			modifier = {
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		SOV_production_communes = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+
+			picture = generic_production_bonus
+			
+			modifier = {
+				industrial_capacity_factory = 0.1
+			}
+		}
+		SOV_russian_enrichment = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+
+			picture = generic_goods_red_bonus
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		SOV_private_research_companies = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+
+			picture = generic_research_bonus
+			
+			modifier = {
+				research_speed_factor = 0.03
+			}
+		}
+		SOV_privatized_vodka_industry = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+
+			picture = generic_foreign_capital
+			
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+		SOV_modern_economy = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+
+			picture = man_five_year_plan_industry
+			
+			modifier = {
+				production_speed_arms_factory_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		SOV_ohranka = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+
+			picture = generic_secret_police
+			
+			modifier = {
+				political_power_factor = 0.1
+				enemy_partisan_effect = -0.1
+				foreign_subversive_activites = -0.25
+			}
+		}
+		SOV_ohranka1 = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+
+			picture = generic_secret_police
+			
+			modifier = {
+				political_power_factor = 0.1
+				enemy_partisan_effect = -0.1
+				foreign_subversive_activites = -0.25
+				army_morale_factor = 0.1
+			}
+		}
+		SOV_ohranka2 = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+
+			picture = generic_secret_police
+			
+			modifier = {
+				political_power_factor = 0.1
+				enemy_partisan_effect = -0.1
+				foreign_subversive_activites = -0.25
+				partisan_effect = 0.5
+			}
+		}
+		SOV_ohranka3 = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+
+			picture = generic_secret_police
+			
+			modifier = {
+				political_power_factor = 0.1
+				enemy_partisan_effect = -0.1
+				foreign_subversive_activites = -0.25
+				army_morale_factor = 0.1
+				partisan_effect = 0.5
+			}
+		}
+		SOV_ohranka4 = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+
+			picture = generic_secret_police
+			
+			modifier = {
+				political_power_factor = 0.1
+				enemy_partisan_effect = -0.1
+				foreign_subversive_activites = -0.25
+				army_morale_factor = 0.1
+				partisan_effect = 0.5
+			}
+		}
+		SOV_armored_pilot_training = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+			
+			equipment_bonus = {
+				armor = {
+					maximum_speed = 0.1
+					breakthrough = 0.1
+				}
+			}
+
+			picture = FRA_motorized_focus
+			
+			modifier = {
+			}
+		}
+		SOV_officers_initiative = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+			
+			equipment_bonus = {
+			}
+
+			picture = generic_war_preparation
+			
+			modifier = {
+				army_org_factor = 0.05
+				army_morale_factor = 0.1
+			}
+		}
+		SOV_national_planning_school = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+			
+			equipment_bonus = {
+			}
+
+			picture = cze_planning_bonus
+			
+			modifier = {
+				planning_speed = 0.1
+				max_planning = 0.1
+			}
+		}
+		SOV_anti_tank_brigades = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+			
+			equipment_bonus = {
+				artillery = {
+					ap_attack = 0.25
+				}
+			}
+
+			picture = generic_artillery_regiments
+			
+			modifier = {
+			}
+		}
+		SOV_mobilize_the_masses = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+			
+			equipment_bonus = {
+			}
+
+			picture = generic_manpower_bonus
+			
+			modifier = {
+				conscription = 0.025
+				army_morale_factor = 0.1
+			}
+		}
+		SOV_standarized_weapons = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+			
+			equipment_bonus = {
+				infantry_weapons = {
+					build_cost_ic = -0.1
+				}
+			}
+
+			picture = hun_secret_rearmament
+			
+			modifier = {
+			}
+		}
+		SOV_standarized_supply = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+			
+			equipment_bonus = {
+			}
+
+			picture = generic_goods_red_bonus
+			
+			modifier = {
+				supply_consumption_factor = -0.1
+			}
+		}
+		SOV_barracks_of_the_people = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+			
+			equipment_bonus = {
+			}
+
+			picture = idea_generic_reserve_divisions
+			
+			modifier = {
+				conscription_factor = 0.1
+				training_time_factor = -0.2
+			}
+		}
+		SOV_dominant_defence = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+			
+			equipment_bonus = {
+			}
+
+			picture = yug_federal_defense_council
+			
+			modifier = {
+				max_dig_in = 10
+				dig_in_speed_factor = 0.25
+			}
+		}
+		SOV_national_formation_school = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+			
+			equipment_bonus = {
+			}
+
+			picture = chi_wargaming_division
+			
+			modifier = {
+				army_org_factor = 0.05
+				recon_factor = 0.05
+			}
+		}
+		SOV_infrastructure_effort = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			available = {
+			}
+			
+			research_bonus = {
+			}
+			
+			equipment_bonus = {
+			}
+
+			picture = generic_build_infrastructure
+			
+			modifier = {
+				production_speed_infrastructure_factor = 0.1
 			}
 		}
 	}
@@ -187,6 +854,69 @@ ideas = {
 			}
 		}
 		
+		SOV_viktor_chernov = {
+			allowed = {
+				original_tag = "SOV"
+			}
+			
+			available = {
+			}
+			
+			traits = {
+				liberal_trait
+				liberal_socialist
+			}
+
+			do_effect = {
+			}
+			
+			allowed_to_remove = {
+				always = no
+			}
+		}
+		
+		SOV_konstatin_balmont = {
+			allowed = {
+				original_tag = "SOV"
+			}
+			
+			available = {
+			}
+			
+			traits = {
+				libertarian_trait
+				silent_workhorse
+			}
+
+			do_effect = {
+			}
+			
+			allowed_to_remove = {
+				always = no
+			}
+		}
+		
+		SOV_dmitri_romanov = {
+			allowed = {
+				original_tag = "SOV"
+			}
+			
+			available = {
+			}
+			
+			traits = {
+				conservative_trait
+				silent_workhorse
+			}
+
+			do_effect = {
+			}
+			
+			allowed_to_remove = {
+				always = no
+			}
+		}
+		
 		konstantin_rodzaevsky = {		
 			
 			allowed = {
@@ -228,7 +958,25 @@ ideas = {
 			}
 		}
 		
-		SOV_nikolai_avksentiev = {
+		SOV_pavel_milyukow = {
+			
+			picture = generic_political_advisor_europe_1
+			
+			allowed = {
+				original_tag = SOV
+			}
+			
+			traits = {
+				libertarian_trait
+				smooth_talking_charmer
+			}
+			
+			allowed_to_remove = {
+				always = no
+			}
+		}
+		
+		SOV_mikhail_tereshchenko = {
 			
 			picture = generic_political_advisor_europe_1
 			
@@ -238,7 +986,7 @@ ideas = {
 			
 			traits = {
 				liberal_trait
-				defensive_excavator
+				smooth_talking_charmer
 			}
 			
 			allowed_to_remove = {
@@ -257,8 +1005,76 @@ ideas = {
 			}
 			
 			traits = { 
+				syndicalist_trait
+				economic_organizer
+			}
+			
+			allowed_to_remove = {
+				always = no
+			}
+		}
+		SOV_matvey_skobelev = {
+			
+			picture = generic_political_advisor_europe_2
+			
+			allowed = {
+				original_tag = SOV
+			}
+			
+			traits = { 
 				socialist_trait
+				economist
+			}
+			
+			allowed_to_remove = {
+				always = no
+			}
+		}
+		SOV_aleksandr_konovalov = {
+			
+			picture = generic_political_advisor_europe_2
+			
+			allowed = {
+				original_tag = SOV
+			}
+			
+			traits = { 
+				liberal_trait
 				captain_of_industry
+			}
+			
+			allowed_to_remove = {
+				always = no
+			}
+		}
+		SOV_nikolai_nekrasov = {
+			
+			picture = generic_political_advisor_europe_2
+			
+			allowed = {
+				original_tag = SOV
+			}
+			
+			traits = { 
+				libertarian_trait
+				economist
+			}
+			
+			allowed_to_remove = {
+				always = no
+			}
+		}
+		SOV_nikolay_makalov = {
+			
+			picture = generic_political_advisor_europe_2
+			
+			allowed = {
+				original_tag = SOV
+			}
+			
+			traits = { 
+				conservative_trait
+				war_industrialist
 			}
 			
 			allowed_to_remove = {
@@ -280,8 +1096,59 @@ ideas = {
 			}
 			
 			traits = {
-				socialist_trait
+				syndicalist_trait
 				prince_of_terror
+			}
+			
+			allowed_to_remove = {
+				always = no
+			}
+		}
+		SOV_nikolai_avksentiev = {
+			
+			picture = generic_political_advisor_europe_1
+			
+			allowed = {
+				original_tag = SOV
+			}
+			
+			traits = {
+				liberal_trait
+				defensive_excavator
+			}
+			
+			allowed_to_remove = {
+				always = no
+			}
+		}
+		SOV_irakli_tsereteli = {
+			
+			picture = generic_political_advisor_europe_1
+			
+			allowed = {
+				original_tag = SOV
+			}
+			
+			traits = {
+				socialist_trait
+				internal_comprimiser
+			}
+			
+			allowed_to_remove = {
+				always = no
+			}
+		}
+		SOV_andrei_shingarev = {
+			
+			picture = generic_political_advisor_europe_1
+			
+			allowed = {
+				original_tag = SOV
+			}
+			
+			traits = {
+				libertarian_trait
+				defensive_excavator
 			}
 			
 			allowed_to_remove = {
