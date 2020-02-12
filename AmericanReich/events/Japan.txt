@@ -1,0 +1,93 @@
+﻿###########################
+# Japanese Events
+###########################
+
+add_namespace = japan
+
+#State of the Empire
+country_event = {
+	id = japan.1
+	title = japan.1.t
+	desc = japan.1.desc
+	picture = GFX_report_event_chinese_soldiers_01
+
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.1.a
+	}
+}
+#Elections of 1936
+country_event = {
+	id = japan.2
+	title = japan.2.t
+	desc = japan.2.desc
+	picture = GFX_report_event_election_vote
+
+	trigger = {
+		has_elections = yes
+		date > 1936.2.19
+	}
+	
+	fire_only_once = yes
+	
+	option = { #
+		name = japan.2.a
+		add_popularity = {
+			ideology = libertarian
+			popularity = 0.1
+		}
+		set_politics = {
+			ruling_party = libertarian
+			elections_allowed = yes
+		}
+	}
+	option = { #
+		name = japan.2.b
+		add_popularity = {
+			ideology = liberal
+			popularity = 0.15
+		}
+		set_politics = {
+			ruling_party = liberal
+			elections_allowed = yes
+		}
+		
+	}
+	option = { #
+		name = japan.2.c
+		add_popularity = {
+			ideology = socialist
+			popularity = 0.15
+		}
+		set_politics = {
+			ruling_party = socialist
+			elections_allowed = yes
+		}
+		
+	}
+	option = {
+		name = japan.2.d
+		add_popularity = {
+			ideology = conservative
+			popularity = 0.05
+		}
+	}
+}
+#May 15th Incident
+country_event = {
+	id = japan.3
+	title = japan.3.t
+	desc = japan.3.desc
+	#picture = GFX_report_event_chinese_soldiers_01
+
+	trigger = {
+		date > 1936.5.14
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		name = japan.1.a
+	}
+}
