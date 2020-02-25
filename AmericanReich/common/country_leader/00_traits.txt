@@ -3540,7 +3540,7 @@ leader_traits = {
 	appeaser = {
 		random = no
 		war_support_factor = -0.05
-		political_power_factor = 0.15
+		political_power_factor = 0.2
 
 		ai_will_do = {
 			factor = 1
@@ -3580,6 +3580,64 @@ leader_traits = {
 		random = yes
 		production_speed_buildings_factor = 0.1
 		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	internal_comprimiser = {
+		random = no
+		political_power_factor = 0.05
+		industrial_capacity_factory = 0.05
+		line_change_production_efficiency_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	liberal_socialist = {
+		random = no
+		political_power_factor = 0.05
+		industrial_capacity_factory = 0.05
+		production_factory_efficiency_gain_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	radical_militarist = {
+		random = no
+		political_power_factor = 0.05
+		industrial_capacity_factory = 0.05
+		war_support_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	classical_conservative = {
+		random = no
+		political_power_factor = 0.05
+		production_speed_buildings_factor = 0.05
+		stability_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	military_statist = {
+		random = no
+		political_power_cost = 0.1
+		production_speed_arms_factory_factor = 0.1
+		production_speed_dockyard_factor = 0.1
+		local_resources_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	democratic_socialist = {
+		random = no
+		political_power_factor = 0.1
+		production_factory_efficiency_gain_factor = 0.05
 		ai_will_do = {
 			factor = 1
 		}

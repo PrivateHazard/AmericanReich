@@ -7,20 +7,33 @@ set_technology = {
 	gw_artillery = 1
 	
 }
-
-set_convoys = 5
+give_military_access = JAP
+set_convoys = 50
 
 set_politics = {
-	
-	ruling_party = autocratic
+	ruling_party = authoritarian
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
 }
-
-
-
-
-
-
-
+set_popularities = {
+	authoritarian = 42
+	conservative = 18
+	syndicalist = 10
+	libertarian = 5
+	liberal = 3
+	populist = 2
+	socialist = 5
+	totalist = 5
+	anarchist = 10
+}
+create_country_leader = {
+	name = "Zhang Zuolin"
+	desc = ""
+	picture = "Portrait_Asia_Generic_land_2"
+	expire = "1953.3.1"
+	ideology = authoritarianism
+	traits = {
+		
+	}
+}

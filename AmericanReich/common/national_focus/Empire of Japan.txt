@@ -23,6 +23,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_stability = 0.1
+		}
 	}
 
 	#Focus for Protectors of Asia
@@ -31,12 +34,15 @@ focus_tree = {
 		icon = GFX_goal_generic_defence
 		x = 77
 		y = 11
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_alliedrecruitment }
 		mutually_exclusive = { focus = JAP_claimthemandate }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 120
 		}
 	}
 
@@ -80,6 +86,32 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_resource = {
+				type = steel
+				amount = 24
+				state = 533
+			}
+			533 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			add_resource = {
+				type = aluminium
+				amount = 24
+				state = 531
+			}
+			531 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			add_resource = {
+				type = steel
+				amount = 24
+				state = 535
+			}
+			535 = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
 	}
 
 	#Focus for Zaibatsu Research
@@ -102,12 +134,18 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = JAP_zaibatsu_cooperation1
+				add_idea = JAP_zaibatsu_cooperation2
+			}
+		}
 	}
 
 	#Focus for Zaibatsu Construction
 	focus = {
 		id = JAP_zaibatsuconstruction
-		icon = GFX_goal_generic_construction2
+		icon = GFX_goal_generic_construction
 		x = 9
 		y = 15
 		cost = 10
@@ -115,6 +153,24 @@ focus_tree = {
 		prerequisite = { focus = JAP_bureaucratization }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			528 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			530 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -145,6 +201,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			has_country_flag = JAP_the_coup_succeeded
+		}
 	}
 
 	#Focus for Bureaucratization
@@ -165,6 +224,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_political_power = -100
+			swap_ideas = {
+				remove_idea = JAP_zaibatsu
+				add_idea = JAP_zaibatsu_cooperation
+			}
+		}
 	}
 
 	#Focus for Reform the Economy
@@ -178,6 +244,13 @@ focus_tree = {
 		prerequisite = { focus = JAP_nipponrd }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = industry
+			}
 		}
 	}
 
@@ -193,6 +266,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = excavation_tech
+			}
+		}
 	}
 
 	#Focus for Electronic Investments
@@ -206,6 +286,13 @@ focus_tree = {
 		prerequisite = { focus = JAP_nipponrd }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = electronics
+			}
 		}
 	}
 
@@ -313,12 +400,18 @@ focus_tree = {
 		icon = GFX_focus_man_claim_the_mandate_of_heaven
 		x = 81
 		y = 11
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_alliedrecruitment }
 		mutually_exclusive = { focus = JAP_protectorsofasia }
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = unfinished_tooltip
 		}
 	}
 
@@ -348,6 +441,33 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			525 = {
+				is_fully_controlled_by = JAP
+			}
+			527 = {
+				is_fully_controlled_by = JAP
+			}
+		}
+		completion_reward = {
+			add_political_power = 25
+			527 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			525 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
 
 	#Focus for Chinese Investment
@@ -362,6 +482,15 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_political_power = 50
+			MAN = {
+				add_offsite_building = { 
+					type = arms_factory 
+					level = 3
+				}
+			}
+		}
 	}
 
 	#Focus for Project China
@@ -370,11 +499,15 @@ focus_tree = {
 		icon = GFX_focus_chi_one_china_policy
 		x = 81
 		y = 7
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_endthewarlords }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 50
+			unlock_decision_category_tooltip = JAP_project_china
 		}
 	}
 
@@ -384,7 +517,7 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		x = 77
 		y = 4
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = JAP_balancedapproach 
@@ -394,6 +527,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = unfinished_tooltip
+		}
 	}
 
 	#Focus for Arm the Fengtian
@@ -402,7 +541,7 @@ focus_tree = {
 		icon = GFX_focus_jap_manchurian_project
 		x = 81
 		y = 4
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = JAP_hokushinron 
@@ -410,6 +549,13 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			MAN = {
+				country_event = {
+					id = japan.9
+				}
+			}
 		}
 	}
 
@@ -419,7 +565,7 @@ focus_tree = {
 		icon = GFX_goal_generic_army_doctrines
 		x = 86
 		y = 3
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_expandtheempire }
 		mutually_exclusive = { 
@@ -431,6 +577,15 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			always = no
+			NOT = {
+				is_subject = yes
+			}
+		}
+		completion_reward = {
+			add_ideas = JAP_hokushinron
+		}
 	}
 
 	#Focus for The Chinese Gamble
@@ -439,11 +594,18 @@ focus_tree = {
 		icon = GFX_focus_jap_cast_the_die
 		x = 81
 		y = 8
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_projectchina }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 50
+			MAN = {
+				add_stability = 0.1
+				add_political_power = 100
+			}
 		}
 	}
 
@@ -453,11 +615,28 @@ focus_tree = {
 		icon = GFX_focus_eng_move_to_secure_the_dominions
 		x = 77
 		y = 8
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_projectkorea }
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			525 = {
+				is_fully_controlled_by = JAP
+			}
+			527 = {
+				is_fully_controlled_by = JAP
+			}
+		}
+		completion_reward = {
+			add_political_power = 25
+			527 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			525 = {
+				add_extra_state_shared_building_slots = 2
+			}
 		}
 	}
 
@@ -467,7 +646,7 @@ focus_tree = {
 		icon = GFX_goal_generic_territory_or_war
 		x = 79
 		y = 6
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = JAP_theyellowbloodspilt 
@@ -475,6 +654,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			unlock_decision_tooltip = JAP_war_with_ma
+			unlock_decision_tooltip = JAP_war_with_yunnan
 		}
 	}
 
@@ -484,7 +667,7 @@ focus_tree = {
 		icon = GFX_goal_generic_neutrality_focus
 		x = 79
 		y = 3
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_expandtheempire }
 		mutually_exclusive = { 
@@ -495,6 +678,14 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			NOT = {
+				is_subject = yes
+			}
+		}
+		completion_reward = {
+			add_ideas = JAP_balanced_approach
 		}
 	}
 
@@ -586,10 +777,12 @@ focus_tree = {
 			factor = 1
 		}
 		available = {
-			
+			has_country_flag = JAP_rise_of_the_masses
 		}
 		completion_reward = {
-			
+			country_event = {
+				id = japan.5
+			}
 		}
 	}
 
@@ -682,6 +875,14 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			custom_effect_tooltip = JAP_the_zero_tt
+			hidden_effect = { 
+				set_technology = { 
+					cv_fighter2 = 1 
+				} 
+			}
+		}
 	}
 
 	#Focus for Freedom in Economics
@@ -704,6 +905,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			has_government = libertarian
 		}
 	}
 
@@ -731,6 +935,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			has_government = liberal
+		}
 	}
 
 	#Focus for Maintain the Status Quo
@@ -739,7 +946,7 @@ focus_tree = {
 		icon = GFX_goal_generic_defence
 		x = 6
 		y = 4
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_revisetheconstitution }
 		mutually_exclusive = { 
@@ -754,6 +961,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			has_government = conservative
+		}
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.05
+		}
 	}
 
 	#Focus for Defense of Democracy
@@ -762,12 +976,20 @@ focus_tree = {
 		icon = GFX_goal_support_democracy
 		x = 3
 		y = 2
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_riseofthemasses }
 		mutually_exclusive = { focus = JAP_theendofdemocracy }
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			has_country_flag = JAP_the_bill_passed
+		}
+		completion_reward = {
+			country_event = {
+				id = japan.7
+			}
 		}
 	}
 
@@ -777,12 +999,20 @@ focus_tree = {
 		icon = GFX_focus_generic_strike_at_democracy2
 		x = 25
 		y = 2
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_riseofthemasses }
 		mutually_exclusive = { focus = JAP_defenseofdemocracy }
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			has_country_flag = JAP_the_bill_failed
+		}
+		completion_reward = {
+			country_event = {
+				id = japan.6
+			}
 		}
 	}
 
@@ -810,6 +1040,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			has_government = socialist
+		}
 	}
 
 	#Focus for The Military Coup
@@ -825,6 +1058,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			has_country_flag = JAP_the_coup_failed
+		}
 	}
 
 	#Focus for Investigate the Military
@@ -833,7 +1069,7 @@ focus_tree = {
 		icon = GFX_goal_generic_axis_build_infantry
 		x = 12
 		y = 4
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = JAP_revisetheconstitution 
@@ -841,6 +1077,13 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_timed_idea = {
+				idea = JAP_military_investigations
+				days = 360
+			}
 		}
 	}
 
@@ -864,12 +1107,24 @@ focus_tree = {
 		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
 		x = 11
 		y = 5
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_investigatethemilitary }
 		mutually_exclusive = { focus = JAP_anewsamurai }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = 100
+			remove_unit_leader = 100
+			remove_unit_leader = 101
+			remove_unit_leader = 102
+			remove_unit_leader = 103
+			remove_unit_leader = 104
+			remove_unit_leader = 105
+			remove_unit_leader = 106
+			remove_unit_leader = 107
 		}
 	}
 
@@ -879,12 +1134,22 @@ focus_tree = {
 		icon = GFX_focus_generic_japanese_imperial_glory
 		x = 13
 		y = 5
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_investigatethemilitary }
 		mutually_exclusive = { focus = JAP_purgethesamurai }
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = JAP_thepeoplesrepublic
+			}
+		}
+		completion_reward = {
+			every_unit_leader = {
+				add_attack = 1
+			}
 		}
 	}
 
@@ -900,6 +1165,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas = JAP_popular_support
+		}
 	}
 
 	#Focus for Strike Controls
@@ -908,11 +1176,14 @@ focus_tree = {
 		icon = GFX_goal_generic_attack_allies
 		x = 6
 		y = 7
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_reinvigoratetherailroads }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_ideas = JAP_strike_controls
 		}
 	}
 
@@ -1027,7 +1298,7 @@ focus_tree = {
 		icon = GFX_goal_support_democracy
 		x = 3
 		y = 9
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = JAP_strikecontrols 
@@ -1037,6 +1308,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 120
 		}
 	}
 
@@ -1074,7 +1348,7 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		x = 12
 		y = 6
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = JAP_anewsamurai 
@@ -1082,6 +1356,21 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 50
+			add_popularity = {
+				ideology = populist
+				popularity = -0.05
+			}
+			add_popularity = {
+				ideology = nationalist
+				popularity = -0.05
+			}
+			add_popularity = {
+				ideology = autocratic
+				popularity = -0.05
+			}
 		}
 	}
 
@@ -1091,11 +1380,15 @@ focus_tree = {
 		icon = GFX_focus_hol_the_foundations_of_defense
 		x = 6
 		y = 5
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_maintainthestatusquo }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.05
 		}
 	}
 
@@ -1105,11 +1398,14 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_infrastructure
 		x = 6
 		y = 6
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
-		prerequisite = { focus = JAP_maintainthestatusquo }
+		prerequisite = { focus = JAP_maintaintheconstitution }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_ideas = JAP_reinvigerate_the_railroads
 		}
 	}
 
@@ -1277,11 +1573,25 @@ focus_tree = {
 		icon = GFX_goal_generic_occupy_states_coastal
 		x = 13
 		y = 7
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_purgeconvictedofficers }
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			NOT = {
+				has_country_flag = JAP_military_cooldown
+			}
+		}
+		completion_reward = {
+			navy_experience = 25
+			custom_effect_tooltip = JAP_securethemilitary_tooltip
+			set_country_flag = {
+				flag = JAP_military_cooldown 
+				value = 1 
+				days = 140
+			}
 		}
 	}
 
@@ -1291,11 +1601,25 @@ focus_tree = {
 		icon = GFX_goal_generic_air_fighter2
 		x = 12
 		y = 8
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_purgeconvictedofficers }
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			NOT = {
+				has_country_flag = JAP_military_cooldown
+			}
+		}
+		completion_reward = {
+			air_experience = 25
+			custom_effect_tooltip = JAP_securethemilitary_tooltip
+			set_country_flag = {
+				flag = JAP_military_cooldown 
+				value = 1 
+				days = 140
+			}
 		}
 	}
 
@@ -1305,11 +1629,25 @@ focus_tree = {
 		icon = GFX_goal_generic_allies_build_infantry
 		x = 11
 		y = 7
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_purgeconvictedofficers }
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			NOT = {
+				has_country_flag = JAP_military_cooldown
+			}
+		}
+		completion_reward = {
+			army_experience = 25
+			custom_effect_tooltip = JAP_securethemilitary_tooltip
+			set_country_flag = {
+				flag = JAP_military_cooldown 
+				value = 1 
+				days = 140
+			}
 		}
 	}
 
@@ -1473,6 +1811,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			remove_ideas = JAP_poor_land_reform
+		}
 	}
 
 	#Focus for Secure the Military
@@ -1481,7 +1822,7 @@ focus_tree = {
 		icon = GFX_goal_generic_alliance
 		x = 12
 		y = 9
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = JAP_securethenavy 
@@ -1494,6 +1835,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			remove_ideas = JAP_disorganized_military
 		}
 	}
 
@@ -1573,6 +1917,26 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_political_power = -100
+			add_stability = 0.05
+			529 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			534 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 
 	#Focus for Purge the Liberals
@@ -1609,6 +1973,13 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = JAP_maintainthestatusquo
+				has_completed_focus = JAP_freedomineconomics
+				has_completed_focus = JAP_constitutionalaristocracy
+			}
 		}
 	}
 
@@ -1748,6 +2119,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_research_slot = 1
+		}
 	}
 
 	#Focus for Liberalization
@@ -1768,6 +2142,17 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			NOT = {
+				has_completed_focus = JAP_dictatorshipoftheproletariat
+				has_completed_focus = JAP_tradeunionrepublic
+				has_completed_focus = JAP_nationalizetheunions
+				has_completed_focus = JAP_modernshogunate
+			}
+		}
+		completion_reward = {
+			add_stability = 0.1
+		}
 	}
 
 	#Focus for Encourage Entrepreneurship
@@ -1782,6 +2167,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas = JAP_encourage_entrepenuership
+		}
 	}
 
 	#Focus for Free the Market
@@ -1795,6 +2183,13 @@ focus_tree = {
 		prerequisite = { focus = JAP_liberalization }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_ideas = free_trade
+			add_offsite_building = { 
+				type = arms_factory 
+				level = 2
+			}
 		}
 	}
 
@@ -1818,6 +2213,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_political_power = -50
+			remove_ideas = JAP_zaibatsu
+		}
 	}
 
 	#Focus for Zaibatsu Production Plants
@@ -1832,6 +2231,28 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = JAP_zaibatsu_cooperation
+				add_idea = JAP_zaibatsu_cooperation1
+			}
+			532 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			529 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 
 	#Focus for Ariel Control
@@ -1843,9 +2264,16 @@ focus_tree = {
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_airfocus }
-		mutually_exclusive = { focus = JAP_gtmorCXH }
+		mutually_exclusive = { focus = JAP_groundsupport }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cat_strategic_destruction
+			}
 		}
 	}
 
@@ -1862,6 +2290,14 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cat_battlefield_support
+				category = cat_operational_integrity
+			}
+		}
 	}
 
 	#Focus for Fighter Focus
@@ -1870,7 +2306,7 @@ focus_tree = {
 		icon = GFX_goal_generic_air_fighter2
 		x = 51
 		y = 4
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = JAP_groundsupport 
@@ -1878,6 +2314,14 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = light_fighter
+				category = cat_heavy_fighter
+			}
 		}
 	}
 
@@ -1887,11 +2331,18 @@ focus_tree = {
 		icon = GFX_goal_generic_CAS
 		x = 49
 		y = 4
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_groundsupport }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cas_bomber
+			}
 		}
 	}
 
@@ -1901,11 +2352,25 @@ focus_tree = {
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		x = 41
 		y = 2
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_militaryinvestments }
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			OR = {
+				has_completed_focus = JAP_showarestoration
+				has_completed_focus = JAP_securethenavy
+			}
+		}
+		completion_reward = {
+			navy_experience = 10
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = naval_doctrine
+			}
 		}
 	}
 
@@ -1915,11 +2380,25 @@ focus_tree = {
 		icon = GFX_goal_generic_army_doctrines
 		x = 61
 		y = 2
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_militaryinvestments }
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			OR = {
+				has_completed_focus = JAP_showarestoration
+				has_completed_focus = JAP_securethearmy
+			}
+		}
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = land_doctrine
+			}
 		}
 	}
 
@@ -1929,11 +2408,25 @@ focus_tree = {
 		icon = GFX_goal_generic_air_doctrine
 		x = 51
 		y = 2
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_militaryinvestments }
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			OR = {
+				has_completed_focus = JAP_showarestoration
+				has_completed_focus = JAP_securetheairforce
+			}
+		}
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = air_doctrine
+			}
 		}
 	}
 
@@ -1954,6 +2447,28 @@ focus_tree = {
 				has_completed_focus = JAP_investigatethemilitary
 			}
 		}
+		completion_reward = {
+			army_experience = 10
+			air_experience = 10
+			navy_experience = 10
+			unlock_decision_category_tooltip = JAP_interservice_rivalry
+			533 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			536 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 
 	#Focus for Colonial Investments
@@ -1972,6 +2487,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = unfinished_tooltip
+		}
 	}
 
 	#Focus for Bomber Focus
@@ -1980,11 +2501,19 @@ focus_tree = {
 		icon = GFX_goal_generic_air_bomber
 		x = 53
 		y = 4
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_arielcontrol }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cat_heavy_fighter
+				category = tactical_bomber
+			}
 		}
 	}
 
@@ -2008,6 +2537,64 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cat_mobile_warfare
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_army_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
 		}
 	}
 
@@ -2038,6 +2625,64 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cat_grand_battle_plan
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_army_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+		}
 	}
 
 	#Focus for Mind Over Matter
@@ -2052,6 +2697,60 @@ focus_tree = {
 		mutually_exclusive = { focus = JAP_matterovermind }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_ideas = JAP_mind_over_matter
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_army_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
 		}
 	}
 
@@ -2068,6 +2767,60 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas = JAP_matter_over_mind
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_army_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+		}
 	}
 
 	#Focus for Motorized Force
@@ -2081,6 +2834,60 @@ focus_tree = {
 		prerequisite = { focus = JAP_armoredbanzaicharge }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_ideas = JAP_motorized_force
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_army_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
 		}
 	}
 
@@ -2096,6 +2903,64 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = armor
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_army_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+		}
 	}
 
 	#Focus for Mechanized Effort
@@ -2109,6 +2974,64 @@ focus_tree = {
 		prerequisite = { focus = JAP_armorfocus }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cat_mechanized_equipment
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_army_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
 		}
 	}
 
@@ -2124,6 +3047,64 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = support_tech
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_army_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+		}
 	}
 
 	#Focus for Fleet in Being
@@ -2136,13 +3117,62 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_navalfocus }
 		mutually_exclusive = { 
-			focus = JAP_vUILdeVG 
+			focus = JAP_tradeinterdiction
 		}
 		mutually_exclusive = { 
-			focus = JAP_mazsUWLc 
+			focus = JAP_basestrike
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cat_fleet_in_being
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_navy_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_dominant_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
 		}
 	}
 
@@ -2158,6 +3188,64 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = infantry_weapons
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_army_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+		}
 	}
 
 	#Focus for Artillery Focus
@@ -2172,6 +3260,64 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = artillery
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_army_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+		}
 	}
 
 	#Focus for Shokkumarīnzu
@@ -2180,7 +3326,7 @@ focus_tree = {
 		icon = GFX_goal_generic_amphibious_assault
 		x = 41
 		y = 5
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = JAP_carrierdevelopment 
@@ -2190,6 +3336,55 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = marine_tech
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_navy_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_dominant_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
+		}
 	}
 
 	#Focus for Naval Bomber Focus
@@ -2198,7 +3393,7 @@ focus_tree = {
 		icon = GFX_focus_usa_escort_fighters
 		x = 50
 		y = 5
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = JAP_fighterfocus 
@@ -2207,6 +3402,13 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = naval_bomber
+			}
 		}
 	}
 
@@ -2234,6 +3436,64 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cat_superior_firepower
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_army_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+		}
 	}
 
 	#Focus for The Tides
@@ -2260,6 +3520,64 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cat_mass_assault
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_army_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+		}
 	}
 
 	#Focus for Cryptographic Focus
@@ -2273,6 +3591,65 @@ focus_tree = {
 		prerequisite = { focus = JAP_supporteffort }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = encryption_tech
+				category = decryption_tech
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_army_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
 		}
 	}
 
@@ -2288,6 +3665,166 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas = JAP_entrench_the_front
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_army_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+		}
+	}
+	#An Army Reborn
+	focus = {
+		id = JAP_anarmyreborn
+		icon = GFX_focus_jap_spiritual_mobilization
+		x = 61
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = JAP_organizedattacks
+			focus = JAP_busttheshores
+			focus = JAP_mechanizedeffort
+			focus = JAP_entrenchthefront
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			army_experience = 25
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					arms_factory > 0
+					free_building_slots = {
+						building = arms_factory
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					arms_factory > 0
+					free_building_slots = {
+						building = arms_factory
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_army_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+		}
 	}
 
 	#Focus for Cruiser Development
@@ -2296,7 +3833,7 @@ focus_tree = {
 		icon = GFX_focus_generic_cruiser2
 		x = 43
 		y = 5
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = JAP_submarinedevelopment 
@@ -2305,6 +3842,55 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cl_tech
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_navy_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_dominant_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
 		}
 	}
 
@@ -2320,6 +3906,60 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas = JAP_organized_attacks
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_army_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+		}
 	}
 
 	#Focus for Mass Morale
@@ -2333,6 +3973,60 @@ focus_tree = {
 		prerequisite = { focus = JAP_thetides }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_ideas = JAP_mass_morale
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_army_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
 		}
 	}
 
@@ -2348,11 +4042,65 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas = JAP_extension_of_the_self
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_army_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+		}
 	}
 
-	#Focus for Bust the Swores
+	#Focus for Bust the Shores
 	focus = {
-		id = JAP_busttheswores
+		id = JAP_busttheshores
 		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
 		x = 64
 		y = 7
@@ -2362,6 +4110,60 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_ideas = JAP_the_tides_of_war
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_army_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_dominant_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+		}
 	}
 
 	#Focus for Destroyer Development
@@ -2370,7 +4172,7 @@ focus_tree = {
 		icon = GFX_focus_generic_destroyer
 		x = 39
 		y = 5
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = JAP_carrierdevelopment 
@@ -2380,6 +4182,55 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = dd_tech
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_navy_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_dominant_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
+		}
 	}
 
 	#Focus for Paratroopers
@@ -2388,7 +4239,7 @@ focus_tree = {
 		icon = GFX_focus_generic_paratrooper
 		x = 52
 		y = 5
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = JAP_fighterfocus 
@@ -2398,6 +4249,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = para_tech
+			}
+		}
 	}
 
 	#Focus for Carrier Development
@@ -2406,11 +4264,60 @@ focus_tree = {
 		icon = GFX_goal_generic_navy_carrier
 		x = 43
 		y = 4
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_basestrike }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cv_tech
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_navy_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_dominant_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
 		}
 	}
 
@@ -2420,11 +4327,60 @@ focus_tree = {
 		icon = GFX_focus_generic_navy_battleship2
 		x = 39
 		y = 4
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_fleetinbeing }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = bb_tech
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_navy_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_dominant_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
 		}
 	}
 
@@ -2441,10 +4397,59 @@ focus_tree = {
 			focus = JAP_fleetinbeing 
 		}
 		mutually_exclusive = { 
-			focus = JAP_mazsUWLc 
+			focus = JAP_basestrike 
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cat_trade_interdiction
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_navy_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_dominant_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
 		}
 	}
 
@@ -2459,11 +4464,61 @@ focus_tree = {
 		prerequisite = { focus = JAP_navalfocus }
 		mutually_exclusive = { 
 			focus = JAP_fleetinbeing 
+		}
+		mutually_exclusive = { 
 			focus = JAP_tradeinterdiction 
-			focus = JAP_ 
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cat_base_strike
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_navy_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_dominant_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
 		}
 	}
 
@@ -2473,11 +4528,60 @@ focus_tree = {
 		icon = GFX_goal_generic_navy_submarine
 		x = 41
 		y = 4
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_tradeinterdiction }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = ss_tech
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_navy_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_dominant_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
 		}
 	}
 
@@ -2491,11 +4595,94 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = JAP_shokkumarnzu 
+		}
+		prerequisite = { 
 			focus = JAP_destroyerdevelopment 
+		}
+		prerequisite = { 
 			focus = JAP_cruiserdevelopment 
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			navy_experience = 25
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					dockyard > 0
+					free_building_slots = {
+						building = dockyard
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					dockyard > 0
+					free_building_slots = {
+						building = dockyard
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_dominant_military
+				}
+				add_political_power = -50
+			}
+			if = {
+				limit = {
+					has_idea = JAP_navy_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_navy_tilted_military
+					add_idea = JAP_navy_dominant_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_balanced_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_balanced_military
+					add_idea = JAP_navy_tilted_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_tilted_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_tilted_military
+					add_idea = JAP_balanced_military
+				}
+			}
+			if = {
+				limit = {
+					has_idea = JAP_army_dominant_military
+				}
+				swap_ideas = {
+					remove_idea = JAP_army_dominant_military
+					add_idea = JAP_army_tilted_military
+				}
+			}
 		}
 	}
 
@@ -2505,13 +4692,22 @@ focus_tree = {
 		icon = GFX_focus_jap_pacific_guardian
 		x = 79
 		y = 1
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
 		}
 		available = {
+			NOT = {
+				is_subject = yes
+			}
 			date > 1937.6.1
+		}
+		completion_reward = {
+			add_war_support = 0.05
+			country_event = {
+				id = japan.8
+			}
 		}
 	}
 
@@ -2527,6 +4723,16 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			NOT = {
+				is_subject = yes
+			}
+		}
+		completion_reward = {
+			add_threat = 5
+			add_ideas = JAP_the_rising_sun
+			create_faction = JAP_asian_sphere
+		}
 	}
 
 	#Focus for Nanshinron
@@ -2535,7 +4741,7 @@ focus_tree = {
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		x = 72
 		y = 3
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_expandtheempire }
 		mutually_exclusive = { 
@@ -2546,6 +4752,15 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			always = no
+			NOT = {
+				is_subject = yes
+			}
+		}
+		completion_reward = {
+			add_ideas = JAP_nanshinron
 		}
 	}
 
@@ -2570,12 +4785,26 @@ focus_tree = {
 		icon = GFX_goal_generic_major_war
 		x = 81
 		y = 5
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_armthefengtian }
 		mutually_exclusive = { focus = JAP_bloodontheyangtze }
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			NOT = {
+				is_subject = yes
+			}
+			is_in_faction = yes
+		}
+		completion_reward = {
+			MAN = {
+				country_event = {
+					id = japan.11
+				}
+			}
+			unlock_decision_tooltip = JAP_war_with_qing
 		}
 	}
 
@@ -2585,11 +4814,23 @@ focus_tree = {
 		icon = GFX_goal_generic_construction2
 		x = 77
 		y = 7
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_endthewarlords }
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			525 = {
+				is_fully_controlled_by = JAP
+			}
+			527 = {
+				is_fully_controlled_by = JAP
+			}
+		}
+		completion_reward = {
+			add_political_power = 50
+			unlock_decision_category_tooltip = JAP_project_korea
 		}
 	}
 
@@ -2609,6 +4850,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_ideas = JAP_allied_recruitment
 		}
 	}
 
@@ -2712,6 +4956,4 @@ focus_tree = {
 			factor = 1
 		}
 	}
-
-#End of focuses 
  }
