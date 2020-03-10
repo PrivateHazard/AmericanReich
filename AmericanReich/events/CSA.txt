@@ -200,7 +200,7 @@ country_event = {
 		}
 		CSA = { transfer_state = 369 }
 		CSA = { transfer_state = 377 }
-		CSA = { transfer_state = 789 }
+		CSA = { transfer_state = 817 }
 	}
 }
 country_event = {

@@ -2229,35 +2229,40 @@ ai_will_do = {
 	}
  } 
 
-#Focus for Ultimatum to Oklahoma
-focus = { 
-id = CSA_ultimatumtooklahoma
-icon = GFX_goal_unknown
-x = 38
-y = 16
-cost = 8
-available_if_capitulated = yes 
-prerequisite = { focus = CSA_demandareferendum } 
-mutually_exclusive = { focus = CSA_ultimatumtocuba } 
-ai_will_do = { 
- factor = 1
- } 
-	available = {
-		has_army_manpower = { size > 549999 }
-		date > 1939.07.15
-	}
-	bypass = {
-		USA = { is_puppet = yes }
-	}
-	completion_reward = {
-		set_global_flag = CSA_Oklahoma
-		add_threat = 10
-		USA = {
-			country_event = { id = csa.10 }
-			custom_effect_tooltip = may_provoke_hostility
+	#Focus for Ultimatum to Oklahoma
+	focus = { 
+		id = CSA_ultimatumtooklahoma
+		icon = GFX_goal_unknown
+		x = 38
+		y = 16
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = CSA_demandareferendum } 
+		mutually_exclusive = { focus = CSA_ultimatumtocuba } 
+		ai_will_do = { 
+			factor = 2
+			modifier = {
+				factor = 400
+				date > 1940.1.1
+			}
+		} 
+		available = {
+			has_army_manpower = { size > 549999 }
+			date > 1939.07.15
 		}
-	}
- } 
+		bypass = {
+			has_war_with = USA
+			USA = { is_puppet = yes }
+		}
+		completion_reward = {
+			set_global_flag = CSA_Oklahoma
+			add_threat = 10
+			USA = {
+				country_event = { id = csa.10 }
+				custom_effect_tooltip = may_provoke_hostility
+			}
+		}
+	}	 
 
 #Focus for Women's Rights
 focus = { 

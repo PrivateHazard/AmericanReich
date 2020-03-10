@@ -19,6 +19,10 @@ focus_tree = {
 		prerequisite = { focus = SOV_superiorfirepower }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				has_war = yes
+			}
 		}
 		completion_reward = {
 			add_ideas = SOV_officers_initiative
@@ -36,6 +40,10 @@ focus_tree = {
 		prerequisite = { focus = SOV_mobilewarfare }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				has_war = yes
+			}
 		}
 		completion_reward = {
 			add_tech_bonus = {
@@ -57,6 +65,10 @@ focus_tree = {
 		prerequisite = { focus = SOV_mobilewarfare }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				has_war = yes
+			}
 		}
 		completion_reward = {
 			add_ideas = SOV_armored_pilot_training
@@ -74,6 +86,10 @@ focus_tree = {
 		prerequisite = { focus = SOV_superiorfirepower }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				has_war = yes
+			}
 		}
 		completion_reward = {
 			add_tech_bonus = {
@@ -95,6 +111,10 @@ focus_tree = {
 		prerequisite = { focus = SOV_grandbattleplan }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				has_war = yes
+			}
 		}
 		completion_reward = {
 			add_tech_bonus = {
@@ -116,6 +136,10 @@ focus_tree = {
 		prerequisite = { focus = SOV_grandbattleplan }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				has_war = yes
+			}
 		}
 		completion_reward = {
 			add_ideas = SOV_anti_tank_brigades
@@ -133,6 +157,10 @@ focus_tree = {
 		prerequisite = { focus = SOV_grandbattleplan }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				has_war = yes
+			}
 		}
 		completion_reward = {
 			add_ideas = SOV_national_planning_school
@@ -150,6 +178,10 @@ focus_tree = {
 		prerequisite = { focus = SOV_massassault }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				has_war = yes
+			}
 		}
 		completion_reward = {
 			add_ideas = SOV_mobilize_the_masses
@@ -167,6 +199,10 @@ focus_tree = {
 		prerequisite = { focus = SOV_massassault }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				has_war = yes
+			}
 		}
 		completion_reward = {
 			add_ideas = SOV_standarized_weapons
@@ -184,6 +220,10 @@ focus_tree = {
 		prerequisite = { focus = SOV_massassault }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				has_war = yes
+			}
 		}
 		completion_reward = {
 			add_ideas = SOV_standarized_supply
@@ -215,6 +255,14 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				has_war = yes
+			}
+			modifier = {
+				add = 1
+				has_completed_focus = SOV_massassault
+			}
 		}
 		completion_reward = {
 			add_tech_bonus = {
@@ -252,6 +300,14 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				has_war = yes
+			}
+			modifier = {
+				add = 1
+				has_completed_focus = SOV_superiorfirepower
+			}
 		}
 		completion_reward = {
 			add_ideas = SOV_national_formation_school
@@ -283,6 +339,14 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				has_war = yes
+			}
+			modifier = {
+				add = 1
+				has_completed_focus = SOV_grandbattleplan
+			}
 		}
 		completion_reward = {
 			add_ideas = SOV_dominant_defence
@@ -314,6 +378,14 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				has_war = yes
+			}
+			modifier = {
+				add = 1
+				has_completed_focus = SOV_massassault
+			}
 		}
 		completion_reward = {
 			add_ideas = SOV_barracks_of_the_people
@@ -330,7 +402,11 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_reintroduceohranka }
 		ai_will_do = {
-			factor = 1
+			factor = 2
+			modifier = {
+				add = 1
+				has_war = yes
+			}
 		}
 		completion_reward = {
 			custom_effect_tooltip = SOV_reintroduceohranka_tooltip
@@ -366,6 +442,10 @@ focus_tree = {
 		prerequisite = { focus = SOV_reintroduceohranka }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 2
+				date > 1938.1.1
+			}
 		}
 		completion_reward = {
 			add_tech_bonus = {
@@ -386,7 +466,11 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_reintroduceohranka }
 		ai_will_do = {
-			factor = 1
+			factor = 2
+			modifier = {
+				add = 1
+				has_war = yes
+			}
 		}
 		completion_reward = {
 			custom_effect_tooltip = SOV_reintroduceohranka_tooltip
@@ -423,6 +507,17 @@ focus_tree = {
 		mutually_exclusive = { focus = SOV_controltheground }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				has_war = yes
+			}
+			modifier = {
+				add = 2
+				OR = {
+					has_tech = air_superiority
+					has_tech = force_rotation
+				}
+			}
 		}
 		completion_reward = {
 			add_tech_bonus = {
@@ -446,6 +541,17 @@ focus_tree = {
 		mutually_exclusive = { focus = SOV_controltheair }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				has_war = yes
+			}
+			modifier = {
+				add = 2
+				OR = {
+					has_tech = formation_flying
+					has_tech = force_rotation
+				}
+			}
 		}
 		completion_reward = {
 			add_tech_bonus = {
@@ -471,6 +577,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				has_war = yes
+			}
 		}
 		completion_reward = {
 			air_experience = 50
@@ -488,6 +598,10 @@ focus_tree = {
 		prerequisite = { focus = SOV_pilottraining }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				has_war = yes
+			}
 		}
 		completion_reward = {
 			add_tech_bonus = {
@@ -509,6 +623,10 @@ focus_tree = {
 		prerequisite = { focus = SOV_pilottraining }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				has_war = yes
+			}
 		}
 		completion_reward = {
 			add_tech_bonus = {
@@ -698,8 +816,30 @@ focus_tree = {
 		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_fareasterndirection }
+		will_lead_to_war_with = TAM
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				date > 1939.3.1
+			}
+			modifier = {
+				add = 1
+				NOT = {
+					OR = {
+						has_idea = SOV_black_friday
+						has_idea = SOV_black_friday1
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				OR = {
+					TRM = {
+						has_war = yes
+					}
+				}
+			}
 		}
 		completion_reward = {
 			create_wargoal = {
@@ -718,8 +858,38 @@ focus_tree = {
 		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_theeuropeandirection }
+		will_lead_to_war_with = BLR
+		will_lead_to_war_with = BAL
+		will_lead_to_war_with = UKR
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				date > 1939.8.1
+			}
+			modifier = {
+				add = 1
+				NOT = {
+					OR = {
+						has_idea = SOV_black_friday
+						has_idea = SOV_black_friday1
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				OR = {
+					BLR = {
+						has_war = yes
+					}
+					UKR = {
+						has_war = yes
+					}
+					BAL = {
+						has_war = yes
+					}
+				}
+			}
 		}
 		completion_reward = {
 			create_wargoal = {
@@ -746,8 +916,30 @@ focus_tree = {
 		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_returnourlands }
+		will_lead_to_war_with = GER
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				date > 1940.3.1
+			}
+			modifier = {
+				add = 1
+				NOT = {
+					OR = {
+						has_idea = SOV_black_friday
+						has_idea = SOV_black_friday1
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				OR = {
+					GER = {
+						has_war = yes
+					}
+				}
+			}
 		}
 		completion_reward = {
 			create_wargoal = {
@@ -910,8 +1102,30 @@ focus_tree = {
 		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_fareasterndirection }
+		will_lead_to_war_with = MAN
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				date > 1938.9.1
+			}
+			modifier = {
+				add = 1
+				NOT = {
+					OR = {
+						has_idea = SOV_black_friday
+						has_idea = SOV_black_friday1
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				OR = {
+					MAN = {
+						has_war = yes
+					}
+				}
+			}
 		}
 		completion_reward = {
 			create_wargoal = {
@@ -981,7 +1195,7 @@ focus_tree = {
 		prerequisite = { focus = SOV_deathofthetsar }
 		mutually_exclusive = { focus = SOV_endthetsardom }
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		available = {
 			has_country_flag = SOV_continue_the_monarchy
@@ -1005,7 +1219,7 @@ focus_tree = {
 		prerequisite = { focus = SOV_deathofthetsar }
 		mutually_exclusive = { focus = SOV_preservethetsardom }
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		available = {
 			has_country_flag = SOV_republic
@@ -1088,7 +1302,7 @@ focus_tree = {
 			focus = SOV_sakinovscoup 
 		}
 		ai_will_do = {
-			factor = 2
+			factor = 3
 		}
 		available = {
 			OR = {
@@ -1152,7 +1366,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_villagecommunes }
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		completion_reward = {
 			add_tech_bonus = {
@@ -1213,7 +1427,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_openuptheeconomy }
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		completion_reward = {
 			add_stability = 0.05
@@ -1254,7 +1468,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_privatizethevodkaindustry }
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		completion_reward = {
 			add_ideas = SOV_private_research_companies
@@ -1293,7 +1507,7 @@ focus_tree = {
 			focus = SOV_sakinovscoup 
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 	}
 
@@ -1307,7 +1521,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_aliberalrepublic }
 		ai_will_do = {
-			factor = 1
+			factor = 3
 		}
 		completion_reward = {
 			add_stability = 0.1
@@ -1475,6 +1689,10 @@ focus_tree = {
 		prerequisite = { focus = SOV_theoldways }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 2
+				has_war = yes
+			}
 		}
 	}
 
@@ -1668,7 +1886,7 @@ focus_tree = {
 			focus = SOV_bureaucraticeconomy 
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		available = {
 			OR = {
@@ -1703,7 +1921,7 @@ focus_tree = {
 			focus = SOV_bureaucraticeconomy 
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		available = {
 			OR = {
@@ -1772,6 +1990,19 @@ focus_tree = {
 		prerequisite = { focus = SOV_russianforeignpolicy }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 1
+				NOT = {
+					OR = {
+						has_idea = SOV_black_friday
+						has_idea = SOV_black_friday1
+					}
+				}
+			}
 		}
 		completion_reward = {
 			233 = {
@@ -1944,7 +2175,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_embracecapitalism }
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		completion_reward = {
 			add_ideas = free_trade
@@ -1965,7 +2196,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_villagecommunes }
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		completion_reward = {
 			247 = {
@@ -2046,7 +2277,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_embracecapitalism }
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		completion_reward = {
 			add_stability = 0.05
@@ -2064,7 +2295,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_industrialcommunes }
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		completion_reward = {
 			add_tech_bonus = {
@@ -2091,7 +2322,7 @@ focus_tree = {
 			focus = SOV_productioncommunes 
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		completion_reward = {
 			add_stability = 0.1
@@ -2115,10 +2346,11 @@ focus_tree = {
 			focus = SOV_privateresearchcompanies 
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		completion_reward = {
 			add_ideas = SOV_modern_economy
+			remove_ideas = SOV_black_friday1
 		}
 	}
 
@@ -2153,7 +2385,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_agriculturalcommunes }
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		completion_reward = {
 			add_stability = 0.05
@@ -2176,7 +2408,7 @@ focus_tree = {
 			focus = SOV_wareconomy 
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		completion_reward = {
 			add_research_slot = 1
@@ -2253,6 +2485,19 @@ focus_tree = {
 		prerequisite = { focus = SOV_caucusdirection }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 1
+				NOT = {
+					OR = {
+						has_idea = SOV_black_friday
+						has_idea = SOV_black_friday1
+					}
+				}
+			}
 		}
 		completion_reward = {
 			create_wargoal = {
@@ -2317,7 +2562,15 @@ focus_tree = {
 			focus = SOV_mobilewarfare 
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 2
+			modifier = {
+				add = 1
+				has_war = yes
+			}
+			modifier = {
+				add = 1
+				has_tech = mass_assault
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -2361,7 +2614,15 @@ focus_tree = {
 			focus = SOV_massassault 
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 2
+			modifier = {
+				add = 1
+				has_war = yes
+			}
+			modifier = {
+				add = 1
+				has_tech = trench_warfare
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -2392,7 +2653,11 @@ focus_tree = {
 		cost = 5
 		available_if_capitulated = yes
 		ai_will_do = {
-			factor = 1
+			factor = 2
+			modifier = {
+				add = 2
+				has_war = yes
+			}
 		}
 		available = {
 			OR = {
@@ -2431,7 +2696,15 @@ focus_tree = {
 			focus = SOV_massassault 
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 2
+			modifier = {
+				add = 1
+				has_war = yes
+			}
+			modifier = {
+				add = 1
+				has_tech = superior_firepower
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -2472,7 +2745,15 @@ focus_tree = {
 			focus = SOV_massassault 
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 2
+			modifier = {
+				add = 1
+				has_war = yes
+			}
+			modifier = {
+				add = 1
+				has_tech = mobile_warfare
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -2505,6 +2786,10 @@ focus_tree = {
 		prerequisite = { focus = SOV_mobilewarfare }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				has_war = yes
+			}
 		}
 		completion_reward = {
 			army_experience = 10
@@ -2527,6 +2812,10 @@ focus_tree = {
 		prerequisite = { focus = SOV_superiorfirepower }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				has_war = yes
+			}
 		}
 		completion_reward = {
 			add_tech_bonus = {
@@ -2548,7 +2837,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_reviewthemilitary }
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		completion_reward = {
 			add_stability = 0.05
@@ -2687,6 +2976,19 @@ focus_tree = {
 		prerequisite = { focus = SOV_caucusdirection }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 1
+				NOT = {
+					OR = {
+						has_idea = SOV_black_friday
+						has_idea = SOV_black_friday1
+					}
+				}
+			}
 		}
 		completion_reward = {
 			create_wargoal = {
@@ -2710,6 +3012,19 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 1
+				NOT = {
+					OR = {
+						has_idea = SOV_black_friday
+						has_idea = SOV_black_friday1
+					}
+				}
+			}
 		}
 		completion_reward = {
 			create_wargoal = {
@@ -2779,6 +3094,19 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				date > 1939.1.1
+			}
+			modifier = {
+				add = 1
+				NOT = {
+					OR = {
+						has_idea = SOV_black_friday
+						has_idea = SOV_black_friday1
+					}
+				}
+			}
 		}
 		completion_reward = {
 			add_war_support = 0.05
@@ -2923,8 +3251,22 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_themiddleeasterndirection }
 		mutually_exclusive = { focus = SOV_liberatethepersians }
+		will_lead_to_war_with = PER
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				date > 1938.9.1
+			}
+			modifier = {
+				add = 1
+				NOT = {
+					OR = {
+						has_idea = SOV_black_friday
+						has_idea = SOV_black_friday1
+					}
+				}
+			}
 		}
 		completion_reward = {
 			create_wargoal = {
@@ -2944,8 +3286,22 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_themiddleeasterndirection }
 		mutually_exclusive = { focus = SOV_allytheturks }
+		will_lead_to_war_with = TUR
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				date > 1938.9.1
+			}
+			modifier = {
+				add = 1
+				NOT = {
+					OR = {
+						has_idea = SOV_black_friday
+						has_idea = SOV_black_friday1
+					}
+				}
+			}
 		}
 		completion_reward = {
 			create_wargoal = {
@@ -2966,6 +3322,19 @@ focus_tree = {
 		prerequisite = { focus = SOV_russianforeignpolicy }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 1
+				NOT = {
+					OR = {
+						has_idea = SOV_black_friday
+						has_idea = SOV_black_friday1
+					}
+				}
+			}
 		}
 		completion_reward = {
 			407 = {
@@ -3029,8 +3398,22 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_centralasiandirection }
 		mutually_exclusive = { focus = SOV_allythekazahks }
+		will_lead_to_war_with = KAZ
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 1
+				NOT = {
+					OR = {
+						has_idea = SOV_black_friday
+						has_idea = SOV_black_friday1
+					}
+				}
+			}
 		}
 		completion_reward = {
 			create_wargoal = {
@@ -3054,6 +3437,19 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 1
+				NOT = {
+					OR = {
+						has_idea = SOV_black_friday
+						has_idea = SOV_black_friday1
+					}
+				}
+			}
 		}
 		completion_reward = {
 			add_war_support = 0.03
@@ -3069,7 +3465,7 @@ focus_tree = {
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		available = {
 			date > 1937.6.1
@@ -3091,6 +3487,19 @@ focus_tree = {
 		mutually_exclusive = { focus = SOV_destroythekazakhs }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 1
+				NOT = {
+					OR = {
+						has_idea = SOV_black_friday
+						has_idea = SOV_black_friday1
+					}
+				}
+			}
 		}
 		completion_reward = {
 			puppet = KAZ
@@ -3113,6 +3522,19 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				date > 1938.6.1
+			}
+			modifier = {
+				add = 1
+				NOT = {
+					OR = {
+						has_idea = SOV_black_friday
+						has_idea = SOV_black_friday1
+					}
+				}
+			}
 		}
 		completion_reward = {
 			add_stability = 0.05
@@ -3128,6 +3550,7 @@ focus_tree = {
 		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_theeuropeandirection }
+		will_lead_to_war_with = FIN
 		ai_will_do = {
 			factor = 1
 		}
@@ -3148,6 +3571,7 @@ focus_tree = {
 		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_theeuropeandirection }
+		will_lead_to_war_with = NOR
 		ai_will_do = {
 			factor = 1
 		}
@@ -3192,8 +3616,30 @@ focus_tree = {
 		cost = 2
 		available_if_capitulated = yes
 		prerequisite = { focus = SOV_themanchurianprecedent }
+		will_lead_to_war_with = JAP
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				add = 1
+				date > 1938.9.1
+			}
+			modifier = {
+				add = 1
+				NOT = {
+					OR = {
+						has_idea = SOV_black_friday
+						has_idea = SOV_black_friday1
+					}
+				}
+			}
+			modifier = {
+				add = 1
+				OR = {
+					JAP = {
+						has_war = yes
+					}
+				}
+			}
 		}
 		completion_reward = {
 			create_wargoal = {

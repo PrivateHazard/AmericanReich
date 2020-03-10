@@ -53,6 +53,12 @@ country_event = {
 					days = 1
 				}
 			}
+			SOV = {
+				country_event = {
+					id = russia.5
+					days = 1
+				}
+			}
 			HOL = {
 				add_timed_idea = {
 					idea = GER_black_friday_default
@@ -90,12 +96,6 @@ country_event = {
 				}
 			}
 			UKR = {
-				add_timed_idea = {
-					idea = GER_black_friday_default
-					days = 180
-				}
-			}
-			SOV = {
 				add_timed_idea = {
 					idea = GER_black_friday_default
 					days = 180

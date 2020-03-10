@@ -38,8 +38,6 @@ set_technology = {
 	early_battleship = 1
 	early_battlecruiser = 1
 	transport = 1
-	mass_assault = 1
-	fleet_in_being = 1
 }
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
@@ -79,9 +77,23 @@ set_research_slots = 4
 set_stability = 0.4
 set_war_support = 0.22
 add_ideas = {
+	high_taxes
 	SOV_brain_drain
 	SOV_republican_resistance
 	SOV_divided_military
+	SOV_dmitri_romanov
+	SOV_pavel_milyukow
+	SOV_matvey_skobelev
+	SOV_nikolai_avksentiev
+}
+
+country_event = {
+	id = russia.1
+	days = 1
+}
+country_event = {
+	id = russia.2
+	days = 6
 }
 
 set_politics = {
@@ -95,25 +107,25 @@ set_politics = {
 	set_popularities = {
 		socialist = 15
 		
-		authoritarian = 22
+		authoritarian = 17
 		
 		populist = 2
 		
-		anarchist = 11
+		anarchist = 7
 		
 		syndicalist = 6
 		
-		totalist = 11
+		totalist = 5
 		
 		marketist = 2
 		
-		syndicalist = 8
+		syndicalist = 6
 		
 		conservative = 11
 		
-		liberal = 5
+		liberal = 13
 		
-		libertarian = 7
+		libertarian = 16
 	}
 
 create_country_leader = {
@@ -139,9 +151,9 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Nicholas II"
+	name = "Noe Zhordania"
 	desc = "POLITICS_ALEXANDER_FYODOROVICH_KERENSKY_DESC"
-	picture = "Portrait_RUS_Alexander_Kerensky.dds"
+	picture = ""
 	expire = "1965.1.1"
 	ideology = socialism
 	traits = {
@@ -161,7 +173,7 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Nicholas II"
+	name = "Dmitry Romanov"
 	desc = "POLITICS_ALEXANDER_FYODOROVICH_KERENSKY_DESC"
 	picture = "Portrait_Soviet_Generic_1.dds"
 	expire = "1965.1.1"
@@ -172,9 +184,9 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Nicholas II"
+	name = "Alexander Kerensky"
 	desc = "POLITICS_ALEXANDER_FYODOROVICH_KERENSKY_DESC"
-	picture = "Portrait_Soviet_Generic_1.dds"
+	picture = "Portrait_RUS_Alexander_Kerensky.dds"
 	expire = "1965.1.1"
 	ideology = liberalism
 	traits = {
@@ -183,7 +195,7 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Nicholas II"
+	name = "Vasily Maklakov"
 	desc = "POLITICS_ALEXANDER_FYODOROVICH_KERENSKY_DESC"
 	picture = "Portrait_Soviet_Generic_1.dds"
 	expire = "1965.1.1"
@@ -194,7 +206,7 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Nicholas II"
+	name = "Pyotr Wrangel"
 	desc = "POLITICS_ALEXANDER_FYODOROVICH_KERENSKY_DESC"
 	picture = "Portrait_Soviet_Generic_1.dds"
 	expire = "1965.1.1"

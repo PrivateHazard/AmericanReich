@@ -89,11 +89,11 @@ set_politics = {
 	elections_allowed = yes
 }
 
-set_popularities = {
+	set_popularities = {
 		
 		socialist = 4
 
-		populism = 0
+		populist = 0
 		
 		marketist = 12
 		

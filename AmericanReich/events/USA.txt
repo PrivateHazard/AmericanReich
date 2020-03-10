@@ -80,87 +80,85 @@ country_event = {
 	desc = usa.3.desc
 	picture = GFX_report_event_usa_election_generic
 
-	fire_only_once = yes
-
 	is_triggered_only = yes
 	
-#	#option = { 	#4 More Years
-#		name = usa.3.a
-#		ai_chance = {
-#			factor = 25
-#			modifier = {
-#				factor = 1
-#			}
-#		}
-#set_global_flag = USA_Elections_1936
-#set_global_flag = USA_Elections_1936_Socialist		
-#add_popularity = {
-#    ideology = socialist
-#    popularity = 0.15
-#}
-#set_politics = {
-#	elections_allowed = yes
-#}
-#	}
-#
-#	option = { 
-#		name = usa.3.b #A Progressive America!
-#		ai_chance = {
-#			factor = 35
-#		}
-#set_global_flag = USA_Elections_1936
-#set_global_flag = USA_Elections_1936_Liberal	
-#add_popularity = {
-#    ideology = liberal
-#    popularity = 0.2
-#}
-#set_politics = {
-#	ruling_party = liberal
-#	elections_allowed = yes
-#}
-#		
-#		
-#	}
-option = { 
+	option = { 	#4 More Years
+	name = usa.3.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 1
+			}
+		}
+		add_popularity = {
+			ideology = socialist
+			popularity = 0.15
+		}
+		set_politics = {
+			elections_allowed = yes
+		}
+		hidden_effect = {
+			complete_national_focus = USA_electionsof1936
+		}
+	}
+
+	option = { 
+		name = usa.3.b #A Progressive America!
+		ai_chance = {
+			factor = 35
+		}	
+		add_popularity = {
+			ideology = liberal
+			popularity = 0.2
+		}
+		set_politics = {
+			ruling_party = liberal
+			elections_allowed = yes
+		}
+		hidden_effect = {
+			complete_national_focus = USA_electionsof1936
+		}
+	}
+	option = { 
 		name = usa.3.c #Hoover's the Man
 		ai_chance = {
 			factor = 35
 		}
-set_global_flag = USA_Elections_1936
-set_global_flag = USA_Elections_1936_Libertarian
-add_popularity = {
-    ideology = libertarian
-    popularity = 0.25
-}
-set_politics = {
-	ruling_party = libertarian
-	elections_allowed = yes
-}
-add_ideas = {
-	USA_Herbert_Hoover
-	USA_cordell_hull
-	USA_william_regnery
-	USA_henry_morgenthau
-}
-		
+		add_popularity = {
+			ideology = libertarian
+			popularity = 0.25
+		}
+		set_politics = {
+			ruling_party = libertarian
+			elections_allowed = yes
+		}
+		add_ideas = {
+			USA_Herbert_Hoover
+			USA_cordell_hull
+			USA_william_regnery
+			USA_henry_morgenthau
+		}
+		hidden_effect = {
+			complete_national_focus = USA_electionsof1936
+		}
 	}
-#option = { 
-#		name = usa.3.d #Democrat Upset?
-#		ai_chance = {
-#			factor = 5
-#		}
-#set_global_flag = USA_Elections_1936
-#set_global_flag = USA_Elections_1936_Conservative
-#add_popularity = {
-#    ideology = conservative
-#    popularity = 0.35
-#}
-#set_politics = {
-#	ruling_party = conservative
-#	elections_allowed = yes
-#}
-		
-#}
+	option = { 
+		name = usa.3.d #Democrat Upset?
+		ai_chance = {
+			factor = 5
+		}
+		add_popularity = {
+			ideology = conservative
+			popularity = 0.35
+		}
+		set_politics = {
+			ruling_party = conservative
+			elections_allowed = yes
+		}
+		hidden_effect = {
+			complete_national_focus = USA_electionsof1936
+		}
+	}
 }
 
 # Germany Accepts

@@ -99,7 +99,6 @@ give_guarantee = CUB
 set_convoys = 400
 
 set_politics = {
-	
 	ruling_party = socialist
 	last_election = "1932.11.8"
 	election_frequency = 48

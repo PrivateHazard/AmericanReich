@@ -48,17 +48,6 @@ set_popularities = {
 		autocratic = 54
 	}
 
-give_guarantee = GEO
-give_guarantee = AZR
-set_autonomy = {
-	target = ARM
-		autonomous_state = autonomy_puppet
-		}
-set_autonomy = {
-	target = LBA
-		autonomous_state = autonomy_puppet
-		}
-
 create_country_leader = {
 	name = "Mehmed VI"
 	desc = "POLITICS_ISMET_INÖNÜ_DESC"

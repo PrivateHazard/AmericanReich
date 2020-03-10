@@ -1,0 +1,668 @@
+focus_tree = {
+	id = USA
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = USA
+		}
+	}
+	continuous_focus_position = { x = 50 y = 2200 }
+	focus = {
+		id = USA_electionsof1936
+		icon = GFX_goal_generic_support_democracy
+		x = 13
+		y = 1
+		cost = 0
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = bypass_tooltip
+		}
+	}
+	#Focus for Legacy of Liberalism
+	focus = {
+		id = USA_legacyofliberalism
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 0
+		y = 2
+		relative_position_id = USA_electionsof1936
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_progressivevictory 
+			focus = USA_democraticrepublicanvictory 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for SPA Victory
+	focus = {
+		id = USA_spavictory
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = -12
+		y = 1
+		relative_position_id = USA_electionsof1936
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = USA_electionsof1936
+		}
+		mutually_exclusive = { 
+			focus = USA_democraticrepublicanvictory 
+		}
+		mutually_exclusive = { 
+			focus = USA_progressivevictory 
+		}
+		mutually_exclusive = { 
+			focus = USA_democraticupset 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government = socialist
+		}
+	}
+
+	#Focus for Progressive Victory
+	focus = {
+		id = USA_progressivevictory
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = -4
+		y = 1
+		cost = 10
+		relative_position_id = USA_electionsof1936
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = USA_electionsof1936
+		}
+		mutually_exclusive = { 
+			focus = USA_spavictory 
+		}
+		mutually_exclusive = { 
+			focus = USA_democraticrepublicanvictory 
+		}
+		mutually_exclusive = { 
+			focus = USA_democraticupset 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government = liberal
+		}
+	}
+
+	#Focus for Democratic-Republican Victory
+	focus = {
+		id = USA_democraticrepublicanvictory
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 4
+		y = 1
+		relative_position_id = USA_electionsof1936
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = USA_electionsof1936
+		}
+		mutually_exclusive = { 
+			focus = USA_spavictory 
+		}
+		mutually_exclusive = { 
+			focus = USA_progressivevictory 
+		}
+		mutually_exclusive = { 
+			focus = USA_democraticupset 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government = libertarian
+		}
+	}
+
+	#Focus for Repeal Regulations
+	focus = {
+		id = USA_repealregulations
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_reinvigoratetheeconomy
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_reinvigoratetheeconomy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Establish the WPA
+	focus = {
+		id = USA_establishthewpa
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_anewdeal
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_anewdeal }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Defend Democracy
+	focus = {
+		id = USA_defenddemocracy
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_americaninnovation
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_americaninnovation }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Home of the Free
+	focus = {
+		id = USA_homeofthefree
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_defenddemocracy
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_defenddemocracy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Stabilize the Republic
+	focus = {
+		id = USA_stabilizetherepublic
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_legacyofliberalism
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_legacyofliberalism }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Small Business Grants
+	focus = {
+		id = USA_smallbusinessgrants
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_encourageentrepreneurship
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_encourageentrepreneurship }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Encourage Entrepreneurship
+	focus = {
+		id = USA_encourageentrepreneurship
+		icon = GFX_goal_unknown
+		x = -1
+		y = 1
+		cost = 10
+		relative_position_id = USA_repealregulations
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_repealregulations }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Establish the Federal Farm Board
+	focus = {
+		id = USA_establishthefederalfarmboard
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = USA_repealregulations
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_repealregulations }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Railway Investments
+	focus = {
+		id = USA_railwayinvestments
+		icon = GFX_goal_unknown
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_establishthefederalfarmboard
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_establishthefederalfarmboard }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Public Construction Projects
+	focus = {
+		id = USA_publicconstructionprojects
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_enactfera
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_enactfera }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Public Armament
+	focus = {
+		id = USA_publicarmament
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_governmentfactories
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_governmentfactories }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Enact FERA
+	focus = {
+		id = USA_enactfera
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = USA_establishthewpa
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_establishthewpa }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Government Factories
+	focus = {
+		id = USA_governmentfactories
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = -1
+		y = 1
+		cost = 10
+		relative_position_id = USA_establishthewpa
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_establishthewpa }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = USA_fairlaborstandardsact
+		icon = GFX_goal_unknown
+		x = 0
+		y = 3
+		cost = 10
+		relative_position_id = USA_establishthewpa
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_publicarmament
+		}
+		prerequisite = { 
+			focus = USA_publicconstructionprojects
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Democratic Upset
+	focus = {
+		id = USA_democraticupset
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 12
+		y = 1
+		relative_position_id = USA_electionsof1936
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = USA_electionsof1936
+		}
+		mutually_exclusive = { 
+			focus = USA_spavictory 
+		}
+		mutually_exclusive = { 
+			focus = USA_progressivevictory 
+		}
+		mutually_exclusive = { 
+			focus = USA_democraticrepublicanvictory 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government = conservative
+		}
+	}
+
+	#Focus for A New Deal
+	focus = {
+		id = USA_anewdeal
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = -4
+		y = 1
+		cost = 10
+		relative_position_id = USA_progressivevictory
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_spavictory 
+			focus = USA_progressivevictory 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Reinvigorate the Economy
+	focus = {
+		id = USA_reinvigoratetheeconomy
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 4
+		y = 1
+		cost = 10
+		relative_position_id = USA_democraticrepublicanvictory
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_democraticrepublicanvictory 
+			focus = USA_democraticupset 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for American Innovation
+	focus = {
+		id = USA_americaninnovation
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_stabilizetherepublic
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_stabilizetherepublic }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Legacy of Socialism
+	focus = {
+		id = USA_legacyofsocialism
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = -4
+		y = 1
+		cost = 10
+		relative_position_id = USA_spavictory
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_spavictory 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Union Representation
+	focus = {
+		id = USA_unionrepresentation
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_federalnationalization
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_federalnationalization }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Accumulated Wealth Tax
+	focus = {
+		id = USA_accumulatedwealthtax
+		icon = GFX_focus_rom_parties_end
+		x = 0
+		y = 6
+		cost = 10
+		relative_position_id = USA_spavictory
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_democraticsocialism 
+		}
+		prerequisite = { 
+			focus = USA_fairlaborstandardsact
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Federal Housing
+	focus = {
+		id = USA_federalhousing
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		x = 0
+		y = 6
+		cost = 10
+		relative_position_id = USA_progressivevictory
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_homeofthefree 
+		}
+		prerequisite = { 
+			focus = USA_fairlaborstandardsact
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Legacy of Conservatism
+	focus = {
+		id = USA_legacyofconservatism
+		icon = GFX_goal_unknown
+		x = 4
+		y = 1
+		cost = 10
+		relative_position_id = USA_democraticupset
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_democraticupset 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = USA_defederalization
+		icon = GFX_focus_SAF_colonialist_crusade
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_legacyofconservatism
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_legacyofconservatism
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = USA_silencetheunions
+		icon = GFX_goal_generic_propaganda
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_defederalization
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_defederalization
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = USA_destroydecadence
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_silencetheunions
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_silencetheunions
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = USA_returntotradition
+		icon = GFX_focus_generic_support_the_left_right
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_destroydecadence
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_destroydecadence
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = USA_reinstatethegoldstandard
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 0
+		y = 6
+		cost = 10
+		relative_position_id = USA_democraticupset
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_incometaxreform
+		}
+		prerequisite = { 
+			focus = USA_returntotradition
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = USA_incometaxreform
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 3
+		cost = 10
+		relative_position_id = USA_repealregulations
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_railwayinvestments
+		}
+		prerequisite = { 
+			focus = USA_smallbusinessgrants
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Revolutionary Oppurtunity
+	focus = {
+		id = USA_revolutionaryoppurtunity
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_unionrepresentation
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_unionrepresentation }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Federal Nationalization
+	focus = {
+		id = USA_federalnationalization
+		icon = GFX_focus_generic_self_management
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_legacyofsocialism
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_legacyofsocialism }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Democratic Socialism
+	focus = {
+		id = USA_democraticsocialism
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_revolutionaryoppurtunity
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_revolutionaryoppurtunity }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = USA_preservethefreemarket
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 4
+		y = 1
+		cost = 10
+		relative_position_id = USA_homeofthefree
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_homeofthefree 
+		}
+		prerequisite = { 
+			focus = USA_incometaxreform
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+ }
