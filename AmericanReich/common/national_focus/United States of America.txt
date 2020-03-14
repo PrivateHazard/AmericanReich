@@ -29,7 +29,7 @@ focus_tree = {
 	focus = {
 		id = USA_legacyofliberalism
 		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
-		x = 0
+		x = 50
 		y = 2
 		relative_position_id = USA_electionsof1936
 		cost = 10
@@ -661,6 +661,18 @@ focus_tree = {
 		prerequisite = { 
 			focus = USA_incometaxreform
 		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Economy
+	focus = {
+		id = USA_aneweconomy
+		icon = GFX_goal_generic_construction
+		x = 20
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
 		}
