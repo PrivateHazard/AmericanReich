@@ -12,7 +12,7 @@ focus_tree = {
 		id = USA_electionsof1936
 		icon = GFX_goal_generic_support_democracy
 		x = 13
-		y = 1
+		y = 0
 		cost = 0
 		available_if_capitulated = yes
 		ai_will_do = {
@@ -29,7 +29,7 @@ focus_tree = {
 	focus = {
 		id = USA_legacyofliberalism
 		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
-		x = 50
+		x = 0
 		y = 2
 		relative_position_id = USA_electionsof1936
 		cost = 10
@@ -669,10 +669,254 @@ focus_tree = {
 	focus = {
 		id = USA_aneweconomy
 		icon = GFX_goal_generic_construction
-		x = 20
+		x = 25
 		y = 1
 		cost = 10
+		relative_position_id = USA_electionsof1936
 		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_electionsof1936
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = USA_civilianfocus
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -2
+		y = 1
+		cost = 10
+		relative_position_id = USA_aneweconomy
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_aneweconomy
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = USA_automobileinvestments
+		icon = GFX_goal_generic_production2
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_civilianfocus
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_civilianfocus
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = USA_improvedhighways
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_automobileinvestments
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_automobileinvestments
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = USA_excavationfocus
+		icon = GFX_goal_generic_construction2
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_improvedhighways
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_improvedhighways
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = USA_consumereconmy
+		icon = GFX_goal_generic_consumer_goods
+		x = -1
+		y = 1
+		cost = 10
+		relative_position_id = USA_taxregulationbureau
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_taxregulationbureau
+		}
+		prerequisite = { 
+			focus = USA_excavationfocus
+		}
+		mutually_exclusive = { 
+			focus = USA_wartimeeconomy
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = USA_militaryfocus
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 2
+		y = 1
+		cost = 10
+		relative_position_id = USA_aneweconomy
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_aneweconomy
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = USA_limitedrearmament
+		icon = GFX_goal_generic_build_tank
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_militaryfocus
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_militaryfocus
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = USA_expandusace
+		icon = GFX_goal_generic_production
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_limitedrearmament
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_limitedrearmament
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = USA_arsenalofdemocracy
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_expandusace
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_expandusace
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = USA_wartimeeconomy
+		icon = GFX_goal_generic_construct_civilian
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = USA_taxregulationbureau
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_arsenalofdemocracy
+		}
+		prerequisite = { 
+			focus = USA_taxregulationbureau
+		}
+		mutually_exclusive = { 
+			focus = USA_consumereconmy
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = USA_scientificboom
+		icon = GFX_focus_research
+		x = 0
+		y = 2
+		cost = 10
+		relative_position_id = USA_taxregulationbureau
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_wartimeeconomy
+			focus = USA_consumereconmy
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = USA_canadianinvestments
+		icon = GFX_focus_generic_concessions
+		x = 0
+		y = 2
+		cost = 10
+		relative_position_id = USA_aneweconomy
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_civilianfocus
+			focus = USA_militaryfocus
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = USA_subsidizeindustry
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_canadianinvestments
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_canadianinvestments
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = USA_taxregulationbureau
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = USA_subsidizeindustry
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_subsidizeindustry
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Military
+	focus = {
+		id = USA_consolidatethepentagon
+		icon = GFX_focus_usa_build_the_pentagon
+		x = -25
+		y = 1
+		cost = 10
+		relative_position_id = USA_electionsof1936
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_electionsof1936
+		}
 		ai_will_do = {
 			factor = 1
 		}

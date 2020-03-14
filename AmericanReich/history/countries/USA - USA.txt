@@ -119,19 +119,13 @@ set_politics = {
 		syndicalist = 7
 	}
 
-country_event = { 
-id = usa.3 
-days = 310
-}
-
 add_ideas = {
 	disarmed_nation
 	free_trade
-	civilian_economy
+	undisturbed_isolation
 	USA_great_depression
 	USA_2nd_amendment
 	high_taxes
-	USA_inefficient_government
 	USA_Norman_Thomas
 	USA_john_winant
 	USA_victor_perlo

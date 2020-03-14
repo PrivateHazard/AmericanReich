@@ -3,9 +3,9 @@ on_actions = {
 	on_new_term_election = {
 		random_events = {
 			100 = japan.2
+			100 = usa.3
 		}
 		random_events = {
-			
 		}
 		random_events = {
 			
@@ -1507,13 +1507,24 @@ on_actions = {
 		}
 	}
 #######################################
-	 on_startup = {
+	on_startup = {
 		effect = {
 			every_country = {
 				country_event = {
 					id = generic.20
 				}
 			}
+		}
+	}
+	on_new_term_election = {
+		random_events = {
+			100 = japan.2
+			100 = usa.3
+		}
+		random_events = {
+		}
+		random_events = {
+			
 		}
 	}
 }
