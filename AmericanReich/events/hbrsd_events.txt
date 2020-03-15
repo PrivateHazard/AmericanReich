@@ -1,0 +1,83 @@
+add_namespace = hbrsd
+
+##Event: Fall of The Empire
+country_event = {
+	id = hbrsd.1
+	title = hbrsd.1.title
+	desc = hbrsd.1.desc
+	picture = GFX_event_test
+	fire_only_once = yes
+	trigger = {
+		has_global_flag = Black_Friday
+	}
+	option = {
+		name = hbrsd.1.a
+		ai_chance = { factor = 1}
+		country_event= {
+mean_time_to_happen = 30 days
+id = hbrsd.2 
+}
+	}
+	option = {
+		name = hbrsd.1.b
+		ai_chance = { factor = 1}
+	}
+}
+##Event: Hungary Has Left
+country_event = {
+	id = hbrsd.2
+	title = hbrsd.2.title
+	desc = hbrsd.2.desc
+	picture = GFX_event_test
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 30
+	}
+	option = {
+		name = hbrsd.2.a
+		ai_chance = { factor = 1}
+		country_event= {
+days = 30 
+id = hbrsd.3 
+}
+release= hun
+	}
+}
+##Event: The Coats and Serbs Have Left
+country_event = {
+	id = hbrsd.3
+	title = hbrsd.3.title
+	desc = hbrsd.3.desc
+	picture = GFX_event_test
+	is_triggered_only = yes
+	option = {
+		name = hbrsd.3.a
+		ai_chance = { factor = 1}
+		country_event= {
+days = 60
+id = hbrsd.4 
+}
+release= BOS
+	}
+}
+##Event: The Revolution Has Started
+country_event = {
+	id = hbrsd.4
+	title = hbrsd.4.title
+	desc = hbrsd.4.desc
+	picture = GFX_event_test
+	is_triggered_only = yes
+	option = {
+		name = hbrsd.4.a
+		ai_chance = { factor = 1}
+		declare_war_on= { 
+target = HUN 
+type = annex_everything 
+}
+declare_war_on= { 
+target = BOS 
+type = annex_everything 
+}
+	}
+}
