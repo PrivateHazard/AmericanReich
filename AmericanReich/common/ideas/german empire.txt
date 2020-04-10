@@ -973,8 +973,8 @@ ideas = {
 			}
 			
 			traits = {
-				old_guard
 				authoritarian_trait
+				hog_old_guard
 			}
 
 			do_effect = {
@@ -999,8 +999,8 @@ ideas = {
 			}
 			
 			traits = {
-				old_guard
 				autocratic_trait
+				hog_respected_war_hero
 			}
 
 			do_effect = {
@@ -1025,8 +1025,8 @@ ideas = {
 			}
 			
 			traits = {
-				silent_workhorse
 				nationalist_trait
+				hog_silent_workhorse
 			}
 
 			do_effect = {
@@ -1051,8 +1051,8 @@ ideas = {
 			}
 			
 			traits = {
-				dictator
 				populist_trait
+				dictator
 			}
 
 			do_effect = {
@@ -1075,8 +1075,8 @@ ideas = {
 			}
 			
 			traits = {
-				militant_socialist
 				totalist_trait
+				hog_militant_socialist
 			}
 
 			do_effect = {
@@ -1097,8 +1097,8 @@ ideas = {
 			}
 			
 			traits = {
-				silent_workhorse
 				conservative_trait
+				hog_silent_workhorse
 			}
 
 			do_effect = {
@@ -1126,8 +1126,8 @@ ideas = {
 			}
 			
 			traits = { 
-				backroom_backstabber
 				authoritarian_trait
+				for_the_cloak_n_dagger_schemer
 			}
 
 			ai_will_do = {
@@ -1146,8 +1146,8 @@ ideas = {
 			}
 			
 			traits = {
-				smooth_talking_charmer
 				conservative_trait
+				smooth_talking_charmer
 			}
 			
 			allowed_to_remove = {
@@ -1166,8 +1166,8 @@ ideas = {
 			}
 			
 			traits = {
-				propaganda_expert
 				nationalist_trait
+				propaganda_expert
 			}
 
 			do_effect = {
@@ -1197,8 +1197,8 @@ ideas = {
 			}
 			
 			traits = { 
-				expansionist
 				populist_trait
+				for_expansionist
 			}
 		}
 	}
@@ -1211,8 +1211,8 @@ ideas = {
 			}
 			
 			traits = {
-				armaments_organizer
 				libertarian_trait
+				armaments_organizer
 			}
 			
 			allowed_to_remove = {
@@ -1229,8 +1229,8 @@ ideas = {
 			}
 			
 			traits = {
-				captain_of_industry
 				conservative_trait
+				eco_laissez_faire_capitalist
 			}
 			ai_will_do = {
 				factor = 2
@@ -1248,8 +1248,8 @@ ideas = {
 			}
 			
 			traits = {
-				war_industrialist
 				nationalist_trait
+				war_industrialist
 			}
 
 			ai_will_do = {
@@ -1270,7 +1270,10 @@ ideas = {
 			available = {
 			}
 			
-			traits = { fortification_engineer }
+			traits = { 
+				autocratic_trait
+				fortification_engineer 
+			}
 
 			ai_will_do = {
 				factor = 0.5
@@ -1295,8 +1298,8 @@ ideas = {
 			}
 			
 			traits = {
-				defensive_excavator
 				authoritarian_trait
+				sec_defensive_excavator
 			}
 			
 			allowed_to_remove = {
@@ -1318,15 +1321,14 @@ ideas = {
 			}
 			
 			traits = {
-				prince_of_terror
 				nationalist_trait
+				sec_prince_of_terror
 			}
 		}
 	}
 	
 	intelligence_minister = {
 		martin_bormann = {
-
 			
 			allowed = {
 				original_tag = GER
@@ -1340,8 +1342,7 @@ ideas = {
 			}
 			
 			traits = {
-				encryptor
-				authoritarian_trait
+				int_encryptor
 			}
 		}
 	}

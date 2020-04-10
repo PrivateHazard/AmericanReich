@@ -748,11 +748,10 @@ ideas = {
 				original_tag = AUS
 			}
 			
-			available = {
-				has_government = conservative
+			traits = { 
+				conservative_trait
+				hog_old_guard 
 			}
-			
-			traits = { old_guard }
 			
 			allowed_to_remove = {
 				always = no
@@ -766,11 +765,10 @@ ideas = {
 				original_tag = AUS
 			}
 			
-			available = {
-				has_government = socialist
+			traits = { 
+				socialist_trait
+				silent_workhorse 
 			}
-			
-			traits = { silent_workhorse }
 			
 			allowed_to_remove = {
 				always = no
@@ -791,12 +789,10 @@ ideas = {
 				original_tag = AUS
 			}
 			
-			available = {
-				NOT = {
-					has_country_flag = AUS_abandoned_gold_standard
-				}
+			traits = { 
+				conservative_trait
+				war_industrialist 
 			}
-			traits = { war_industrialist }
 			
 			allowed_to_remove = {
 				always = no
@@ -809,10 +805,11 @@ ideas = {
 			allowed = {
 				original_tag = AUS
 			}
-			available = {
-				has_country_flag = AUS_abandoned_gold_standard
+			
+			traits = { 
+				libertarian_trait
+				captain_of_industry 
 			}
-			traits = { captain_of_industry }
 			
 			allowed_to_remove = {
 				always = no
@@ -830,7 +827,10 @@ ideas = {
 				original_tag = AUS
 			}
 			
-			traits = { prince_of_terror }
+			traits = { 
+				conservative_trait
+				sec_prince_of_terror 
+			}
 			
 			allowed_to_remove = {
 				always = no
@@ -847,7 +847,7 @@ ideas = {
 				original_tag = AUS
 			}
 			
-			traits = { balanced_cryptographer }
+			traits = { int_balanced_cryptographer }
 		}
 	}
 

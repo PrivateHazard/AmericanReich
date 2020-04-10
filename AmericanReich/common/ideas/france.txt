@@ -1243,8 +1243,8 @@ ideas = {
 			}			
 			
 			traits = { 
-				militant_socialist
 				totalist_trait
+				hog_militant_socialist
 			}
 
 			allowed_to_remove = {
@@ -1259,8 +1259,8 @@ ideas = {
 			}
 			
 			traits = {
-				peaceful_revolutionary
 				syndicalist_trait
+				hog_peaceful_revolutionary
 			}
 			
 			allowed_to_remove = {
@@ -1279,8 +1279,8 @@ ideas = {
 			}
 			
 			traits = {
-				rearmer
 				syndicalist_trait
+				rearmer
 			}
 			
 			allowed_to_remove = {
@@ -1301,8 +1301,8 @@ ideas = {
 			picture = generic_political_advisor_europe_5
 			
 			traits = {
-				silent_workhorse
 				marketist_trait
+				hog_silent_workhorse
 			}
 	
 			on_add = {
@@ -1328,8 +1328,8 @@ ideas = {
 			picture = generic_political_advisor_europe_3
 			
 			traits = {
-				smooth_talking_charmer
 				marketist_trait
+				smooth_talking_charmer
 			}
 	
 			on_add = {
@@ -1353,8 +1353,8 @@ ideas = {
 			}
 			
 			traits = {
-				propaganda_expert
 				totalist_trait
+				propaganda_expert
 			}
 
 			ai_will_do = {
@@ -1377,8 +1377,8 @@ ideas = {
 			picture = generic_army_europe_5
 			
 			traits = {
-				war_industrialist
 				totalist_trait
+				eco_war_industrialist
 			}
 	
 			on_add = {
@@ -1404,8 +1404,8 @@ ideas = {
 			picture = generic_army_europe_5
 			
 			traits = {
-				syndicate_proponent
 				syndicalist_trait
+				eco_syndicate_proponent
 			}
 	
 			on_add = {
@@ -1431,8 +1431,8 @@ ideas = {
 			picture = generic_political_advisor_europe_3
 			
 			traits = {
-				captain_of_industry
 				marketist_trait
+				eco_captain_of_industry
 			}
 	
 			on_add = {
@@ -1458,8 +1458,8 @@ ideas = {
 			picture = generic_political_advisor_europe_3
 			
 			traits = {
-				economist
 				anarchist_trait
+				economist
 			}
 	
 			on_add = {
@@ -1488,8 +1488,8 @@ ideas = {
 			picture = generic_political_advisor_europe_3
 			
 			traits = {
-				backroom_backstabber
 				totalist_trait
+				sec_crime_fighter
 			}
 	
 			ai_will_do = {
@@ -1509,8 +1509,8 @@ ideas = {
 			picture = generic_political_advisor_europe_3
 			
 			traits = {
-				armaments_organizer
 				marketist_trait
+				armaments_organizer
 			}
 	
 			on_add = {
@@ -1536,8 +1536,8 @@ ideas = {
 			picture = generic_political_advisor_europe_3
 			
 			traits = {
-				defensive_excavator
 				syndicalist_trait
+				sec_defensive_excavator
 			}
 	
 			on_add = {
@@ -1563,8 +1563,8 @@ ideas = {
 			picture = generic_political_advisor_europe_3
 			
 			traits = {
-				quartermaster_general
 				anarchist_trait
+				quartermaster_general
 			}
 	
 			on_add = {
@@ -1593,8 +1593,7 @@ ideas = {
 			picture = generic_political_advisor_europe_3
 			
 			traits = {
-				balanced_cryptographer
-				totalist_trait
+				int_balanced_cryptographer
 			}
 	
 			on_add = {
@@ -1616,8 +1615,7 @@ ideas = {
 			picture = generic_political_advisor_europe_3
 			
 			traits = {
-				decryptor
-				anarchist_trait
+				int_decryptor
 			}
 	
 			on_add = {
@@ -1630,7 +1628,7 @@ ideas = {
 				factor = 1
 			}
 		}
-		FRA_henri_giraud_intel = {
+		FRA_henri_giraud_int = {
 			
 			allowed = {
 				original_tag = "FRA"
@@ -1639,8 +1637,7 @@ ideas = {
 			picture = generic_political_advisor_europe_3
 			
 			traits = {
-				encryptor
-				syndicalist_trait
+				int_encryptor
 			}
 	
 			on_add = {

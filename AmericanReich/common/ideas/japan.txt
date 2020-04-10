@@ -685,7 +685,7 @@ ideas = {
 			
 			traits = {
 				syndicalist_trait
-				revolutionary
+				hog_revolutionary
 			}
 
 			do_effect = {
@@ -711,7 +711,7 @@ ideas = {
 			
 			traits = { 
 				populist_trait
-				radical_militarist
+				hog_radical_militarist
 			}
 
 			do_effect = {
@@ -736,7 +736,7 @@ ideas = {
 			
 			traits = {
 				conservative_trait
-				silent_workhorse
+				hog_silent_workhorse
 			}
 			
 			allowed_to_remove = {
@@ -754,7 +754,7 @@ ideas = {
 			
 			traits = {
 				populist_trait
-				loyal_nationalist
+				hog_flamboyant_tough_guy
 			}
 
 			ai_will_do = {
@@ -776,7 +776,7 @@ ideas = {
 			
 			traits = {
 				conservative_trait
-				classical_conservative
+				hog_classical_conservative
 			}
 
 			ai_will_do = {
@@ -798,7 +798,7 @@ ideas = {
 			
 			traits = {
 				autocratic_trait
-				military_statist
+				hog_military_statist
 			}
 
 			ai_will_do = {
@@ -820,7 +820,7 @@ ideas = {
 			
 			traits = {
 				socialist_trait
-				democratic_socialist
+				hog_democratic_socialist
 			}
 
 			ai_will_do = {
@@ -845,7 +845,7 @@ ideas = {
 			
 			traits = {
 				libertarian_trait
-				appeaser
+				for_appeaser
 			}
 
 			do_effect = {
@@ -886,7 +886,7 @@ ideas = {
 			
 			traits = {
 				conservative_trait
-				expansionist
+				for_expansionist
 			}
 			
 			allowed_to_remove = {
@@ -927,7 +927,7 @@ ideas = {
 
 			traits = { 
 				libertarian_trait
-				captain_of_industry
+				eco_laissez_faire_capitalist
 			}
 
 			ai_will_do = {
@@ -951,7 +951,7 @@ ideas = {
 
 			traits = { 
 				conservative_trait
-				defensive_excavator
+				sec_defensive_excavator
 			}
 
 			ai_will_do = {

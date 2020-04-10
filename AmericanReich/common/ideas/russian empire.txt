@@ -788,7 +788,7 @@ ideas = {
 			
 			traits = {
 				socialist_trait
-				revolutionary
+				hog_revolutionary
 			}
 			
 			allowed_to_remove = {
@@ -808,7 +808,7 @@ ideas = {
 			
 			traits = {
 				totalist_trait
-				militant_socialist
+				hog_militant_socialist
 			}
 			
 			allowed_to_remove = {
@@ -826,7 +826,7 @@ ideas = {
 
 			traits = {
 				syndicalist_trait
-				silent_workhorse
+				hog_silent_workhorse
 			}
 	
 			allowed_to_remove = {
@@ -843,7 +843,7 @@ ideas = {
 			
 			traits = {
 				liberal_trait
-				old_figurehead
+				hog_old_figurehead
 			}
 
 			do_effect = {
@@ -864,7 +864,7 @@ ideas = {
 			
 			traits = {
 				liberal_trait
-				liberal_socialist
+				hog_liberal_socialist
 			}
 
 			do_effect = {
@@ -885,7 +885,7 @@ ideas = {
 			
 			traits = {
 				libertarian_trait
-				silent_workhorse
+				hog_silent_workhorse
 			}
 
 			do_effect = {
@@ -906,7 +906,7 @@ ideas = {
 			
 			traits = {
 				conservative_trait
-				silent_workhorse
+				hog_corporate_suit
 			}
 
 			do_effect = {
@@ -927,7 +927,7 @@ ideas = {
 			
 			traits = {
 				populist_trait
-				fervent_nationalist
+				hog_flamboyant_tough_guy
 			}
 	
 			do_effect = {
@@ -1040,7 +1040,7 @@ ideas = {
 			
 			traits = { 
 				liberal_trait
-				captain_of_industry
+				eco_laissez_faire_capitalist
 			}
 			
 			allowed_to_remove = {
@@ -1097,7 +1097,7 @@ ideas = {
 			
 			traits = {
 				syndicalist_trait
-				prince_of_terror
+				sec_prince_of_terror
 			}
 			
 			allowed_to_remove = {
@@ -1114,7 +1114,7 @@ ideas = {
 			
 			traits = {
 				liberal_trait
-				defensive_excavator
+				sec_defensive_excavator
 			}
 			
 			allowed_to_remove = {
@@ -1131,7 +1131,7 @@ ideas = {
 			
 			traits = {
 				socialist_trait
-				internal_comprimiser
+				sec_internal_comprimiser
 			}
 			
 			allowed_to_remove = {
@@ -1148,7 +1148,7 @@ ideas = {
 			
 			traits = {
 				libertarian_trait
-				defensive_excavator
+				sec_defensive_excavator
 			}
 			
 			allowed_to_remove = {

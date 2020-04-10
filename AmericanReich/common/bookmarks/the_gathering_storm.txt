@@ -34,8 +34,14 @@ bookmarks = {
 			history = "USA_GATHERING_STORM_DESC"
 			ideology = socialist
 			ideas = {
+				USA_great_depression0
+				USA_social_instability
+				USA_memories_of_the_trenches
 			}
 			focuses = {
+				USA_backinbusiness
+				USA_consolidatethepentagon
+				USA_strikedixie
 			}
 		}
 		"CSA"={

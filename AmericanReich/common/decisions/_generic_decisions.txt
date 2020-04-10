@@ -225,7 +225,7 @@ economy_decisions = {
 	infrastructure_building_slot = {
 		icon = generic_construction
         allowed = {
-            always = yes
+			always = yes
         }
         cost = 50
         fire_only_once = no
@@ -242,6 +242,12 @@ economy_decisions = {
             }
         }
         visible = {
+			if = {
+				limit = {
+					original_tag = USA
+				}
+				has_completed_focus = USA_aneweconomy
+			}
 			any_state = {
             	NOT = { has_state_flag = infrastructure_building_slot_flag }
             	is_fully_controlled_by = ROOT
@@ -271,7 +277,7 @@ economy_decisions = {
 	civilian_factory_commission = {
 		icon = generic_construction
         allowed = {
-            always = yes
+			always = yes
         }
         cost = 150
         fire_only_once = no
@@ -287,6 +293,12 @@ economy_decisions = {
             }
         }
         visible = {
+			if = {
+				limit = {
+					original_tag = USA
+				}
+				has_completed_focus = USA_civilianfocus
+			}
 			any_state = {
             	NOT = { has_state_flag = factory_comission_flag }
             	is_fully_controlled_by = ROOT
@@ -296,7 +308,6 @@ economy_decisions = {
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision civilian_factory_commission"
 			random_owned_state = {
 				limit = {
 					NOT = { has_state_flag = factory_comission_flag }
@@ -319,7 +330,7 @@ economy_decisions = {
 	arms_factory_commission = {
 		icon = generic_construction
         allowed = {
-            always = yes
+			always = yes
         }
         cost = 125
         fire_only_once = no
@@ -336,6 +347,12 @@ economy_decisions = {
         }
 
         visible = {
+			if = {
+				limit = {
+					original_tag = USA
+				}
+				has_completed_focus = USA_militaryfocus
+			}
 			any_state = {
             	NOT = { has_state_flag = factory_comission_flag }
             	is_fully_controlled_by = ROOT
@@ -345,7 +362,6 @@ economy_decisions = {
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision arms_factory_commission"
 			random_owned_state = {
 				limit = {
 					NOT = { has_state_flag = factory_comission_flag }
@@ -368,7 +384,7 @@ economy_decisions = {
 	dockyard_commission = {
 		icon = generic_construction
         allowed = {
-            always = yes
+			always = yes
         }
         cost = 100
         fire_only_once = no
@@ -385,6 +401,12 @@ economy_decisions = {
             }
         }
         visible = {
+			if = {
+				limit = {
+					original_tag = USA
+				}
+				has_completed_focus = USA_militaryfocus
+			}
 			any_state = {
             	NOT = { has_state_flag = factory_comission_flag }
             	is_coastal = yes
@@ -394,14 +416,19 @@ economy_decisions = {
             }
 		}
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision dockyard_commission"
 			random_owned_state = {
 				limit = {
-					NOT = { has_state_flag = factory_comission_flag }
+					NOT = { 
+						has_state_flag = factory_comission_flag 
+					}
 					is_coastal = yes
 					is_fully_controlled_by = ROOT
 					is_owned_by = ROOT
-					free_building_slots = { building = dockyard size > 1 include_locked = no }
+					free_building_slots = { 
+						building = dockyard 
+						size > 1 
+						include_locked = no 
+					}
 				}
 				add_building_construction = {
                     type = dockyard

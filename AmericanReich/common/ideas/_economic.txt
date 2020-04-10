@@ -9,6 +9,7 @@ ideas = {
 				always = no
 			}
 			removal_cost = -1
+			level = 6
 		
 			modifier = {
 				consumer_goods_factor = 0.4
@@ -19,13 +20,14 @@ ideas = {
 				conversion_cost_mil_to_civ_factor = 0.5
 				max_fuel_factor = -0.45
 				fuel_gain_factor = -0.6
+				mobilization_speed = -0.5
 			}
 			
 			allowed_to_remove = {
 				OR = {
-					has_war_support > 0.5
+					has_war_support > 0.4
 					has_war = yes
-					has_completed_focus = USA_wartimeeconomy
+					has_completed_focus = USA_thegiantawakes
 				}
 			}
 			
@@ -40,9 +42,10 @@ ideas = {
 				always = no
 			}
 			removal_cost = -1
+			level = 6
 			
 			modifier = {
-				consumer_goods_factor = 0.4
+				consumer_goods_factor = 0.3
 				production_speed_industrial_complex_factor = -0.4
 				production_speed_arms_factory_factor = -0.4
 				production_speed_dockyard_factor = -0.4
@@ -54,6 +57,7 @@ ideas = {
 				guarantee_tension = 0.5
 				max_fuel_factor = -0.35
 				fuel_gain_factor = -0.5
+				mobilization_speed = -0.4
 			}
 			allowed_to_remove = {
 				OR = {
@@ -588,7 +592,16 @@ ideas = {
 			}
 			
 			allowed_to_remove = {
-				has_completed_focus = USA_electionsof1936
+				if = {
+					limit = {
+						original_tag = USA
+					}
+					OR = {
+						has_completed_focus = USA_repealregulations
+						has_completed_focus = USA_federalhousing
+						has_completed_focus = USA_accumulatedwealthtax
+					}
+				}
 			}
 		}
 		higher_taxes = {

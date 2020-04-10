@@ -10,8 +10,8 @@ if = {
 }
 
 set_research_slots = 4
-set_stability = 0.63
-set_war_support = 0.05
+set_stability = 0.6
+set_war_support = 0
 # Starting tech
 set_technology = {
 	infantry_weapons = 1
@@ -89,21 +89,21 @@ if = {
 	}
 }
 
-set_autonomy = {
+	set_autonomy = {
 		target = CAB
 		autonomous_state = autonomy_puppet
 		freedom_level = 0.4
 	}
-give_guarantee = CUB
+	give_guarantee = CUB
 
-set_convoys = 400
+	set_convoys = 400
 
-set_politics = {
-	ruling_party = socialist
-	last_election = "1932.11.8"
-	election_frequency = 48
-	elections_allowed = yes
-}
+	set_politics = {
+		ruling_party = socialist
+		last_election = "1932.11.8"
+		election_frequency = 48
+		elections_allowed = yes
+	}
 
 	set_popularities = {
 		liberal = 22
@@ -118,19 +118,25 @@ set_politics = {
 		
 		syndicalist = 7
 	}
+	
+	country_event = {
+		id = usa.1
+		days = 1
+	}
 
 add_ideas = {
 	disarmed_nation
 	free_trade
 	undisturbed_isolation
-	USA_great_depression
-	USA_2nd_amendment
+	USA_great_depression0
+	USA_social_instability
+	USA_memories_of_the_trenches
 	high_taxes
 	USA_Norman_Thomas
 	USA_john_winant
 	USA_victor_perlo
 	USA_donald_nelson
-	USA_social_instability
+	USA_inefficient_government
 }
 
 create_country_leader = {

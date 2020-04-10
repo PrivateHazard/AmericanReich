@@ -1332,7 +1332,7 @@ ideas = {
 			
 			traits = {
 				totalist_trait
-				militant_socialist
+				hog_militant_socialist
 			}
 	
 			do_effect = {
@@ -1358,7 +1358,7 @@ ideas = {
 			
 			traits = {
 				syndicalist_trait
-				silent_workhorse
+				hog_silent_workhorse
 			}
 	
 			do_effect = {
@@ -1384,7 +1384,7 @@ ideas = {
 			
 			traits = {
 				nationalist_trait
-				fervent_nationalist
+				hog_flamboyant_tough_guy
 			}
 	
 			do_effect = {
@@ -1462,7 +1462,7 @@ ideas = {
 			
 			traits = {
 				authoritarian_trait
-				revolutionary
+				hog_revolutionary
 			}
 
 			ai_will_do = {
@@ -1487,7 +1487,7 @@ ideas = {
 			
 			traits = { 
 				authoritarian_trait
-				appeaser
+				for_appeaser
 			}
 
 			ai_will_do = {
@@ -1556,7 +1556,7 @@ ideas = {
 			
 			traits = {
 				nationalist_trait
-				loyal_nationalist
+				for_loyal_nationalist
 			}
 			
 			allowed_to_remove = {
@@ -1579,7 +1579,7 @@ ideas = {
 			
 			traits = {
 				nationalist_trait
-				economic_organizer
+				eco_economic_organizer
 			}
 
 			ai_will_do = {
@@ -1604,7 +1604,7 @@ ideas = {
 			
 			traits = {
 				nationalist_trait
-				economic_organizer
+				eco_economic_organizer
 			}
 
 			ai_will_do = {
@@ -1671,7 +1671,7 @@ ideas = {
 			
 			traits = {
 				nationalist_trait
-				princess_of_terror
+				sec_princess_of_terror
 			}
 
 			ai_will_do = {
@@ -1691,7 +1691,7 @@ ideas = {
 			
 			traits = {
 				authoritarian_trait
-				backroom_backstabber
+				sec_silent_lawyer
 			}
 			
 			allowed_to_remove = {
@@ -1760,7 +1760,7 @@ ideas = {
 			
 			traits = {
 				autocratic_trait
-				peoples_monarch
+				hos_peoples_monarch
 			}
 		}
 		ENG_hugh_sinclair = {
@@ -1779,7 +1779,7 @@ ideas = {
 			
 			traits = {
 				authoritarian_trait
-				balanced_cryptographer
+				int_balanced_cryptographer
 			}
 		}
 	}

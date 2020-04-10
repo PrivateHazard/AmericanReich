@@ -1150,42 +1150,13 @@ ideas = {
 			removal_cost = -1
 			
 			traits = {
-				silent_workhorse
 				populist_trait
+				hog_political_protege
 			}
 			
 			modifier = {
 			}
 			cost = 50
-			do_effect = {
-		
-			}
-			
-			ai_will_do = {
-				factor = 0
-			}
-			
-			allowed_to_remove = {
-				always = no
-			}
-		}
-		CSA_Herbert_Hoover = {
-			
-			picture = USA_harry_white
-			allowed = {
-				original_tag = "CSA"
-			}
-			
-			available = {
-			}
-
-			traits = {
-				financial_expert
-				libertarian_trait
-			}
-			
-			cost = 50
-			
 			do_effect = {
 		
 			}
@@ -1211,8 +1182,8 @@ ideas = {
 			}
 		
 			traits = {
-				propaganda_expert
 				populist_trait
+				propaganda_expert
 			}
 			
 			ai_will_do = {
@@ -1234,8 +1205,8 @@ ideas = {
 			}
 			
 			traits = {
-				compassionate_gentleman
 				liberal_trait
+				compassionate_gentleman
 			}
 		}
 		CSA_cordell_hull = {
@@ -1250,8 +1221,8 @@ ideas = {
 			}
 			
 			traits = {
-				smooth_talking_charmer
 				libertarian_trait
+				smooth_talking_charmer
 			}
 			
 			allowed_to_remove = {
@@ -1266,8 +1237,8 @@ ideas = {
 			}
 			
 			traits = { 
-				editor
 				populist_trait
+				editor
 			}
 			cost = 50
 			do_effect = {
@@ -1298,8 +1269,8 @@ ideas = {
 			}
 			
 			traits = {
-				economist
 				populist_trait
+				economist
 			}
 			
 			allowed_to_remove = {
@@ -1316,8 +1287,8 @@ ideas = {
 			}
 
 			traits = {
-				financial_expert
 				libertarian_trait
+				eco_laissez_faire_capitalist
 			}
 			cost = 50
 			do_effect = {
@@ -1347,8 +1318,8 @@ ideas = {
 			}
 			
 			traits = { 
-				armaments_organizer
 				populist_trait
+				armaments_organizer
 			}
 			
 			allowed_to_remove = {
@@ -1365,8 +1336,8 @@ ideas = {
 			}
 
 			traits = {
-				captain_of_industry
 				libertarian_trait
+				sec_internal_comprimiser
 			}
 			cost = 50
 			do_effect = {
@@ -1396,7 +1367,7 @@ ideas = {
 			}
 			
 			traits = {
-				encryptor
+				int_encryptor
 				populist_trait
 			}
 		}
@@ -1413,7 +1384,7 @@ ideas = {
 			}
 			
 			traits = {
-				balanced_cryptographer
+				int_balanced_cryptographer
 				populist_trait
 			}
 		}
