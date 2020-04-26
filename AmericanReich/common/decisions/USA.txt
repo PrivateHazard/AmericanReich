@@ -1,9 +1,7 @@
 war_measures = {
 }
 
-foreign_support = {
-}
-economy_decisions = {
+political_actions = {
 	USA_canadian_integration = {
 		icon = infiltrate_state
 		available = {
@@ -93,6 +91,33 @@ economy_decisions = {
 			}
 		}
 	}
+	USA_request_union_support = {
+		icon = eng_trade_unions_support
+		allowed = {
+			oringinal_tag = USA
+		}
+		visible = {
+			has_country_flag = USA_union_supported
+		}
+		cost = 0
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				has_political_power < 0
+			}
+		}
+		days_remove = 140
+		complete_effect = {
+			add_political_power = 100
+			add_stability = -0.05
+		}
+	}
+}
+
+foreign_support = {
+}
+economy_decisions = {
 	USA_end_subsidies = {
 		icon = eng_trade_unions_support
 		allowed = {
@@ -119,21 +144,24 @@ foreign_politics = {
 			oringinal_tag = USA
 		}
 		visible = {
-			has_completed_focus = USA_reformthearmy
+			OR = {
+				has_completed_focus = USA_outside_the_box
+				has_completed_focus = USA_reformthearmy
+			}
 			has_idea = USA_memories_of_the_trenches
 		}
 		cost = 25
 		days_remove = 365
 		fire_only_once = yes
 		ai_will_do = {
-			factor = 10
+			factor = 1000
 		}
 		modifier = {
-			political_power_cost = 0.25
+			political_power_gain = -0.1
         }
-		complete_effect = {
+		remove_effect = {
 			remove_ideas = USA_memories_of_the_trenches
-		}
+        }
 	}
 }
 USA_war_plans = {

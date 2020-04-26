@@ -110,18 +110,54 @@ if = {
 		
 		libertarian = 20
 		
-		socialist = 41
+		socialist = 37
 		
 		conservative = 6
 		
 		totalist = 4
 		
 		syndicalist = 7
+		
+		anarchist = 2
+		
+		authoritarian = 2
 	}
 	
 	country_event = {
 		id = usa.1
 		days = 1
+	}
+	country_event = {
+		id = usa.9
+		days = 60
+	}
+	country_event = {
+		id = usa.8
+		days = 76
+	}
+	country_event = {
+		id = usa.5
+		days = 121
+	}
+	country_event = {
+		id = usa.10
+		days = 154
+	}
+	country_event = {
+		id = usa.15
+		days = 161
+	}
+	country_event = {
+		id = usa.12
+		days = 170
+	}
+	country_event = {
+		id = usa.16
+		days = 184
+	}
+	country_event = {
+		id = usa.17
+		days = 198
 	}
 
 add_ideas = {
@@ -133,10 +169,9 @@ add_ideas = {
 	USA_memories_of_the_trenches
 	high_taxes
 	USA_Norman_Thomas
-	USA_john_winant
-	USA_victor_perlo
-	USA_donald_nelson
-	USA_inefficient_government
+	USA_cordell_hull
+	USA_harry_white
+	USA_joesph_patterson
 }
 
 create_country_leader = {
@@ -160,17 +195,17 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Franklin D. Roosevelt"
+	name = "Al Smith"
 	desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
 	picture = "Portrait_USA_Franklin_Roosevelt.dds"
 	expire = "1965.1.1"
-	ideology = liberalism
+	ideology = conservatism
 	traits = {
 	}
 }
 
 create_country_leader = {
-	name = "Willhem Franzheim"
+	name = "William Dudley Pelley"
 	desc = "POLITICS_WILLIAM_DUDLEY_PELLEY_DESC"
 	picture = "Portrait_USA_William_Dudley_Pelley.dds"
 	expire = "1965.1.1"
@@ -185,7 +220,29 @@ create_country_leader = {
 	desc = "POLITICS_EARL_BROWDER_DESC"
 	picture = "Portrait_USA_Generic_1.dds"
 	expire = "1965.1.1"
+	ideology = totalism
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "John \"Jack\" Reed"
+	desc = "POLITICS_EARL_BROWDER_DESC"
+	picture = "Portrait_USA_Jack_Reed.dds"
+	expire = "1965.1.1"
 	ideology = syndicalism
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "Upton Sinclair"
+	desc = "POLITICS_EARL_BROWDER_DESC"
+	picture = "Portrait_USA_Upton_Sinclair.dds"
+	expire = "1965.1.1"
+	ideology = anarchism
 	traits = {
 		
 	}
@@ -194,9 +251,29 @@ create_country_leader = {
 create_country_leader = {
 	name = "Alf Landon"
 	desc = "POLITICS_ALF_LANDON_DESC"
-	picture = "portrait_USA_alf_landon.dds"
+	picture = "Portrait_USA_Alf_Landon.dds"
 	expire = "1965.1.1"
-	ideology = conservatism
+	ideology = liberalism
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Douglas MacArthur"
+	desc = "POLITICS_ALF_LANDON_DESC"
+	picture = "Portrait_USA_gen_douglas_macarthur.dds"
+	expire = "1965.1.1"
+	ideology = authoritarianism
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Smedley Butler"
+	desc = "POLITICS_ALF_LANDON_DESC"
+	picture = "Portrait_USA_smedly_butler_G.dds"
+	expire = "1965.1.1"
+	ideology = autocracy
 	traits = {
 	}
 }
@@ -211,6 +288,19 @@ create_corps_commander = {
 	defense_skill = 5
 	planning_skill = 4
 	logistics_skill = 4
+}
+
+create_field_marshal = {
+	name = "Douglas MacArthur"
+	id = 57
+	picture = "Portrait_USA_gen_douglas_macarthur.dds"
+	traits = {  offensive_doctrine brilliant_strategist career_officer media_personality politically_connected }
+	skill = 4
+
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 4
+	logistics_skill = 2
 }
 
 create_field_marshal = {
@@ -259,6 +349,18 @@ create_corps_commander = {
 	defense_skill = 3
 	planning_skill = 1
 	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "Smedley Butler"
+	picture = "Portrait_USA_smedly_butler_G.dds"
+	traits = {  commando infantry_officer trait_reckless}
+	skill = 3
+
+	attack_skill = 4
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 3
 }
 
 create_corps_commander = {

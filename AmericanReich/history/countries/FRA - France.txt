@@ -151,9 +151,9 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Maurice Thorez"
+	name = "Marcel Deat"
 	desc = "POLITICS_MAURICE_THOREZ_DESC"
-	picture = "GFX_portrait_fra_maurice_thorez"
+	picture = "Portrait_FRA_Marcel_Deat"
 	expire = "1965.1.1"
 	ideology = 	totalism
 	traits = {
@@ -162,9 +162,9 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Leon Blum"
+	name = "Sebastian Faure"
 	desc = "POLITICS_MAURICE_THOREZ_DESC"
-	picture = "portrait_fra_Leon_Blum.dds"
+	picture = "Portrait_FRA_Sebastien_Faure.dds"
 	expire = "1965.1.1"
 	ideology = 	anarchism
 	traits = {
@@ -173,9 +173,9 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Leon Blum"
+	name = "Benoit Franchon"
 	desc = "POLITICS_MAURICE_THOREZ_DESC"
-	picture = "portrait_fra_Leon_Blum.dds"
+	picture = "Portrait_FRA_Benoit_Frachon.dds"
 	expire = "1965.1.1"
 	ideology = 	syndicalism
 	traits = {
@@ -184,9 +184,9 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Leon Blum"
+	name = "Leon Jouhaux"
 	desc = "POLITICS_MAURICE_THOREZ_DESC"
-	picture = "portrait_fra_Leon_Blum.dds"
+	picture = "Portrait_FRA_Leon_Jouhaux.dds"
 	expire = "1965.1.1"
 	ideology = 	marketism
 	traits = {

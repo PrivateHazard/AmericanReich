@@ -41,7 +41,7 @@ ideas = {
 			picture = generic_disjointed_gov
 			
 			modifier = {
-				political_power_cost = 0.1
+				political_power_gain = -0.1
 				stability_factor = -0.05
 			}
 		}
@@ -130,7 +130,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_factor = 0.1
+				political_power_gain = 0.1
 				min_export = -0.1
 			}
 		}
@@ -373,7 +373,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_factor = 0.1
+				political_power_gain = 0.1
 			}
 		}
 		FRA_liberalization1 = {
@@ -389,7 +389,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_factor = 0.1
+				political_power_gain = 0.1
 				conscription = 0.005
 			}
 		}
@@ -406,7 +406,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_factor = 0.25
+				political_power_gain = 0.25
 				stability_weekly = 0.005
 			}
 		}
@@ -425,7 +425,7 @@ ideas = {
 			modifier = {
 				mobilization_speed = 0.1
 				foreign_subversive_activites = -0.25
-				political_power_factor = 0.05
+				political_power_gain = 0.05
 			}
 		}
 		FRA_centralized_unions1 = {
@@ -443,7 +443,7 @@ ideas = {
 			modifier = {
 				mobilization_speed = 0.1
 				foreign_subversive_activites = -0.25
-				political_power_factor = 0.05
+				political_power_gain = 0.05
 				offensive_war_stability_factor = 0.2
 				defensive_war_stability_factor = 0.2
 			}
@@ -463,7 +463,7 @@ ideas = {
 			modifier = {
 				conscription_factor = 0.05
 				industrial_capacity_factory = 0.05
-				political_power_cost = 0.1
+				political_power_gain = -0.1
 			}
 		}
 		FRA_world_revolution = {
@@ -1280,7 +1280,7 @@ ideas = {
 			
 			traits = {
 				syndicalist_trait
-				rearmer
+				hog_political_protege
 			}
 			
 			allowed_to_remove = {
@@ -1329,7 +1329,7 @@ ideas = {
 			
 			traits = {
 				marketist_trait
-				smooth_talking_charmer
+				for_great_compromiser
 			}
 	
 			on_add = {
@@ -1354,7 +1354,7 @@ ideas = {
 			
 			traits = {
 				totalist_trait
-				propaganda_expert
+				for_expansionist
 			}
 
 			ai_will_do = {
@@ -1432,7 +1432,7 @@ ideas = {
 			
 			traits = {
 				marketist_trait
-				eco_captain_of_industry
+				eco_industrialiser
 			}
 	
 			on_add = {
@@ -1459,7 +1459,7 @@ ideas = {
 			
 			traits = {
 				anarchist_trait
-				economist
+				eco_keynesian_economy
 			}
 	
 			on_add = {
@@ -1510,7 +1510,7 @@ ideas = {
 			
 			traits = {
 				marketist_trait
-				armaments_organizer
+				sec_rearmer
 			}
 	
 			on_add = {
@@ -1564,7 +1564,7 @@ ideas = {
 			
 			traits = {
 				anarchist_trait
-				quartermaster_general
+				sec_compassionate_gentleman
 			}
 	
 			on_add = {

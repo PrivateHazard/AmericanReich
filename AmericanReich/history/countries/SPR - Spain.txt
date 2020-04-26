@@ -25,15 +25,15 @@ set_technology = {
 	transport = 1
 }
 
-set_politics = {
+	set_politics = {
 	
-	ruling_party = liberal
-	last_election = "1933.2.16"
-	election_frequency = 36
-	elections_allowed = yes
-}
+		ruling_party = liberal
+		last_election = "1933.2.16"
+		election_frequency = 36
+		elections_allowed = yes
+	}
 
-set_popularities = {
+	set_popularities = {
 		liberal = 42
 		
 		socialist = 13
@@ -77,7 +77,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Alfonso XIII"
 	desc = "POLITICS_ALEJANDRO_LERROUX_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
+	picture = "Portrait_Alfonso_XIII.dds"
 	expire = "1965.1.1"
 	ideology = liberalism
 	traits = {
@@ -88,7 +88,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Alfonso XIII"
 	desc = "POLITICS_ALEJANDRO_LERROUX_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
+	picture = "Portrait_Alfonso_XIII.dds"
 	expire = "1965.1.1"
 	ideology = socialism
 	traits = {
@@ -99,7 +99,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Alfonso XIII"
 	desc = "POLITICS_ALEJANDRO_LERROUX_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
+	picture = "Portrait_Alfonso_XIII"
 	expire = "1965.1.1"
 	ideology = conservatism
 	traits = {

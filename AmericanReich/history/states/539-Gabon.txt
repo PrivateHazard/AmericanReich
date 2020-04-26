@@ -13,9 +13,6 @@ state={
 		add_core_of = MIT
 		add_core_of = GAB
 		victory_points = {
-			8193 2
-		}
-		victory_points = {
 			5139 1
 		}
 		buildings = {
@@ -30,6 +27,6 @@ state={
 	}
 
 	provinces={
-		2080 2192 3109 5036 5054 5139 6008 6039 8193 8207 9137 10948 12975 13210
+		5139 8207 10948 13210
 	}
 }

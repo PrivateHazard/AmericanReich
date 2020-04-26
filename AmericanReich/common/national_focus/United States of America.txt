@@ -92,9 +92,10 @@ focus_tree = {
 	#Focus for SPA Victory
 	focus = {
 		id = USA_spavictory
-		icon = GFX_focus_generic_strike_at_democracy2
-		x = -6
+		icon = GFX_focus_por_workers_of_iberia
+		x = -3
 		y = 1
+		cost = 5
 		relative_position_id = USA_electionsof1936
 		available_if_capitulated = yes
 		prerequisite = {
@@ -115,15 +116,18 @@ focus_tree = {
 		available = {
 			has_government = socialist
 		}
+		completion_reward = {
+			add_ideas = USA_spa_government
+		}
 	}
 
 	#Focus for Progressive Victory
 	focus = {
 		id = USA_progressivevictory
 		icon = GFX_focus_spr_torchbearers_of_tomorrow
-		x = -2
+		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 		relative_position_id = USA_electionsof1936
 		available_if_capitulated = yes
 		prerequisite = {
@@ -144,15 +148,18 @@ focus_tree = {
 		available = {
 			has_government = liberal
 		}
+		completion_reward = {
+			add_ideas = USA_progressive_government
+		}
 	}
 
 	#Focus for Democratic-Republican Victory
 	focus = {
 		id = USA_democraticrepublicanvictory
 		icon = GFX_goal_generic_positive_trade_relations
-		x = 2
+		x = 1
 		y = 1
-		cost = 7
+		cost = 5
 		relative_position_id = USA_electionsof1936
 		available_if_capitulated = yes
 		prerequisite = {
@@ -174,7 +181,6 @@ focus_tree = {
 			has_government = libertarian
 		}
 		completion_reward = {
-			remove_ideas = USA_inefficient_government
 			add_ideas = USA_democratic_republican_government
 		}
 	}
@@ -245,7 +251,7 @@ focus_tree = {
 		icon = GFX_goal_generic_production
 		x = 0
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_anewdeal
 		available_if_capitulated = yes
 		prerequisite = { focus = USA_anewdeal }
@@ -253,6 +259,10 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
+			add_timed_idea = {
+				idea = USA_wpa
+				days = 480
+			}
 			if = {
 				limit = {
 					has_idea = USA_great_depression4
@@ -309,7 +319,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = USA_americaninnovation }
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		completion_reward = {
 			add_war_support = 0.05
@@ -369,7 +379,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = USA_defenddemocracy }
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		completion_reward = {
 			add_political_power = 120
@@ -495,8 +505,10 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
+			add_political_power = -25
 			random_owned_controlled_state = {
 				limit = {
+					is_core_of = USA
 					free_building_slots = {
 						building = industrial_complex
 						size > 0
@@ -527,6 +539,38 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				limit = {
+					is_core_of = USA
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = USA
 					free_building_slots = {
 						building = industrial_complex
 						size > 0
@@ -604,7 +648,7 @@ focus_tree = {
 	focus = {
 		id = USA_encourageentrepreneurship
 		icon = GFX_goal_generic_construct_civ_factory
-		x = -1
+		x = 0
 		y = 1
 		cost = 8
 		relative_position_id = USA_repealregulations
@@ -613,11 +657,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		mutually_exclusive = {
+			focus = USA_establishthefederalfarmboard
+		}
 		available = {
-			has_government = libertarian
-			NOT = {
-				has_completed_focus = USA_establishthefederalfarmboard
-			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -682,7 +725,7 @@ focus_tree = {
 	focus = {
 		id = USA_establishthefederalfarmboard
 		icon = GFX_goal_generic_construct_civilian
-		x = 1
+		x = 2
 		y = 1
 		cost = 8
 		relative_position_id = USA_repealregulations
@@ -691,11 +734,11 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		mutually_exclusive = {
+			focus = USA_establishthefederalfarmboard
+		}
 		available = {
-			has_government = conservative
-			NOT = {
-				has_completed_focus = USA_encourageentrepreneurship
-			}
+			always = no
 		}
 		completion_reward = {
 			if = {
@@ -805,10 +848,10 @@ focus_tree = {
 	#Focus for Public Construction Projects
 	focus = {
 		id = USA_publicconstructionprojects
-		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		icon = GFX_goal_generic_construction
 		x = 0
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_enactfera
 		available_if_capitulated = yes
 		prerequisite = { focus = USA_enactfera }
@@ -816,6 +859,10 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = USA_new_deal
+				add_idea = USA_new_deal1
+			}
 			if = {
 				limit = {
 					has_idea = USA_great_depression4
@@ -864,10 +911,10 @@ focus_tree = {
 	#Focus for Public Armament
 	focus = {
 		id = USA_publicarmament
-		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		icon = GFX_goal_generic_construct_mil_factory
 		x = 0
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_governmentfactories
 		available_if_capitulated = yes
 		prerequisite = { focus = USA_governmentfactories }
@@ -875,6 +922,99 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = USA
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = USA
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = USA
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 			if = {
 				limit = {
 					has_idea = USA_great_depression4
@@ -923,17 +1063,21 @@ focus_tree = {
 	#Focus for Enact FERA
 	focus = {
 		id = USA_enactfera
-		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
-		x = 1
+		icon = GFX_goal_generic_forceful_treaty
+		x = 0
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_establishthewpa
 		available_if_capitulated = yes
 		prerequisite = { focus = USA_establishthewpa }
 		ai_will_do = {
 			factor = 1
 		}
+		mutually_exclusive = {
+			focus = USA_governmentfactories
+		}
 		completion_reward = {
+			add_stability = 0.05
 			if = {
 				limit = {
 					has_idea = USA_great_depression4
@@ -981,17 +1125,81 @@ focus_tree = {
 	#Focus for Government Factories
 	focus = {
 		id = USA_governmentfactories
-		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
-		x = -1
+		icon = GFX_goal_generic_political_pressure
+		x = -2
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_establishthewpa
 		available_if_capitulated = yes
 		prerequisite = { focus = USA_establishthewpa }
 		ai_will_do = {
 			factor = 1
 		}
+		mutually_exclusive = {
+			focus = USA_enactfera
+		}
 		completion_reward = {
+			add_political_power = 50
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 			if = {
 				limit = {
 					has_idea = USA_great_depression4
@@ -1041,7 +1249,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		x = 0
 		y = 3
-		cost = 10
+		cost = 8
 		relative_position_id = USA_establishthewpa
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -1052,6 +1260,14 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
+			add_ideas = USA_fair_labor_standards
+			if = {
+				limit = {
+					has_idea = USA_may_day_strikes
+				}
+				add_political_power = 25
+				remove_ideas = USA_may_day_strikes
+			}
 			if = {
 				limit = {
 					has_idea = USA_great_depression4
@@ -1100,8 +1316,9 @@ focus_tree = {
 	focus = {
 		id = USA_democraticupset
 		icon = GFX_goal_generic_defence
-		x = 6
+		x = 3
 		y = 1
+		cost = 5
 		relative_position_id = USA_electionsof1936
 		available_if_capitulated = yes
 		prerequisite = {
@@ -1128,7 +1345,7 @@ focus_tree = {
 	focus = {
 		id = USA_anewdeal
 		icon = GFX_focus_generic_treaty
-		x = -2
+		x = -1
 		y = 1
 		cost = 8
 		relative_position_id = USA_progressivevictory
@@ -1141,6 +1358,7 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
+			add_ideas = USA_new_deal
 			if = {
 				limit = {
 					has_idea = USA_great_depression4
@@ -1190,7 +1408,7 @@ focus_tree = {
 	focus = {
 		id = USA_reinvigoratetheeconomy
 		icon = GFX_goal_generic_production2
-		x = 2
+		x = 1
 		y = 1
 		cost = 8
 		relative_position_id = USA_democraticrepublicanvictory
@@ -1201,6 +1419,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			political_power_daily > 0.1
 		}
 		completion_reward = {
 			add_timed_idea = {
@@ -1315,14 +1536,198 @@ focus_tree = {
 	#Focus for Legacy of Socialism
 	focus = {
 		id = USA_legacyofsocialism
-		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		icon = GFX_focus_generic_concessions
 		x = -1
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_spavictory
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = USA_spavictory 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = USA_legacy_of_socialism
+			if = {
+				limit = {
+					has_idea = USA_social_instability4
+				}
+				remove_ideas = USA_social_instability4
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability3
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability3
+					add_idea = USA_social_instability4
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability2
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability2
+					add_idea = USA_social_instability3
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability1
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability1
+					add_idea = USA_social_instability2
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability
+					add_idea = USA_social_instability1
+				}
+			}
+		}
+	}
+
+	#Focus for Union Representation
+	focus = {
+		id = USA_unionrepresentation
+		icon = GFX_focus_usa_union_representation_act
+		x = -2
+		y = 1
+		cost = 8
+		relative_position_id = USA_federalnationalization
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_federalnationalization }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			country_event = {
+				id = usa.13
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability4
+				}
+				remove_ideas = USA_social_instability4
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability3
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability3
+					add_idea = USA_social_instability4
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability2
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability2
+					add_idea = USA_social_instability3
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability1
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability1
+					add_idea = USA_social_instability2
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability
+					add_idea = USA_social_instability1
+				}
+			}
+		}
+	}
+
+	#Focus for Accumulated Wealth Tax
+	focus = {
+		id = USA_accumulatedwealthtax
+		icon = GFX_focus_rom_parties_end
+		x = 0
+		y = 6
+		cost = 8
+		relative_position_id = USA_spavictory
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_democraticsocialism 
+		}
+		prerequisite = { 
+			focus = USA_fairlaborstandardsact
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government = socialist
+			has_political_power > 150
+		}
+		completion_reward = {
+			add_political_power = -150
+			swap_ideas = {
+				remove_idea = USA_spa_government
+				add_idea = USA_spa_government1
+			}
+		}
+	}
+
+	#Focus for Federal Housing
+	focus = {
+		id = USA_federalhousing
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		x = 0
+		y = 6
+		cost = 8
+		relative_position_id = USA_progressivevictory
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_homeofthefree 
+		}
+		prerequisite = { 
+			focus = USA_fairlaborstandardsact
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government = liberal
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = USA_progressive_government
+				add_idea = USA_progressive_government1
+			}
+		}
+	}
+
+	#Focus for Legacy of Conservatism
+	focus = {
+		id = USA_legacyofconservatism
+		icon = GFX_goal_generic_defence
+		x = 1
+		y = 1
+		cost = 8
+		relative_position_id = USA_democraticupset
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = USA_democraticupset 
 		}
 		ai_will_do = {
 			factor = 1
@@ -1372,84 +1777,12 @@ focus_tree = {
 			}
 		}
 	}
-
-	#Focus for Union Representation
-	focus = {
-		id = USA_unionrepresentation
-		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
-		x = 0
-		y = 1
-		cost = 10
-		relative_position_id = USA_federalnationalization
-		available_if_capitulated = yes
-		prerequisite = { focus = USA_federalnationalization }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Accumulated Wealth Tax
-	focus = {
-		id = USA_accumulatedwealthtax
-		icon = GFX_focus_rom_parties_end
-		x = 0
-		y = 6
-		cost = 10
-		relative_position_id = USA_spavictory
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = USA_democraticsocialism 
-		}
-		prerequisite = { 
-			focus = USA_fairlaborstandardsact
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Federal Housing
-	focus = {
-		id = USA_federalhousing
-		icon = GFX_focus_usa_guarantee_the_american_dream
-		x = 0
-		y = 6
-		cost = 10
-		relative_position_id = USA_progressivevictory
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = USA_homeofthefree 
-		}
-		prerequisite = { 
-			focus = USA_fairlaborstandardsact
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Legacy of Conservatism
-	focus = {
-		id = USA_legacyofconservatism
-		icon = GFX_goal_generic_defence
-		x = 1
-		y = 1
-		cost = 10
-		relative_position_id = USA_democraticupset
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = USA_democraticupset 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
 	focus = {
 		id = USA_defederalization
-		icon = GFX_focus_SAF_colonialist_crusade
+		icon = GFX_goal_generic_attack_allies
 		x = 0
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_legacyofconservatism
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -1458,13 +1791,57 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = USA_social_instability4
+				}
+				remove_ideas = USA_social_instability4
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability3
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability3
+					add_idea = USA_social_instability4
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability2
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability2
+					add_idea = USA_social_instability3
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability1
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability1
+					add_idea = USA_social_instability2
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability
+					add_idea = USA_social_instability1
+				}
+			}
+		}
 	}
 	focus = {
 		id = USA_silencetheunions
-		icon = GFX_goal_generic_propaganda
-		x = 0
+		icon = GFX_focus_spr_crush_the_revolution
+		x = 2
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_defederalization
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -1473,13 +1850,57 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = USA_social_instability4
+				}
+				remove_ideas = USA_social_instability4
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability3
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability3
+					add_idea = USA_social_instability4
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability2
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability2
+					add_idea = USA_social_instability3
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability1
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability1
+					add_idea = USA_social_instability2
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability
+					add_idea = USA_social_instability1
+				}
+			}
+		}
 	}
 	focus = {
 		id = USA_destroydecadence
 		icon = GFX_goal_generic_political_pressure
 		x = 0
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_silencetheunions
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -1488,13 +1909,57 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = USA_social_instability4
+				}
+				remove_ideas = USA_social_instability4
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability3
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability3
+					add_idea = USA_social_instability4
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability2
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability2
+					add_idea = USA_social_instability3
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability1
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability1
+					add_idea = USA_social_instability2
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability
+					add_idea = USA_social_instability1
+				}
+			}
+		}
 	}
 	focus = {
 		id = USA_returntotradition
 		icon = GFX_focus_generic_support_the_left_right
-		x = 0
+		x = -2
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_destroydecadence
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -1503,13 +1968,57 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = USA_social_instability4
+				}
+				remove_ideas = USA_social_instability4
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability3
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability3
+					add_idea = USA_social_instability4
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability2
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability2
+					add_idea = USA_social_instability3
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability1
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability1
+					add_idea = USA_social_instability2
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability
+					add_idea = USA_social_instability1
+				}
+			}
+		}
 	}
 	focus = {
 		id = USA_reinstatethegoldstandard
 		icon = GFX_focus_usa_reestablish_the_gold_standard
 		x = 0
 		y = 6
-		cost = 10
+		cost = 8
 		relative_position_id = USA_democraticupset
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -1520,6 +2029,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			has_government = conservative
 		}
 	}
 	focus = {
@@ -1539,6 +2051,13 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_stability = 0.05
+			if = {
+				limit = {
+					has_idea = USA_may_day_strikes
+				}
+				add_political_power = 25
+				remove_ideas = USA_may_day_strikes
+			}
 			if = {
 				limit = {
 					has_idea = USA_great_depression4
@@ -1586,15 +2105,62 @@ focus_tree = {
 	#Focus for Revolutionary Oppurtunity
 	focus = {
 		id = USA_revolutionaryoppurtunity
-		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		icon = GFX_goal_generic_war_with_comintern
 		x = 0
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_unionrepresentation
 		available_if_capitulated = yes
 		prerequisite = { focus = USA_unionrepresentation }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			country_event = {
+				id = usa.14
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability4
+				}
+				remove_ideas = USA_social_instability4
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability3
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability3
+					add_idea = USA_social_instability4
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability2
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability2
+					add_idea = USA_social_instability3
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability1
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability1
+					add_idea = USA_social_instability2
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability
+					add_idea = USA_social_instability1
+				}
+			}
 		}
 	}
 
@@ -1604,27 +2170,117 @@ focus_tree = {
 		icon = GFX_focus_generic_self_management
 		x = 0
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_legacyofsocialism
 		available_if_capitulated = yes
 		prerequisite = { focus = USA_legacyofsocialism }
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			add_political_power = 100
+			if = {
+				limit = {
+					has_idea = USA_social_instability4
+				}
+				remove_ideas = USA_social_instability4
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability3
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability3
+					add_idea = USA_social_instability4
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability2
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability2
+					add_idea = USA_social_instability3
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability1
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability1
+					add_idea = USA_social_instability2
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability
+					add_idea = USA_social_instability1
+				}
+			}
+		}
 	}
 
 	#Focus for Democratic Socialism
 	focus = {
 		id = USA_democraticsocialism
-		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
-		x = 0
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = 2
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_revolutionaryoppurtunity
 		available_if_capitulated = yes
 		prerequisite = { focus = USA_revolutionaryoppurtunity }
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.05
+			if = {
+				limit = {
+					has_idea = USA_social_instability4
+				}
+				remove_ideas = USA_social_instability4
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability3
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability3
+					add_idea = USA_social_instability4
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability2
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability2
+					add_idea = USA_social_instability3
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability1
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability1
+					add_idea = USA_social_instability2
+				}
+			}
+			if = {
+				limit = {
+					has_idea = USA_social_instability
+				}
+				swap_ideas = {
+					remove_idea = USA_social_instability
+					add_idea = USA_social_instability1
+				}
+			}
 		}
 	}
 	
@@ -1633,7 +2289,7 @@ focus_tree = {
 		icon = GFX_goal_generic_positive_trade_relations
 		x = 0
 		y = 6
-		cost = 10
+		cost = 8
 		relative_position_id = USA_democraticrepublicanvictory
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -1644,6 +2300,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			has_government = libertarian
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -2447,12 +3106,9 @@ focus_tree = {
 		available_if_capitulated = yes
 		continue_if_invalid = yes
 		ai_will_do = {
-			factor = 1
+			factor = 3
 		}
 		available = {
-			NOT = {
-				has_idea = USA_inefficient_government
-			}
 			OR = {
 				has_war_support > 0.1
 				has_war = yes
@@ -2477,7 +3133,7 @@ focus_tree = {
 			focus = USA_consolidatethepentagon
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 4
 		}
 		completion_reward = {
 			add_tech_bonus = {
@@ -2485,7 +3141,14 @@ focus_tree = {
 				uses = 2
 				category = land_doctrine
 			}
-			unlock_decision_tooltip = USA_replace_textbooks
+			if = {
+				limit = {
+					NOT = {
+						has_completed_focus = USA_outside_the_box
+					}
+				}
+				unlock_decision_tooltip = USA_replace_textbooks
+			}
 		}
 	}
 	focus = {
@@ -3304,7 +3967,7 @@ focus_tree = {
 			focus = USA_consolidatethepentagon
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 3
 		}
 		available = {
 			OR = {
@@ -3380,7 +4043,7 @@ focus_tree = {
 			focus = USA_formthedepartmentofhomedefence
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		available = {
 			has_defensive_war = yes
@@ -3423,7 +4086,7 @@ focus_tree = {
 			focus = USA_formthedepartmentofhomedefence
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 		available = {
 			is_subject = no
@@ -3656,7 +4319,7 @@ focus_tree = {
 		icon = GFX_goal_generic_positive_trade_relations
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		relative_position_id = USA_neutralityact
 		available_if_capitulated = yes
 		prerequisite = {
@@ -3929,6 +4592,579 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_war_support = 0.05
+		}
+	}
+	#End of Term
+	focus = {
+		id = USA_finish_the_job
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = -48
+		y = 0
+		cost = 5
+		available_if_capitulated = yes
+		continue_if_invalid = yes
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = USA_electionsof1936
+			}
+			has_country_leader = {
+				name = "Norman Thomas"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = USA_attack_on_poverty
+		icon = GFX_focus_generic_support_the_left_right
+		x = -1
+		y = 1
+		cost = 8
+		relative_position_id = USA_finish_the_job
+		available_if_capitulated = yes
+		continue_if_invalid = yes
+		prerequisite = {
+			focus = USA_finish_the_job
+		}
+		mutually_exclusive = {
+			focus = USA_defend_the_people
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = USA_electionsof1936
+			}
+			has_country_leader = {
+				name = "Norman Thomas"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = USA_provide_jobs
+		icon = GFX_goal_generic_production
+		x = -1
+		y = 1
+		cost = 8
+		relative_position_id = USA_attack_on_poverty
+		available_if_capitulated = yes
+		continue_if_invalid = yes
+		prerequisite = {
+			focus = USA_attack_on_poverty
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = USA_electionsof1936
+			}
+			has_country_leader = {
+				name = "Norman Thomas"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = USA
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = USA
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}	
+	}
+	focus = {
+		id = USA_patriotic_drive
+		icon = GFX_focus_chi_mission_to_the_us
+		x = -1
+		y = 1
+		cost = 8
+		relative_position_id = USA_provide_jobs
+		available_if_capitulated = yes
+		continue_if_invalid = yes
+		prerequisite = {
+			focus = USA_provide_jobs
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = USA_electionsof1936
+			}
+			has_country_leader = {
+				name = "Norman Thomas"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			add_political_power = 50
+			add_popularity = {
+				ideology = socialist
+				popularity = 0.03
+			}
+			add_popularity = {
+				ideology = liberal
+				popularity = 0.03
+			}
+			add_popularity = {
+				ideology = conservative
+				popularity = 0.03
+			}
+			add_popularity = {
+				ideology = libertarian
+				popularity = 0.03
+			}
+		}	
+	}
+	focus = {
+		id = USA_a_fireside_chat
+		icon = GFX_goal_generic_propaganda
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = USA_patriotic_drive
+		available_if_capitulated = yes
+		continue_if_invalid = yes
+		prerequisite = {
+			focus = USA_patriotic_drive
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = USA_electionsof1936
+			}
+			has_country_leader = {
+				name = "Norman Thomas"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			add_stability = 0.1
+		}	
+	}
+	focus = {
+		id = USA_defend_the_people
+		icon = GFX_goal_generic_defence
+		x = 1
+		y = 1
+		cost = 8
+		relative_position_id = USA_finish_the_job
+		available_if_capitulated = yes
+		continue_if_invalid = yes
+		prerequisite = {
+			focus = USA_finish_the_job
+		}
+		mutually_exclusive = {
+			focus = USA_attack_on_poverty
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = USA_electionsof1936
+			}
+			has_country_leader = {
+				name = "Norman Thomas"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			army_experience = 15
+		}
+	}
+	focus = {
+		id = USA_reinstitution_of_the_volunteer_corps
+		icon = GFX_focus_generic_manpower
+		x = 1
+		y = 1
+		cost = 8
+		relative_position_id = USA_defend_the_people
+		available_if_capitulated = yes
+		continue_if_invalid = yes
+		prerequisite = {
+			focus = USA_defend_the_people
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_idea = disarmed_nation
+			NOT = {
+				has_completed_focus = USA_electionsof1936
+			}
+			has_country_leader = {
+				name = "Norman Thomas"
+				ruling_only = yes
+			}
+		}
+		bypass = {
+			NOT = {
+				has_idea = disarmed_nation
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = disarmed_nation
+				add_idea = volunteer_only	
+			}
+		}
+	}
+	focus = {
+		id = USA_remilitarization
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 1
+		y = 1
+		cost = 8
+		relative_position_id = USA_reinstitution_of_the_volunteer_corps
+		available_if_capitulated = yes
+		continue_if_invalid = yes
+		prerequisite = {
+			focus = USA_reinstitution_of_the_volunteer_corps
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = USA_electionsof1936
+			}
+			has_country_leader = {
+				name = "Norman Thomas"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = USA
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = USA
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}	
+	}
+	focus = {
+		id = USA_outside_the_box
+		icon = GFX_goal_generic_army_doctrines
+		x = -1
+		y = 1
+		cost = 10
+		relative_position_id = USA_remilitarization
+		available_if_capitulated = yes
+		continue_if_invalid = yes
+		prerequisite = {
+			focus = USA_remilitarization
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = USA_electionsof1936
+			}
+			has_country_leader = {
+				name = "Norman Thomas"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			add_political_power = 25
+			unlock_decision_tooltip = USA_replace_textbooks
+		}
+	}
+	focus = {
+		id = USA_expand_the_party_fund
+		icon = GFX_focus_mex_privatisation
+		x = 0
+		y = 2
+		cost = 5
+		relative_position_id = USA_finish_the_job
+		available_if_capitulated = yes
+		continue_if_invalid = yes
+		prerequisite = {
+			focus = USA_attack_on_poverty
+			focus = USA_defend_the_people
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = USA_electionsof1936
+			}
+			has_country_leader = {
+				name = "Norman Thomas"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			add_political_power = -50
+			add_popularity = {
+				ideology = socialist
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = USA_radicalize_the_left
+		icon = GFX_focus_spr_masters_of_our_own_fate
+		x = 1
+		y = 1
+		cost = 8
+		relative_position_id = USA_expand_the_party_fund
+		available_if_capitulated = yes
+		continue_if_invalid = yes
+		prerequisite = {
+			focus = USA_expand_the_party_fund
+		}
+		mutually_exclusive = {
+			focus = USA_concessions_to_the_stikers
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		has_idea = USA_may_day_strikes
+			NOT = {
+				has_completed_focus = USA_electionsof1936
+			}
+			has_country_leader = {
+				name = "Norman Thomas"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			remove_ideas = USA_may_day_strikes
+			add_popularity = {
+				ideology = syndicalist
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = totalist
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = anarchist
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = USA_concessions_to_the_stikers
+		icon = GFX_focus_spr_class_war
+		x = -1
+		y = 1
+		cost = 8
+		relative_position_id = USA_expand_the_party_fund
+		available_if_capitulated = yes
+		continue_if_invalid = yes
+		prerequisite = {
+			focus = USA_expand_the_party_fund
+		}
+		mutually_exclusive = {
+			focus = USA_radicalize_the_left
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_idea = USA_may_day_strikes
+			NOT = {
+				has_completed_focus = USA_electionsof1936
+			}
+			has_country_leader = {
+				name = "Norman Thomas"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			add_political_power = -100
+			remove_ideas = USA_may_day_strikes
+		}
+	}
+	focus = {
+		id = USA_seize_the_polls
+		icon = GFX_focus_usa_voter_registration_act
+		x = 0
+		y = 2
+		cost = 5
+		relative_position_id = USA_expand_the_party_fund
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = USA_concessions_to_the_stikers
+			focus = USA_radicalize_the_left
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			always = no
+			NOT = {
+				has_completed_focus = USA_electionsof1936
+			}
+			has_country_leader = {
+				name = "Norman Thomas"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = unfinished_tooltip
+		}
+	}
+	focus = {
+		id = USA_endorse_a_candidate
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = USA_seize_the_polls
+		available_if_capitulated = yes
+		continue_if_invalid = yes
+		prerequisite = {
+			focus = USA_outside_the_box
+			focus = USA_a_fireside_chat
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = USA_electionsof1936
+			}
+			has_country_leader = {
+				name = "Norman Thomas"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			country_event = {
+				id = usa.11
+			}
 		}
 	}
  }

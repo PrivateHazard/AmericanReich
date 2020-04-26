@@ -52,7 +52,7 @@ set_popularities = {
 		populist = 9
 		
 		
-		anarchist = 6
+		libertarian = 6
 		
 	}
 
@@ -82,9 +82,9 @@ set_stability = 0.62
 #}
 
 create_country_leader = {
-	name = "Wilhelma"
+	name = "Wilhelmina"
 	desc = "POLITICS_ANTON_MUSSERT_DESC"
-	picture = ""
+	picture = "Portrait_HOL_Wilhelmina.dds"
 	expire = "1965.1.1"
 	ideology = conservatism
 	traits = {
@@ -92,24 +92,32 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Anton Mussert"
+	name = "Wilhelmina"
 	desc = "POLITICS_ANTON_MUSSERT_DESC"
-	picture = "GFX_portrait_hol_anton_mussert"
+	picture = "Portrait_HOL_Wilhelmina.dds"
 	expire = "1965.1.1"
-	ideology = populism
+	ideology = liberalism
 	traits = {
-		leider
 	}
 }
 
 create_country_leader = {
-	name = "Lou de Visser"
-	desc = "POLITICS_LOU_DE_VISSER_DESC"
-	picture = "GFX_portrait_HOL_lou_de_visser"
+	name = "Wilhelmina"
+	desc = "POLITICS_ANTON_MUSSERT_DESC"
+	picture = "Portrait_HOL_Wilhelmina.dds"
 	expire = "1965.1.1"
-	ideology = anarchism
+	ideology = libertarianism
 	traits = {
-		veteran_communist
+	}
+}
+
+create_country_leader = {
+	name = "Wilhelmina"
+	desc = "POLITICS_ANTON_MUSSERT_DESC"
+	picture = "Portrait_HOL_Wilhelmina.dds"
+	expire = "1965.1.1"
+	ideology = socialism
+	traits = {
 	}
 }
 

@@ -529,7 +529,7 @@ ideas = {
 			
 			modifier = {
 				consumer_goods_factor = 0.05
-				political_power_factor = -0.05
+				political_power_gain = -0.05
 				production_speed_infrastructure_factor = -0.1
 				conversion_cost_civ_to_mil_factor = 0.1
 			}
@@ -561,7 +561,7 @@ ideas = {
 			
 			modifier = {
 				consumer_goods_factor = 0.15
-				political_power_factor = 0.05
+				political_power_gain = 0.05
 				production_speed_infrastructure_factor = 0.1
 				production_speed_air_base_factor = 0.05
 				conversion_cost_civ_to_mil_factor = -0.1
@@ -582,7 +582,7 @@ ideas = {
 			
 			modifier = {
 				consumer_goods_factor = 0.2
-				political_power_factor = 0.1
+				political_power_gain = 0.1
 				production_speed_infrastructure_factor = 0.2
 				production_speed_air_base_factor = 0.1
 				conversion_cost_civ_to_mil_factor = -0.2
@@ -615,7 +615,7 @@ ideas = {
 			
 			modifier = {
 				consumer_goods_factor = 0.25
-				political_power_factor = 0.15
+				political_power_gain = 0.15
 				production_speed_infrastructure_factor = 0.3
 				production_speed_air_base_factor = 0.15
 				conversion_cost_civ_to_mil_factor = -0.3
@@ -635,7 +635,7 @@ ideas = {
 			level = 5
 			
 			modifier = {
-				political_power_factor = 0.1
+				political_power_gain = 0.1
 			}
 		}
 		low_immigration = {
@@ -663,7 +663,7 @@ ideas = {
 			
 			modifier = {
 				MONTHLY_POPULATION = 0.25
-				political_power_factor = -0.05
+				political_power_gain = -0.05
 			}
 		}
 		high_immigration = {
@@ -678,7 +678,7 @@ ideas = {
 			
 			modifier = {
 				MONTHLY_POPULATION = 0.5
-				political_power_factor = -0.1
+				political_power_gain = -0.1
 			}
 		}
 		higher_immigration = {
@@ -692,7 +692,7 @@ ideas = {
 			
 			modifier = {
 				MONTHLY_POPULATION = 1
-				political_power_factor = -0.15
+				political_power_gain = -0.15
 			}
 		}
 	}
@@ -705,12 +705,12 @@ ideas = {
 			level = 5
 			
 			modifier = {
-				political_power_factor = 0.15
+				political_power_gain = 0.15
 				stability_factor = 0.1
 				enemy_partisan_effect = 0.1
 				encryption_factor = -0.01
 				decryption_factor = -0.005
-				resistance_tick_auto = 2
+				resistance_target  = 2
 			}
 		}
 		low_police = {
@@ -723,10 +723,10 @@ ideas = {
 			level = 4
 			
 			modifier = {
-				political_power_factor = 0.1
+				political_power_gain = 0.1
 				encryption_factor = -0.005
 				stability_factor = 0.05
-				resistance_tick_auto = 1
+				resistance_target  = 1
 			}
 		}
 		medium_police = {
@@ -740,7 +740,7 @@ ideas = {
 			default = yes
 			
 			modifier = {
-				political_power_factor = 0.05
+				political_power_gain = 0.05
 			}
 		}
 		high_police = {
@@ -754,11 +754,11 @@ ideas = {
 			level = 2
 			
 			modifier = {
-				political_power_factor = -0.05
+				political_power_gain = -0.05
 				encryption_factor = 0.01
 				decryption_factor = 0.005
 				stability_factor = -0.05
-				resistance_tick_auto = -1
+				resistance_target  = -1
 			}
 		}
 		higher_police = {
@@ -771,11 +771,11 @@ ideas = {
 			level = 1
 			
 			modifier = {
-				political_power_factor = -0.1
+				political_power_gain = -0.1
 				encryption_factor = 0.02
 				decryption_factor = 0.01
 				stability_factor = -0.1
-				resistance_tick_auto = -2
+				resistance_target  = -2
 			}
 		}
 	}

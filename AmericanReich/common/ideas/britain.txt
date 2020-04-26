@@ -17,7 +17,7 @@ ideas = {
 			picture = generic_disjointed_gov
 			
 			modifier = {
-				political_power_cost = 0.6
+				political_power_gain = -0.6
 				stability_factor = -0.2
 			}
 		}
@@ -36,7 +36,7 @@ ideas = {
 			picture = generic_disjointed_gov
 			
 			modifier = {
-				political_power_cost = 0.45
+				political_power_gain = -0.45
 				stability_factor = -0.15
 			}
 		}
@@ -55,7 +55,7 @@ ideas = {
 			picture = generic_disjointed_gov
 			
 			modifier = {
-				political_power_cost = 0.3
+				political_power_gain = -0.3
 				stability_factor = -0.1
 			}
 		}
@@ -74,7 +74,7 @@ ideas = {
 			picture = generic_disjointed_gov
 			
 			modifier = {
-				political_power_cost = 0.15
+				political_power_gain = -0.15
 				stability_factor = -0.05
 			}
 		}
@@ -91,7 +91,7 @@ ideas = {
 			}	
 			
 			modifier = {
-				political_power_factor = 0.15
+				political_power_gain = 0.15
 				autocratic_drift = -0.05
 				authoritarian_drift = -0.05
 			}
@@ -126,7 +126,7 @@ ideas = {
 			}
 			
 			modifier = {
-				political_power_factor = 0.05
+				political_power_gain = 0.05
 				industrial_capacity_factory = 0.05
 				industrial_capacity_dockyard = 0.05
 			}
@@ -144,7 +144,7 @@ ideas = {
 			}
 			
 			modifier = {
-				political_power_factor = 0.1
+				political_power_gain = 0.1
 				stability_factor = 0.05
 			}
 		}
@@ -1412,7 +1412,7 @@ ideas = {
 			
 			traits = {
 				anarchist_trait
-				socialist_novelist
+				hog_ambitious_union_boss
 			}
 
 			ai_will_do = {
@@ -1437,7 +1437,7 @@ ideas = {
 			
 			traits = {
 				autocratic_trait
-				old_figurehead
+				hog_old_figurehead
 			}
 
 			ai_will_do = {
@@ -1461,7 +1461,7 @@ ideas = {
 			}
 			
 			traits = {
-				authoritarian_trait
+				syndicalist_trait
 				hog_revolutionary
 			}
 
@@ -1511,7 +1511,7 @@ ideas = {
 			
 			traits = {
 				syndicalist_trait
-				red_suffragette
+				for_biased_intellectual
 			}
 
 			ai_will_do = {
@@ -1536,7 +1536,7 @@ ideas = {
 			
 			traits = {
 				autocratic_trait
-				royalist_bulldog
+				for_expansionist
 			}
 
 			ai_will_do = {
@@ -1624,7 +1624,7 @@ ideas = {
 			
 			traits = {
 				authoritarian_trait
-				war_industrialist
+				eco_military_entrepreneur
 			}
 
 			ai_will_do = {
@@ -1644,7 +1644,7 @@ ideas = {
 			
 			traits = {
 				syndicalist_trait
-				economist
+				eco_planned_economy_proponent
 			}
 
 			ai_will_do = {
@@ -1707,7 +1707,7 @@ ideas = {
 			
 			traits = {
 				syndicalist_trait
-				quartermaster_general
+				sec_health_and_safety
 			}
 
 			ai_will_do = {
@@ -1727,7 +1727,7 @@ ideas = {
 			
 			traits = {
 				autocratic_trait
-				armaments_organizer
+				sec_efficient_sociopath
 			}
 			
 			allowed_to_remove = {

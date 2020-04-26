@@ -1,6 +1,6 @@
 ﻿l_english:
- #focus
-  CSA_dixiecasco:0 "Dixie CAS Co."
+ #Focus
+ CSA_dixiecasco:0 "Dixie CAS Co."
  CSA_dixiecasco_desc:0 ""
  CSA_callforearlyelections:0 "Call for Early Elections"
  CSA_callforearlyelections_desc:0 ""
@@ -347,13 +347,12 @@
  CSA_airdoctrineeffort2_desc:0 ""
  CSA_aircorps:0 "Air Corps"
  CSA_aircorps_desc:0 ""
- #idea
+ #Idea
  CSA_segregation:0 "Jim Crow Laws"
  CSA_protection_act:0 "National Protection Act"
  CSA_fire_decree:0 "Capitol Fire Decree"
  CSA_fire_decree2:0 "Enabling Act"
  CSA_fire_decree3:0 "Enabling Act"
- CSA_Huey_Long:0 "Huey Long"
  CSA_congress:0 "Congress"
  CSA_congress2:0 "Dissolved Congress"
  CSA_silver_shirts:0 "Silver Shirts Legalized"
@@ -365,10 +364,6 @@
  CSA_officers_purged:0 "Officers Purged"
  CSA_oaths_of_loyalty:0 "Oaths of Loyalty"
  CSA_expand_the_DSS:0 "Expanding the DSS"
- CSA_gerald_smith:0 "Gerald Smith"
- CSA_john_hammer:0 "John Hammer"
- CSA_charles_coughlin:0 "Charles Coughlin"
- CSA_george_patton:0 "George Patton"
  CSA_community_projects:0 "Community Projects"
  CSA_defensive_focus:0 "Defensive Focus"
  CSA_defensive_focus1:0 "Defensive Focus"
@@ -415,3 +410,9 @@
  CSA_factory_specialization:0 "Factory Specialization"
  CSA_factory_specialization1:0 "Factory Specialization"
  CSA_factory_specialization2:0 "Factory Specialization"
+ #Ministers
+ CSA_gerald_smith:0 "Gerald Smith"
+ CSA_john_hammer:0 "John Hammer"
+ CSA_charles_coughlin:0 "Charles Coughlin"
+ CSA_george_patton:0 "George Patton"
+ CSA_Huey_Long:0 "Huey Long"

@@ -48,125 +48,649 @@ add_namespace = usa
 		}
 	}
 
-# Election of 1936
-country_event = {
-	id = usa.3
-	title = usa.3.t
-	desc = usa.3.desc
-	picture = GFX_report_event_usa_election_generic
+	# Election of 1936
+	country_event = {
+		id = usa.3
+		title = usa.3.t
+		desc = usa.3.desc
+		picture = GFX_report_event_usa_election_generic
 
-	trigger = {
-		original_tag = USA
-		has_elections = yes
-		date > 1936.11.7
-	}
+		trigger = {
+			original_tag = USA
+			has_elections = yes
+			date > 1936.11.7
+		}
 	
-	fire_only_once = yes
+		fire_only_once = yes
 	
-	option = { 	#4 More Years
-	name = usa.3.a
-		ai_chance = {
-			factor = 25
-			modifier = {
+		option = { 	#4 More Years
+			name = usa.3.a
+			ai_chance = {
 				factor = 1
 			}
-		}
-		trigger = {
-			always = no
-		}
-		add_popularity = {
-			ideology = socialist
-			popularity = 0.15
-		}
-		hidden_effect = {
-			complete_national_focus = USA_electionsof1936
-		}
-	}
-
-	option = { 
-		name = usa.3.b #A Progressive America!
-		ai_chance = {
-			factor = 35
-		}
-		trigger = {
-			always = no
-		}
-		add_popularity = {
-			ideology = liberal
-			popularity = 0.2
-		}
-		set_politics = {
-			ruling_party = liberal
-			elections_allowed = yes
-		}
-		hidden_effect = {
-			complete_national_focus = USA_electionsof1936
-		}
-	}
-	option = { 
-		name = usa.3.c #Hoover's the Man
-		ai_chance = {
-			factor = 35
-		}
-		add_popularity = {
-			ideology = libertarian
-			popularity = 0.25
-		}
-		set_politics = {
-			ruling_party = libertarian
-			elections_allowed = yes
-		}
-		add_ideas = {
-			USA_Herbert_Hoover
-			USA_cordell_hull
-			USA_william_regnery
-			USA_henry_morgenthau
-		}
-		hidden_effect = {
-			complete_national_focus = USA_electionsof1936
-		}
-	}
-	option = { 
-		name = usa.3.d #Democrat Upset?
-		ai_chance = {
-			factor = 5
-		}
-		trigger = {
-			always = no
-		}
-		add_popularity = {
-			ideology = conservative
-			popularity = 0.35
-		}
-		set_politics = {
-			ruling_party = conservative
-			elections_allowed = yes
-		}
-		hidden_effect = {
-			complete_national_focus = USA_electionsof1936
-		}
-	}
-}
-
-# Germany Accepts
-country_event = {
-	id = usa.4
-	title = usa.4.t
-	desc = usa.1.desc
-	picture = GFX_report_event_usa_election_generic
-
-   is_triggered_only = yes
-
-	option = { 	#Excellent!
-		name = usa.4.a
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 1
+			trigger = {
+				NOT = {
+					socialist < 0.25
+				}
+			}
+			if = {
+				limit = {
+					country_flag = USA_upton_spa
+				}
+				retire_country_leader = yes
+				create_country_leader = {
+					name = "Upton Sinclair"
+					desc = "POLITICS_EARL_BROWDER_DESC"
+					picture = "Portrait_USA_Upton_Sinclair.dds"
+					expire = "1965.1.1"
+					ideology = socialism
+					traits = {		
+					}
+				}
+			}
+			add_popularity = {
+				ideology = socialist
+				popularity = 0.06
+			}
+			if = {
+				limit = {
+					country_flag = USA_upton_spa
+				}
+				add_ideas = USA_upton_sinclair
+			}
+			hidden_effect = {
+				complete_national_focus = USA_electionsof1936
 			}
 		}
-		GER = { add_to_faction = USA }
+
+		option = { 
+			name = usa.3.b #A Progressive America!
+			ai_chance = {
+				factor = 1
+			}
+			trigger = {
+				NOT = {
+					liberal < 0.25
+				}
+			}
+			if = {
+				limit = {
+					country_flag = USA_upton_spa
+				}
+				retire_country_leader = yes
+				create_country_leader = {
+					name = "Upton Sinclair"
+					desc = "POLITICS_EARL_BROWDER_DESC"
+					picture = "Portrait_USA_Upton_Sinclair.dds"
+					expire = "1965.1.1"
+					ideology = socialism
+					traits = {		
+					}
+				}
+			}
+			add_popularity = {
+				ideology = liberal
+				popularity = 0.13
+			}
+			set_politics = {
+				ruling_party = liberal
+				elections_allowed = yes
+			}
+			add_ideas = USA_alf_landon
+			add_ideas = USA_gerald_nye
+			add_ideas = USA_robert_mccormick
+			add_ideas = USA_william_regnery
+			hidden_effect = {
+				complete_national_focus = USA_electionsof1936
+			}
+		}
+		option = { 
+			name = usa.3.c #Hoover's the Man
+			ai_chance = {
+				factor = 1
+			}
+			trigger = {
+				NOT = {
+					libertarian < 0.25
+				}
+			}
+			if = {
+				limit = {
+					country_flag = USA_upton_spa
+				}
+				retire_country_leader = yes
+				create_country_leader = {
+					name = "Upton Sinclair"
+					desc = "POLITICS_EARL_BROWDER_DESC"
+					picture = "Portrait_USA_Upton_Sinclair.dds"
+					expire = "1965.1.1"
+					ideology = socialism
+					traits = {		
+					}
+				}
+			}
+			add_popularity = {
+				ideology = libertarian
+				popularity = 0.13
+			}
+			set_politics = {
+				ruling_party = libertarian
+				elections_allowed = yes
+			}
+			add_ideas = USA_Herbert_Hoover
+			add_ideas = USA_john_winant
+			add_ideas =	USA_harold_ickes
+			add_ideas =	USA_henry_morgenthau
+			hidden_effect = {
+				complete_national_focus = USA_electionsof1936
+			}
+		}
+		option = { 
+			name = usa.3.d #Democrat Upset?
+			ai_chance = {
+				factor = 5
+			}
+			trigger = {
+				always = no
+				NOT = {
+					conservative < 0.25
+				}
+			}
+			add_popularity = {
+				ideology = conservative
+				popularity = 0.13
+			}
+			set_politics = {
+				ruling_party = conservative
+				elections_allowed = yes
+			}
+			hidden_effect = {
+				complete_national_focus = USA_electionsof1936
+			}
+		}
+	}
+
+	# Germany Accepts
+	country_event = {
+		id = usa.4
+		title = usa.4.t
+		desc = usa.1.desc
+		picture = GFX_report_event_usa_election_generic
+
+		is_triggered_only = yes
+
+		option = { 	#Excellent!
+			name = usa.4.a
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1
+				}
+			}
+			GER = { add_to_faction = USA }
 		
+		}
 	}
+	
+	#May Day Riots
+	country_event = {
+		id = usa.5
+		title = usa.5.t
+		desc = usa.5.desc
+		picture = GFX_report_event_generic_strike
 
-}
+		is_triggered_only = yes
+
+		option = { 	#Disperse the crowds, by any means!
+			name = usa.5.a
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1
+				}
+			}
+			add_political_power = -10
+			add_stability = 0.01
+			hidden_effect = {
+				country_event = {
+					id = usa.6
+					days = 3
+				}
+			}
+		}
+		
+		option = { 	#Disperse the crowds, by appeasement!
+			name = usa.5.b
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1
+				}
+			}
+			add_political_power = 10
+			add_popularity = {
+				ideology = socialist
+				popularity = 0.02
+			}
+			country_event = {
+				id = usa.7
+				days = 2
+			}
+		}
+	}
+	
+	#May Day Riots Worsen
+	country_event = {
+		id = usa.6
+		title = usa.6.t
+		desc = usa.6.desc
+		picture = GFX_report_event_worker_protests
+
+		is_triggered_only = yes
+
+		option = { 	#Perhaps, this is the beginning of the end for our cause...
+			name = usa.6.a
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1
+				}
+			}
+			add_ideas = USA_may_day_strikes
+			add_stability = -0.04
+			add_popularity = {
+				ideology = conservative
+				popularity = 0.02
+			}
+			add_popularity = {
+				ideology = libertarian
+				popularity = 0.02
+			}
+			add_popularity = {
+				ideology = liberal
+				popularity = 0.02
+			}
+			add_popularity = {
+				ideology = anarchist
+				popularity = 0.02
+			}
+			add_popularity = {
+				ideology = syndicalist
+				popularity = 0.02
+			}
+			add_popularity = {
+				ideology = totalist
+				popularity = 0.02
+			}
+		}
+	}
+	
+	#May Day Proposal
+	country_event = {
+		id = usa.7
+		title = usa.7.t
+		desc = usa.7.desc
+		picture = GFX_report_event_second_vienna_award_pact
+
+		is_triggered_only = yes
+
+		option = { 	#We accept the demands.
+			name = usa.7.a
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1
+				}
+			}
+			add_political_power = 20
+			add_stability = 0.02
+			add_timed_idea = {
+				idea = USA_may_day_agreements
+				days = 365
+			}
+		}
+		
+		option = { 	#We refuse the demands!
+			name = usa.7.b
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1
+				}
+			}
+			add_political_power = -10
+			add_stability = 0.01
+			hidden_effect = {
+				country_event = {
+					id = usa.6
+					days = 3
+				}
+			}
+		}
+		
+		option = { 	#We can't pay for this!
+			name = usa.7.c
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1
+				}
+			}
+			trigger = {
+				has_global_flag = Black_Friday
+			}
+			add_political_power = -50
+			add_ideas = USA_may_day_strikes
+			add_popularity = {
+				ideology = anarchist
+				popularity = 0.02
+			}
+			add_popularity = {
+				ideology = syndicalist
+				popularity = 0.02
+			}
+			add_popularity = {
+				ideology = totalist
+				popularity = 0.02
+			}
+		}
+	}
+	#Saint Patrick's Day Flood
+	country_event = {
+		id = usa.8
+		title = usa.8.t
+		desc = usa.8.desc
+		picture = GFX_report_event_dead_soldiers
+
+		is_triggered_only = yes
+
+		option = { 	#They can help themselves.
+			name = usa.8.a
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1
+				}
+			}
+			add_manpower = -500
+			add_popularity = {
+				ideology = socialist
+				popularity = -0.02
+			}
+		}
+		option = { 	#We must aid the people!
+			name = usa.8.b
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1
+				}
+			}
+			add_political_power = -30
+			add_stability = 0.01
+		}
+	}
+	#Construction of the Sinclair Dam
+	country_event = {
+		id = usa.9
+		title = usa.9.t
+		desc = usa.9.desc
+		picture = GFX_report_event_soviet_soldiers_tank
+
+		is_triggered_only = yes
+
+		option = { 	#Perhaps we're on the road to recovery.
+			name = usa.9.a
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1
+				}
+			}
+			382 = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	#Red Summer
+	country_event = {
+		id = usa.10
+		title = usa.10.t
+		desc = usa.10.desc
+		picture = GFX_report_event_dead_soldiers
+
+		is_triggered_only = yes
+
+		option = { 	#It can't get any worse!
+			name = usa.10.a
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1
+				}
+			}
+			add_manpower = -20
+			add_political_power = -20
+		}
+	}
+	#Endorsing a Candidate
+	country_event = {
+		id = usa.11
+		title = usa.11.t
+		desc = usa.11.desc
+		picture = GFX_report_event_election_vote
+
+		is_triggered_only = yes
+
+		option = { 	#Long live the SPA!
+			name = usa.11.a
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1
+				}
+			}
+			add_popularity = {
+				if = {
+					limit = {
+						country_flag = USA_norman_spa
+					}
+					add_political_power = -50
+				}
+				ideology = socialist
+				popularity = 0.05
+			}
+		}
+		
+		option = { 	#Alf Landon will give a square deal!
+			name = usa.11.b
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1
+				}
+			}
+			add_popularity = {
+				ideology = liberal
+				popularity = 0.05
+			}
+		}
+		
+		option = { 	#Hoover's the man!
+			name = usa.11.c
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1
+				}
+			}
+			add_popularity = {
+				ideology = libertarian
+				popularity = 0.05
+			}
+		}
+	}
+	#The SPA Presidential Convention
+	country_event = {
+		id = usa.12
+		title = usa.12.t
+		desc = usa.12.desc
+		picture = GFX_report_event_generic_parliament
+
+		is_triggered_only = yes
+
+		option = { 	#I will run again!
+			name = usa.12.a
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1
+				}
+			}
+			trigger = {
+				always = no
+			}
+		}
+		
+		option = { 	#My Vice President Upton Sinclair!
+			name = usa.12.b
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1
+				}
+			}
+			add_popularity = {
+				ideology = anarchist
+				popularity = 0.02
+			}
+			set_country_flag = USA_upton_spa
+		}
+	}
+	#The Union Representation Act
+	country_event = {
+		id = usa.13
+		title = usa.13.t
+		desc = usa.13.desc
+		picture = GFX_report_event_worker_protests
+
+		is_triggered_only = yes
+
+		option = { 	#The Union makes us strong!
+			name = usa.13.a
+			ai_chance = {
+				factor = 1
+			}
+			unlock_decision_tooltip = USA_request_union_support
+			add_political_power = 100
+			add_stability = -0.05
+			set_country_flag = USA_union_supported
+		}
+		
+		option = { 	#We can't afford to make the Unions partisan...
+			name = usa.13.b
+			ai_chance = {
+				factor = 0
+			}
+			add_political_power = -100
+			add_stability = 0.05
+		}
+	}
+	#A Revolutionary Oppurtunity
+	country_event = {
+		id = usa.14
+		title = usa.14.t
+		desc = usa.14.desc
+		picture = GFX_report_event_generic_sign_treaty2
+
+		is_triggered_only = yes
+
+		option = { 	#We must form a Popular Front!
+			name = usa.14.a
+			ai_chance = {
+				factor = 1
+			}
+			add_war_support = 0.05
+			add_stability = -0.05
+		}
+		option = { 	#We can't compromise our values!
+			name = usa.14.b
+			ai_chance = {
+				factor = 1
+			}
+			add_political_power = -100
+			add_stability = 0.05
+		}
+	}
+	#The Progressive Presidential Convention
+	country_event = {
+		id = usa.15
+		title = usa.15.t
+		desc = usa.15.desc
+		picture = GFX_report_event_generic_parliament
+
+		is_triggered_only = yes
+
+		option = { 	#May the best man win...
+			name = usa.15.a
+			ai_chance = {
+				factor = 1
+			}
+			add_popularity = {
+				ideology = liberal
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = socialist
+				popularity = -0.01
+			}
+		}
+	}
+	#The Democratic-Republican Presidential Convention
+	country_event = {
+		id = usa.16
+		title = usa.16.t
+		desc = usa.16.desc
+		picture = GFX_report_event_generic_parliament
+
+		is_triggered_only = yes
+
+		option = { 	#May the best man win...
+			name = usa.16.a
+			ai_chance = {
+				factor = 1
+			}
+			add_popularity = {
+				ideology = libertarian
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = socialist
+				popularity = -0.01
+			}
+		}
+	}
+	#The Democrat Presidential Convention
+	country_event = {
+		id = usa.17
+		title = usa.17.t
+		desc = usa.17.desc
+		picture = GFX_report_event_generic_parliament
+
+		is_triggered_only = yes
+
+		option = { 	#May the best man win...
+			name = usa.17.a
+			ai_chance = {
+				factor = 1
+			}
+			add_popularity = {
+				ideology = conservative
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = socialist
+				popularity = -0.01
+			}
+		}
+	}

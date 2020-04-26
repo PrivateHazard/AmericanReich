@@ -869,7 +869,7 @@ ideas = {
 			
 			traits = {
 				liberal_trait
-				compassionate_gentleman
+				for_great_compromiser
 			}
 			
 			allowed_to_remove = {
@@ -906,7 +906,7 @@ ideas = {
 
 			traits = { 
 				conservative_trait
-				war_industrialist
+				eco_military_entrepreneur
 			}
 
 			ai_will_do = {

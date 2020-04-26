@@ -1147,7 +1147,7 @@ ideas = {
 			
 			traits = {
 				conservative_trait
-				smooth_talking_charmer
+				for_great_compromiser
 			}
 			
 			allowed_to_remove = {
@@ -1167,7 +1167,7 @@ ideas = {
 			
 			traits = {
 				nationalist_trait
-				propaganda_expert
+				for_loyal_nationalist
 			}
 
 			do_effect = {
