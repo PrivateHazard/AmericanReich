@@ -1,0 +1,588 @@
+	ideas = {
+		
+		safety_laws = {
+			law = yes
+			
+			lower_safety = {
+
+				removal_cost = -1
+				cost = 100
+				level = 5
+				picture = FRA_matignon_agreements
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					MONTHLY_POPULATION = -0.1
+					production_factory_max_efficiency_factor = 0.1
+					production_speed_buildings_factor = 0.1
+				}
+			}
+			
+			low_safety = {
+
+				removal_cost = -1
+				cost = 100
+				level = 4
+				picture = generic_production_bonus
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					MONTHLY_POPULATION = -0.05
+					production_factory_max_efficiency_factor = 0.05
+					production_speed_buildings_factor = 0.05
+				}
+			}
+			
+			medium_safety = {
+
+				removal_cost = -1
+				cost = 100
+				level = 3
+				default = yes
+				picture = generic_volunteer_expedition_bonus
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					stability_factor = 0.025
+				}
+			}
+			
+			high_safety = {
+
+				removal_cost = -1
+				cost = 100
+				level = 2
+				picture = FRA_factory_strikes
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					stability_factor = 0.05
+					production_factory_max_efficiency_factor = -0.05
+					production_speed_buildings_factor = -0.05
+				}
+			}
+			
+			higher_safety = {
+
+				removal_cost = -1
+				cost = 100
+				level = 1
+				picture = FRA_scw_intervention_nationalists_focus
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					stability_factor = 0.075
+					production_factory_max_efficiency_factor = -0.1
+					production_speed_buildings_factor = -0.1
+				}
+			}
+		}
+		
+		education_laws = {
+			law = yes
+			
+			lower_education = {
+
+				removal_cost = -1
+				cost = 100
+				level = 5
+				picture = generic_pp_unity_bonus
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = 0.15
+					stability_factor = -0.075
+					research_speed_factor = -0.1
+				}
+			}
+			
+			low_education = {
+
+				removal_cost = -1
+				cost = 100
+				level = 4
+				picture = jap_duplicate_research
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = 0.05
+					stability_factor = -0.025
+					research_speed_factor = -0.05
+				}
+			}
+			
+			medium_education = {
+
+				removal_cost = -1
+				cost = 100
+				level = 3
+				default = yes
+				picture = generic_research_bonus
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = -0.05
+					stability_factor = 0.025
+				}
+			}
+			
+			high_education = {
+
+				removal_cost = -1
+				cost = 100
+				level = 2
+				picture = jap_supremacy_of_technology
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = -0.1
+					stability_factor = 0.05
+					research_speed_factor = 0.05
+				}
+			}
+			
+			higher_education = {
+
+				removal_cost = -1
+				cost = 100
+				level = 1
+				picture = jap_supremacy_of_will
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = -0.15
+					stability_factor = 0.075
+					research_speed_factor = 0.1
+				}
+			}
+		}
+		
+		race_laws = {
+			law = yes
+			
+			lower_race = {
+
+				removal_cost = -1
+				cost = 100
+				level = 5
+				picture = generic_oppression
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = 0.2
+					stability_factor = 0.05
+					non_core_manpower = -0.02
+					enemy_partisan_effect = 0.2
+				}
+			}
+			
+			low_race = {
+
+				removal_cost = -1
+				cost = 100
+				level = 4
+				default = yes
+				picture = saf_history_of_segregation
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = 0.1
+					stability_factor = 0.025
+					enemy_partisan_effect = 0.1
+				}
+			}
+			
+			medium_race = {
+
+				removal_cost = -1
+				cost = 100
+				level = 3
+				picture = generic_neutrality_drift_bonus
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					non_core_manpower = 0.02
+				}
+			}
+			
+			high_race = {
+
+				removal_cost = -1
+				cost = 100
+				level = 2
+				picture = FRA_scw_intervention_republicans_focus
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = -0.1
+					stability_factor = -0.025
+					non_core_manpower = 0.04
+					enemy_partisan_effect = -0.1
+				}
+			}
+			
+			higher_race = {
+
+				removal_cost = -1
+				cost = 100
+				level = 1
+				picture = FRA_matignon_agreements
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = -0.2
+					stability_factor = -0.05
+					non_core_manpower = 0.06
+					enemy_partisan_effect = -0.2
+				}
+			}
+		}
+		
+		female_laws = {
+			law = yes
+			
+			lower_female = {
+
+				removal_cost = -1
+				cost = 100
+				level = 5
+				default = yes
+				picture = generic_morale_bonus
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					MONTHLY_POPULATION = 0.15
+					stability_factor = 0.025
+					industrial_capacity_factory = -0.05
+					industrial_capacity_dockyard = -0.05
+				}
+			}
+			
+			low_female = {
+
+				removal_cost = -1
+				cost = 100
+				level = 4
+				picture = generic_production_bonus
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					MONTHLY_POPULATION = 0.05
+				}
+			}
+			
+			medium_female = {
+
+				removal_cost = -1
+				cost = 100
+				level = 3
+				picture = generic_manpower_bonus
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					MONTHLY_POPULATION = -0.05
+					stability_factor = -0.025
+					industrial_capacity_factory = 0.05
+					industrial_capacity_dockyard = 0.05
+				}
+			}
+			
+			high_female = {
+
+				removal_cost = -1
+				cost = 100
+				level = 2
+				picture = generic_intel_bonus
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					MONTHLY_POPULATION = -0.15
+					stability_factor = -0.05
+					industrial_capacity_factory = 0.1
+					industrial_capacity_dockyard = 0.1
+				}
+			}
+			
+			higher_female = {
+
+				removal_cost = -1
+				cost = 100
+				level = 1
+				picture = generic_disjointed_gov
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					MONTHLY_POPULATION = -0.25
+					stability_factor = -0.075
+					industrial_capacity_factory = 0.15
+					industrial_capacity_dockyard = 0.15
+				}
+			}
+		}
+		
+		prison_laws = {
+			law = yes
+			
+			lower_prison = {
+
+				removal_cost = -1
+				cost = 100
+				level = 5
+				picture = generic_exploit_mines
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					industry_free_repair_factor = 1
+					production_speed_buildings_factor = 0.1
+					stability_factor = -0.1
+					research_speed_factor = -0.05
+				}
+			}
+			
+			low_prison = {
+
+				removal_cost = -1
+				cost = 100
+				level = 4
+				default = yes
+				picture = generic_army_problems
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					industry_free_repair_factor = 0.5
+					production_speed_buildings_factor = 0.05
+					stability_factor = -0.05
+					research_speed_factor = -0.025
+				}
+			}
+			
+			medium_prison = {
+
+				removal_cost = -1
+				cost = 100
+				level = 3
+				picture = generic_build_infrastructure
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					industry_free_repair_factor = 0.25
+				}
+			}
+			
+			high_prison = {
+
+				removal_cost = -1
+				cost = 100
+				level = 2
+				picture = generic_fortify_the_borders
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					industry_free_repair_factor = 0.1
+					stability_factor = 0.05
+				}
+			}
+			
+			higher_prison = {
+
+				removal_cost = -1
+				cost = 100
+				level = 1
+				picture = generic_victors_of_ww1
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					stability_factor = 0.1
+				}
+			}
+		}
+		
+		police_laws = {
+			law = yes
+			
+			lower_police = {
+
+				removal_cost = -1
+				cost = 100
+				level = 5
+				picture = chi_war_of_resistance3
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = 0.15
+					stability_factor = 0.1
+					enemy_partisan_effect = 0.1
+					encryption_factor = -0.01
+					decryption_factor = -0.005
+					resistance_target  = 0.1
+				}
+			}
+			
+			low_police = {
+
+				allowed_civil_war = {
+				}
+
+				removal_cost = -1
+				cost = 100
+				level = 4
+				picture = FRA_matignon_agreements
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = 0.1
+					encryption_factor = -0.005
+					stability_factor = 0.05
+					resistance_target  = 0.05
+				}
+			}
+			
+			medium_police = {
+				
+				allowed_civil_war = {
+				}
+
+				removal_cost = -1
+				cost = 100
+				level = 3
+				default = yes
+				picture = generic_volunteer_expedition_bonus
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = 0.05
+				}
+			}
+			
+			high_police = {
+				
+
+				allowed_civil_war = {
+				}
+
+				removal_cost = -1
+				cost = 100
+				level = 2
+				picture = ast_classify_aliens
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = -0.05
+					encryption_factor = 0.01
+					decryption_factor = 0.005
+					stability_factor = -0.05
+					resistance_target  = -0.05
+				}
+			}
+			
+			higher_police = {
+
+				allowed_civil_war = {
+				}
+
+				removal_cost = -1
+				cost = 100
+				level = 1
+				picture = generic_secret_police
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = -0.1
+					encryption_factor = 0.02
+					decryption_factor = 0.01
+					stability_factor = -0.1
+					resistance_target  = -0.1
+				}
+			}
+		}
+	}

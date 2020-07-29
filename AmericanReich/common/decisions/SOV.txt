@@ -1,0 +1,1013 @@
+	economy_decisions = {
+	}
+
+	foreign_politics = {
+		SOV_undivide_the_military = {
+
+			icon = decision_generic_army_support
+
+			available = {
+				has_idea = SOV_divided_military
+			}
+			
+			visible = {
+				original_tag = SOV
+				has_completed_focus = SOV_reviewthemilitary
+			}
+			
+			fire_only_once = yes
+			days_remove = 180
+			priority = 1
+			
+			ai_will_do = {
+				factor = 10
+			}
+			
+			modifier = {
+				political_power_gain = -0.2
+			}
+			
+			remove_effect = {
+				remove_ideas = SOV_divided_military
+			}
+		}
+	
+		SOV_war_with_KAZ = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				is_subject = no
+				NOT = {
+					is_in_faction_with = KAZ
+				}
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = KAZ
+				is_neighbor_of = KAZ
+				NOT = {
+					has_non_aggression_pact_with = KAZ
+					has_country_flag = generic_justification
+				}
+			}
+			
+			visible = {
+				has_completed_focus = SOV_centralasiandirection
+			}
+			
+			will_lead_to_war_with = KAZ
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+			}
+			
+			modifier = {
+				political_power_gain = -0.1
+			}
+			
+			complete_effect = {
+				set_country_flag = generic_justification
+			}
+			
+			remove_effect = {
+				clr_country_flag = generic_justification
+				declare_war_on = {
+					target = KAZ
+					type = annex_everything
+				}
+			}
+		}
+		
+		SOV_war_with_DON = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				is_subject = no
+				NOT = {
+					is_in_faction_with = DON
+				}
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = DON
+				is_neighbor_of = DON
+				NOT = {
+					has_non_aggression_pact_with = DON
+					has_country_flag = generic_justification
+				}
+			}
+			
+			visible = {
+				has_completed_focus = SOV_caucusdirection
+			}
+			
+			will_lead_to_war_with = DON
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+			}
+			
+			modifier = {
+				political_power_gain = -0.1
+			}
+			
+			complete_effect = {
+				set_country_flag = generic_justification
+			}
+			
+			remove_effect = {
+				clr_country_flag = generic_justification
+				declare_war_on = {
+					target = DON
+					type = annex_everything
+				}
+			}
+		}
+		
+		SOV_war_with_GEO = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				is_subject = no
+				NOT = {
+					is_in_faction_with = GEO
+				}
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = GEO
+				is_neighbor_of = GEO
+				NOT = {
+					has_non_aggression_pact_with = GEO
+					has_country_flag = generic_justification
+				}
+			}
+			
+			visible = {
+				has_completed_focus = SOV_caucusdirection
+			}
+			
+			will_lead_to_war_with = GEO
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+			}
+			
+			modifier = {
+				political_power_gain = -0.1
+			}
+			
+			complete_effect = {
+				set_country_flag = generic_justification
+			}
+			
+			remove_effect = {
+				clr_country_flag = generic_justification
+				declare_war_on = {
+					target = GEO
+					type = annex_everything
+				}
+			}
+		}
+		
+		SOV_war_with_ARM = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				is_subject = no
+				NOT = {
+					is_in_faction_with = ARM
+				}
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = ARM
+				is_neighbor_of = ARM
+				NOT = {
+					has_non_aggression_pact_with = ARM
+					has_country_flag = generic_justification
+				}
+			}
+			
+			visible = {
+				has_completed_focus = SOV_caucusdirection
+			}
+			
+			will_lead_to_war_with = ARM
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+			}
+			
+			modifier = {
+				political_power_gain = -0.1
+			}
+			
+			complete_effect = {
+				set_country_flag = generic_justification
+			}
+			
+			remove_effect = {
+				clr_country_flag = generic_justification
+				declare_war_on = {
+					target = ARM
+					type = annex_everything
+				}
+			}
+		}
+		
+		SOV_war_with_AZR = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				is_subject = no
+				NOT = {
+					is_in_faction_with = AZR
+				}
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = AZR
+				is_neighbor_of = AZR
+				NOT = {
+					has_non_aggression_pact_with = AZR
+					has_country_flag = generic_justification
+				}
+			}
+			
+			visible = {
+				has_completed_focus = SOV_caucusdirection
+			}
+			
+			will_lead_to_war_with = AZR
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+			}
+			
+			modifier = {
+				political_power_gain = -0.1
+			}
+			
+			complete_effect = {
+				set_country_flag = generic_justification
+			}
+			
+			remove_effect = {
+				clr_country_flag = generic_justification
+				declare_war_on = {
+					target = AZR
+					type = annex_everything
+				}
+			}
+		}
+		
+		SOV_war_with_UKR = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				is_subject = no
+				NOT = {
+					is_in_faction_with = UKR
+				}
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = UKR
+				is_neighbor_of = UKR
+				NOT = {
+					has_non_aggression_pact_with = UKR
+					has_country_flag = generic_justification
+				}
+			}
+			
+			visible = {
+				has_completed_focus = SOV_theeuropeandirection
+			}
+			
+			will_lead_to_war_with = UKR
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+			}
+			
+			modifier = {
+				political_power_gain = -0.1
+			}
+			
+			complete_effect = {
+				set_country_flag = generic_justification
+			}
+			
+			remove_effect = {
+				clr_country_flag = generic_justification
+				declare_war_on = {
+					target = UKR
+					type = annex_everything
+				}
+			}
+		}
+		
+		SOV_war_with_BLR = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				is_subject = no
+				NOT = {
+					is_in_faction_with = BLR
+				}
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = BLR
+				is_neighbor_of = BLR
+				NOT = {
+					has_non_aggression_pact_with = BLR
+					has_country_flag = generic_justification
+				}
+			}
+			
+			visible = {
+				has_completed_focus = SOV_theeuropeandirection
+			}
+			
+			will_lead_to_war_with = BLR
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+			}
+			
+			modifier = {
+				political_power_gain = -0.1
+			}
+			
+			complete_effect = {
+				set_country_flag = generic_justification
+			}
+			
+			remove_effect = {
+				clr_country_flag = generic_justification
+				declare_war_on = {
+					target = BLR
+					type = annex_everything
+				}
+			}
+		}
+		
+		SOV_war_with_POL = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				is_subject = no
+				NOT = {
+					is_in_faction_with = POL
+				}
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = POL
+				is_neighbor_of = POL
+				NOT = {
+					has_non_aggression_pact_with = POL
+					has_country_flag = generic_justification
+				}
+			}
+			
+			visible = {
+				has_completed_focus = SOV_theeuropeandirection
+			}
+			
+			will_lead_to_war_with = POL
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+			}
+			
+			modifier = {
+				political_power_gain = -0.1
+			}
+			
+			complete_effect = {
+				set_country_flag = generic_justification
+			}
+			
+			remove_effect = {
+				clr_country_flag = generic_justification
+				declare_war_on = {
+					target = POL
+					type = annex_everything
+				}
+			}
+		}
+		
+		SOV_war_with_BAL = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				is_subject = no
+				NOT = {
+					is_in_faction_with = BAL
+				}
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = BAL
+				is_neighbor_of = BAL
+				NOT = {
+					has_non_aggression_pact_with = BAL
+					has_country_flag = generic_justification
+				}
+			}
+			
+			visible = {
+				has_completed_focus = SOV_theeuropeandirection
+			}
+			
+			will_lead_to_war_with = BAL
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+			}
+			
+			modifier = {
+				political_power_gain = -0.1
+			}
+			
+			complete_effect = {
+				set_country_flag = generic_justification
+			}
+			
+			remove_effect = {
+				clr_country_flag = generic_justification
+				declare_war_on = {
+					target = BAL
+					type = annex_everything
+				}
+			}
+		}
+		
+		SOV_war_with_LIT = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				is_subject = no
+				NOT = {
+					is_in_faction_with = LIT
+				}
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = LIT
+				is_neighbor_of = LIT
+				NOT = {
+					has_non_aggression_pact_with = LIT
+					has_country_flag = generic_justification
+				}
+			}
+			
+			visible = {
+				has_completed_focus = SOV_theeuropeandirection
+			}
+			
+			will_lead_to_war_with = LIT
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+			}
+			
+			modifier = {
+				political_power_gain = -0.1
+			}
+			
+			complete_effect = {
+				set_country_flag = generic_justification
+			}
+			
+			remove_effect = {
+				clr_country_flag = generic_justification
+				declare_war_on = {
+					target = LIT
+					type = annex_everything
+				}
+			}
+		}
+		
+		SOV_war_with_FIN = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				is_subject = no
+				NOT = {
+					is_in_faction_with = FIN
+				}
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = FIN
+				is_neighbor_of = FIN
+				NOT = {
+					has_non_aggression_pact_with = FIN
+					has_country_flag = generic_justification
+				}
+			}
+			
+			visible = {
+				has_completed_focus = SOV_theeuropeandirection
+			}
+			
+			will_lead_to_war_with = FIN
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+			}
+			
+			modifier = {
+				political_power_gain = -0.1
+			}
+			
+			complete_effect = {
+				set_country_flag = generic_justification
+			}
+			
+			remove_effect = {
+				clr_country_flag = generic_justification
+				declare_war_on = {
+					target = FIN
+					type = annex_everything
+				}
+			}
+		}
+		
+		SOV_war_with_TRM = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				is_subject = no
+				NOT = {
+					is_in_faction_with = TRM
+				}
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = TRM
+				is_neighbor_of = TRM
+				NOT = {
+					has_non_aggression_pact_with = TRM
+					has_country_flag = generic_justification
+				}
+			}
+			
+			visible = {
+				has_completed_focus = SOV_fareasterndirection
+			}
+			
+			will_lead_to_war_with = TRM
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+			}
+			
+			modifier = {
+				political_power_gain = -0.1
+			}
+			
+			complete_effect = {
+				set_country_flag = generic_justification
+			}
+			
+			remove_effect = {
+				clr_country_flag = generic_justification
+				declare_war_on = {
+					target = TRM
+					type = annex_everything
+				}
+			}
+		}
+		
+		SOV_war_with_MAN = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				is_subject = no
+				NOT = {
+					is_in_faction_with = MAN
+				}
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = MAN
+				is_neighbor_of = MAN
+				NOT = {
+					has_non_aggression_pact_with = MAN
+					has_country_flag = generic_justification
+				}
+			}
+			
+			visible = {
+				has_completed_focus = SOV_fareasterndirection
+			}
+			
+			will_lead_to_war_with = MAN
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+			}
+			
+			modifier = {
+				political_power_gain = -0.1
+			}
+			
+			complete_effect = {
+				set_country_flag = generic_justification
+			}
+			
+			remove_effect = {
+				clr_country_flag = generic_justification
+				declare_war_on = {
+					target = MAN
+					type = annex_everything
+				}
+			}
+		}
+		
+		SOV_war_with_JAP = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				is_subject = no
+				NOT = {
+					is_in_faction_with = JAP
+				}
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = JAP
+				NOT = {
+					has_non_aggression_pact_with = JAP
+					has_country_flag = generic_justification
+				}
+				hidden_trigger = {
+					is_ai = no
+				}
+			}
+			
+			visible = {
+				has_completed_focus = SOV_fareasterndirection
+			}
+			
+			will_lead_to_war_with = JAP
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+			}
+			
+			modifier = {
+				political_power_gain = -0.1
+			}
+			
+			complete_effect = {
+				set_country_flag = generic_justification
+			}
+			
+			remove_effect = {
+				clr_country_flag = generic_justification
+				declare_war_on = {
+					target = JAP
+					type = annex_everything
+				}
+			}
+		}
+		
+		SOV_war_with_TUR = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				is_subject = no
+				NOT = {
+					is_in_faction_with = TUR
+				}
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = TUR
+				is_neighbor_of = TUR
+				NOT = {
+					has_non_aggression_pact_with = TUR
+					has_country_flag = generic_justification
+				}
+			}
+			
+			visible = {
+				has_completed_focus = SOV_themiddleeasterndirection
+			}
+			
+			will_lead_to_war_with = TUR
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+			}
+			
+			modifier = {
+				political_power_gain = -0.1
+			}
+			
+			complete_effect = {
+				set_country_flag = generic_justification
+			}
+			
+			remove_effect = {
+				clr_country_flag = generic_justification
+				declare_war_on = {
+					target = TUR
+					type = annex_everything
+				}
+			}
+		}
+		
+		SOV_war_with_PER = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				is_subject = no
+				NOT = {
+					is_in_faction_with = PER
+				}
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = PER
+				is_neighbor_of = PER
+				NOT = {
+					has_non_aggression_pact_with = PER
+					has_country_flag = generic_justification
+				}
+			}
+			
+			visible = {
+				has_completed_focus = SOV_themiddleeasterndirection
+			}
+			
+			will_lead_to_war_with = PER
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+			}
+			
+			modifier = {
+				political_power_gain = -0.1
+			}
+			
+			complete_effect = {
+				set_country_flag = generic_justification
+			}
+			
+			remove_effect = {
+				clr_country_flag = generic_justification
+				declare_war_on = {
+					target = PER
+					type = annex_everything
+				}
+			}
+		}
+	}
+	
+	SOV_category_expand_our_faction = {
+
+		SOV_invite_tag_to_faction = {
+	
+			icon = generic_political_discourse
+			
+			fire_only_once = no
+			
+			days_re_enable = 120
+
+			allowed = {
+				original_tag = SOV
+			}
+			
+			visible = {
+				is_in_faction = yes
+				is_faction_leader = yes
+			}
+			
+			target_root_trigger = {
+				has_completed_focus = SOV_expand_our_alliance
+			}
+
+			target_trigger = {
+				FROM = {
+					NOT = { is_in_faction_with = ROOT }
+					OR = {
+						tag = BUL
+						tag = ROM
+						tag = SER
+						tag = PER
+					}
+				}
+			}
+
+			available = {
+				FROM = {
+					is_in_faction = no
+					is_subject = no
+				}
+			}
+
+			cost = 25
+			
+			complete_effect = {
+				FROM = {
+					country_event = {
+						id = generic.5
+					}				
+				}
+			}
+			
+			ai_will_do = {
+				factor = 100
+			}
+		}
+	}
+	
+	SOV_integration = {
+		SOV_integrate_state = {
+		
+			icon = generic_nationalism
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			available = {
+				FROM = {
+					is_claimed_by = ROOT
+				}
+			}
+
+			state_target = yes
+			on_map_mode = map_only
+			target_array = controlled_states
+
+			target_trigger = {
+				has_completed_focus = SOV_russianforeignpolicy
+				FROM = {
+					NOT = {
+						is_core_of = ROOT
+					}
+					FROM = {
+						is_claimed_by = ROOT
+					}
+				}
+			}
+			
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 10
+					OR = {
+						political_power_daily > 0.8
+						has_political_power > 100
+					}
+				}
+			}
+
+			cost = 50
+
+			fire_only_once = yes
+
+			days_remove = 60
+
+			modifier = {
+				political_power_gain = -0.2
+			}
+
+			visible = {
+				tag = SOV
+				has_completed_focus = SOV_russianforeignpolicy
+				always = yes
+			}
+
+			complete_effect = {
+
+			}
+
+			remove_effect = {
+				FROM = {
+					add_core_of = ROOT
+					remove_claim_by = ROOT
+				}
+			}
+		}
+	}

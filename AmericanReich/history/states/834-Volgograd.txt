@@ -1,0 +1,21 @@
+state={
+	id=834
+	name="STATE_834"
+	manpower = 135070
+	
+	state_category = rural
+
+	history={
+		owner = DON
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = DON
+		victory_points = {
+		}
+	}
+
+	provinces={
+		498 6503 6527 9442 9474 9459 11447
+	}
+}

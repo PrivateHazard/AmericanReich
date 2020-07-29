@@ -1504,16 +1504,20 @@ on_actions = {
 				}
 			}
 		}
+		effect = {
+			for_each_scope_loop = {
+				array = countries
+				add_dynamic_modifier = { modifier = party_popularity_dynamic_modifier }
+			}
+		}
 	}
 	on_new_term_election = {
 		random_events = {
 			100 = japan.2
 			100 = usa.3
-		}
-		random_events = {
-		}
-		random_events = {
-			
+			100 = csa.2
+			100 = italy.3
+			100 = russia.13
 		}
 	}
 }

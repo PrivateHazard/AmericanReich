@@ -1,0 +1,189 @@
+	focus_tree = {
+		id = AST
+		country = {
+			factor = 0
+			modifier = {
+				add = 10
+				tag = AST
+			}
+		}
+		continuous_focus_position = { x = 50 y = 1600 }
+		
+		#Politics
+		focus = { 
+			id = AST_chaos_in_the_crown
+			icon = GFX_focus_AST_chaos
+			x = 0
+			y = 0
+			cost = 15
+			available_if_capitulated = yes 
+			ai_will_do = { 
+				factor = 1
+			} 
+			available = {
+				has_country_leader = {
+					name = "Regency Council"
+					ruling_only = yes
+				}
+			}
+			bypass = {
+			}
+			select_effect = {
+				add_political_power = 0
+			}
+			completion_reward = {
+				custom_effect_tooltip = AST_chaos_in_the_crown_tooltip
+				hidden_effect = {
+					country_event = {
+						id = australia.3
+					}
+				}
+			}
+		}
+		
+		focus = { 
+			id = AST_a_steady_course
+			icon = GFX_focus_AST_a_steady_course
+			x = 1
+			y = 1
+			cost = 5
+			relative_position_id = AST_chaos_in_the_crown
+			available_if_capitulated = yes 
+			prerequisite = {
+				focus = AST_chaos_in_the_crown
+			}
+			mutually_exclusive = {
+				focus = AST_a_change_in_course
+			}
+			ai_will_do = { 
+				factor = 1
+			} 
+			available = {
+				has_country_leader = {
+					name = "Albert I"
+					ruling_only = yes
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_ideas = AST_a_steady_course_idea
+			}
+		}
+		
+		focus = { 
+			id = AST_begin_speech_therapy
+			icon = GFX_focus_generic_military_academy
+			x = 1
+			y = 1
+			cost = 5
+			relative_position_id = AST_a_steady_course
+			available_if_capitulated = yes 
+			prerequisite = {
+				focus = AST_a_steady_course
+			}
+			ai_will_do = { 
+				factor = 1
+			} 
+			available = {
+				has_country_leader = {
+					name = "Albert I"
+					ruling_only = yes
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ruler_traits = { 
+					remove = hos_inconfident
+					add = hos_inconfident1 
+				}
+			}
+		}
+		
+		focus = { 
+			id = AST_a_change_in_course
+			icon = GFX_focus_AST_a_change_in_course
+			x = -1
+			y = 1
+			cost = 5
+			relative_position_id = AST_chaos_in_the_crown
+			available_if_capitulated = yes 
+			prerequisite = {
+				focus = AST_chaos_in_the_crown
+			}
+			mutually_exclusive = {
+				focus = AST_a_steady_course
+			}
+			ai_will_do = { 
+				factor = 1
+			} 
+			available = {
+				has_country_leader = {
+					name = "Edward VIII"
+					ruling_only = yes
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_ideas = AST_a_change_in_course_idea
+			}
+		}
+		
+		focus = { 
+			id = AST_organize_the_government
+			icon = GFX_focus_generic_self_management
+			x = -1
+			y = 1
+			cost = 5
+			relative_position_id = AST_a_change_in_course
+			available_if_capitulated = yes 
+			prerequisite = {
+				focus = AST_a_change_in_course
+			}
+			ai_will_do = { 
+				factor = 1
+			} 
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = AST_a_change_in_course_idea
+					add_idea = AST_a_change_in_course_idea1
+				}
+			}
+		}
+		
+		focus = { 
+			id = AST_revive_the_economy
+			icon = GFX_goal_generic_production1
+			x = 0
+			y = 2
+			cost = 10
+			relative_position_id = AST_chaos_in_the_crown
+			available_if_capitulated = yes 
+			prerequisite = {
+				focus = AST_a_change_in_course
+				focus = AST_a_steady_course
+			}
+			ai_will_do = { 
+				factor = 1
+			} 
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				
+			}
+		}
+		
+		#Economics
+		#Foreign Policy
+		#Armed Forces
+		#Navy
+		#Air
+	}

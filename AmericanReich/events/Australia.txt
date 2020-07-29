@@ -1,0 +1,78 @@
+﻿	add_namespace = australia
+
+	country_event = { #The Sun has Set
+		id = australia.1
+		title = australia.1.t
+		desc = australia.1.desc
+		picture = GFX_report_event_eng_royal_family
+
+		is_triggered_only = yes
+
+		option = { 	#We will go on...
+			name = australia.1.a
+		}
+	}
+	
+	country_event = { #Death of the Last Emperor
+		id = australia.2
+		title = australia.2.t
+		desc = australia.2.desc
+		picture = GFX_report_event_generic_funeral
+
+		is_triggered_only = yes
+
+		option = { 	#But where's the King?
+			name = australia.2.a
+			effect_tooltip = {
+				create_country_leader = {
+					name = "Regency Council"
+					desc = ""
+					picture = "Portrait_AST_Regency_Council.tga"
+					expire = "1965.1.1"
+					ideology = libertarianism
+					traits = {
+						hos_regency
+					}
+				}
+			}
+		}
+		
+		immediate = {
+			hidden_effect = {
+				kill_country_leader = yes
+				create_country_leader = {
+					name = "Regency Council"
+					desc = ""
+					picture = "Portrait_AST_Regency_Council.tga"
+					expire = "1965.1.1"
+					ideology = libertarianism
+					traits = {
+						hos_regency
+					}
+				}
+			}
+		}
+	}
+	
+	country_event = { #The End of the Search
+		id = australia.3
+		title = australia.3.t
+		desc = australia.3.desc
+		picture = GFX_report_event_eng_edward_and_wallis
+
+		is_triggered_only = yes
+
+		option = { 	#Long Live King Albert!
+			name = australia.3.a
+			create_country_leader = {
+				name = "Albert I"
+				desc = ""
+				picture = "Portrait_AST_Albert_I.tga"
+				expire = "1965.1.1"
+				ideology = libertarianism
+				traits = {
+					hos_inconfident
+				}
+			}
+		}
+	}

@@ -1,0 +1,64 @@
+﻿	capital = 41
+
+	#oob = "SPR_1936"
+
+	set_research_slots = 3
+	set_stability = 0.42
+	set_war_support = 0.45
+
+	set_technology = {
+		
+	}
+
+	set_politics = {
+		ruling_party = syndicalist
+		last_election = "1933.2.16"
+		election_frequency = 36
+		elections_allowed = no
+	}
+
+	set_popularities = {
+		syndicalist = 100
+	}
+	
+	add_ideas = {
+		#Ministers
+		SPR_juan_garcia_oliver
+		SPR_alexander_orlov
+		SPR_juan_lopez_sanchez
+		SPR_antonia_adroher_i_pascual
+	}
+	
+	create_country_leader = {
+		name = "José Díaz"
+		desc = ""
+		picture = "Portrait_Spain_Jose_Diaz.dds"
+		expire = "1965.1.1"
+		ideology = syndicalism
+		traits = {
+		}
+	}
+
+	### Ship Variants ###
+
+	create_equipment_variant = {
+		name = "C Class"
+		type = submarine_1
+		upgrades = {
+			ship_reliability_upgrade = 1
+			sub_engine_upgrade = 1
+			sub_stealth_upgrade = 1
+			sub_torpedo_upgrade = 1
+		}
+	}
+
+	create_equipment_variant = {
+		name = "Príncipe Alfonso Class"
+		type = light_cruiser_1
+		upgrades = {
+			ship_reliability_upgrade = 1
+			ship_engine_upgrade = 1
+			ship_gun_upgrade = 1
+			ship_anti_air_upgrade = 1
+		}
+	}

@@ -39,11 +39,24 @@ add_namespace = usa
 			ai_chance = {
 				factor = 1
 			}
-			add_stability = -0.1
-			add_political_power = -120
-			swap_ideas = {
-				remove_idea = USA_great_depression0
-				add_idea = USA_great_depression
+			effect_tooltip = {
+				add_stability = -0.1
+				add_political_power = -120
+				swap_ideas = {
+					remove_idea = USA_great_depression0
+					add_idea = USA_great_depression
+				}
+			}
+		}
+		
+		immediate = {
+			hidden_effect = {
+				add_stability = -0.1
+				add_political_power = -120
+				swap_ideas = {
+					remove_idea = USA_great_depression0
+					add_idea = USA_great_depression
+				}
 			}
 		}
 	}
@@ -70,7 +83,7 @@ add_namespace = usa
 			}
 			trigger = {
 				NOT = {
-					socialist < 0.25
+					socialist < 0.22
 				}
 			}
 			if = {
@@ -106,11 +119,11 @@ add_namespace = usa
 		option = { 
 			name = usa.3.b #A Progressive America!
 			ai_chance = {
-				factor = 1
+				factor = 2
 			}
 			trigger = {
 				NOT = {
-					liberal < 0.25
+					liberal < 0.22
 				}
 			}
 			if = {
@@ -147,11 +160,11 @@ add_namespace = usa
 		option = { 
 			name = usa.3.c #Hoover's the Man
 			ai_chance = {
-				factor = 1
+				factor = 2
 			}
 			trigger = {
 				NOT = {
-					libertarian < 0.25
+					libertarian < 0.22
 				}
 			}
 			if = {
@@ -188,12 +201,12 @@ add_namespace = usa
 		option = { 
 			name = usa.3.d #Democrat Upset?
 			ai_chance = {
-				factor = 5
+				factor = 3
 			}
 			trigger = {
 				always = no
 				NOT = {
-					conservative < 0.25
+					conservative < 0.22
 				}
 			}
 			add_popularity = {

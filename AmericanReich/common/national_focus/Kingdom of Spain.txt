@@ -1,0 +1,5209 @@
+	focus_tree = {
+		id = SPR
+		country = {
+			factor = 0
+			modifier = {
+				add = 10
+				tag = SPR
+			}
+		}
+		continuous_focus_position = { x = 2050 y = 1500 }
+		
+		#Pre-Civil War
+		focus = {
+			id = SPR_a_day_in_the_life
+			icon = GFX_focus_generic_strike_at_democracy1
+			x = 0
+			y = 0
+			cost = 5
+			available_if_capitulated = yes
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war
+			}
+			completion_reward = {
+				add_political_power = 50
+			}
+		}
+		
+		focus = {
+			id = SPR_of_alphonso
+			icon = GFX_focus_generic_monarchy_2
+			x = 0
+			y = 1
+			relative_position_id = SPR_a_day_in_the_life
+			cost = 5
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_a_day_in_the_life
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war
+			}
+			completion_reward = {
+				add_stability = 0.05
+			}
+		}
+		
+		focus = {
+			id = SPR_the_reformer
+			icon = GFX_focus_generic_diplomatic_treaty
+			x = -2
+			y = 1
+			relative_position_id = SPR_of_alphonso
+			cost = 5
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_of_alphonso
+			}
+			mutually_exclusive = {
+				focus = SPR_the_defender_of_the_faith
+				focus = SPR_the_economist
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_the_permanent_temporary_dictatorship
+					add_idea = SPR_the_permanent_temporary_dictatorship1
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_reform_the_government
+			icon = GFX_focus_generic_self_management
+			x = 0
+			y = 2
+			relative_position_id = SPR_the_reformer
+			cost = 5
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_the_reformer
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war
+			}
+			completion_reward = {
+				country_event = {
+					id = spain.8
+				}
+				remove_ideas = SPR_the_permanent_temporary_dictatorship1
+			}
+		}
+		
+		focus = {
+			id = SPR_unite_spain
+			icon = GFX_focus_intervention_spain_nationalists
+			x = 0
+			y = 2
+			relative_position_id = SPR_reform_the_government
+			cost = 5
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_secure_the_carlists
+			}
+			prerequisite = {
+				focus = SPR_secure_the_liberals
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war
+			}
+			completion_reward = {
+				add_political_power = 100
+			}
+		}
+		
+		focus = {
+			id = SPR_finally_elections
+			icon = GFX_goal_generic_neutrality_focus
+			x = 1
+			y = 1
+			relative_position_id = SPR_unite_spain
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_unite_spain
+				focus = SPR_form_the_national_front
+			}
+			mutually_exclusive = {
+				focus = SPR_ban_cnt_fai
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war
+			}
+			completion_reward = {
+				country_event = {
+					id = spain.10
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_negotiate_with_the_republicans
+			icon = GFX_focus_intervention_spain_republic
+			x = -1
+			y = 1
+			relative_position_id = SPR_the_reformer
+			cost = 5
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_the_reformer
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war
+			}
+			completion_reward = {
+				unlock_decision_tooltip = SPR_ally_liberals
+				swap_ideas = {
+					remove_idea = SPR_political_fracturing
+					add_idea = SPR_political_fracturing1
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_secure_the_liberals
+			icon = GFX_focus_spr_torchbearers_of_tomorrow
+			x = 0
+			y = 2
+			relative_position_id = SPR_negotiate_with_the_republicans
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_negotiate_with_the_republicans
+			}
+			prerequisite = {
+				focus = SPR_reform_the_government
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war
+			}
+			completion_reward = {
+				add_political_power = 25
+				unlock_decision_tooltip = SPR_secure_liberals
+			}
+		}
+		
+		focus = {
+			id = SPR_the_defender_of_the_faith
+			icon = GFX_focus_generic_home_defense
+			x = 0
+			y = 1
+			relative_position_id = SPR_of_alphonso
+			cost = 5
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_of_alphonso
+			}
+			mutually_exclusive = {
+				focus = SPR_the_economist
+				focus = SPR_the_reformer
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war
+			}
+			completion_reward = {
+				add_ideas = SPR_defend_the_faith
+			}
+		}
+		
+		focus = {
+			id = SPR_arm_the_loyalists
+			icon = GFX_focus_focus_fra_maquis
+			x = 0
+			y = 2
+			relative_position_id = SPR_the_defender_of_the_faith
+			cost = 5
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_the_defender_of_the_faith
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war
+			}
+			completion_reward = {
+				unlock_decision_category_tooltip = SPR_arm_the_loyalists
+			}
+		}
+		
+		focus = {
+			id = SPR_form_the_national_front
+			icon = GFX_focus_spr_maintain_the_republic
+			x = 0
+			y = 2
+			relative_position_id = SPR_arm_the_loyalists
+			cost = 5
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_secure_the_carlists
+			}
+			prerequisite = {
+				focus = SPR_strike_busting
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war
+			}
+			completion_reward = {
+				set_temp_variable = { 
+					national_front_temp = party_popularity@authoritarian
+				}
+				add_to_temp_variable = { 
+					national_front_temp = party_popularity@autocratic
+					national_front_temp = party_popularity@populist 
+				}
+				multiply_temp_variable = { 
+					national_front_temp = 0.25
+				}
+				add_stability = national_front_temp
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = SPR_secured_the_nationalists
+						}
+					}
+					custom_effect_tooltip = SPR_nationalist_tooltip
+					custom_effect_tooltip = SPR_secure_support_tooltip
+					set_country_flag = SPR_secured_the_nationalists
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_negotiate_with_the_carlists
+			icon = GFX_focus_spa_supremacy_of_the_communion
+			x = 1
+			y = 1
+			relative_position_id = SPR_the_reformer
+			cost = 5
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_the_reformer
+				focus = SPR_the_defender_of_the_faith
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war
+			}
+			completion_reward = {
+				unlock_decision_tooltip = SPR_ally_carlists
+				swap_ideas = {
+					remove_idea = SPR_fall_from_grace
+					add_idea = SPR_fall_from_grace1
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_secure_the_carlists
+			icon = GFX_focus_generic_monarchy_1
+			x = 0
+			y = 2
+			relative_position_id = SPR_negotiate_with_the_carlists
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_negotiate_with_the_carlists
+			}
+			prerequisite = {
+				focus = SPR_reform_the_government
+				focus = SPR_arm_the_loyalists
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war
+			}
+			completion_reward = {
+				add_political_power = 25
+				unlock_decision_tooltip = SPR_secure_carlists
+			}
+		}
+		
+		focus = {
+			id = SPR_negotiate_with_the_workers
+			icon = GFX_focus_spr_masters_of_our_own_fate
+			x = -1
+			y = 1
+			relative_position_id = SPR_the_economist
+			cost = 5
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_the_economist
+				focus = SPR_the_defender_of_the_faith
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war
+			}
+			completion_reward = {
+				add_timed_idea = {
+					idea = SPR_workers_reforms
+					days = 360
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_strike_busting
+			icon = GFX_goal_generic_forceful_treaty
+			x = 0
+			y = 2
+			relative_position_id = SPR_negotiate_with_the_workers
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_negotiate_with_the_workers
+			}
+			prerequisite = {
+				focus = SPR_boost_southern_industry
+				focus = SPR_arm_the_loyalists
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war
+			}
+			completion_reward = {
+				add_political_power = 25
+				unlock_decision_tooltip = SPR_strike_busting
+			}
+		}
+		
+		focus = {
+			id = SPR_the_economist
+			icon = GFX_goal_generic_consumer_goods
+			x = 2
+			y = 1
+			relative_position_id = SPR_of_alphonso
+			cost = 5
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_of_alphonso
+			}
+			mutually_exclusive = {
+				focus = SPR_the_defender_of_the_faith
+				focus = SPR_the_reformer
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war
+			}
+			completion_reward = {
+				add_timed_idea = {
+					idea = SPR_economic_reforms
+					days = 360
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_boost_southern_industry
+			icon = GFX_focus_generic_industry_2
+			x = 0
+			y = 2
+			relative_position_id = SPR_the_economist
+			cost = 5
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_the_economist
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+				OR = {
+					owns_state = 169
+					owns_state = 173
+					owns_state = 118
+					owns_state = 789
+				}
+			}
+			bypass = {
+				OR = {
+					has_global_flag = SPA_civil_war
+					NOT = {
+						OR = {
+							owns_state = 169
+							owns_state = 173
+							owns_state = 118
+							owns_state = 789
+						}
+					}
+				}
+			}
+			completion_reward = {
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+						OR = {
+							state = 169
+							state = 173
+							state = 118
+							state = 789
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_prepare_for_revolution
+			icon = GFX_goal_generic_construct_mil_factory
+			x = 0
+			y = 2
+			relative_position_id = SPR_boost_southern_industry
+			cost = 5
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_strike_busting
+			}
+			prerequisite = {
+				focus = SPR_continue_recovery
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+				OR = {
+					owns_state = 169
+					owns_state = 173
+					owns_state = 118
+					owns_state = 789
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war
+			}
+			completion_reward = {
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+						OR = {
+							state = 169
+							state = 173
+							state = 118
+							state = 789
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_ban_cnt_fai
+			icon = GFX_focus_spr_crush_the_revolution
+			x = -1
+			y = 1
+			relative_position_id = SPR_prepare_for_revolution
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_prepare_for_revolution
+				focus = SPR_form_the_national_front
+			}
+			mutually_exclusive = {
+				focus = SPR_finally_elections
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = all_unions
+					add_idea = non_political_unions
+				}
+				set_temp_variable = { 
+					totalist_temp = party_popularity@totalist 
+				}
+				add_to_temp_variable = { 
+					totalist_temp = party_popularity@anarchist 
+					totalist_temp = party_popularity@syndicalist 
+				}
+				multiply_temp_variable = { totalist_temp = -0.25 }
+				add_stability = totalist_temp
+				add_popularity = {
+					ideology = totalist
+					popularity = -0.025
+				}
+				add_popularity = {
+					ideology = syndicalist
+					popularity = -0.05
+				}
+				add_popularity = {
+					ideology = anarchist
+					popularity = -0.05
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = SPR_secured_the_nationalists
+						}
+					}
+					custom_effect_tooltip = SPR_nationalist_tooltip
+					custom_effect_tooltip = SPR_secure_support_tooltip
+					set_country_flag = SPR_secured_the_nationalists
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_emergency_recovery_plans
+			icon = GFX_focus_fra_devalue_the_franc
+			x = 1
+			y = 1
+			relative_position_id = SPR_the_economist
+			cost = 5
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_the_economist
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+				custom_trigger_tooltip = {
+					tooltip = SPR_black_friday_tooltip		
+					OR = {
+						has_idea = SPR_black_friday
+						has_idea = SPR_black_friday1
+						has_idea = SPR_black_friday2
+					}
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_black_friday
+					add_idea = SPR_black_friday1
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_continue_recovery
+			icon = GFX_goal_generic_production
+			x = 0
+			y = 2
+			relative_position_id = SPR_emergency_recovery_plans
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_emergency_recovery_plans
+			}
+			prerequisite = {
+				focus = SPR_boost_southern_industry
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+				custom_trigger_tooltip = {
+					tooltip = SPR_black_friday_tooltip		
+					OR = {
+						has_idea = SPR_black_friday
+						has_idea = SPR_black_friday1
+						has_idea = SPR_black_friday2
+					}
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war
+			}
+			completion_reward = {
+				add_political_power = 75
+				unlock_decision_tooltip = SPR_black_friday_recovery
+			}
+		}
+		
+		focus = {
+			id = SPR_of_spain
+			icon = GFX_goal_generic_forceful_treaty
+			x = 0
+			y = 2
+			relative_position_id = SPR_form_the_national_front
+			cost = 10
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_finally_elections
+				focus = SPR_ban_cnt_fai
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war
+			}
+			completion_reward = {
+				add_war_support = 0.1
+				add_timed_idea = {
+					idea = SPR_por_espana
+					days = 900
+				}
+				country_event = {
+					id = spain.2
+				}
+				custom_effect_tooltip = SPR_civil_war_tooltip
+			}
+		}
+		
+		#Civil War
+		focus = {
+			id = SPR_save_the_kingdom
+			icon = GFX_goal_tfv_strengthen_commonwealth_ties
+			x = 10
+			y = 0
+			cost = 5
+			available_if_capitulated = yes
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_global_flag = SPA_civil_war
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war_over
+			}
+			completion_reward = {
+				unlock_decision_category_tooltip = SPA_saving_spain
+			}
+		}
+		
+		focus = {
+			id = SPR_frontline_politics
+			icon = GFX_focus_spa_unify_the_nationalist_front
+			x = -3
+			y = 1
+			cost = 5
+			relative_position_id = SPR_save_the_kingdom
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_save_the_kingdom
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_global_flag = SPA_civil_war
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war_over
+			}
+			completion_reward = {
+				if = {
+					limit = {
+						has_idea = SPR_fall_from_grace1
+					}
+					remove_ideas = SPR_fall_from_grace1
+				}
+				else_if = {
+					limit = {
+						has_idea = SPR_fall_from_grace
+					}
+					swap_ideas = {
+						remove_idea = SPR_fall_from_grace
+						add_idea = SPR_fall_from_grace1
+					}
+				}
+				else = {
+					add_political_power = 50
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_maintain_the_status_quo
+			icon = GFX_goal_generic_neutrality_focus
+			x = 1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_frontline_politics
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_frontline_politics
+			}
+			mutually_exclusive = {
+				focus = SPR_much_needed_change
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_global_flag = SPA_civil_war
+				custom_trigger_tooltip = {
+					tooltip = SPR_kept_dictatorship_tooltip		
+					OR = {
+						has_idea = SPR_the_permanent_temporary_dictatorship
+						has_idea = SPR_the_permanent_temporary_dictatorship1
+					}
+				}
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war_over
+			}
+			completion_reward = {
+				if = {
+					limit = {
+						has_idea = SPR_the_permanent_temporary_dictatorship
+					}
+					swap_ideas = {
+						remove_idea = SPR_the_permanent_temporary_dictatorship
+						add_idea = SPR_the_permanent_temporary_dictatorship1
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPR_the_permanent_temporary_dictatorship1
+					}
+					remove_ideas = SPR_the_permanent_temporary_dictatorship1
+				}
+				else = {
+					add_stability = 0.05
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_empower_the_king
+			icon = GFX_focus_rom_royal_dictatorship
+			x = 1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_maintain_the_status_quo
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_maintain_the_status_quo
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = SPR_political_fracturing_tooltip		
+					OR = {
+						has_idea = SPR_political_fracturing
+						has_idea = SPR_political_fracturing1
+					}
+				}
+			}
+			bypass = {
+				NOT = {
+					custom_trigger_tooltip = {
+						tooltip = SPR_political_fracturing_tooltip		
+						OR = {
+							has_idea = SPR_political_fracturing
+							has_idea = SPR_political_fracturing1
+						}
+					}
+				}
+			}
+			completion_reward = {
+				if = {
+					limit = {
+						has_idea = SPR_political_fracturing
+					}
+					swap_ideas = {
+						remove_idea = SPR_political_fracturing
+						add_idea = SPR_political_fracturing1
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPR_political_fracturing1
+					}
+					remove_ideas = SPR_political_fracturing1
+				}
+				else = {
+					add_stability = 0.05
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_unite_the_front
+			icon = GFX_goal_tripartite_pact
+			x = 1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_empower_the_king
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_empower_the_king
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				if = {
+					limit = {
+						has_idea = SPR_political_fracturing
+					}
+					swap_ideas = {
+						remove_idea = SPR_political_fracturing
+						add_idea = SPR_political_fracturing1
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPR_political_fracturing1
+					}
+					remove_ideas = SPR_political_fracturing1
+				}
+				else = {
+					add_stability = 0.05
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_consolidate_the_kingdom
+			icon = GFX_focus_eng_move_to_secure_the_dominions
+			x = -1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_unite_the_front
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_unite_the_front
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				add_ideas = SPR_consolidate_power
+			}
+		}
+		
+		focus = {
+			id = SPR_military_government
+			icon = GFX_goal_generic_alliance
+			x = -1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_consolidate_the_kingdom
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_consolidate_the_kingdom
+			}
+			prerequisite = {
+				focus = SPR_renewed_industry
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			completion_reward = {
+				if = {
+					limit = {
+						has_idea = SPR_the_permanent_temporary_dictatorship
+					}
+					swap_ideas = {
+						remove_idea = SPR_the_permanent_temporary_dictatorship
+						add_idea = SPR_the_permanent_temporary_dictatorship1
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPR_the_permanent_temporary_dictatorship1
+					}
+					remove_ideas = SPR_the_permanent_temporary_dictatorship1
+				}
+				else = {
+					add_stability = 0.05
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_much_needed_change
+			icon = GFX_focus_generic_strike_at_democracy2
+			x = -1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_frontline_politics
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_frontline_politics
+			}
+			mutually_exclusive = {
+				focus = SPR_maintain_the_status_quo
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_global_flag = SPA_civil_war
+				custom_trigger_tooltip = {
+					tooltip = SPR_ended_dictatorship_tooltip		
+					NOT = {
+						has_idea = SPR_the_permanent_temporary_dictatorship
+						has_idea = SPR_the_permanent_temporary_dictatorship1
+					}
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = controlled_party
+					add_idea = multi_party
+				}
+				swap_ideas = {
+					remove_idea = medium_voting
+					add_idea = high_voting
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_introduce_reforms
+			icon = GFX_focus_hol_the_foundations_of_defense
+			x = -1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_much_needed_change
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_much_needed_change
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = SPR_political_fracturing_tooltip		
+					OR = {
+						has_idea = SPR_political_fracturing
+						has_idea = SPR_political_fracturing1
+					}
+				}
+			}
+			bypass = {
+				NOT = {
+					custom_trigger_tooltip = {
+						tooltip = SPR_political_fracturing_tooltip		
+						OR = {
+							has_idea = SPR_political_fracturing
+							has_idea = SPR_political_fracturing1
+						}
+					}
+				}
+			}
+			completion_reward = {
+				add_ideas = low_safety
+				if = {
+					limit = {
+						has_idea = SPR_political_fracturing
+					}
+					swap_ideas = {
+						remove_idea = SPR_political_fracturing
+						add_idea = SPR_political_fracturing1
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPR_political_fracturing1
+					}
+					remove_ideas = SPR_political_fracturing1
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_societal_reformation
+			icon = GFX_goal_generic_improve_relations
+			x = -1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_introduce_reforms
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_introduce_reforms
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				if = {
+					limit = {
+						has_idea = SPR_political_fracturing
+					}
+					swap_ideas = {
+						remove_idea = SPR_political_fracturing
+						add_idea = SPR_political_fracturing1
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPR_political_fracturing1
+					}
+					remove_ideas = SPR_political_fracturing1
+				}
+				else = {
+					add_stability = 0.05
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_defend_liberty
+			icon = GFX_goal_generic_defence
+			x = 1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_societal_reformation
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_societal_reformation
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_ideas = SPR_defend_liberty
+			}
+		}
+		
+		focus = {
+			id = SPR_draft_a_constitution
+			icon = GFX_focus_generic_monarchy_1
+			x = 1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_defend_liberty
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_defend_liberty
+			}
+			prerequisite = {
+				focus = SPR_renewed_industry
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_war_support = 0.05
+			}
+		}
+		
+		focus = {
+			id = SPR_begin_economic_recovery
+			icon = GFX_focus_mex_privatisation
+			x = 0
+			y = 2
+			cost = 10
+			relative_position_id = SPR_frontline_politics
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_much_needed_change
+				focus = SPR_maintain_the_status_quo
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_global_flag = Black_Friday
+			}
+			bypass = {
+			}
+			completion_reward = {
+				if = {
+					limit = {
+						has_completed_focus = SPR_continue_recovery
+					}
+					random_owned_controlled_state = {
+						limit = {
+							free_building_slots = {
+								building = industrial_complex
+								size > 1
+								include_locked = yes
+							}
+							OR = {
+								state = 169
+								state = 173
+								state = 118
+								state = 789
+							}
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = industrial_complex
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					unlock_decision_tooltip = SPR_black_friday_recovery
+				}
+				swap_ideas = {
+					remove_idea = low_poverty
+					add_idea = medium_poverty
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_military_industry
+			icon = GFX_goal_generic_construct_mil_factory
+			x = 1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_begin_economic_recovery
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_begin_economic_recovery
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+						OR = {
+							state = 169
+							state = 173
+							state = 118
+							state = 789
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_civilian_industry
+			icon = GFX_goal_generic_construct_civ_factory
+			x = -1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_begin_economic_recovery
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_begin_economic_recovery
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+						OR = {
+							state = 169
+							state = 173
+							state = 118
+							state = 789
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_renewed_industry
+			icon = GFX_goal_generic_construction2
+			x = 0
+			y = 2
+			cost = 10
+			relative_position_id = SPR_begin_economic_recovery
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_civilian_industry
+			}
+			prerequisite = {
+				focus = SPR_military_industry
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_timed_idea = {
+					idea = SPR_renewed_industry
+					days = 720
+				}
+				swap_ideas = {
+					remove_idea = medium_industry
+					add_idea = high_industry
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_long_live_spain
+			icon = GFX_focus_intervention_spain_nationalists
+			x = 0
+			y = 2
+			cost = 10
+			relative_position_id = SPR_renewed_industry
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_military_government
+				focus = SPR_draft_a_constitution
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				if = {
+					limit = {
+						has_idea = SPR_consolidate_power
+					}
+					swap_ideas = {
+						remove_idea = SPR_consolidate_power
+						add_idea = SPR_consolidate_power1
+					}
+				}
+				if = {
+					limit = {
+						has_idea = SPR_defend_liberty
+					}
+					swap_ideas = {
+						remove_idea = SPR_defend_liberty
+						add_idea = SPR_defend_liberty1
+					}
+				}
+				if = {
+					limit = {
+						has_idea = SPR_fall_from_grace1
+					}
+					remove_ideas = SPR_fall_from_grace1
+				}
+				if = {
+					limit = {
+						has_idea = SPR_fall_from_grace
+					}
+					swap_ideas = {
+						remove_idea = SPR_fall_from_grace
+						add_idea = SPR_fall_from_grace1
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							NOT = {
+								has_idea = SPR_fall_from_grace
+								has_idea = SPR_fall_from_grace1
+							}
+						}
+					}
+					add_political_power = 50
+				}
+			}
+		}
+		
+		#Armed Forces
+		focus = {
+			id = SPR_attend_the_armed_forces
+			icon = GFX_goal_generic_military_sphere
+			x = 3
+			y = 1
+			cost = 5
+			relative_position_id = SPR_save_the_kingdom
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_save_the_kingdom
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_global_flag = SPA_civil_war
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war_over
+			}
+			completion_reward = {
+				army_experience = 10
+				air_experience = 10
+				navy_experience = 10
+			}
+		}
+		
+		focus = {
+			id = SPR_arm_spain
+			icon = GFX_focus_focus_fra_intervention_spain
+			x = 1
+			y = 1
+			cost = 10
+			relative_position_id = SPR_attend_the_armed_forces
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_attend_the_armed_forces
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_global_flag = SPA_civil_war
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war_over
+			}
+			completion_reward = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 500
+					producer = SPR
+				}
+				if = {
+					limit = {
+						has_idea = SPA_civil_war4
+					}
+					remove_ideas = SPA_civil_war4
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war3
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war3
+						add_idea = SPA_civil_war4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war2
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war2
+						add_idea = SPA_civil_war3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war1
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war1
+						add_idea = SPA_civil_war2
+					}
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = SPA_civil_war
+						add_idea = SPA_civil_war1
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_purchase_arms
+			icon = GFX_goal_generic_small_arms
+			x = 1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_arm_spain
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_arm_spain
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_global_flag = SPA_civil_war
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war_over
+			}
+			completion_reward = {
+				unlock_decision_tooltip = SPR_purchase_arms
+			}
+		}
+		
+		focus = {
+			id = SPR_organize_the_loyalists
+			icon = GFX_focus_generic_combined_arms
+			x = -1
+			y = 1
+			cost = 10
+			relative_position_id = SPR_attend_the_armed_forces
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_attend_the_armed_forces
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_global_flag = SPA_civil_war
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war_over
+			}
+			completion_reward = {
+				add_ideas = SPR_organize_the_loyalists
+				if = {
+					limit = {
+						has_idea = SPA_civil_war4
+					}
+					remove_ideas = SPA_civil_war4
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war3
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war3
+						add_idea = SPA_civil_war4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war2
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war2
+						add_idea = SPA_civil_war3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war1
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war1
+						add_idea = SPA_civil_war2
+					}
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = SPA_civil_war
+						add_idea = SPA_civil_war1
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_increase_training_standards
+			icon = GFX_focus_generic_support_the_left_right
+			x = -1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_organize_the_loyalists
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_organize_the_loyalists
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_global_flag = SPA_civil_war
+			}
+			bypass = {
+				OR = {
+					has_global_flag = SPA_civil_war_over
+					has_idea = higher_training
+				}
+				
+			}
+			completion_reward = {
+				if = {
+					limit = {
+						has_idea = high_training
+					}
+					add_ideas = higher_training
+				}
+				else = {
+					add_ideas = high_training
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_recruit_loyalists
+			icon = GFX_focus_generic_manpower
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_attend_the_armed_forces
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_organize_the_loyalists
+			}
+			prerequisite = {
+				focus = SPR_arm_spain
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_global_flag = SPA_civil_war
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war_over
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_organize_the_loyalists
+					add_idea = SPR_organize_the_loyalists1
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_recruit_female_loyalists
+			icon = GFX_focus_up_joan_of_arc
+			x = 0
+			y = 2
+			cost = 10
+			relative_position_id = SPR_organize_the_loyalists
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_recruit_loyalists
+			}
+			prerequisite = {
+				focus = SPR_increase_training_standards
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_global_flag = SPA_civil_war
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = lower_female_service
+					add_idea = low_female_service
+				}
+				if = {
+					limit = {
+						has_idea = SPA_civil_war4
+					}
+					remove_ideas = SPA_civil_war4
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war3
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war3
+						add_idea = SPA_civil_war4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war2
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war2
+						add_idea = SPA_civil_war3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war1
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war1
+						add_idea = SPA_civil_war2
+					}
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = SPA_civil_war
+						add_idea = SPA_civil_war1
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_promote_female_loyalists
+			icon = GFX_goal_generic_demand_territory
+			x = -1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_recruit_female_loyalists
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_recruit_female_loyalists
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_global_flag = SPA_civil_war
+				has_idea = low_female_service
+			}
+			bypass = {
+				has_idea = medium_female_service
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = low_female_service
+					add_idea = medium_female_service
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_muster_a_defence
+			icon = GFX_goal_generic_defence
+			x = 0
+			y = 2
+			cost = 10
+			relative_position_id = SPR_arm_spain
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_recruit_loyalists
+			}
+			prerequisite = {
+				focus = SPR_purchase_arms
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_global_flag = SPA_civil_war
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war_over
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_organize_the_loyalists1
+					add_idea = SPR_organize_the_loyalists2
+				}
+				if = {
+					limit = {
+						has_idea = SPA_civil_war4
+					}
+					remove_ideas = SPA_civil_war4
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war3
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war3
+						add_idea = SPA_civil_war4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war2
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war2
+						add_idea = SPA_civil_war3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war1
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war1
+						add_idea = SPA_civil_war2
+					}
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = SPA_civil_war
+						add_idea = SPA_civil_war1
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_rules_of_engagement
+			icon = GFX_focus_hol_the_foundations_of_defense
+			x = 1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_muster_a_defence
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_muster_a_defence
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_global_flag = SPA_civil_war
+			}
+			bypass = {
+				has_idea = medium_supervision
+			}
+			completion_reward = {
+				add_ideas = medium_supervision
+			}
+		}
+		
+		focus = {
+			id = SPR_offensive_counterblow
+			icon = GFX_goal_generic_major_war
+			x = 0
+			y = 2
+			cost = 10
+			relative_position_id = SPR_recruit_loyalists
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_recruit_female_loyalists
+			}
+			prerequisite = {
+				focus = SPR_muster_a_defence
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_global_flag = SPA_civil_war
+			}
+			bypass = {
+				has_global_flag = SPA_civil_war_over
+			}
+			completion_reward = {
+				add_timed_idea = {
+					idea = SPR_ofensive_counterblow
+					days = 360
+				}
+				if = {
+					limit = {
+						has_idea = SPA_civil_war4
+					}
+					remove_ideas = SPA_civil_war4
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war3
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war3
+						add_idea = SPA_civil_war4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war2
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war2
+						add_idea = SPA_civil_war3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war1
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war1
+						add_idea = SPA_civil_war2
+					}
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = SPA_civil_war
+						add_idea = SPA_civil_war1
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_develop_discipline
+			icon = GFX_focus_secret_rearmament
+			x = -1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_offensive_counterblow
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_offensive_counterblow
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_army_experience < 10
+				}
+				OR = {
+					has_idea = medium_army
+					has_idea = high_army
+				}
+			}
+			bypass = {
+				has_idea = higher_army
+			}
+			completion_reward = {
+				army_experience = -10
+				if = {
+					limit = {
+						has_idea = medium_army
+					}
+					swap_ideas = {
+						remove_idea = medium_army
+						add_idea = high_army
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = high_army
+					}
+					swap_ideas = {
+						remove_idea = high_army
+						add_idea = higher_army
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_curtail_commanders
+			icon = GFX_focus_generic_military_mission
+			x = 1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_offensive_counterblow
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_offensive_counterblow
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				NOT = {
+					has_army_experience < 10
+				}
+				OR = {
+					has_idea = medium_army
+					has_idea = high_army
+				}
+			}
+			bypass = {
+				has_idea = higher_army
+			}
+			completion_reward = {
+				army_experience = -10
+				if = {
+					limit = {
+						has_idea = medium_army
+					}
+					swap_ideas = {
+						remove_idea = medium_army
+						add_idea = high_army
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = high_army
+					}
+					swap_ideas = {
+						remove_idea = high_army
+						add_idea = higher_army
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_professionalism
+			icon = GFX_focus_ger_oppose_hitler
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_offensive_counterblow
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_develop_discipline
+			}
+			prerequisite = {
+				focus = SPR_curtail_commanders
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_idea = higher_army
+				NOT = {
+					has_idea = higher_training
+				}
+			}
+			bypass = {
+				has_idea = higher_training
+			}
+			completion_reward = {
+				army_experience = 5
+				air_experience = 5
+				navy_experience = 5
+				if = {
+					limit = {
+						NOT = {
+							has_idea = higher_training
+						}
+					}
+					add_ideas = higher_training
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_the_spanish_military
+			icon = GFX_focus_generic_little_entente
+			x = 0
+			y = 4
+			cost = 5
+			relative_position_id = SPR_unite_the_front
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_long_live_spain
+			}
+			prerequisite = {
+				focus = SPR_professionalism
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				
+			}
+			bypass = {
+				
+			}
+			completion_reward = {
+				add_tech_bonus = {
+					bonus = 0.55
+					uses = 2
+					category = land_doctrine
+					category = air_doctrine
+					category = naval_doctrine
+				}
+			}
+		}
+		
+		#Politics
+		focus = {
+			id = SPR_the_kingdom_anew
+			icon = GFX_focus_generic_home_defense
+			x = 21
+			y = 0
+			cost = 5
+			available_if_capitulated = yes
+			available = {
+				has_global_flag = SPA_civil_war_over
+				custom_trigger_tooltip = {
+					tooltip = SPR_not_political_fracturing_tooltip		
+					OR = {
+						NOT = {
+							has_idea = SPR_political_fracturing
+							has_idea = SPR_political_fracturing1
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = SPR_not_fallen_from_grace_tooltip		
+					OR = {
+						NOT = {
+							has_idea = SPR_fall_from_grace
+							has_idea = SPR_fall_from_grace1
+						}
+					}
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_timed_idea = {
+					idea = SPR_stabilizing_the_kingdom
+					days = 180
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_appoint_a_new_government
+			icon = GFX_goal_generic_neutrality_focus
+			x = 0
+			y = 1
+			cost = 5
+			relative_position_id = SPR_the_kingdom_anew
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_the_kingdom_anew
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				country_event = {
+					id = spain.12
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_an_old_kingdom
+			icon = GFX_focus_spa_unify_the_nationalist_front
+			x = 2
+			y = 1
+			cost = 5
+			relative_position_id = SPR_appoint_a_new_government
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_appoint_a_new_government
+			}
+			mutually_exclusive = {
+				focus = SPR_a_new_kingdom
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				OR = {
+					has_government = conservative
+					has_government = authoritarian
+					has_government = populist
+					has_government = autocratic
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_ideas = SPR_an_old_kingdom_idea
+			}
+		}
+		
+		focus = {
+			id = SPR_directed_democracy
+			icon = GFX_focus_rom_royal_dictatorship
+			x = 0
+			y = 1
+			cost = 5
+			relative_position_id = SPR_an_old_kingdom
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_an_old_kingdom
+			}
+			mutually_exclusive = {
+				focus = SPR_by_gods_grace
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				OR = {
+					has_government = conservative
+					has_government = authoritarian
+					has_government = populist
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_an_old_kingdom_idea
+					add_idea = SPR_directed_democracy_idea
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_the_kings_initiative
+			icon = GFX_focus_generic_monarchy_1
+			x = -1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_directed_democracy
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_directed_democracy
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_directed_democracy_idea
+					add_idea = SPR_directed_democracy_idea1
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_the_kings_vision
+			icon = GFX_goal_generic_forceful_treaty
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_the_kings_initiative
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_the_kings_initiative
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_directed_democracy_idea1
+					add_idea = SPR_directed_democracy_idea2
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_the_kings_speech
+			icon = GFX_focus_generic_monarchy_2
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_the_kings_vision
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_the_kings_vision
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_timed_idea = {
+					idea = SPR_the_kings_speech
+					days = 360
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_review_the_cortez
+			icon = GFX_goal_generic_intelligence_exchange
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_directed_democracy
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_directed_democracy
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				if = {
+					limit = {
+						has_government = populist
+					}
+					add_popularity = {
+						ideology = populist
+						popularity = 0.1
+					}
+				}
+				else_if = {
+					limit = {
+						has_government = autocratic
+					}
+					add_popularity = {
+						ideology = populist
+						popularity = 0.1
+					}
+				}
+				else_if = {
+					limit = {
+						has_government = conservative
+					}
+					add_popularity = {
+						ideology = conservative
+						popularity = 0.1
+					}
+				}
+				else = {
+					add_popularity = {
+						ideology = authoritarian
+						popularity = 0.1
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_promote_loyalty
+			icon = GFX_goal_generic_propaganda
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_review_the_cortez
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_review_the_cortez
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_ideas = medium_police
+			}
+		}
+		
+		focus = {
+			id = SPR_focused_governence
+			icon = GFX_goal_generic_demand_territory
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_promote_loyalty
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_promote_loyalty
+			}
+			prerequisite = {
+				focus = SPR_the_kings_speech
+			}
+			prerequisite = {
+				focus = SPR_all_the_kings_men
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_directed_democracy_idea2
+					add_idea = SPR_directed_democracy_idea3
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_by_gods_grace
+			icon = GFX_focus_por_concordat
+			x = 2
+			y = 1
+			cost = 5
+			relative_position_id = SPR_an_old_kingdom
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_an_old_kingdom
+			}
+			mutually_exclusive = {
+				focus = SPR_directed_democracy
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_government = autocratic
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_an_old_kingdom_idea
+					add_idea = SPR_by_gods_grace_idea
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_one_king
+			icon = GFX_goal_tfv_strengthen_commonwealth_ties
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_by_gods_grace
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_by_gods_grace
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_by_gods_grace_idea
+					add_idea = SPR_by_gods_grace_idea1
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_one_fatherland
+			icon = GFX_focus_intervention_spain_nationalists
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_one_king
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_one_king
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_by_gods_grace_idea1
+					add_idea = SPR_by_gods_grace_idea2
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_one_god
+			icon = GFX_focus_por_concordat
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_one_fatherland
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_one_fatherland
+			}
+			prerequisite = {
+				focus = SPR_nobody_expects
+			}
+			prerequisite = {
+				focus = SPR_all_the_kings_men
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_by_gods_grace_idea2
+					add_idea = SPR_by_gods_grace_idea3
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_assert_the_church
+			icon = GFX_focus_generic_strike_at_democracy1
+			x = 1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_by_gods_grace
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_by_gods_grace
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+				has_idea = single_religion
+			}
+			completion_reward = {
+				add_ideas = single_religion
+			}
+		}
+		
+		focus = {
+			id = SPR_religious_education
+			icon = GFX_goal_generic_scientific_exchange
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_assert_the_church
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_assert_the_church
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+				has_idea = higher_education
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = low_education
+					add_idea = medium_education
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_nobody_expects
+			icon = GFX_focus_mex_caudillo_private_armies
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_religious_education
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_religious_education
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_popularity = {
+					ideology = autocratic
+					popularity = 0.1
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_secure_the_military
+			icon = GFX_goal_generic_political_pressure
+			x = -1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_by_gods_grace
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_by_gods_grace
+				focus = SPR_directed_democracy
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = SPR_disjointed_military_tooltip		
+					OR = {
+						has_idea = SPR_disjointed_military
+						has_idea = SPR_disjointed_military1
+						has_idea = SPR_disjointed_military2
+					}
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_disjointed_military1
+					add_idea = SPR_disjointed_military2
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_ensure_loyalty
+			icon = GFX_goal_generic_dangerous_deal
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_secure_the_military
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_secure_the_military
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = SPR_disjointed_military_tooltip		
+					OR = {
+						has_idea = SPR_disjointed_military
+						has_idea = SPR_disjointed_military1
+						has_idea = SPR_disjointed_military2
+					}
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_disjointed_military1
+					add_idea = SPR_disjointed_military2
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_all_the_kings_men
+			icon = GFX_focus_generic_little_entente
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_ensure_loyalty
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_ensure_loyalty
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = SPR_disjointed_military_tooltip		
+					OR = {
+						has_idea = SPR_disjointed_military
+						has_idea = SPR_disjointed_military1
+						has_idea = SPR_disjointed_military2
+					}
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				remove_ideas = SPR_disjointed_military2
+			}
+		}
+		
+		focus = {
+			id = SPR_the_truest_spain
+			icon = GFX_focus_focus_fra_intervention_spain
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_all_the_kings_men
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_focused_governence
+				focus = SPR_one_god
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_idea = medium_society
+			}
+			bypass = {
+				has_idea = higher_society
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = medium_society
+					add_idea = high_society
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_a_new_kingdom
+			icon = GFX_focus_spr_maintain_the_republic
+			x = -2
+			y = 1
+			cost = 5
+			relative_position_id = SPR_appoint_a_new_government
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_appoint_a_new_government
+			}
+			mutually_exclusive = {
+				focus = SPR_an_old_kingdom
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				OR = {
+					has_government = conservative
+					has_government = libertarian
+					has_government = liberal
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_ideas = SPR_a_new_kingdom_idea
+				add_ideas = medium_safety
+				if = {
+					limit = {
+						NOT = {
+							has_idea = high_voting
+						}
+					}
+					add_ideas = high_voting
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = multi_party
+						}
+					}
+					add_ideas = multi_party
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_slow_and_steady
+			icon = GFX_focus_generic_diplomatic_treaty
+			x = 0
+			y = 1
+			cost = 5
+			relative_position_id = SPR_a_new_kingdom
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_a_new_kingdom
+			}
+			mutually_exclusive = {
+				focus = SPR_fast_and_furious
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				OR = {
+					has_government = conservative
+					has_government = libertarian
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_a_new_kingdom_idea
+					add_idea = SPR_a_new_kingdom_slow_and_steady
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_reassure_the_land_owners
+			icon = GFX_focus_generic_self_management
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_slow_and_steady
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_slow_and_steady
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_a_new_kingdom_slow_and_steady
+					add_idea = SPR_a_new_kingdom_slow_and_steady1
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_agricultural_subsidies
+			icon = GFX_goal_generic_consumer_goods
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_reassure_the_land_owners
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_reassure_the_land_owners
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_a_new_kingdom_slow_and_steady1
+					add_idea = SPR_a_new_kingdom_slow_and_steady2
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_recover_communal_lands
+			icon = GFX_goal_generic_construction2
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_agricultural_subsidies
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_agricultural_subsidies
+			}
+			prerequisite = {
+				focus = SPR_clerical_reforms
+			}
+			prerequisite = {
+				focus = SPR_general_exemptions
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_a_new_kingdom_slow_and_steady2
+					add_idea = SPR_a_new_kingdom_slow_and_steady3
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_reassure_the_churches
+			icon = GFX_focus_por_concordat
+			x = 1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_slow_and_steady
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_slow_and_steady
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = low_prison
+					add_idea = medium_prison
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_ensure_free_religion
+			icon = GFX_goal_generic_major_alliance
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_reassure_the_churches
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_reassure_the_churches
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_ideas = free_religion
+			}
+		}
+		
+		focus = {
+			id = SPR_clerical_reforms
+			icon = GFX_focus_generic_treaty
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_ensure_free_religion
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_ensure_free_religion
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_ideas = free_press
+			}
+		}
+		
+		focus = {
+			id = SPR_fast_and_furious
+			icon = GFX_focus_generic_support_the_left_right
+			x = -2
+			y = 1
+			cost = 5
+			relative_position_id = SPR_a_new_kingdom
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_a_new_kingdom
+			}
+			mutually_exclusive = {
+				focus = SPR_slow_and_steady
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				has_government = liberal
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_a_new_kingdom_idea
+					add_idea = SPR_a_new_kingdom_fast_and_furious
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_reassure_the_workers
+			icon = GFX_focus_spr_masters_of_our_own_fate
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_fast_and_furious
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_fast_and_furious
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = medium_safety
+					add_idea = high_safety
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_guarentee_unemployment_benefits
+			icon = GFX_goal_generic_intelligence_exchange
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_reassure_the_workers
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_reassure_the_workers
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_ideas = medium_unemployment_benefits
+			}
+		}
+		
+		focus = {
+			id = SPR_regulate_safety
+			icon = GFX_focus_eng_concessions_to_the_trade_unions
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_guarentee_unemployment_benefits
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_guarentee_unemployment_benefits
+			}
+			prerequisite = {
+				focus = SPR_rights_for_women
+			}
+			prerequisite = {
+				focus = SPR_general_exemptions
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+				has_idea = higher_safety
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = high_safety
+					add_idea = higher_safety
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_conservative_cooperation
+			icon = GFX_goal_generic_improve_relations
+			x = -1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_fast_and_furious
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_fast_and_furious
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_a_new_kingdom_fast_and_furious
+					add_idea = SPR_a_new_kingdom_fast_and_furious1
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_the_christian_question
+			icon = GFX_focus_mex_triumph_over_the_cristeros
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_conservative_cooperation
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_conservative_cooperation
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_a_new_kingdom_fast_and_furious1
+					add_idea = SPR_a_new_kingdom_fast_and_furious2
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_rights_for_women
+			icon = GFX_goal_generic_demand_territory
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_the_christian_question
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_the_christian_question
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = lower_female
+					add_idea = low_female
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_military_investigations
+			icon = GFX_focus_generic_military_mission
+			x = -1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_slow_and_steady
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_slow_and_steady
+				focus = SPR_fast_and_furious
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = SPR_disjointed_military_tooltip		
+					OR = {
+						has_idea = SPR_disjointed_military
+						has_idea = SPR_disjointed_military1
+						has_idea = SPR_disjointed_military2
+					}
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_disjointed_military
+					add_idea = SPR_disjointed_military1
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_pledges_of_allegiance
+			icon = GFX_focus_generic_military_academy
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_military_investigations
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_military_investigations
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = SPR_disjointed_military_tooltip		
+					OR = {
+						has_idea = SPR_disjointed_military
+						has_idea = SPR_disjointed_military1
+						has_idea = SPR_disjointed_military2
+					}
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_disjointed_military1
+					add_idea = SPR_disjointed_military2
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_general_exemptions
+			icon = GFX_goal_generic_allies_build_infantry
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_pledges_of_allegiance
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_pledges_of_allegiance
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = SPR_disjointed_military_tooltip		
+					OR = {
+						has_idea = SPR_disjointed_military
+						has_idea = SPR_disjointed_military1
+						has_idea = SPR_disjointed_military2
+					}
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_ideas = general_exemptions
+				remove_ideas = SPR_disjointed_military2
+			}
+		}
+		
+		focus = {
+			id = SPR_the_spanish_bastion
+			icon = GFX_focus_spr_torchbearers_of_tomorrow
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_general_exemptions
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_regulate_safety
+				focus = SPR_recover_communal_lands
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = medium_academic
+					add_idea = high_academic
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_start_drafting
+			icon = GFX_focus_generic_treaty
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_appoint_a_new_government
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_a_new_kingdom
+				focus = SPR_an_old_kingdom
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				hidden_effect = {
+					set_country_flag = { 
+						flag = SPR_constitutional_drafting 
+						value = 1 
+						days = 70
+					}
+				}
+				add_ideas = SPR_constitution
+			}
+		}
+		
+		focus = {
+			id = SPR_the_head
+			icon = GFX_focus_generic_strike_at_democracy2
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_start_drafting
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_start_drafting
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			available = {
+				NOT = {
+					has_country_flag = SPR_constitutional_drafting
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				hidden_effect = {
+					set_country_flag = { 
+						flag = SPR_constitutional_drafting 
+						value = 1 
+						days = 70
+					}
+				}
+				country_event = {
+					id = spain.13
+				}
+				swap_ideas = {
+					remove_idea = SPR_constitution
+					add_idea = SPR_constitution1
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_the_body
+			icon = GFX_focus_hol_united_netherlands
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_the_head
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_the_head
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			available = {
+				NOT = {
+					has_country_flag = SPR_constitutional_drafting
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				hidden_effect = {
+					set_country_flag = { 
+						flag = SPR_constitutional_drafting 
+						value = 1 
+						days = 70
+					}
+				}
+				country_event = {
+					id = spain.14
+				}
+				swap_ideas = {
+					remove_idea = SPR_constitution1
+					add_idea = SPR_constitution2
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_the_mind
+			icon = GFX_goal_generic_neutrality_focus
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_the_body
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_the_body
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			available = {
+				NOT = {
+					has_country_flag = SPR_constitutional_drafting
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				hidden_effect = {
+					set_country_flag = { 
+						flag = SPR_constitutional_drafting 
+						value = 1 
+						days = 70
+					}
+				}
+				swap_ideas = {
+					remove_idea = SPR_constitution2
+					add_idea = SPR_constitution3
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_the_constitutional_convention
+			icon = GFX_focus_hol_the_foundations_of_defense
+			x = 0
+			y = 1
+			cost = 5
+			relative_position_id = SPR_the_mind
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_the_mind
+			}
+			ai_will_do = {
+				factor = 10
+			}
+			available = {
+				NOT = {
+					has_country_flag = SPR_constitutional_drafting
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				custom_effect_tooltip = SPR_the_constitutional_convention_tooltip
+			}
+		}
+		
+		
+		#Economics
+		focus = {
+			id = SPR_emergency_recovery
+			icon = GFX_focus_hol_abandon_the_gold_standard
+			x = 29
+			y = 0
+			cost = 10
+			available_if_capitulated = yes
+			continue_if_invalid = yes
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+				has_global_flag = SPA_civil_war_over
+				OR = {
+					NOT = {
+						has_war_support < 0.4
+					}
+					has_war = yes
+					has_completed_focus = SPR_the_constitutional_convention
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_research_slot = 1
+				if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery4
+					}
+					remove_ideas = SPA_civil_war_recovery4
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery3
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery3
+						add_idea = SPA_civil_war_recovery4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery2
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery2
+						add_idea = SPA_civil_war_recovery3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery1
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery1
+						add_idea = SPA_civil_war_recovery2
+					}
+				}
+				else = {
+					limit = {
+						has_idea = SPA_civil_war_recovery
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery
+						add_idea = SPA_civil_war_recovery1
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_industrial_comissions
+			icon = GFX_goal_generic_intelligence_exchange
+			x = 0
+			y = 1
+			cost = 5
+			relative_position_id = SPR_emergency_recovery
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_emergency_recovery
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_political_power = 75
+				unlock_decision_tooltip = infrastructure_building_slot
+				unlock_decision_tooltip = civilian_factory_commission
+				unlock_decision_tooltip = arms_factory_commission
+				unlock_decision_tooltip = dockyard_commission
+			}
+		}
+		
+		focus = {
+			id = SPR_civilian_recovery_effort
+			icon = GFX_goal_generic_consumer_goods
+			x = -1
+			y = 1
+			cost = 10
+			relative_position_id = SPR_industrial_comissions
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_industrial_comissions
+			}
+			mutually_exclusive = {
+				focus = SPR_economic_mobilization
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+				has_completed_focus = SPR_the_constitutional_convention
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_ideas = SPR_civilian_focus
+				if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery4
+					}
+					remove_ideas = SPA_civil_war_recovery4
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery3
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery3
+						add_idea = SPA_civil_war_recovery4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery2
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery2
+						add_idea = SPA_civil_war_recovery3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery1
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery1
+						add_idea = SPA_civil_war_recovery2
+					}
+				}
+				else = {
+					limit = {
+						has_idea = SPA_civil_war_recovery
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery
+						add_idea = SPA_civil_war_recovery1
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_infrastructure_effort
+			icon = GFX_goal_generic_construct_infrastructure
+			x = -1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_civilian_recovery_effort
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_civilian_recovery_effort
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_civilian_focus
+					add_idea = SPR_civilian_focus1
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_improve_living_standards
+			icon = GFX_focus_usa_reestablish_the_gold_standard
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_infrastructure_effort
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_infrastructure_effort
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_civilian_focus1
+					add_idea = SPR_civilian_focus2
+				}
+				if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery4
+					}
+					remove_ideas = SPA_civil_war_recovery4
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery3
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery3
+						add_idea = SPA_civil_war_recovery4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery2
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery2
+						add_idea = SPA_civil_war_recovery3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery1
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery1
+						add_idea = SPA_civil_war_recovery2
+					}
+				}
+				else = {
+					limit = {
+						has_idea = SPA_civil_war_recovery
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery
+						add_idea = SPA_civil_war_recovery1
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_subsidize_small_businesses
+			icon = GFX_goal_generic_construct_civilian
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_civilian_recovery_effort
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_civilian_recovery_effort
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+									any_owned_state = {
+										free_building_slots = {
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+										is_in_home_area = yes
+									}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+									any_owned_state = {
+										free_building_slots = {
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+										is_in_home_area = yes
+									}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_the_spanish_miracle
+			icon = GFX_focus_spa_the_spanish_miracle
+			x = 0
+			y = 2
+			cost = 20
+			relative_position_id = SPR_subsidize_small_businesses
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_subsidize_small_businesses
+			}
+			prerequisite = {
+				focus = SPR_improve_living_standards
+			}
+			prerequisite = {
+				focus = SPR_bread_and_no_roses
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				random_owned_controlled_state = {
+					limit = {
+						NOT = {
+							state = 118
+						}
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+									any_owned_state = {
+										free_building_slots = {
+											building = industrial_complex
+											size > 1
+											include_locked = yes
+										}
+										is_in_home_area = yes
+									}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						NOT = {
+							state = 118
+						}
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+									any_owned_state = {
+										free_building_slots = {
+											building = industrial_complex
+											size > 1
+											include_locked = yes
+										}
+										is_in_home_area = yes
+									}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						NOT = {
+							state = 118
+						}
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+									any_owned_state = {
+										free_building_slots = {
+											building = industrial_complex
+											size > 1
+											include_locked = yes
+										}
+										is_in_home_area = yes
+									}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						NOT = {
+							state = 118
+						}
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+									any_owned_state = {
+										free_building_slots = {
+											building = industrial_complex
+											size > 1
+											include_locked = yes
+										}
+										is_in_home_area = yes
+									}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						NOT = {
+							state = 118
+						}
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+									any_owned_state = {
+										free_building_slots = {
+											building = industrial_complex
+											size > 1
+											include_locked = yes
+										}
+										is_in_home_area = yes
+									}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery4
+					}
+					remove_ideas = SPA_civil_war_recovery4
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery3
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery3
+						add_idea = SPA_civil_war_recovery4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery2
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery2
+						add_idea = SPA_civil_war_recovery3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery1
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery1
+						add_idea = SPA_civil_war_recovery2
+					}
+				}
+				else = {
+					limit = {
+						has_idea = SPA_civil_war_recovery
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery
+						add_idea = SPA_civil_war_recovery1
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_economic_mobilization
+			icon = GFX_goal_generic_production2
+			x = 1
+			y = 1
+			cost = 10
+			relative_position_id = SPR_industrial_comissions
+			available_if_capitulated = yes
+			continue_if_invalid = yes
+			prerequisite = {
+				focus = SPR_industrial_comissions
+			}
+			mutually_exclusive = {
+				focus = SPR_civilian_recovery_effort
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+				OR = {
+					NOT = {
+						has_war_support < 0.4
+					}
+					has_war = yes
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_ideas = SPR_economic_mobilization_idea
+				if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery4
+					}
+					remove_ideas = SPA_civil_war_recovery4
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery3
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery3
+						add_idea = SPA_civil_war_recovery4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery2
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery2
+						add_idea = SPA_civil_war_recovery3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery1
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery1
+						add_idea = SPA_civil_war_recovery2
+					}
+				}
+				else = {
+					limit = {
+						has_idea = SPA_civil_war_recovery
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery
+						add_idea = SPA_civil_war_recovery1
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_build_up_the_war_industry
+			icon = GFX_goal_generic_construct_mil_factory
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_economic_mobilization
+			available_if_capitulated = yes
+			continue_if_invalid = yes
+			prerequisite = {
+				focus = SPR_economic_mobilization
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+										is_in_home_area = yes
+									}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+										is_in_home_area = yes
+									}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_industrial_investments
+			icon = GFX_focus_mex_privatisation
+			x = 1
+			y = 1
+			cost = 10
+			relative_position_id = SPR_economic_mobilization
+			available_if_capitulated = yes
+			continue_if_invalid = yes
+			prerequisite = {
+				focus = SPR_economic_mobilization
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_economic_mobilization_idea
+					add_idea = SPR_economic_mobilization_idea1
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_factory_subsidies
+			icon = GFX_goal_generic_construction
+			x = 0
+			y = 2
+			cost = 10
+			relative_position_id = SPR_industrial_investments
+			available_if_capitulated = yes
+			continue_if_invalid = yes
+			prerequisite = {
+				focus = SPR_industrial_investments
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = SPR_economic_mobilization_idea1
+					add_idea = SPR_economic_mobilization_idea2
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_war_economy
+			icon = GFX_focus_generic_tank_production
+			x = 0
+			y = 2
+			cost = 10
+			relative_position_id = SPR_build_up_the_war_industry
+			available_if_capitulated = yes
+			continue_if_invalid = yes
+			prerequisite = {
+				focus = SPR_build_up_the_war_industry
+			}
+			prerequisite = {
+				focus = SPR_factory_subsidies
+			}
+			prerequisite = {
+				focus = SPR_bread_and_no_roses
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				random_owned_controlled_state = {
+					limit = {
+						NOT = {
+							state = 118
+						}
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 1
+											include_locked = yes
+										}
+										is_in_home_area = yes
+									}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						NOT = {
+							state = 118
+						}
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 1
+											include_locked = yes
+										}
+										is_in_home_area = yes
+									}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery4
+					}
+					remove_ideas = SPA_civil_war_recovery4
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery3
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery3
+						add_idea = SPA_civil_war_recovery4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery2
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery2
+						add_idea = SPA_civil_war_recovery3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery1
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery1
+						add_idea = SPA_civil_war_recovery2
+					}
+				}
+				else = {
+					limit = {
+						has_idea = SPA_civil_war_recovery
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery
+						add_idea = SPA_civil_war_recovery1
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_farm_investments
+			icon = GFX_focus_generic_industry_1
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_industrial_comissions
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_civilian_recovery_effort
+				focus = SPR_economic_mobilization
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = medium_farming
+					add_idea = high_farming
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_bread_and_no_roses
+			icon = GFX_goal_generic_construction2
+			x = 0
+			y = 2
+			cost = 5
+			relative_position_id = SPR_farm_investments
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_farm_investments
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+			}
+			bypass = {
+				custom_trigger_tooltip = {
+					tooltip = SPA_civil_war_recovery_tooltip
+					has_global_flag = SPA_civil_war_over
+					OR = {
+						NOT = {
+							has_idea = SPA_civil_war_recovery
+							has_idea = SPA_civil_war_recovery1
+							has_idea = SPA_civil_war_recovery2
+							has_idea = SPA_civil_war_recovery3
+							has_idea = SPA_civil_war_recovery4
+						}
+					}
+				}
+			}
+			completion_reward = {
+				if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery4
+					}
+					remove_ideas = SPA_civil_war_recovery4
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery3
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery3
+						add_idea = SPA_civil_war_recovery4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery2
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery2
+						add_idea = SPA_civil_war_recovery3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = SPA_civil_war_recovery1
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery1
+						add_idea = SPA_civil_war_recovery2
+					}
+				}
+				else = {
+					limit = {
+						has_idea = SPA_civil_war_recovery
+					}
+					swap_ideas = {
+						remove_idea = SPA_civil_war_recovery
+						add_idea = SPA_civil_war_recovery1
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_research_grants
+			icon = GFX_focus_research2
+			x = 0
+			y = 2
+			cost = 15
+			relative_position_id = SPR_bread_and_no_roses
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_the_spanish_miracle
+				focus = SPR_war_economy
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_research_slot = 1
+				if = {
+					limit = {
+						has_idea = high_academic
+					}
+					swap_ideas = {
+						remove_idea = high_academic
+						add_idea = higher_academic
+					}
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = medium_academic
+						add_idea = high_academic
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_destroy_poverty
+			icon = GFX_focus_generic_monarchy_1
+			x = -1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_the_spanish_miracle
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_the_spanish_miracle
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				if = {
+					limit = {
+						has_idea = medium_poverty
+					}
+					swap_ideas = {
+						remove_idea = medium_poverty
+						add_idea = high_poverty
+					}
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = low_poverty
+						add_idea = medium_poverty
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_upgrade_industry
+			icon = GFX_focus_generic_industry_3
+			x = 1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_war_economy
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_war_economy
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+			}
+			bypass = {
+			}
+			completion_reward = {
+				if = {
+					limit = {
+						has_idea = high_industry
+					}
+					swap_ideas = {
+						remove_idea = high_industry
+						add_idea = higher_industry
+					}
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = medium_industry
+						add_idea = high_industry
+					}
+				}
+			}
+		}
+		
+		#Foreign Policy
+		focus = {
+			id = SPR_spain_in_the_world
+			icon = GFX_focus_spa_strengthen_the_supreme_reality_of_spain
+			x = 35
+			y = 0
+			cost = 5
+			available_if_capitulated = yes
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+				is_subject = no
+				OR = {
+					has_war_with = GER
+					has_war_with = FRA
+					has_war_with = USA
+					has_war_with = SOV
+					has_war_with = ENG
+					has_war_with = AUS
+					has_war_with = CSA
+					has_war_with = AST
+					has_war_with = JAP
+					has_war_with = CHI
+					AND = {
+						has_global_flag = SPA_civil_war_over
+						has_completed_focus = SPR_the_constitutional_convention
+					}
+				}
+			}
+			bypass = {
+				is_in_faction = yes
+			}
+			completion_reward = {
+				unlock_decision_tooltip = generic_join_GER
+				unlock_decision_tooltip = generic_join_AST
+			}
+		}
+		
+		focus = {
+			id = SPR_AST_faction_entailments
+			icon = GFX_focus_attack_australia
+			x = 2
+			y = 1
+			cost = 5
+			relative_position_id = SPR_spain_in_the_world
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_spain_in_the_world
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+				has_global_flag = SPA_civil_war_over
+				is_in_faction_with = AST
+			}
+			bypass = {
+			}
+			completion_reward = {
+				every_other_country = {
+					limit = {
+						is_in_faction_with = AST
+					}
+					add_opinion_modifier = {
+						target = SPR
+						modifier = ENG_imperial_trade
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_english_enlightenment
+			icon = GFX_focus_research2
+			x = 1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_AST_faction_entailments
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_AST_faction_entailments
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+				is_in_faction_with = AST
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_ideas = SPR_enlightenment
+			}
+		}
+		
+		focus = {
+			id = SPR_a_lonely_path_we_trek
+			icon = GFX_focus_generic_alone
+			x = 0
+			y = 1
+			cost = 5
+			relative_position_id = SPR_spain_in_the_world
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_spain_in_the_world
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+				has_global_flag = SPA_civil_war_over
+				is_in_faction = no
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_ideas = SPR_deterrence
+			}
+		}
+		
+		focus = {
+			id = SPR_GER_faction_relations
+			icon = GFX_focus_chi_mission_to_germany
+			x = -2
+			y = 1
+			cost = 5
+			relative_position_id = SPR_spain_in_the_world
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_spain_in_the_world
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+				has_global_flag = SPA_civil_war_over
+				is_in_faction_with = GER
+			}
+			bypass = {
+			}
+			completion_reward = {
+				every_other_country = {
+					limit = {
+						is_in_faction_with = GER
+					}
+					add_opinion_modifier = {
+						target = SPR
+						modifier = ENG_imperial_trade
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_join_mitteleuropa
+			icon = GFX_focus_ger_revive_kaiserreich
+			x = -1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_GER_faction_relations
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_GER_faction_relations
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+				is_in_faction_with = GER
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_ideas = SPR_mitteleuropa
+			}
+		}
+		
+		focus = {
+			id = SPR_take_back_the_rif
+			icon = GFX_goal_generic_more_territorial_claims
+			x = 1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_a_lonely_path_we_trek
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_a_lonely_path_we_trek
+				focus = SPR_AST_faction_entailments
+			}
+			mutually_exclusive = {
+				focus = SPR_compensation_for_the_rif
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+				is_subject = no
+				any_other_country = {
+					owns_state = 290
+					NOT = {
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+			bypass = {
+				owns_state = 290
+			}
+			completion_reward = {
+				add_state_claim = 290
+				every_country = {
+					limit = {
+						owns_state = 290
+					}
+					country_event = {
+						id = spain.15
+						days = 1
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_integrate_the_rif
+			icon = GFX_goal_anschluss
+			x = 1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_take_back_the_rif
+			available_if_capitulated = yes
+			continue_if_invalid = yes
+			prerequisite = {
+				focus = SPR_take_back_the_rif
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+				controls_state = 290
+			}
+			completion_reward = {
+				if = {
+					limit = {
+						290 = {
+							is_claimed_by = SPR
+						}
+						remove_claim_by = SPR
+					}
+				}
+				add_state_core = 290
+			}
+		}
+		
+		focus = {
+			id = SPR_compensation_for_the_rif
+			icon = GFX_focus_generic_concessions
+			x = -1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_a_lonely_path_we_trek
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_a_lonely_path_we_trek
+				focus = SPR_GER_faction_relations
+			}
+			mutually_exclusive = {
+				focus = SPR_take_back_the_rif
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+				any_other_country = {
+					owns_state = 290
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				add_stability = 0.05
+			}
+		}
+		
+		focus = {
+			id = SPR_fortify_the_north
+			icon = GFX_goal_generic_construct_military
+			x = -1
+			y = 1
+			cost = 5
+			relative_position_id = SPR_compensation_for_the_rif
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_compensation_for_the_rif
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+				OR = {
+					controls_state = 792
+					controls_state = 166
+					controls_state = 172
+					controls_state = 794
+					controls_state = 165
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				if = {
+					limit = {
+						792 = {
+							is_controlled_by = SPR
+						}
+					}
+					792 = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = 6756
+						}
+					}
+				}
+				if = {
+					limit = {
+						166 = {
+							is_controlled_by = SPR
+						}
+					}
+					166 = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = 11838
+						}
+					}
+				}
+				if = {
+					limit = {
+						172 = {
+							is_controlled_by = SPR
+						}
+					}
+					172 = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = 3737
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = 3931
+						}
+					}
+				}
+				if = {
+					limit = {
+						794 = {
+							is_controlled_by = SPR
+						}
+					}
+					794 = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = 915
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = 899
+						}
+					}
+				}
+				if = {
+					limit = {
+						165 = {
+							is_controlled_by = SPR
+						}
+					}
+					165 = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = 3899
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = 3898
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = 11779
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = 9824
+						}
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_claim_the_french_throne
+			icon = GFX_focus_SPR_claim_french_throne
+			x = 0
+			y = 2
+			cost = 10
+			relative_position_id = SPR_a_lonely_path_we_trek
+			available_if_capitulated = yes
+			will_lead_to_war_with = FRA
+			prerequisite = {
+				focus = SPR_compensation_for_the_rif
+				focus = SPR_take_back_the_rif
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+				is_subject = no
+				NOT = {
+					is_in_faction_with = FRA
+				}
+				any_state = {
+					is_core_of = FRA
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				every_state = {
+					limit = {
+						OR = {
+							is_core_of = FRA
+							is_state = 459
+							is_state = 460
+							is_state = 513
+							is_state = 514
+							is_state = 458
+							is_state = 665
+						}
+					}
+					add_claim_by = SPR
+				}
+				if = {
+					limit = {
+						country_exists = FRA
+					}
+					declare_war_on = {
+						target = FRA
+						type = annex_everything
+					}
+				}
+			}
+		}
+		
+		focus = {
+			id = SPR_integrate_the_french
+			icon = GFX_focus_chi_reach_out_to_france
+			x = 0
+			y = 1
+			cost = 10
+			relative_position_id = SPR_claim_the_french_throne
+			available_if_capitulated = yes
+			prerequisite = {
+				focus = SPR_claim_the_french_throne
+			}
+			ai_will_do = {
+				factor = 2
+			}
+			available = {
+				any_controlled_state = {
+					is_core_of = FRA
+					is_claimed_by = SPR
+				}
+			}
+			bypass = {
+			}
+			completion_reward = {
+				unlock_decision_category_tooltip = SPR_french_integration
+			}
+		}
+		
+		#Navy
+		#Air
+	}

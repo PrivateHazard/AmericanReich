@@ -18,7 +18,7 @@ ideas = {
 			}
 			
 			modifier = {
-				fascism_drift = 0.1
+				populist_drift = 0.1
 				fascism_acceptance = 100
 			}
 		}
@@ -40,7 +40,7 @@ ideas = {
 			}
 			
 			modifier = {
-				communism_drift = 0.1
+				totalist_drift = 0.1
 				communism_acceptance = 100
 			}
 		}
@@ -242,7 +242,7 @@ ideas = {
 			}
 			
 			modifier = {
-				democratic_drift = 0.02
+				liberal_drift = 0.02
 			}
 		}
 
@@ -408,7 +408,7 @@ ideas = {
 			}
 			
 			modifier = {
-				communism_drift = 0.01
+				totalist_drift = 0.01
 			}
 		}
 
@@ -427,7 +427,7 @@ ideas = {
 			}
 			
 			modifier = {
-				communism_drift = 0.01
+				totalist_drift = 0.01
 				conscription = 0.01
 			}
 		}

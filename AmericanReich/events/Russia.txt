@@ -1,166 +1,720 @@
-﻿###########################
-#Russian Events
-###########################
+﻿	add_namespace = russia
 
-add_namespace = russia
-
-#Introduction
-country_event = {
-	id = russia.1
-	title = russia.1.t
-	desc = russia.1.desc
-	#picture = GFX_report_event_japanese_transport_soldiers
-	
-	is_triggered_only = yes 
-	
-	option = { # S nami Bog!
-		name = russia.1.a
-		ai_chance = { factor = 75 }
-		set_country_flag = introductory_event_recieved
+	#Introduction
+	country_event = {
+		id = russia.1
+		title = russia.1.t
+		desc = russia.1.desc
+		#picture = GFX_report_event_japanese_transport_soldiers
+		
+		is_triggered_only = yes 
+		
+		option = { # S nami Bog!
+			name = russia.1.a
+			ai_chance = { factor = 75 }
+			set_country_flag = introductory_event_recieved
+		}
 	}
-}
-#Death of the Tsar
-country_event = {
-	id = russia.2
-	title = russia.2.t
-	desc = russia.2.desc
-	#picture = GFX_report_event_japanese_transport_soldiers
 	
-	is_triggered_only = yes 
-	
-	option = { #May he rest in peace...
-		name = russia.2.a
-		ai_chance = { factor = 75 }
-		kill_country_leader = yes
-		create_country_leader = {
-			name = "Regency Council"
-			desc = "POLITICS_KONSTANTIN_RODZAEVSKY_DESC"
-			picture = "portrait_eng_fallen_government.dds"
-			expire = "1965.1.1"
-			ideology = authoritarianism
-			traits = {
+	#Death of the Tsar
+	country_event = {
+		id = russia.2
+		title = russia.2.t
+		desc = russia.2.desc
+		#picture = GFX_report_event_japanese_transport_soldiers
+		
+		is_triggered_only = yes 
+		
+		option = { #May he rest in peace...
+			name = russia.2.a
+			ai_chance = { factor = 75 }
+			effect_tooltip = {
+				create_country_leader = {
+					name = "Regency Council"
+					desc = "POLITICS_KONSTANTIN_RODZAEVSKY_DESC"
+					picture = "Portrait_RUS_Regency_Council.tga"
+					expire = "1965.1.1"
+					ideology = authoritarianism
+					traits = {
+					}
+				}
 			}
 		}
-		add_popularity = {
-			ideology = authoritarian
-			popularity = -0.1
+		
+		immediate = {
+			hidden_effect = {
+				kill_country_leader = yes
+				create_country_leader = {
+					name = "Regency Council"
+					desc = "POLITICS_KONSTANTIN_RODZAEVSKY_DESC"
+					picture = "Portrait_RUS_Regency_Council.tga"
+					expire = "1965.1.1"
+					ideology = authoritarianism
+					traits = {
+					}
+				}
+			}
 		}
 	}
-}
-#The Coucil's Vote
-country_event = {
-	id = russia.3
-	title = russia.3.t
-	desc = russia.3.desc
-	#picture = GFX_report_event_japanese_transport_soldiers
-	
-	is_triggered_only = yes 
-	
-	option = { #Vote for a Republic
-		name = russia.3.a
-		ai_chance = { factor = 100 }
-		set_country_flag = SOV_republic
-		add_political_power = 120
-		set_cosmetic_tag = SOV_republic
+	#The Coucil's Vote
+	country_event = {
+		id = russia.3
+		title = russia.3.t
+		desc = russia.3.desc
+		picture = GFX_report_event_generic_parliament
+		
+		is_triggered_only = yes 
+		
+		option = { #Vote for a Republic
+			name = russia.3.a
+			ai_chance = { factor = 2 }
+			set_country_flag = SOV_republic
+			add_popularity = {
+				ideology = liberal
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = libertarian
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = socialist
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = conservative
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = authoritarian
+				popularity = 0.06
+			}
+			retire_country_leader = yes
+			add_ideas = {
+				SOV_felix_yusupov
+				SOV_abram_dragomirov
+				SOV_vladimir_kokovtsov
+				SOV_pavel_ignatieff
+			}
+			hidden_effect = {
+				set_cosmetic_tag = SOV_republic
+			}
+		}
+		
+		option = { #Vote to Continue the Monarchy
+			name = russia.3.b
+			ai_chance = { factor = 2 }
+			set_country_flag = SOV_continue_the_monarchy
+			add_stability = 0.05
+		}
+		
+		option = { #Nobody, the senate failed to vote.
+			name = russia.3.c
+			ai_chance = { factor = 1 }
+			set_country_flag = SOV_stalled
+			country_event = {
+				id = russia.10
+			}
+		}		
+	}
+	#Deciding the New Government
+	country_event = {
+		id = russia.4
+		title = russia.4.t
+		desc = russia.4.desc
+		#picture = GFX_report_event_japanese_transport_soldiers
+		
+		is_triggered_only = yes
+		
+		option = { #Kerensky's Government
+			name = russia.4.a
+			ai_chance = { factor = 1 }
+			set_politics = {
+				ruling_party = liberal
+				elections_allowed = yes
+			}
+			add_popularity = {
+				ideology = liberal
+				popularity = 0.13
+			}
+			add_ideas = {
+				SOV_viktor_chernov
+				SOV_mikhail_tereshchenko
+				SOV_aleksandr_konovalov
+				SOV_nikolai_avksentiev
+			}
+		}
+		
+		option = { #Maklakov's Government
+			name = russia.4.b
+			ai_chance = { factor = 1 }
+			set_politics = {
+				ruling_party = libertarian
+				elections_allowed = yes
+			}
+			add_popularity = {
+				ideology = libertarian
+				popularity = 0.13
+			}
+			add_ideas = {
+				SOV_konstatin_balmont
+				SOV_pavel_milyukow
+				SOV_nikolai_nekrasov
+				SOV_andrei_shingarev
+			}
+		}
+		
+		option = { #Zhordania's Government
+			name = russia.4.c
+			ai_chance = { factor = 1 }
+			set_politics = {
+				ruling_party = socialist
+				elections_allowed = yes
+			}
+			add_popularity = {
+				ideology = socialist
+				popularity = 0.13
+			}
+			add_ideas = {
+				mikhail_kalinin
+				SOV_vyacheslav_molotov
+				SOV_matvey_skobelev
+				SOV_irakli_tsereteli
+			}
+		}
+		
+		option = { #Trubetskoy's Government
+			name = russia.4.d
+			ai_chance = { factor = 1 }
+			set_politics = {
+				ruling_party = conservative
+				elections_allowed = yes
+			}
+			add_popularity = {
+				ideology = conservative
+				popularity = 0.13
+			}
+			add_ideas = {
+				SOV_ivan_erdeli
+				SOV_george_ignatieff
+				SOV_nikolay_makarov
+				SOV_alexander_protopopov
+			}
+		}
 	}
 	
-	option = { #Vote to Continue the Monarchy
-		name = russia.3.b
-		ai_chance = { factor = 0 }
+	#Black Friday Hits Russia
+	country_event = {
+		id = russia.5
+		title = russia.5.t
+		desc = russia.5.desc
+		picture = GFX_report_event_generic_strike
+		
+		is_triggered_only = yes 
+		
+		option = { #Moy Bog!
+			name = russia.5.a
+			ai_chance = { factor = 100 }
+			effect_tooltip = {
+				add_ideas = SOV_black_friday
+				add_stability = -0.2
+			}
+		}
+		immediate = {
+			hidden_effect = {
+				add_ideas = SOV_black_friday
+				add_stability = -0.2
+			}
+		}
+	}
+	
+	#Our Future
+	country_event = {
+		id = russia.6
+		title = russia.6.t
+		desc = russia.6.desc
+		#picture = GFX_report_event_japanese_transport_soldiers
+		
+		is_triggered_only = yes 
+		
+		option = { #We Shall Hold Elections
+			name = russia.6.a
+			ai_chance = { factor = 80 }
+			add_stability = 0.05
+			country_event = {
+				id = russia.4
+			}
+		}
+		
+		option = { #There's No Need For Elections
+			name = russia.6.b
+			ai_chance = { factor = 20 }
+		}
+	}
+	
+	#The Attack on Alexei!
+	country_event = {
+		id = russia.7
+		title = russia.7.t
+		desc = russia.7.desc
+		picture = GFX_report_event_generic_conference
+		
+		is_triggered_only = yes 
+		
+		option = { #The Tsarevich lives!
+			name = russia.7.a
+			ai_chance = { factor = 60 }
+			set_country_flag = SOV_alexei_lives
+			add_popularity = {
+				ideology = authoritarian
+				popularity = 0.05
+			}
+		}
+		
+		option = { #The Tsarevich passes...
+			name = russia.7.b
+			ai_chance = { factor = 40 }
+			set_country_flag = SOV_alexei_died
+			add_popularity = {
+				ideology = authoritarian
+				popularity = -0.05
+			}
+		}
+	}
+	
+	#The Coronation of the Tsar
+	country_event = {
+		id = russia.8
+		title = russia.8.t
+		desc = russia.8.desc
+		picture = GFX_report_event_generic_conference
+		
+		is_triggered_only = yes 
+		
+		option = { #Tsar Alexei II!
+			name = russia.8.a
+			ai_chance = { factor = 100 }
+			trigger = {
+				has_country_flag = SOV_alexei_lives
+			}
+			retire_country_leader = yes
+			create_country_leader = {
+				name = "Alexei II"
+				desc = ""
+				picture = "Portrait_RUS_Alexi_Romanov.tga"
+				expire = "1965.1.1"
+				ideology = authoritarianism
+				traits = {
+					hos_reformist
+				}
+			}
+		}
+		
+		option = { #Tsar Kirill I!
+			name = russia.8.b
+			ai_chance = { factor = 50 }
+			trigger = {
+				has_country_flag = SOV_alexei_died
+			}
+			retire_country_leader = yes
+			create_country_leader = {
+				name = "Kirill I"
+				desc = ""
+				picture = "Portrait_RUS_Kyril_Romanov.tga"
+				expire = "1965.1.1"
+				ideology = authoritarianism
+				traits = {
+					hos_stable
+				}
+			}
+		}
+		
+		option = { #Tsar Dimitri I!
+			name = russia.8.c
+			ai_chance = { factor = 50 }
+			trigger = {
+				has_country_flag = SOV_alexei_died
+			}
+			retire_country_leader = yes
+			set_politics = {
+				ruling_party = autocratic
+			}
+			add_popularity = {
+				ideology = autocratic
+				popularity = 0.05
+			}
+			create_country_leader = {
+				name = "Dimitri I"
+				desc = ""
+				picture = "Portrait_RUS_Dmitri_Romanov_Tsar.tga"
+				expire = "1965.1.1"
+				ideology = autocracy
+				traits = {
+					hos_autocrat
+				}
+			}
+			add_ideas = {
+				SOV_sergey_markov
+				SOV_alexsey_ignatyev
+				SOV_alexander_balk
+				SOV_aleksei_putilov
+			}
+			hidden_effect = {
+				create_country_leader = {
+					name = "Dimitri I"
+					desc = ""
+					picture = "Portrait_RUS_Dmitri_Romanov_Tsar.tga"
+					expire = "1965.1.1"
+					ideology = authoritarianism
+					traits = {
+					}
+				}
+			}
+		}
+	}
+	
+	#The Free Elections
+	country_event = {
+		id = russia.9
+		title = russia.9.t
+		desc = russia.9.desc
+		#picture = GFX_report_event_japanese_transport_soldiers
+		
+		is_triggered_only = yes
+		
+		option = { #The RS
+			name = russia.9.a
+			ai_chance = { factor = 3 }
+			set_politics = {
+				ruling_party = conservative
+				elections_allowed = yes
+				last_election = "1936.7.29"
+			}
+			add_popularity = {
+				ideology = conservative
+				popularity = 0.2
+			}
+			add_ideas = {
+				SOV_nikolay_trubetskoy
+				SOV_george_ignatieff
+				SOV_nikolay_makarov
+				SOV_alexander_protopopov
+			}
+		}
+		
+		option = { #The Kadets
+			name = russia.9.b
+			ai_chance = { factor = 1 }
+			set_politics = {
+				ruling_party = libertarian
+				elections_allowed = yes
+				last_election = "1936.7.29"
+			}
+			add_popularity = {
+				ideology = libertarian
+				popularity = 0.2
+			}
+			add_ideas = {
+				SOV_konstatin_balmont
+				SOV_pavel_milyukow
+				SOV_nikolai_nekrasov
+				SOV_andrei_shingarev
+			}
+		}
+		
+		option = { #The SR
+			name = russia.9.c
+			ai_chance = { factor = 1 }
+			set_politics = {
+				ruling_party = liberal
+				elections_allowed = yes
+				last_election = "1936.7.29"
+			}
+			add_popularity = {
+				ideology = liberal
+				popularity = 0.2
+			}
+			add_ideas = {
+				alexander_kerensky
+				SOV_mikhail_tereshchenko
+				SOV_aleksandr_konovalov
+				SOV_nikolai_avksentiev
+			}
+		}
+		
+		option = { #The Oktyabritsty
+			name = russia.9.d
+			ai_chance = { factor = 1 }
+			set_politics = {
+				ruling_party = authoritarian
+				elections_allowed = yes
+				last_election = "1936.7.29"
+			}
+			add_popularity = {
+				ideology = authoritarian
+				popularity = 0.2
+			}
+			add_ideas = {
+				SOV_dmitri_romanov
+				SOV_abram_dragomirov
+				SOV_vladimir_kokovtsov
+				SOV_pavel_ignatieff
+			}
+		}
+		
+		immediate = {
+			hidden_effect = {
+				create_country_leader = {
+					name = "Alexei II"
+					desc = ""
+					picture = "Portrait_RUS_Alexi_Romanov.tga"
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+						hos_reformist
+					}
+				}
+				create_country_leader = {
+					name = "Alexei II"
+					desc = ""
+					picture = "Portrait_RUS_Alexi_Romanov.tga"
+					expire = "1965.1.1"
+					ideology = liberalism
+					traits = {
+						hos_reformist
+					}
+				}
+				create_country_leader = {
+					name = "Alexei II"
+					desc = ""
+					picture = "Portrait_RUS_Alexi_Romanov.tga"
+					expire = "1965.1.1"
+					ideology = libertarianism
+					traits = {
+						hos_reformist
+					}
+				}
+				
+				create_country_leader = {
+					name = "Alexei II"
+					desc = ""
+					picture = "Portrait_RUS_Alexi_Romanov.tga"
+					expire = "1965.1.1"
+					ideology = socialism
+					traits = {
+						hos_reformist
+					}
+				}
+			}
+		}
+	}
+	
+	#The Regency Coup
+	country_event = {
+		id = russia.10
+		title = russia.10.t
+		desc = russia.10.desc
+		picture = GFX_report_event_generic_army
+		
+		is_triggered_only = yes 
+		
+		option = { #Wrangel Seizes the Government, Calming the Senate.
+			name = russia.10.a
+			ai_chance = { factor = 50 }
+			add_popularity = {
+				ideology = authoritarian
+				popularity = 0.1
+			}
+			set_politics = {
+				ruling_party = authoritarian
+			}
+			add_ideas = {
+				SOV_pavel_ignatieff
+				SOV_vladimir_kokovtsov
+				SOV_abram_dragomirov
+				SOV_pyotr_wrangel
+			}
+			set_cosmetic_tag = SOV_military
+		}
+		
+		option = { #Kornilov Seizes the Government, the Streets Run with Blood!
+			name = russia.10.b
+			ai_chance = { factor = 50 }
+			add_popularity = {
+				ideology = autocratic
+				popularity = 0.1
+			}
+			set_politics = {
+				ruling_party = autocratic
+			}
+			add_political_power = -100
+			add_ideas = {
+				SOV_sergey_markov
+				SOV_alexsey_ignatyev
+				SOV_alexander_balk
+				SOV_aleksei_putilov
+			}
+			set_cosmetic_tag = SOV_military
+		}
+		
+		immediate = {
+			hidden_effect = {
+				create_country_leader = {
+					name = "Pyotr Wrangel"
+					desc = ""
+					picture = "Portrait_RUS_Pyotr_Wrangel.tga"
+					expire = "1965.1.1"
+					ideology = authoritarianism
+					traits = {
+					}
+				}
+			}
+		}
+	}
+	
+	#The Military Government
+	country_event = {
+		id = russia.11
+		title = russia.11.t
+		desc = russia.11.desc
+		picture = GFX_report_event_hol_cabinet_de_geer
+		
+		is_triggered_only = yes 
+		
+		option = { #Appoint Denikin
+			name = russia.11.a
+			ai_chance = { factor = 50 }
+			add_ideas = {
+				SOV_anton_denikin
+			}
+		}
+		
+		option = { #Keep the Current Government
+			name = russia.11.b
+			ai_chance = { factor = 50 }
+			add_political_power = 50
+		}
+	}
+	
+	#The Counter Coup
+	country_event = {
+		id = russia.12
+		title = russia.12.t
+		desc = russia.12.desc
+		picture = GFX_report_event_ast_army
+		
+		is_triggered_only = yes 
+		
+		option = { #Savinkov
+			name = russia.12.a
+			ai_chance = { factor = 50 }
+			set_politics = {
+				ruling_party = populist
+			}
+			add_ideas = {
+				konstantin_rodzaevsky
+				SOV_alexander_kazembek
+				SOV_andrey_zankevich
+				SOV_vladimir_manstein
+			}
+		}
+		
+		option = { #Keep the Current Government
+			name = russia.12.b
+			ai_chance = { factor = 50 }
+			trigger = {
+				always = no
+			}
+		}
+	}
+	
+	#Elections of Year
+	country_event = {
+		id = russia.13
+		title = russia.13.t
+		desc = russia.13.desc
+		picture = GFX_report_event_election_vote
+		
+		is_triggered_only = yes
+		
 		trigger = {
-			always = no
+			has_elections = yes
+			tag = SOV
 		}
-		set_country_flag = SOV_continue_the_monarchy
-		add_stability = 0.05
+		
+		option = { #Kerensky's Government
+			name = russia.13.a
+			ai_chance = { factor = 1 }
+			set_politics = {
+				ruling_party = liberal
+				elections_allowed = yes
+			}
+			add_popularity = {
+				ideology = liberal
+				popularity = 0.13
+			}
+			add_ideas = {
+				SOV_viktor_chernov
+				SOV_mikhail_tereshchenko
+				SOV_aleksandr_konovalov
+				SOV_nikolai_avksentiev
+			}
+		}
+		
+		option = { #Maklakov's Government
+			name = russia.13.b
+			ai_chance = { factor = 1 }
+			set_politics = {
+				ruling_party = libertarian
+				elections_allowed = yes
+			}
+			add_popularity = {
+				ideology = libertarian
+				popularity = 0.13
+			}
+			add_ideas = {
+				SOV_konstatin_balmont
+				SOV_pavel_milyukow
+				SOV_nikolai_nekrasov
+				SOV_andrei_shingarev
+			}
+		}
+		
+		option = { #Zhordania's Government
+			name = russia.13.c
+			ai_chance = { factor = 1 }
+			set_politics = {
+				ruling_party = socialist
+				elections_allowed = yes
+			}
+			add_popularity = {
+				ideology = socialist
+				popularity = 0.13
+			}
+			add_ideas = {
+				mikhail_kalinin
+				SOV_vyacheslav_molotov
+				SOV_matvey_skobelev
+				SOV_irakli_tsereteli
+			}
+		}
+		
+		option = { #Trubetskoy's Government
+			name = russia.13.d
+			ai_chance = { factor = 1 }
+			set_politics = {
+				ruling_party = conservative
+				elections_allowed = yes
+			}
+			add_popularity = {
+				ideology = conservative
+				popularity = 0.13
+			}
+			add_ideas = {
+				SOV_ivan_erdeli
+				SOV_george_ignatieff
+				SOV_nikolay_makarov
+				SOV_alexander_protopopov
+			}
+		}
 	}
-}
-#Deciding the New Government
-country_event = {
-	id = russia.4
-	title = russia.4.t
-	desc = russia.4.desc
-	#picture = GFX_report_event_japanese_transport_soldiers
-	
-	fire_only_once = yes
-	mean_time_to_happen = {
-		days = 5
-	}
-	
-	trigger = {
-		original_tag = SOV
-		has_completed_focus = SOV_endthetsardom
-	}
-	
-	option = { #Kerensky's Government
-		name = russia.4.a
-		ai_chance = { factor = 100 }
-		set_politics = {
-			ruling_party = liberal
-			elections_allowed = yes
-		}
-		add_popularity = {
-			ideology = liberal
-			popularity = 0.2
-		}
-		add_ideas = {
-			SOV_viktor_chernov
-			SOV_mikhail_tereshchenko
-			SOV_aleksandr_konovalov
-			SOV_nikolai_avksentiev
-		}
-	}
-	
-	option = { #Maklakov's Government
-		name = russia.4.b
-		ai_chance = { factor = 0 }
-		set_politics = {
-			ruling_party = libertarian
-			elections_allowed = yes
-		}
-		add_popularity = {
-			ideology = libertarian
-			popularity = 0.2
-		}
-		add_ideas = {
-			SOV_konstatin_balmont
-			SOV_pavel_milyukow
-			SOV_nikolai_nekrasov
-			SOV_andrei_shingarev
-		}
-	}
-	
-	option = { #Zhordania's Government
-		name = russia.4.c
-		ai_chance = { factor = 0 }
-		set_politics = {
-			ruling_party = socialist
-			elections_allowed = yes
-		}
-		add_popularity = {
-			ideology = socialist
-			popularity = 0.2
-		}
-		add_ideas = {
-			mikhail_kalinin
-			SOV_vyacheslav_molotov
-			SOV_matvey_skobelev
-			SOV_irakli_tsereteli
-		}
-	}
-}
-#Black Friday Hits Russia
-country_event = {
-	id = russia.5
-	title = russia.5.t
-	desc = russia.5.desc
-	#picture = GFX_report_event_japanese_transport_soldiers
-	
-	is_triggered_only = yes 
-	
-	option = { #Moy Bog!
-		name = russia.5.a
-		ai_chance = { factor = 100 }
-		add_ideas = SOV_black_friday
-		add_stability = -0.2
-	}
-}

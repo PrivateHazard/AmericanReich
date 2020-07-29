@@ -1,0 +1,61 @@
+﻿	capital = 117
+
+	#oob = "ITA_1936"
+
+	set_research_slots = 3
+	set_stability = 0.5
+	set_war_support = 0.25
+	add_ideas = {
+		limited_exports
+		limited_conscription
+		partial_economic_mobilisation
+	}
+
+
+	# Starting tech
+
+	set_convoys = 80
+
+	set_politics = {
+		ruling_party = autocratic
+		last_election = "1932.11.3"
+		election_frequency = 48
+		elections_allowed = no
+	}
+
+	set_popularities = {
+		autocratic = 36
+		authoritarian = 23
+		populist = 19
+		conservative = 11
+		liberal = 3
+		libertarian = 5
+		nationalist = 3
+	}
+	
+	create_country_leader = {
+		name = "Ferdinand III"
+		desc = ""
+		picture = "Portrait_SCI_Ferdinand_III.tga"
+		expire = "1965.1.1"
+		ideology = autocracy
+		traits = {
+			
+		}
+	}
+	
+	air_wings = {
+		117 = { 
+			# 2a Divisione Aerea 'Borea'
+			fighter_equipment_0 = { 
+				amount = 150 
+				owner = "SCI" 
+			} 
+			# 4a Divisione Aerea 'Drago'
+			# 6a Divisione Aerea 'Falco'
+			tac_bomber_equipment_0 = { 
+				amount = 120 
+				owner = "SCI" 
+			} 
+		}
+	}

@@ -1,645 +1,747 @@
-﻿add_namespace = britain 
+﻿	add_namespace = britain 
 
-#The King's Landing
-country_event = {
-	id = britain.1
-	title = britain.1.t
-	desc = britain.1.desc
-	#picture = GFX_report_event_physics_lab_01
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = ENG
-		focus_progress = {
-			focus = ENG_convenetherevolutionarycongress
-			progress > 0.1
-		}
-	}
-	
-	option = {
-		name = britain.1.a	#We shall welcome him to the Republic!
-		ai_chance = {
-			factor = 50 
-		}
-		set_country_flag = ENG_king_welcomed
-		add_popularity = {
-			ideology = autocratic
-			popularity = 0.1
-		}
-	}
-	
-	option = {
-		name = britain.1.b	#Turn him away, Britain shan't endure the Monarchist tyranny any longer!
-		ai_chance = {
-			factor = 50 
-		}
-		set_country_flag = ENG_king_not_welcomed
-		add_popularity = {
-			ideology = autocratic
-			popularity = -0.05
-		}
-	}
-	
-	option = {
-		name = britain.1.c	#Do nothing.
-		ai_chance = {
-			factor = 50 
-		}
-	}
-}
-#The Interior Policy Debate
-country_event = {
-	id = britain.2
-	title = britain.2.t
-	desc = britain.2.desc
-	#picture = GFX_report_event_physics_lab_01
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = ENG
-		focus_progress = {
-			focus = ENG_convenetherevolutionarycongress
-			progress > 0.3
-		}
-	}
-	
-	option = {
-		name = britain.2.a	#Mary Allen
-		ai_chance = {
-			factor = 50 
-		}
-		add_popularity = {
-			ideology = nationalist
-			popularity = 0.06
-		}
-		add_ideas = ENG_mary_sophia_allen
-	}
-	
-	option = {
-		name = britain.2.b #Ernst Bevin
-		ai_chance = {
-			factor = 50 
-		}
-		trigger = {
-			NOT = {
-				has_country_flag = ENG_king_welcomed
+	#The King's Landing
+	country_event = {
+		id = britain.1
+		title = britain.1.t
+		desc = britain.1.desc
+		#picture = GFX_report_event_physics_lab_01
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = britain.1.a	#We shall welcome him to the Commonwealth!
+			ai_chance = {
+				factor = 50 
+			}
+			set_country_flag = ENG_king_welcomed
+			add_popularity = {
+				ideology = autocratic
+				popularity = 0.1
 			}
 		}
-		add_popularity = {
-			ideology = syndicalist
-			popularity = 0.06
-		}
-		add_ideas = ENG_ernest_bevin
-	}
-	
-	option = {
-		name = britain.2.c # Nevile Henderson
-		trigger = {
-			NOT = {
-				has_country_flag = ENG_king_not_welcomed
+		
+		option = {
+			name = britain.1.b	#Turn him away, Britain shan't endure the Monarchist tyranny any longer!
+			ai_chance = {
+				factor = 50 
+			}
+			set_country_flag = ENG_king_not_welcomed
+			add_popularity = {
+				ideology = autocratic
+				popularity = -0.05
 			}
 		}
-		ai_chance = {
-			factor = 50 
-		}
-		add_popularity = {
-			ideology = autocratic
-			popularity = 0.06
-		}
-		add_ideas = ENG_leslie_hore_belisha
-	}
-}
-#Select Message
-country_event = {
-	id = britain.3
-	title = britain.3.t
-	desc = britain.3.desc
-	#picture = GFX_report_event_physics_lab_01
-	
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = britain.3.a	#Let's get on with it!
-		ai_chance = {
-			factor = 50 
-		}
-		add_political_power = 25
-	}
-}
-#The Economic Policy Debate
-country_event = {
-	id = britain.4
-	title = britain.4.t
-	desc = britain.4.desc
-	#picture = GFX_report_event_physics_lab_01
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = ENG
-		focus_progress = {
-			focus = ENG_convenetherevolutionarycongress
-			progress > 0.5
-		}
-	}
-	
-	option = {
-		name = britain.4.a	#Oswald Mosley
-		ai_chance = {
-			factor = 50 
-		}
-		add_popularity = {
-			ideology = nationalist
-			popularity = 0.06
-		}
-		add_ideas = ENG_oswald_mosley
-	}
-	
-	option = {
-		name = britain.4.b #Maurice Dobb
-		ai_chance = {
-			factor = 50 
-		}
-		trigger = {
-			NOT = {
-				has_country_flag = ENG_king_welcomed
+		
+		option = {
+			name = britain.1.c	#Do nothing.
+			ai_chance = {
+				factor = 50 
 			}
 		}
-		add_popularity = {
-			ideology = syndicalist
-			popularity = 0.06
-		}
-		add_ideas = ENG_maurice_dobb
-	}
-	
-	option = {
-		name = britain.4.c #Maxwell Aitken
-		trigger = {
-			NOT = {
-				has_country_flag = ENG_king_not_welcomed
-			}
-		}
-		ai_chance = {
-			factor = 50 
-		}
-		add_popularity = {
-			ideology = autocratic
-			popularity = 0.06
-		}
-		add_ideas = ENG_maxwell_aitken
-	}
-}
-#The Foreign Policy Debate
-country_event = {
-	id = britain.5
-	title = britain.5.t
-	desc = britain.5.desc
-	#picture = GFX_report_event_physics_lab_01
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = ENG
-		focus_progress = {
-			focus = ENG_convenetherevolutionarycongress
-			progress > 0.6
-		}
-	}
-	
-	option = {
-		name = britain.5.a	#Leslie Belisha
-		ai_chance = {
-			factor = 50 
-		}
-		add_popularity = {
-			ideology = nationalist
-			popularity = 0.06
-		}
-		add_ideas = ENG_rotha_linthorn_orman
-	}
-	
-	option = {
-		name = britain.5.b #Sylvia Pankhurst
-		ai_chance = {
-			factor = 50 
-		}
-		trigger = {
-			NOT = {
-				has_country_flag = ENG_king_welcomed
-			}
-		}
-		add_popularity = {
-			ideology = syndicalist
-			popularity = 0.06
-		}
-		add_ideas = ENG_sylvia_pankhurst
-	}
-	
-	option = {
-		name = britain.5.c #Winston Churchill
-		trigger = {
-			NOT = {
-				has_country_flag = ENG_king_not_welcomed
-			}
-		}
-		ai_chance = {
-			factor = 50 
-		}
-		add_popularity = {
-			ideology = autocratic
-			popularity = 0.06
-		}
-		add_ideas = ENG_winston_churchill
-	}
-}
-#The Government Policy Debate
-country_event = {
-	id = britain.6
-	title = britain.6.t
-	desc = britain.6.desc
-	#picture = GFX_report_event_physics_lab_01
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = ENG
-		focus_progress = {
-			focus = ENG_convenetherevolutionarycongress
-			progress > 0.7
-		}
-	}
-	
-	option = {
-		name = britain.6.a	#John Beckett
-		ai_chance = {
-			factor = 50 
-		}
-		add_popularity = {
-			ideology = nationalist
-			popularity = 0.06
-		}
-		add_ideas = john_beckett
-	}
-	
-	option = {
-		name = britain.6.b #Clement Atlee
-		ai_chance = {
-			factor = 50 
-		}
-		trigger = {
-			NOT = {
-				has_country_flag = ENG_king_welcomed
-			}
-		}
-		add_popularity = {
-			ideology = syndicalist
-			popularity = 0.06
-		}
-		add_ideas = clement_attlee
-	}
-	
-	option = {
-		name = britain.6.c #David Lloyd George
-		trigger = {
-			NOT = {
-				has_country_flag = ENG_king_not_welcomed
-			}
-		}
-		ai_chance = {
-			factor = 50 
-		}
-		add_popularity = {
-			ideology = autocratic
-			popularity = 0.06
-		}
-		add_ideas = ENG_david_lloyd_george
-	}
-}
-#Support a Faction?
-country_event = {
-	id = britain.7
-	title = britain.7.t
-	desc = britain.7.desc
-	#picture = GFX_report_event_physics_lab_01
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = ENG
-		focus_progress = {
-			focus = ENG_convenetherevolutionarycongress
-			progress > 0.8
-		}
-	}
-	
-	option = {
-		name = britain.7.a	#Support ENGSOC
-		ai_chance = {
-			factor = 50 
-		}
-		add_popularity = {
-			ideology = nationalist
-			popularity = 0.1
-		}
-		add_political_power = -100
-	}
-	
-	option = {
-		name = britain.7.b #Support the Syndies
-		ai_chance = {
-			factor = 50 
-		}
-		add_popularity = {
-			ideology = syndicalist
-			popularity = 0.1
-		}
-		add_political_power = -100
-	}
-	
-	option = {
-		name = britain.7.c #Support the Monarchists
-		ai_chance = {
-			factor = 50 
-		}
-		add_popularity = {
-			ideology = autocratic
-			popularity = 0.1
-		}
-		add_political_power = -100
-	}
-	
-	option = {
-		name = britain.7.d #Support nobody
-		ai_chance = {
-			factor = 50 
-		}
-		add_stability = 0.05
-		add_political_power = 50
-	}
-}
-#ENGSOC Victory!
-country_event = {
-	id = britain.8
-	title = britain.8.t
-	desc = britain.8.desc
-	#picture = GFX_report_event_physics_lab_01
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = ENG
-		has_completed_focus = ENG_convenetherevolutionarycongress
-		OR = {
-			AND = {
-				nationalist > 0.4
-				syndicalist < 0.4
-				autocratic < 0.4
-			}
-			AND = {
-				nationalist < 0.4
-				syndicalist < 0.4
-				autocratic < 0.4
+		
+		immediate = {
+			hidden_effect = {
+				country_event = {
+					id = britain.2
+					days = 28
+				}
 			}
 		}
 	}
 	
-	option = {
-		name = britain.8.a	#Glory to Britain!
-		ai_chance = {
-			factor = 50 
-		}
-		set_politics = {
-			ruling_party = nationalist
-		}
-		add_popularity = {
-			ideology = nationalist
-			popularity = 0.05
-		}
-		add_popularity = {
-			ideology = populist
-			popularity = 0.1
-		}
-		set_country_flag = ENG_revolutionary_congress_finished
-		if = {
-			limit = {
-				has_idea = ENG_oswald_mosley
+	#The Interior Policy Debate
+	country_event = {
+		id = britain.2
+		title = britain.2.t
+		desc = britain.2.desc
+		#picture = GFX_report_event_physics_lab_01
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = britain.2.a	#Mary Allen
+			ai_chance = {
+				factor = 50 
 			}
-			add_ideas = {
-				ENG_cynthia_mosley
+			add_popularity = {
+				ideology = nationalist
+				popularity = 0.06
 			}
+			add_ideas = ENG_mary_sophia_allen
 		}
-	}
-}
-#CPGB Victory!
-country_event = {
-	id = britain.9
-	title = britain.9.t
-	desc = britain.9.desc
-	#picture = GFX_report_event_physics_lab_01
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = ENG
-		has_completed_focus = ENG_convenetherevolutionarycongress
-		nationalist < 0.4
-		syndicalist > 0.4
-		autocratic < 0.4
-	}
-	
-	option = {
-		name = britain.9.a	#Glory to the Workers!
-		ai_chance = {
-			factor = 50 
+		
+		option = {
+			name = britain.2.b #Ernst Bevin
+			ai_chance = {
+				factor = 50 
+			}
+			trigger = {
+				NOT = {
+					has_country_flag = ENG_king_welcomed
+				}
+			}
+			add_popularity = {
+				ideology = syndicalist
+				popularity = 0.06
+			}
+			add_ideas = ENG_ernest_bevin
 		}
-		set_politics = {
-			ruling_party = syndicalist
+		
+		option = {
+			name = britain.2.c # Nevile Henderson
+			trigger = {
+				NOT = {
+					has_country_flag = ENG_king_not_welcomed
+				}
+			}
+			ai_chance = {
+				factor = 50 
+			}
+			add_popularity = {
+				ideology = autocratic
+				popularity = 0.06
+			}
+			add_ideas = ENG_leslie_hore_belisha
 		}
-		add_popularity = {
-			ideology = syndicalist
-			popularity = 0.05
-		}
-		add_popularity = {
-			ideology = totalist
-			popularity = 0.1
-		}
-		add_popularity = {
-			ideology = anarchist
-			popularity = 0.1
-		}
-		set_country_flag = ENG_revolutionary_congress_finished
-	}
-}
-#King's Party Victory!
-country_event = {
-	id = britain.10
-	title = britain.10.t
-	desc = britain.10.desc
-	#picture = GFX_report_event_physics_lab_01
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = ENG
-		has_completed_focus = ENG_convenetherevolutionarycongress
-		nationalist < 0.4
-		syndicalist < 0.4
-		autocratic > 0.4
-	}
-	
-	option = {
-		name = britain.10.a	#God Save the King!
-		ai_chance = {
-			factor = 50 
-		}
-		set_politics = {
-			ruling_party = autocratic
-		}
-		add_popularity = {
-			ideology = autocratic
-			popularity = 0.05
-		}
-		set_country_flag = ENG_revolutionary_congress_finished
-	}
-}
-#Britain Wishes to Join the Reichspakt
-country_event = {
-	id = britain.11
-	title = britain.11.t
-	desc = britain.11.desc
-	#picture = GFX_report_event_physics_lab_01
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = britain.11.a	#Welcome Britain into Reichspakt!
-		ai_will_do = {
-			factor = 1
-		}
-		GER = { add_to_faction = ENG }
-	}
-	option = {
-		name = britain.11.b	#We have no need of the British.
-		ai_will_do = {
-			factor = 0
-		}
-	}
-}
-#Britain Wishes to Join the Internationale
-country_event = {
-	id = britain.12
-	title = britain.12.t
-	desc = britain.12.desc
-	#picture = GFX_report_event_physics_lab_01
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = britain.12.a	#Welcome Britain into the Internationale!
-		ai_will_do = {
-			factor = 1
-		}
-		FRA = { add_to_faction = ENG }
-	}
-	option = {
-		name = britain.12.b	#We have no need of the British.
-		ai_will_do = {
-			factor = 0
-		}
-	}
-}
-#Consolidating the Party
-country_event = {
-	id = britain.13
-	title = britain.13.t
-	desc = britain.13.desc
-	#picture = GFX_report_event_physics_lab_01
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = britain.13.a	#Agree
-		ai_will_do = {
-			factor = 1
-		}
-		add_popularity = {
-			ideology = populist
-			popularity = -0.15
-		}
-		add_timed_idea = {
-			idea = ENG_controlling_the_trade_unions
-			days = 360
-		}
-	}
-	
-	option = {
-		name = britain.13.b	#Disagree
-		ai_will_do = {
-			factor = 1
-		}
-		add_popularity = {
-			ideology = populist
-			popularity = 0.05
-		}
-		add_political_power = 25
-	}
-}
-#The King's Party
-country_event = {
-	id = britain.14
-	title = britain.14.t
-	desc = britain.14.desc
-	#picture = GFX_report_event_physics_lab_01
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = britain.14.a	#Appoint the King's Party
-		ai_will_do = {
-			factor = 1
-		}
-		hidden_effect = {
-			retire_country_leader = yes
-		}
-		set_party_name = { 
-			ideology = autocratic
-			long_name = ENG_autocratic_kings_party_long 
-			name = ENG_autocratic_kings_party
-		}
-		create_country_leader = {
-			name = "Edward VIII"
-			desc = "POLITICS_OSWALD_MOSLEY_DESC"
-			picture = "Portrait_Britain_Edward_VIII.dds"
-			expire = "1965.1.1"
-			ideology = autocracy
-			traits = {
-				autocratic_trait
-				peoples_monarch1
+		
+		immediate = {
+			hidden_effect = {
+				country_event = {
+					id = britain.4
+					days = 14
+				}
 			}
 		}
-		set_cosmetic_tag = ENG_kingdom
 	}
 	
-	#option = {
-	#	name = britain.14.b	#Disagree
-	#	ai_will_do = {
-	#		factor = 1
-	#	}
-	#	
-	#}
-}
+	country_event = {
+		id = britain.3
+		title = britain.3.t
+		desc = britain.3.desc
+		#picture = GFX_report_event_physics_lab_01
+		
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = britain.3.a	#Let's get on with it!
+			ai_chance = {
+				factor = 50 
+			}
+			add_political_power = 5
+		}
+		
+		immediate = {
+			hidden_effect = {
+				country_event = {
+					id = britain.1
+					days = 14
+				}
+			}
+		}
+	}
+	
+	#The Economic Policy Debate
+	country_event = {
+		id = britain.4
+		title = britain.4.t
+		desc = britain.4.desc
+		#picture = GFX_report_event_physics_lab_01
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = britain.4.a	#Oswald Mosley
+			ai_chance = {
+				factor = 50 
+			}
+			add_popularity = {
+				ideology = nationalist
+				popularity = 0.06
+			}
+			add_ideas = ENG_oswald_mosley
+		}
+		
+		option = {
+			name = britain.4.b #Maurice Dobb
+			ai_chance = {
+				factor = 50 
+			}
+			trigger = {
+				NOT = {
+					has_country_flag = ENG_king_welcomed
+				}
+			}
+			add_popularity = {
+				ideology = syndicalist
+				popularity = 0.06
+			}
+			add_ideas = ENG_maurice_dobb
+		}
+		
+		option = {
+			name = britain.4.c #Maxwell Aitken
+			trigger = {
+				NOT = {
+					has_country_flag = ENG_king_not_welcomed
+				}
+			}
+			ai_chance = {
+				factor = 50 
+			}
+			add_popularity = {
+				ideology = autocratic
+				popularity = 0.06
+			}
+			add_ideas = ENG_maxwell_aitken
+		}
+		
+		immediate = {
+			hidden_effect = {
+				country_event = {
+					id = britain.5
+					days = 14
+				}
+			}
+		}
+	}
+	#The Foreign Policy Debate
+	country_event = {
+		id = britain.5
+		title = britain.5.t
+		desc = britain.5.desc
+		#picture = GFX_report_event_physics_lab_01
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = britain.5.a	#Leslie Belisha
+			ai_chance = {
+				factor = 50 
+			}
+			add_popularity = {
+				ideology = nationalist
+				popularity = 0.06
+			}
+			add_ideas = ENG_rotha_linthorn_orman
+		}
+		
+		option = {
+			name = britain.5.b #Sylvia Pankhurst
+			ai_chance = {
+				factor = 50 
+			}
+			trigger = {
+				NOT = {
+					has_country_flag = ENG_king_welcomed
+				}
+			}
+			add_popularity = {
+				ideology = syndicalist
+				popularity = 0.06
+			}
+			add_ideas = ENG_sylvia_pankhurst
+		}
+		
+		option = {
+			name = britain.5.c #Winston Churchill
+			trigger = {
+				NOT = {
+					has_country_flag = ENG_king_not_welcomed
+				}
+			}
+			ai_chance = {
+				factor = 50 
+			}
+			add_popularity = {
+				ideology = autocratic
+				popularity = 0.06
+			}
+			add_ideas = ENG_winston_churchill
+		}
+		
+		immediate = {
+			hidden_effect = {
+				country_event = {
+					id = britain.6
+					days = 14
+				}
+			}
+		}
+	}
+	
+	#The Government Policy Debate
+	country_event = {
+		id = britain.6
+		title = britain.6.t
+		desc = britain.6.desc
+		#picture = GFX_report_event_physics_lab_01
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = britain.6.a	#John Beckett
+			ai_chance = {
+				factor = 50 
+			}
+			add_popularity = {
+				ideology = nationalist
+				popularity = 0.06
+			}
+			add_ideas = john_beckett
+		}
+		
+		option = {
+			name = britain.6.b #Clement Atlee
+			ai_chance = {
+				factor = 50 
+			}
+			trigger = {
+				NOT = {
+					has_country_flag = ENG_king_welcomed
+				}
+			}
+			add_popularity = {
+				ideology = syndicalist
+				popularity = 0.06
+			}
+			add_ideas = clement_attlee
+		}
+		
+		option = {
+			name = britain.6.c #David Lloyd George
+			trigger = {
+				NOT = {
+					has_country_flag = ENG_king_not_welcomed
+				}
+			}
+			ai_chance = {
+				factor = 50 
+			}
+			add_popularity = {
+				ideology = autocratic
+				popularity = 0.06
+			}
+			add_ideas = ENG_david_lloyd_george
+		}
+		
+		immediate = {
+			hidden_effect = {
+				country_event = {
+					id = britain.7
+					days = 14
+				}
+			}
+		}
+	}
+	
+	#Support a Faction?
+	country_event = {
+		id = britain.7
+		title = britain.7.t
+		desc = britain.7.desc
+		#picture = GFX_report_event_physics_lab_01
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = britain.7.a	#Support ENGSOC
+			ai_chance = {
+				factor = 50 
+			}
+			add_popularity = {
+				ideology = nationalist
+				popularity = 0.1
+			}
+			add_political_power = -100
+		}
+		
+		option = {
+			name = britain.7.b #Support the Syndies
+			ai_chance = {
+				factor = 50 
+			}
+			add_popularity = {
+				ideology = syndicalist
+				popularity = 0.1
+			}
+			add_political_power = -100
+		}
+		
+		option = {
+			name = britain.7.c #Support the Monarchists
+			ai_chance = {
+				factor = 50 
+			}
+			add_popularity = {
+				ideology = autocratic
+				popularity = 0.1
+			}
+			add_political_power = -100
+		}
+		
+		option = {
+			name = britain.7.d #Support nobody
+			ai_chance = {
+				factor = 50 
+			}
+			add_stability = 0.05
+			add_political_power = 50
+		}
+	}
+	
+	#ENGSOC Victory!
+	country_event = {
+		id = britain.8
+		title = britain.8.t
+		desc = britain.8.desc
+		picture = GFX_report_event_eng_good_blackshirt_march
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = britain.8.a	#Glory to Britain!
+				effect_tooltip = {
+					set_politics = {
+					ruling_party = nationalist
+				}
+				add_popularity = {
+					ideology = nationalist
+					popularity = 0.05
+				}
+				add_popularity = {
+					ideology = populist
+					popularity = 0.1
+				}
+				set_country_flag = ENG_revolutionary_congress_finished
+				if = {
+					limit = {
+						has_idea = ENG_oswald_mosley
+					}
+					add_ideas = {
+						ENG_cynthia_mosley
+					}
+				}
+			}
+			
+		}
+		
+		immediate = {
+			hidden_effect = {
+				set_politics = {
+					ruling_party = nationalist
+				}
+				add_popularity = {
+					ideology = nationalist
+					popularity = 0.05
+				}
+				add_popularity = {
+					ideology = populist
+					popularity = 0.1
+				}
+				set_country_flag = ENG_revolutionary_congress_finished
+				if = {
+					limit = {
+						has_idea = ENG_oswald_mosley
+					}
+					add_ideas = {
+						ENG_cynthia_mosley
+					}
+				}
+			}
+		}
+	}
+	
+	#BRP Victory!
+	country_event = {
+		id = britain.9
+		title = britain.9.t
+		desc = britain.9.desc
+		picture = GFX_report_event_communists_cheer
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = britain.9.a	#Glory to the Workers!
+			effect_tooltip = {
+				set_politics = {
+					ruling_party = syndicalist
+				}
+				add_popularity = {
+					ideology = syndicalist
+					popularity = 0.05
+				}
+				add_popularity = {
+					ideology = totalist
+					popularity = 0.1
+				}
+				add_popularity = {
+					ideology = anarchist
+					popularity = 0.1
+				}
+			}
+		}
+		
+		immediate = {
+			hidden_effect = {
+				set_politics = {
+					ruling_party = syndicalist
+				}
+				add_popularity = {
+					ideology = syndicalist
+					popularity = 0.05
+				}
+				add_popularity = {
+					ideology = totalist
+					popularity = 0.1
+				}
+				add_popularity = {
+					ideology = anarchist
+					popularity = 0.1
+				}
+				set_country_flag = ENG_revolutionary_congress_finished
+			}
+		}
+	}
+	
+	#King's Party Victory!
+	country_event = {
+		id = britain.10
+		title = britain.10.t
+		desc = britain.10.desc
+		#picture = GFX_report_event_physics_lab_01
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = britain.10.a	#God Save the King!
+			effect_tooltip = {
+				set_politics = {
+					ruling_party = autocratic
+				}
+				add_popularity = {
+					ideology = autocratic
+					popularity = 0.05
+				}
+			}
+			
+		}
+		
+		immediate = {
+			hidden_effect = {
+				set_politics = {
+					ruling_party = autocratic
+				}
+				add_popularity = {
+					ideology = autocratic
+					popularity = 0.05
+				}
+				set_country_flag = ENG_revolutionary_congress_finished
+			}
+		}
+	}
+	
+	#The Final Election
+	country_event = {
+		id = britain.11
+		title = britain.11.t
+		desc = britain.11.desc
+		picture = GFX_report_event_election_vote
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = britain.11.a	#ENGSOC!
+			ai_will_do = {
+				factor = 1
+			}
+			trigger = {
+				nationalist > 0.2
+			}
+			country_event = {
+				id = britain.8
+			}
+		}
+		option = {
+			name = britain.11.b	#the BRP!
+			ai_will_do = {
+				factor = 1
+			}
+			trigger = {
+				syndicalist > 0.2
+				NOT = {
+					has_country_flag = ENG_king_welcomed
+				}
+			}
+			country_event = {
+				id = britain.9
+			}
+		}
+		option = {
+			name = britain.11.c	#the King's Party
+			ai_will_do = {
+				factor = 1
+			}
+			trigger = {
+				autocratic > 0.2
+				NOT = {
+					has_country_flag = ENG_king_not_welcomed
+				}
+			}
+			country_event = {
+				id = britain.10
+			}
+		}
+	}
+	
+	#Britain Demands Subjagation
+	country_event = {
+		id = britain.12
+		title = britain.12.t
+		desc = britain.12.desc
+		#picture = GFX_report_event_physics_lab_01
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = britain.12.a	#We must...
+			ai_will_do = {
+				factor = 1
+			}
+			ENG = {
+				transfer_state = 119
+				puppet = IRE
+			}
+		}
+		option = {
+			name = britain.12.b	#We must maintain independence!
+			ai_will_do = {
+				factor = 0
+			}
+			set_country_flag = ENG_IRE_rejected
+		}
+	}
+	#Consolidating the Party
+	country_event = {
+		id = britain.13
+		title = britain.13.t
+		desc = britain.13.desc
+		picture = GFX_report_event_eng_mosley_speech
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = britain.13.a	#Agree
+			ai_will_do = {
+				factor = 1
+			}
+			remove_ideas = ENG_trade_union_congress
+			add_popularity = {
+				ideology = populist
+				popularity = -0.15
+			}
+			add_timed_idea = {
+				idea = ENG_controlling_the_trade_unions
+				days = 360
+			}
+		}
+		
+		option = {
+			name = britain.13.b	#Disagree
+			ai_will_do = {
+				factor = 1
+			}
+			remove_ideas = ENG_trade_union_congress
+			add_popularity = {
+				ideology = populist
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = nationalist
+				popularity = 0.1
+			}
+		}
+	}
+	
+	#The King's Party
+	country_event = {
+		id = britain.14
+		title = britain.14.t
+		desc = britain.14.desc
+		#picture = GFX_report_event_physics_lab_01
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = britain.14.a	#Appoint the King's Party
+			ai_will_do = {
+				factor = 1
+			}
+			hidden_effect = {
+				retire_country_leader = yes
+			}
+			set_party_name = { 
+				ideology = autocratic
+				long_name = ENG_autocratic_kings_party_long 
+				name = ENG_autocratic_kings_party
+			}
+			create_country_leader = {
+				name = "Edward VIII"
+				desc = "POLITICS_OSWALD_MOSLEY_DESC"
+				picture = "Portrait_Britain_Edward_VIII.dds"
+				expire = "1965.1.1"
+				ideology = autocracy
+				traits = {
+				}
+			}
+			set_cosmetic_tag = ENG_kingdom
+		}
+		
+		#option = {
+		#	name = britain.14.b	#Disagree
+		#	ai_will_do = {
+		#		factor = 1
+		#	}
+		#	
+		#}
+	}
+	
+	#Defining True Socialism
+	country_event = {
+		id = britain.15
+		title = britain.15.t
+		desc = britain.15.desc
+		picture = GFX_report_event_communist_leader
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = britain.15.a	#Syndicalism is Socialism
+			ai_will_do = {
+				factor = 1
+			}
+			add_country_leader_trait = hos_true_socialist
+			add_popularity = {
+				ideology = syndicalist
+				popularity = 0.1
+			}
+		}
+	}
+	
+	#The End of an Era
+	country_event = {
+		id = britain.16
+		title = britain.16.t
+		desc = britain.16.desc
+		picture = GFX_report_event_fascist_gathering
+		
+		is_triggered_only = yes
+		
+		option = { #Godspeed!
+			name = britain.16.a	
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}

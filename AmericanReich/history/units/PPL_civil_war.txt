@@ -1,0 +1,79 @@
+	division_template = { 
+		name = "Rebel Division" 
+		division_names_group = ITA_INF_01 
+
+		# Represents nearly all infantry divisions
+		# In later years, CC.NN. Brigade added to INF Division (1x2 MIL/INF regiments)
+		# Also represent semi-mountain divisions (1st, 2nd, 3rd, 4th, 6th Divisions)
+		regiments = { 
+			infantry = { x = 0 y = 0 } 
+			infantry = { x = 0 y = 1 } 
+			infantry = { x = 0 y = 2 } 
+			infantry = { x = 1 y = 0 } 
+			infantry = { x = 1 y = 1 } 
+		} 
+	}
+	
+	units = {
+		division = {  
+			division_name = {
+				is_name_ordered = yes
+				name_order = 4
+			} 
+			location = 9904
+			division_template = "Rebel Division"
+			start_experience_factor = 0.3
+		}
+		division = {  
+			division_name = {
+				is_name_ordered = yes
+				name_order = 4
+			} 
+			location = 9904
+			division_template = "Rebel Division"
+			start_experience_factor = 0.3
+		}
+		division = {  
+			division_name = {
+				is_name_ordered = yes
+				name_order = 4
+			} 
+			location = 9904
+			division_template = "Rebel Division"
+			start_experience_factor = 0.3
+		}
+		division = {  
+			division_name = {
+				is_name_ordered = yes
+				name_order = 4
+			} 
+			location = 9904
+			division_template = "Rebel Division"
+			start_experience_factor = 0.3
+		}
+		division = {  
+			division_name = {
+				is_name_ordered = yes
+				name_order = 4
+			} 
+			location = 9904
+			division_template = "Rebel Division"
+			start_experience_factor = 0.3
+		}
+	}
+	
+	air_wings = {
+		2 = { 
+			# 2a Divisione Aerea 'Borea'
+			fighter_equipment_0 = { 
+				amount = 72 
+				owner = "PPL" 
+			} 
+			# 4a Divisione Aerea 'Drago'
+			# 6a Divisione Aerea 'Falco'
+			tac_bomber_equipment_0 = { 
+				amount = 50 
+				owner = "PPL" 
+			} 
+		}
+	}

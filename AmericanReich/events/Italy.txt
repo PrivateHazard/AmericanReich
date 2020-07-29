@@ -1,0 +1,671 @@
+﻿	add_namespace = italy
+
+	# A Broken Dream
+	country_event = {
+		id = italy.1
+		title = italy.1.t
+		desc = italy.1.desc
+		picture = GFX_report_event_royal_parade
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = italy.1.a
+			
+		}
+	}
+	
+	#Freedom at last!
+	country_event = {
+		id = italy.2
+		title = italy.2.t
+		desc = italy.2.desc
+		picture = GFX_report_event_generic_read_write
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = italy.2.a
+			effect_tooltip = {
+				set_autonomy = {
+					target = ITA
+					autonomy_state = autonomy_free
+				}
+			}
+			hidden_effect = {
+				news_event = {
+					id = news.2
+					days = 7
+				}
+			}
+		}
+		
+		immediate = {
+			hidden_effect = {
+				AUS = {
+					set_autonomy = {
+						target = ITA
+						autonomy_state = autonomy_free
+					}
+				}
+			}
+		}
+	}
+	
+	#Elections of 1936
+	country_event = {
+		id = italy.3
+		title = italy.3.t
+		desc = italy.3.desc
+		picture = GFX_report_event_election_vote
+		
+		fire_only_once = yes
+		
+		trigger = {
+			date > 1936.9.30
+			tag = ITA
+			has_elections = yes
+		}
+		
+		option = { #Liberal Victory
+			name = italy.3.a
+			set_politics = {
+				ruling_party = liberal
+				elections_allowed = yes
+			}
+			add_popularity = {
+				ideology = liberal
+				popularity = 0.13
+			}
+		}
+		
+		immediate = {
+			hidden_effect = {
+				country_event = {
+					id = italy.4
+					days = 21
+				}
+			}
+		}
+	}
+	
+	#The Death of the Pope
+	country_event = {
+		id = italy.4
+		title = italy.4.t
+		desc = italy.4.desc
+		picture = GFX_report_event_generic_parliament
+		
+		is_triggered_only = yes
+		
+		option = { #Dio con lui...
+			name = italy.4.a
+			effect_tooltip = {
+				create_country_leader = {
+					name = "Council of Cardinals"
+					desc = ""
+					picture = "Portrait_ITA_College_of_Cardinals.tga"
+					expire = "1965.1.1"
+					ideology = liberalism
+					traits = {
+						
+					}
+				}
+				kill_country_leader = yes
+			}
+		}
+		
+		immediate = {
+			hidden_effect = {
+				kill_country_leader = yes
+				create_country_leader = {
+					name = "Council of Cardinals"
+					desc = ""
+					picture = "Portrait_ITA_College_of_Cardinals.tga"
+					expire = "1965.1.1"
+					ideology = liberalism
+					traits = {
+						
+					}
+				}
+				create_country_leader = {
+					name = "Council of Cardinals"
+					desc = ""
+					picture = "Portrait_ITA_College_of_Cardinals.tga"
+					expire = "1965.1.1"
+					ideology = authoritarianism
+					traits = {
+						
+					}
+				}
+				country_event = {
+					id = italy.5
+					days = 21
+				}
+			}
+		}
+	}
+	
+	#The Uprising
+	country_event = {
+		id = italy.5
+		title = italy.5.t
+		desc = italy.5.desc
+		picture = GFX_report_event_generic_parliament
+		
+		is_triggered_only = yes
+		
+		option = { #ITA
+			name = italy.5.a
+			effect_tooltip = {
+				set_cosmetic_tag = ITA_republic
+				retire_country_leader = yes
+				create_country_leader = {
+					name = "Luigi Einaudi"
+					desc = ""
+					picture = "Portrait_ITA_Luigi_Einaudi.tga"
+					expire = "1965.1.1"
+					ideology = liberalism
+					traits = {
+							
+					}
+				}
+				add_popularity = {
+					ideology = autocratic
+					popularity = -0.1
+				}
+				add_popularity = {
+					authoritarian = -0.1
+					popularity = -0.1
+				}
+				add_popularity = {
+					ideology = syndicalist
+					popularity = -0.1
+				}
+				add_popularity = {
+					ideology = totalist
+					popularity = -0.1
+				}
+				add_popularity = {
+					ideology = anarchist
+					popularity = -0.1
+				}
+			}
+		}
+		
+		option = { #SRI
+			name = italy.5.b
+			trigger = {
+				is_ai = no
+			}
+			SRI = { 
+				change_tag_from = ROOT 
+			}
+		}
+		
+		option = { #PPL
+			name = italy.5.c
+			trigger = {
+				is_ai = no
+			}
+			PPL = { 
+				change_tag_from = ROOT 
+			}
+		}
+		
+		option = { #SCI
+			name = italy.5.d
+			trigger = {
+				is_ai = no
+			}
+			SCI = { 
+				change_tag_from = ROOT 
+			}
+		}
+		
+		immediate = {
+			hidden_effect = {
+				set_global_flag = ITA_civil_war
+				set_cosmetic_tag = ITA_republic
+				load_oob = ITA_civil_war
+				add_popularity = {
+					ideology = autocratic
+					popularity = -0.1
+				}
+				add_popularity = {
+					ideology = authoritarian
+					popularity = -0.1
+				}
+				add_popularity = {
+					ideology = syndicalist
+					popularity = -0.1
+				}
+				add_popularity = {
+					ideology = totalist
+					popularity = -0.1
+				}
+				add_popularity = {
+					ideology = anarchist
+					popularity = -0.1
+				}
+				ITA = {
+					country_event = {
+						id = italy.6
+						days = 21
+					}
+					capital = 159
+					retire_country_leader = yes
+					create_country_leader = {
+						name = "Luigi Einaudi"
+						desc = ""
+						picture = "Portrait_ITA_Luigi_Einaudi.tga"
+						expire = "1965.1.1"
+						ideology = liberalism
+						traits = {
+							
+						}
+					}
+					create_country_leader = {
+						name = "Giovani Gronchi"
+						desc = ""
+						picture = "Portrait_ITA_Giovanni_Gronchi.tga"
+						expire = "1965.1.1"
+						ideology = conservatism
+						traits = {
+							
+						}
+					}
+					create_country_leader = {
+						name = "Ferrucio Parri"
+						desc = ""
+						picture = "Portrait_ITA_Ferruccio_Parri.tga"
+						expire = "1965.1.1"
+						ideology = socialist
+						traits = {
+							
+						}
+					}
+					create_country_leader = {
+						name = "Ivanoe Bonomi"
+						desc = ""
+						picture = "Portrait_ITA_Ivanoe_Bonomi.tga"
+						expire = "1965.1.1"
+						ideology = liberertarianism
+						traits = {
+							
+						}
+					}
+					add_ai_strategy = { 
+						type = alliance 
+						id = "AST" 
+						value = 200 
+					}
+					add_ai_strategy = { 
+						type = alliance 
+						id = "AUS" 
+						value = 200 
+					}
+					add_opinion_modifier = {
+						target = AST
+						modifier = offered_support
+					}
+					add_opinion_modifier = {
+						target = AUS
+						modifier = offered_support
+					}
+					remove_state_core = 2
+					remove_state_core = 158
+					remove_state_core = 826
+					remove_state_core = 825
+					remove_state_core = 162
+					remove_state_core = 735
+					remove_state_core = 828
+					remove_state_core = 830
+					remove_state_core = 1
+					remove_state_core = 117
+					remove_state_core = 157
+					remove_state_core = 115
+					remove_state_core = 829
+					remove_state_core = 156
+					remove_state_core = 832
+					remove_state_core = 831
+					remove_state_core = 161
+					add_state_claim = 830
+					add_state_claim = 828
+					add_state_claim = 162
+					add_state_claim = 161
+					add_state_claim = 826
+					add_state_claim = 735
+					add_state_claim = 158
+					add_state_claim = 825
+					add_state_claim = 2
+					add_state_claim = 157
+					add_state_claim = 829
+					add_state_claim = 156
+					add_state_claim = 117
+					add_state_claim = 826
+					add_state_claim = 832
+					add_state_claim = 831
+					add_state_claim = 115
+				}
+				SRI = {
+					add_state_core = 158
+					transfer_state = 158
+					add_state_core = 161
+					transfer_state = 161
+					add_state_core = 826
+					transfer_state = 826
+					add_state_core = 825
+					transfer_state = 825
+					add_state_core = 162
+					transfer_state = 162
+					add_state_core = 735
+					transfer_state = 735
+					add_state_core = 828
+					transfer_state = 828
+					add_state_core = 830
+					transfer_state = 830
+					add_state_claim = 159
+					add_state_claim = 160
+					add_state_claim = 827
+					add_state_claim = 114
+					add_state_claim = 116
+					add_state_claim = 2
+					add_state_claim = 157
+					add_state_claim = 829
+					add_state_claim = 156
+					add_state_claim = 117
+					add_state_claim = 826
+					add_state_claim = 832
+					add_state_claim = 831
+					add_state_claim = 115
+					load_oob = SRI_civil_war
+					add_ai_strategy = { 
+						type = alliance 
+						id = "FRA" 
+						value = 200 
+					}
+					add_opinion_modifier = {
+						target = FRA
+						modifier = offered_support
+					}
+					inherit_technology = ITA
+				}
+				PPL = {
+					add_state_core = 2
+					transfer_state = 2
+					load_oob = PPL_civil_war
+					inherit_technology = ITA
+				}
+				SCI = {
+					add_state_core = 117
+					transfer_state = 117
+					add_state_core = 157
+					transfer_state = 157
+					add_state_core = 829
+					transfer_state = 829
+					add_state_core = 156
+					transfer_state = 156
+					add_state_core = 832
+					transfer_state = 832
+					add_state_core = 831
+					transfer_state = 831
+					add_state_core = 115
+					transfer_state = 115
+					add_state_claim = 159
+					add_state_claim = 160
+					add_state_claim = 827
+					add_state_claim = 114
+					add_state_claim = 116
+					add_state_claim = 2
+					add_state_claim = 830
+					add_state_claim = 828
+					add_state_claim = 162
+					add_state_claim = 161
+					add_state_claim = 826
+					add_state_claim = 735
+					add_state_claim = 158
+					add_state_claim = 825
+					load_oob = SCI_civil_war
+					add_opinion_modifier = {
+						target = GER
+						modifier = offered_support
+					}
+					add_opinion_modifier = {
+						target = GER
+						modifier = offered_support
+					}
+					add_opinion_modifier = {
+						target = GER
+						modifier = offered_support
+					}
+					inherit_technology = ITA
+				}
+				FRA = {
+					transfer_state = 1
+					add_ai_strategy = { 
+						type = alliance 
+						id = "SRI" 
+						value = 200 
+					}
+					add_opinion_modifier = {
+						target = SRI
+						modifier = offered_support
+					}
+					add_opinion_modifier = {
+						target = SRI
+						modifier = offered_support
+					}
+					add_opinion_modifier = {
+						target = SRI
+						modifier = offered_support
+					}
+				}
+				GER = {
+					add_ai_strategy = { 
+						type = alliance 
+						id = "SCI" 
+						value = 200 
+					}
+					add_opinion_modifier = {
+						target = SCI
+						modifier = offered_support
+					}
+					add_opinion_modifier = {
+						target = SCI
+						modifier = offered_support
+					}
+					add_opinion_modifier = {
+						target = SCI
+						modifier = offered_support
+					}
+				}
+				AST = {
+					add_ai_strategy = { 
+						type = alliance 
+						id = "ITA" 
+						value = 200 
+					}
+					add_opinion_modifier = {
+						target = ITA
+						modifier = offered_support
+					}
+				}
+				AUS = {
+					add_ai_strategy = { 
+						type = alliance 
+						id = "ITA" 
+						value = 200 
+					}
+					add_opinion_modifier = {
+						target = ITA
+						modifier = offered_support
+					}
+				}
+				transfer_units_fraction= {
+					target = SRI
+					size = 0.3
+					stockpile_ratio = 0.3
+					army_ratio = 0.3
+					navy_ratio = 0.3
+					air_ratio = 0.3
+				}
+				transfer_units_fraction= {
+					target = SCI
+					size = 0.3
+					stockpile_ratio = 0.3
+					army_ratio = 0.3
+					navy_ratio = 0.3
+					air_ratio = 0.3
+				}
+				transfer_units_fraction = {
+					target = PPL
+					size = 0.1
+					stockpile_ratio = 0.1
+					army_ratio = 0.1
+					navy_ratio = 0.1
+					air_ratio = 0.1
+				}
+			}
+		}
+	}
+	
+	#SRI Declares War on us!
+	country_event = {
+		id = italy.6
+		title = italy.6.t
+		desc = italy.6.desc
+		picture = GFX_report_event_defensive_preparations
+			
+		is_triggered_only = yes
+			
+		option = { #Our last stand...
+			name = italy.6.a
+		}
+			
+		immediate = {
+			hidden_effect = {
+				SRI = {
+					declare_war_on = {
+						target = ITA
+						type = annex_everything
+					}
+					declare_war_on = {
+						target = SCI
+						type = annex_everything
+					}
+				}
+				country_event = {
+					id = italy.7
+					days = 7
+				}
+			}
+		}
+	}
+	
+	#SCI Declares War on us!
+	country_event = {
+		id = italy.7
+		title = italy.7.t
+		desc = italy.7.desc
+		picture = GFX_report_event_defensive_preparations
+			
+		is_triggered_only = yes
+			
+		option = { #Our last stand...
+			name = italy.7.a
+		}
+			
+		immediate = {
+			hidden_effect = {
+				SCI = {
+					declare_war_on = {
+						target = ITA
+						type = annex_everything
+					}
+				}
+			}
+		}
+	}
+	
+	#Italian Civil War Over
+	country_event = {
+		id = italy.8
+		title = italy.8.t
+		desc = italy.8.desc
+		picture = GFX_report_event_defensive_preparations
+			
+		fire_only_once = yes
+		
+		trigger = {
+			has_global_flag = ITA_civil_war
+			OR = {
+				original_tag = ITA
+				original_tag = SCI
+				original_tag = SRI
+			}
+			if = {
+				limit = {
+					original_tag = ITA
+				}
+				NOT = {
+					country_exists = SRI
+					country_exists = SCI
+				}
+			}
+			if = {
+				limit = {
+					original_tag = SRI
+				}
+				NOT = {
+					country_exists = SCI
+					country_exists = ITA
+				}
+			}
+			if = {
+				limit = {
+					original_tag = SCI
+				}
+				NOT = {
+					country_exists = SRI
+					country_exists = ITA
+				}
+			}
+		}
+			
+		option = { #The worst is over...
+			name = italy.8.a
+		}
+			
+		immediate = {
+			hidden_effect = {
+				annex_country = {
+					target = PPL
+					transfer_troops = yes
+				}
+				add_state_core = 833
+				add_state_core = 159
+				add_state_core = 161
+				add_state_core = 160
+				add_state_core = 827
+				add_state_core = 114
+				add_state_core = 2
+				add_state_core = 117
+				add_state_core = 157
+				add_state_core = 829
+				add_state_core = 156
+				add_state_core = 832
+				add_state_core = 831					
+				add_state_core = 115
+				add_state_core = 116
+				add_state_core = 158
+				add_state_core = 826
+				add_state_core = 825	
+				add_state_core = 162					
+				add_state_core = 735
+				add_state_core = 828
+				add_state_core = 830
+			}
+		}
+	}
+

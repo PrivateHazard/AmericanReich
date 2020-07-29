@@ -424,7 +424,7 @@ ideas = {
 			
 			modifier = {
 				political_power_gain = 0.25
-				democratic_drift = 0.02
+				liberal_drift = 0.02
 			}
 		}
 
@@ -443,7 +443,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				neutrality_drift = -0.02
+				authoritarian_drift = -0.02
 			}
 		}
 

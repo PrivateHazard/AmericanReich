@@ -22,17 +22,17 @@ country_event = {
 		name = raj.1.a
 		
 		release = PAK
-remove_ideas = {
-    RAJ_marginalized_muslim_community
-}
-			}
+		remove_ideas = {
+			RAJ_marginalized_muslim_community
+		}
+	}
 	option = {
 		name = raj.1.b
 		
 		release = PAK
-remove_ideas = {
-    RAJ_marginalized_muslim_community
-}
+		remove_ideas = {
+			RAJ_marginalized_muslim_community
+		}
 PAK = { change_tag_from = RAJ }
 			}
 		}
@@ -106,7 +106,7 @@ country_event = {
 }
 			}
 		}
-country_event = {
+	country_event = {
 	id = raj.4
 	title = raj.4.t
 	desc = raj.4.desc

@@ -58,9 +58,22 @@ country_event = {
 		option = { 	#Oh no...
 			name = aus.2.a
 			ai_chance = { factor = 100 }
-			set_country_flag = AUS_black_friday
-			add_stability = -0.2
-			add_ideas = AUS_black_friday1
+			effect_tooptip = {
+				add_stability = -0.2
+				add_ideas = AUS_black_friday1
+			}
+		}
+		
+		immediate = {
+			hidden_effect = {
+				set_country_flag = AUS_black_friday
+				add_stability = -0.2
+				add_ideas = AUS_black_friday1
+				ITA = {
+					country_event = italy.2
+					days = 5
+				}
+			}
 		}
 	}
 	country_event = {

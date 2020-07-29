@@ -2,30 +2,6 @@ ideas = {
 
 	country = {
 
-		FRA_victors_of_wwi = {
-			
-			allowed = {
-				original_tag = FRA
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = no
-			}
-
-			removal_cost = -1
-
-			picture = generic_victors_of_ww1
-			
-			research_bonus = {
-				land_doctrine = -0.75
-			}
-			modifier = {
-				conscription = -0.003
-				war_support_factor = -0.05
-			}
-		}
-
 		FRA_legacy_of_the_old_republic = {
 			
 			allowed = {
@@ -47,6 +23,7 @@ ideas = {
 		}
 		
 		FRA_our_education = {
+			picture = generic_research_bonus
 			
 			allowed = {
 				original_tag = FRA
@@ -62,7 +39,9 @@ ideas = {
 				research_speed_factor = 0.05
 			}
 		}
+		
 		FRA_our_education1 = {
+			picture = generic_research_bonus
 			
 			allowed = {
 				original_tag = FRA
@@ -78,7 +57,9 @@ ideas = {
 				research_speed_factor = 0.1
 			}
 		}
+		
 		FRA_revanchism = {
+			picture = FRA_scw_intervention_republicans_focus
 			
 			allowed = {
 				original_tag = FRA
@@ -92,7 +73,9 @@ ideas = {
 				land_reinforce_rate = 0.1
 			}
 		}
+		
 		FRA_autarcie = {
+			picture = generic_production_bonus
 			
 			allowed = {
 				original_tag = FRA
@@ -106,7 +89,9 @@ ideas = {
 				production_speed_dockyard_factor = 0.15
 			}
 		}
+		
 		FRA_socialist_investments = {
+			picture = generic_production_bonus
 			
 			allowed = {
 				original_tag = FRA
@@ -117,10 +102,11 @@ ideas = {
 			
 			modifier = {
 				production_speed_buildings_factor = 0.1
-				production_speed_industrial_complex_factor = 0.05
 			}
 		}
+		
 		FRA_cultural_exports = {
+			picture = can_wartime_prices_and_trade_board
 			
 			allowed = {
 				original_tag = FRA
@@ -130,11 +116,13 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_gain = 0.1
-				min_export = -0.1
+				political_power_gain = 0.05
+				min_export = -0.05
 			}
 		}
+		
 		FRA_increase_resources = {
+			picture = generic_exploit_mines
 			
 			allowed = {
 				original_tag = FRA
@@ -147,7 +135,9 @@ ideas = {
 				local_resources_factor = 0.10
 			}
 		}
+		
 		FRA_increase_weapon_production = {
+			picture = generic_production_bonus
 			
 			allowed = {
 				original_tag = FRA
@@ -156,11 +146,18 @@ ideas = {
 
 			removal_cost = -1
 			
-			modifier = {
-				industrial_capacity_factory = 0.1
+			equipment_bonus = {
+				infantry_weapons = {
+					build_cost_ic = -0.1
+				}
+				artillery = {
+					build_cost_ic = -0.1
+				}
 			}
 		}
+		
 		FRA_classical_syndicalism = {
+			picture = FRA_matignon_agreements
 			
 			allowed = {
 				original_tag = FRA
@@ -173,7 +170,9 @@ ideas = {
 				production_speed_buildings_factor = 0.1
 			}
 		}
+		
 		FRA_classical_syndicalism1 = {
+			picture = FRA_matignon_agreements
 			
 			allowed = {
 				original_tag = FRA
@@ -189,7 +188,9 @@ ideas = {
 				industrial_capacity_factory = 0.05
 			}
 		}
+		
 		FRA_market_socialism = {
+			picture = generic_goods_red_bonus
 			
 			allowed = {
 				original_tag = FRA
@@ -202,7 +203,9 @@ ideas = {
 				consumer_goods_factor = -0.05
 			}
 		}
+		
 		FRA_market_socialism1 = {
+			picture = generic_goods_red_bonus
 			
 			allowed = {
 				original_tag = FRA
@@ -216,7 +219,9 @@ ideas = {
 				production_factory_max_efficiency_factor = -0.1
 			}
 		}
+		
 		FRA_market_socialism2 = {
+			picture = generic_goods_red_bonus
 			
 			allowed = {
 				original_tag = FRA
@@ -233,7 +238,9 @@ ideas = {
 				local_building_slots_factor = 0.1
 			}
 		}
+		
 		FRA_cooperatives = {
+			picture = generic_local_self_management
 			
 			allowed = {
 				original_tag = FRA
@@ -248,7 +255,9 @@ ideas = {
 				production_speed_arms_factory_factor = 0.05
 			}
 		}
+		
 		FRA_cooperatives1 = {
+			picture = generic_local_self_management
 			
 			allowed = {
 				original_tag = FRA
@@ -264,7 +273,9 @@ ideas = {
 				local_building_slots_factor = 0.1
 			}
 		}
+		
 		FRA_cooperatives2 = {
+			picture = generic_local_self_management
 			
 			allowed = {
 				original_tag = FRA
@@ -279,7 +290,9 @@ ideas = {
 				local_building_slots_factor = 0.2
 			}
 		}
+		
 		FRA_revolutionary_economy = {
+			picture = eng_spirit_of_the_industrial_revolution
 			
 			allowed = {
 				original_tag = FRA
@@ -292,7 +305,9 @@ ideas = {
 				production_speed_arms_factory_factor = 0.1
 			}
 		}
+		
 		FRA_revolutionary_economy1 = {
+			picture = eng_spirit_of_the_industrial_revolution
 			
 			allowed = {
 				original_tag = FRA
@@ -307,7 +322,9 @@ ideas = {
 				supply_consumption_factor = -0.1
 			}
 		}
+		
 		FRA_revolutionary_economy2 = {
+			picture = eng_spirit_of_the_industrial_revolution
 			
 			allowed = {
 				original_tag = FRA
@@ -323,7 +340,9 @@ ideas = {
 				production_factory_max_efficiency_factor = 0.1
 			}
 		}
+		
 		FRA_revolutionary_economy3 = {
+			picture = eng_spirit_of_the_industrial_revolution
 			
 			allowed = {
 				original_tag = FRA
@@ -340,7 +359,9 @@ ideas = {
 				industrial_capacity_factory = 0.1
 			}
 		}
+		
 		FRA_engineering_schools = {
+			picture = ast_naval_auxiliary_patrol
 			
 			allowed = {
 				original_tag = FRA
@@ -354,13 +375,16 @@ ideas = {
 			
 			research_bonus = {
 				industry = 0.1
+				electronics = 0.1
 			}
 			
 			modifier = {
 			
 			}
 		}
+		
 		FRA_liberalization = {
+			picture = generic_democratic_drift_bonus
 			
 			allowed = {
 				original_tag = FRA
@@ -376,7 +400,9 @@ ideas = {
 				political_power_gain = 0.1
 			}
 		}
+		
 		FRA_liberalization1 = {
+			picture = generic_democratic_drift_bonus
 			
 			allowed = {
 				original_tag = FRA
@@ -393,7 +419,9 @@ ideas = {
 				conscription = 0.005
 			}
 		}
+		
 		FRA_standardized_wages = {
+			picture = fra_market_dynamism
 			
 			allowed = {
 				original_tag = FRA
@@ -410,7 +438,9 @@ ideas = {
 				stability_weekly = 0.005
 			}
 		}
+		
 		FRA_centralized_unions = {
+			picture = generic_central_management
 			
 			allowed = {
 				original_tag = FRA
@@ -428,7 +458,9 @@ ideas = {
 				political_power_gain = 0.05
 			}
 		}
+		
 		FRA_centralized_unions1 = {
+			picture = generic_central_management
 			
 			allowed = {
 				original_tag = FRA
@@ -444,11 +476,13 @@ ideas = {
 				mobilization_speed = 0.1
 				foreign_subversive_activites = -0.25
 				political_power_gain = 0.05
-				offensive_war_stability_factor = 0.2
-				defensive_war_stability_factor = 0.2
+				offensive_war_stability_factor = 0.1
+				defensive_war_stability_factor = 0.1
 			}
 		}
+		
 		FRA_women_in_the_revolution = {
+			picture = generic_infantry_bonus
 			
 			allowed = {
 				original_tag = FRA
@@ -463,10 +497,12 @@ ideas = {
 			modifier = {
 				conscription_factor = 0.05
 				industrial_capacity_factory = 0.05
-				political_power_gain = -0.1
+				political_power_gain = -0.05
 			}
 		}
+		
 		FRA_world_revolution = {
+			picture = spr_class_war
 			
 			allowed = {
 				original_tag = FRA
@@ -479,12 +515,13 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				non_core_manpower = 0.1
 				justify_war_goal_time = -0.75
 				enemy_justify_war_goal_time = -0.75
 			}
 		}
+		
 		FRA_infrastructure = {
+			picture = generic_build_infrastructure
 			
 			allowed = {
 				original_tag = FRA
@@ -500,7 +537,9 @@ ideas = {
 				production_speed_infrastructure_factor = 0.1
 			}
 		}
+		
 		FRA_military_industrial_kickstart = {
+			picture = FRA_national_mobilization_focus
 			
 			allowed = {
 				original_tag = FRA
@@ -516,7 +555,9 @@ ideas = {
 				production_speed_arms_factory_factor = 0.2
 			}
 		}
+		
 		FRA_calibrated_economy = {
+			picture = generic_economic_increase
 			
 			allowed = {
 				original_tag = FRA
@@ -536,10 +577,12 @@ ideas = {
 			
 			modifier = {
 				consumer_goods_factor = -0.05
-				industrial_capacity_factory = 0.1
+				line_change_production_efficiency_factor = 0.1
 			}
 		}
+		
 		FRA_communard_spirit = {
+			picture = generic_communist_army
 			
 			allowed = {
 				original_tag = FRA
@@ -563,7 +606,9 @@ ideas = {
 				partisan_effect = 0.25
 			}
 		}
+		
 		FRA_communard_spirit1 = {
+			picture = generic_communist_army
 			
 			allowed = {
 				original_tag = FRA
@@ -588,7 +633,9 @@ ideas = {
 				experience_gain_army = 0.05
 			}
 		}
+		
 		FRA_armored_breakthrough = {
+			picture = generic_acquire_tanks
 			
 			allowed = {
 				original_tag = FRA
@@ -610,7 +657,9 @@ ideas = {
 			modifier = {
 			}
 		}
+		
 		FRA_armored_breakthrough1 = {
+			picture = generic_acquire_tanks
 			
 			allowed = {
 				original_tag = FRA
@@ -640,7 +689,9 @@ ideas = {
 			modifier = {
 			}
 		}
+		
 		FRA_armored_breakthrough2 = {
+			picture = generic_acquire_tanks
 			
 			allowed = {
 				original_tag = FRA
@@ -677,7 +728,9 @@ ideas = {
 				}
 			}
 		}
+		
 		FRA_armored_breakthrough3_quality = {
+			picture = generic_acquire_tanks
 			
 			allowed = {
 				original_tag = FRA
@@ -710,7 +763,9 @@ ideas = {
 				}
 			}
 		}
+		
 		FRA_armored_breakthrough3_production = {
+			picture = generic_acquire_tanks
 			
 			allowed = {
 				original_tag = FRA
@@ -743,7 +798,9 @@ ideas = {
 				}
 			}
 		}
+		
 		FRA_superior_firepower = {
+			picture = generic_artillery_regiments
 			
 			allowed = {
 				original_tag = FRA
@@ -765,7 +822,9 @@ ideas = {
 			modifier = {
 			}
 		}
+		
 		FRA_superior_firepower1 = {
+			picture = generic_artillery_regiments
 			
 			allowed = {
 				original_tag = FRA
@@ -795,7 +854,9 @@ ideas = {
 				}
 			}
 		}
+		
 		FRA_superior_firepower2 = {
+			picture = generic_artillery_regiments
 			
 			allowed = {
 				original_tag = FRA
@@ -830,7 +891,9 @@ ideas = {
 				}
 			}
 		}
+		
 		FRA_superior_firepower3 = {
+			picture = generic_artillery_regiments
 			
 			allowed = {
 				original_tag = FRA
@@ -866,7 +929,9 @@ ideas = {
 				}
 			}
 		}
+		
 		FRA_officers_initiative = {
+			picture = cze_planning_bonus
 			
 			allowed = {
 				original_tag = FRA
@@ -893,7 +958,9 @@ ideas = {
 			equipment_bonus = {
 			}
 		}
+		
 		FRA_officers_initiative1 = {
+			picture = cze_planning_bonus
 			
 			allowed = {
 				original_tag = FRA
@@ -921,7 +988,9 @@ ideas = {
 			equipment_bonus = {
 			}
 		}
+		
 		FRA_officers_initiative2 = {
+			picture = cze_planning_bonus
 			
 			allowed = {
 				original_tag = FRA
@@ -952,7 +1021,9 @@ ideas = {
 			equipment_bonus = {
 			}
 		}
+		
 		FRA_officers_initiative3 = {
+			picture = cze_planning_bonus
 			
 			allowed = {
 				original_tag = FRA
@@ -985,7 +1056,9 @@ ideas = {
 			equipment_bonus = {
 			}
 		}
+		
 		FRA_mass_mobilization = {
+			picture = generic_manpower_bonus
 			
 			allowed = {
 				original_tag = FRA
@@ -1012,7 +1085,9 @@ ideas = {
 			equipment_bonus = {
 			}
 		}
+		
 		FRA_mass_mobilization1 = {
+			picture = generic_manpower_bonus
 			
 			allowed = {
 				original_tag = FRA
@@ -1045,6 +1120,7 @@ ideas = {
 			}
 		}
 		FRA_mass_mobilization2 = {
+			picture = generic_manpower_bonus
 			
 			allowed = {
 				original_tag = FRA
@@ -1078,7 +1154,9 @@ ideas = {
 				}
 			}
 		}
+		
 		FRA_mass_mobilization3 = {
+			picture = generic_manpower_bonus
 			
 			allowed = {
 				original_tag = FRA
@@ -1114,7 +1192,9 @@ ideas = {
 				}
 			}
 		}
+		
 		FRA_strategic_destruction = {
+			picture = generic_air_research
 			
 			allowed = {
 				original_tag = FRA
@@ -1137,13 +1217,20 @@ ideas = {
 			
 			equipment_bonus = {
 				cat_strategic_bomber = {
-					air_bombing = 0.1 
-					
+					build_cost_ic = -0.05
+					air_bombing = 0.05
+					instant = yes
+				}
+				naval_bomber = {
+					build_cost_ic = -0.05
+					naval_strike_attack = 0.05  
 					instant = yes
 				}
 			}
 		}
+		
 		FRA_battlefield_support = {
+			picture = generic_air_payment
 			
 			allowed = {
 				original_tag = FRA
@@ -1167,12 +1254,17 @@ ideas = {
 			equipment_bonus = {
 				cas_bomber = {
 					build_cost_ic = -0.1
-					
+					instant = yes
+				}
+				tactical_bomber = {
+					build_cost_ic = -0.1
 					instant = yes
 				}
 			}
 		}
+		
 		FRA_aviation_training = {
+			picture = generic_fighter_production_diverted
 			
 			allowed = {
 				original_tag = FRA
@@ -1195,14 +1287,20 @@ ideas = {
 			
 			equipment_bonus = {
 				light_fighter = {
-					build_cost_ic = -0.2
-					air_agility = 0.2
-					
+					build_cost_ic = -0.05
+					air_agility = 0.05
+					instant = yes
+				}
+				cat_heavy_fighter = {
+					build_cost_ic = -0.05
+					air_agility = 0.05
 					instant = yes
 				}
 			}
 		}
+		
 		FRA_aviation_institute = {
+			picture = generic_air_bonus
 			
 			allowed = {
 				original_tag = FRA
@@ -1224,13 +1322,103 @@ ideas = {
 			}
 			
 			research_bonus = {
-				air_doctrine = 0.1
+				air_equipment = 0.1
 			}
 			
 			equipment_bonus = {
 			}
 		}
 		
+		FRA_internationalism = {
+			picture = home_of_the_revolution
+			
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				non_core_manpower = 0.1
+			}
+		}
+		
+		FRA_syndicalist_government = {
+			picture = FRA_scw_intervention_republicans_focus
+			
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				line_change_production_efficiency_factor = 0.1
+			}
+		}
+		
+		FRA_anarchist_government = {
+			picture = spr_anarchist_society.dds
+			
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = 0.1
+			}
+		}
+		
+		FRA_marketist_government = {
+			picture = generic_economic_increase.dds
+			
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+			}
+		}
+		
+		FRA_totalist_government = {
+			picture = generic_communism_drift_bonus.dds
+			
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+
+			allowed_civil_war = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
 	}
 
 	# POLITICAL
@@ -1244,7 +1432,7 @@ ideas = {
 			
 			traits = { 
 				totalist_trait
-				hog_militant_socialist
+				hog_militant_revolutionary
 			}
 
 			allowed_to_remove = {

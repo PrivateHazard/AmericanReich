@@ -14,18 +14,6 @@ idea_categories = {
 		removal_cost = -1
 	}
 	
-	government = {
-		slot = mobilization_laws
-		slot = trade_laws
-		slot = economy
-		slot = tax_laws
-		slot = immigration_laws
-		slot = police_laws
-		
-		cost = 150
-		removal_cost = 0
-	}
-	
 	ministers = {
 		slot = head_minister
 		slot = foreign_minister
@@ -33,9 +21,68 @@ idea_categories = {
 		slot = interior_minister
 		slot = intelligence_minister
 		
-		
-		cost = 50
+		cost = 100
 		removal_cost = -1
+	}
+	
+	economic_laws = {
+		slot = economy
+		slot = trade_laws
+		slot = tax_laws
+		slot = work_hour_laws
+		slot = minimum_wage_laws
+		slot = unemployment_benefits_laws
+		
+		cost = 100
+		removal_cost = 0
+	}
+	
+	manpower_laws = {
+		slot = mobilization_laws
+		slot = female_service_laws
+		slot = supervision_laws
+		slot = training_laws
+		slot = military_racial_integration_laws
+		slot = draft_exemption_laws
+		
+		cost = 100
+		removal_cost = 0
+	}
+	
+	political_laws = {
+		slot = voting_laws
+		slot = party_laws
+		slot = religious_laws
+		slot = press_laws
+		slot = union_laws
+		slot = immigration_laws
+		
+		cost = 100
+		removal_cost = 0
+	}
+	
+	social_laws = {
+		slot = safety_laws
+		slot = education_laws
+		slot = race_laws
+		slot = female_laws
+		slot = prison_laws
+		slot = police_laws
+		
+		cost = 100
+		removal_cost = 0
+	}
+	
+	development = {
+		slot = academic_development
+		slot = farming_development
+		slot = poverty_development
+		slot = industry_development
+		slot = army_development
+		slot = society_development
+		
+		cost = 0
+		removal_cost = 0
 	}
 	
 	research_production = {

@@ -1,199 +1,254 @@
-﻿capital = 371
+﻿	capital = 371
 
-OOB = "CSA_1936"
+	OOB = "CSA_1936"
 
-set_research_slots = 4
-set_stability = 0.58
-set_war_support = .35
-# Starting tech
-set_technology = {
-	infantry_weapons = 1
-	infantry_weapons1 = 1
-	tech_recon = 1
-	tech_support = 1		
-	tech_engineers = 1
-	gw_artillery = 1
-	gwtank = 1
-	early_fighter = 1
-	fighter1 = 1
-	cv_early_fighter = 1
-	cv_naval_bomber1 = 1
-	cv_CAS1 = 1
-	naval_bomber1 = 1
-	CAS1 = 1
-	early_bomber = 1
-	early_submarine = 1
-	basic_submarine = 1
-	early_destroyer = 1
-	early_light_cruiser = 1
-	basic_light_cruiser = 1
-	early_heavy_cruiser = 1
-	early_battleship = 1
-	early_battlecruiser = 1
-	early_carrier = 1
-	basic_carrier = 1
-	transport = 1
-	mobile_warfare = 1
-	basic_light_tank = 1
-	improved_light_tank = 1
-	basic_heavy_tank = 1
-	motorised_infantry = 1
-	fuel_silos = 1
-}
+	set_research_slots = 4
+	set_stability = 0.68
+	set_war_support = 0.35
+	set_technology = {
+		infantry_weapons = 1
+		infantry_weapons1 = 1
+		tech_recon = 1
+		tech_support = 1		
+		tech_engineers = 1
+		gw_artillery = 1
+		gwtank = 1
+		early_fighter = 1
+		fighter1 = 1
+		cv_early_fighter = 1
+		cv_naval_bomber1 = 1
+		cv_CAS1 = 1
+		naval_bomber1 = 1
+		CAS1 = 1
+		early_bomber = 1
+		early_submarine = 1
+		basic_submarine = 1
+		early_destroyer = 1
+		early_light_cruiser = 1
+		basic_light_cruiser = 1
+		early_heavy_cruiser = 1
+		early_battleship = 1
+		early_battlecruiser = 1
+		early_carrier = 1
+		basic_carrier = 1
+		transport = 1
+		mobile_warfare = 1
+		basic_light_tank = 1
+		improved_light_tank = 1
+		basic_heavy_tank = 1
+		motorised_infantry = 1
+		fuel_silos = 1
+	}
 
-add_ideas = {
-	medium_taxes
-	limited_conscription
-	low_immigration
-	CSA_segregation
-	CSA_protection_act
-	CSA_Huey_Long
-	partial_economic_mobilisation
-	CSA_whittaker_chambers
-	CSA_william_regnery
-	CSA_congress
-	CSA_bill_of_rights
-}
-
-country_event = { 
-id = csa.1 
-days = 34
-}
-
-set_politics = {
+	add_ideas = {
+		#Ministers
+		CSA_Huey_Long
+		CSA_alvin_king
+		CSA_james_ferguson
+		CSA_gerald_smith
+		#National Ideas
+		CSA_segregation
+		CSA_protection_act
+		CSA_bill_of_rights
+		#Laws
+		partial_economic_mobilisation
+		medium_taxes
+		low_work_hours
+		lower_minimum_wage
+		lower_unemployment_benefits
+		limited_conscription
+		lower_female_service
+		lower_racial_integration
+		low_voting
+		multi_party
+		free_press
+		non_political_unions
+		low_immigration
+		low_safety
+		low_education
+		medium_prison
+		high_police
+		#Development
+		low_academic
+		low_farming
+		low_poverty
+		
+	}
 	
-	ruling_party = populist
-	last_election = "1933.11.8"
-	election_frequency = 72
-	elections_allowed = yes
-}
+	country_event = {
+		id = csa.18
+		days = 1
+	}
+	
+	country_event = { 
+		id = csa.1 
+		days = 98
+	}
 
-set_popularities = {
+	set_politics = {
+		ruling_party = populist
+		last_election = "1933.11.8"
+		election_frequency = 72
+		elections_allowed = yes
+	}
+	set_major = yes
+
+	set_popularities = {
 		libertarian = 12
-		
+		liberal = 3
 		conservative = 18
-		
-		
 		socialist = 3
-		
-
-		populist = 42
-		
+		populist = 34
+		authoritarian = 5
 		nationalist = 5
-		
 		anarchist = 11
-		
-		totalist = 9
+		syndicalist = 5
+		totalist = 4
 	}
 
-set_convoys = 120
+	set_convoys = 120
 
-create_country_leader = {
-	name = "Huey Long"
-	desc = ""
-	picture = "Portrait_CSA_Huey_Long.dds"
-	expire = "1965.1.1"
-	ideology = populism
-	traits = {
+	create_country_leader = {
+		name = "Huey Long"
+		desc = ""
+		picture = "Portrait_CSA_Huey_Long.dds"
+		expire = "1965.1.1"
+		ideology = populism
+		traits = {
+		}
 	}
-}
 
-create_country_leader = {
-	name = "Arrington Davis"
-	desc = "POLITICS_KING_ZOG_DESC"
-	picture = "Portrait_CSA_Douglas_MacArthur.dds"
-	expire = "1965.1.1"
-	ideology = libertarianism
-	traits = {
+	create_country_leader = {
+		name = "Arrington Davis"
+		desc = "POLITICS_KING_ZOG_DESC"
+		picture = "Portrait_USA_John_Nance_Garner.dds"
+		expire = "1965.1.1"
+		ideology = libertarianism
+		traits = {
+		}
 	}
-}
-
-create_country_leader = {
-	name = "Louis Jeremiah"
-	desc = "POLITICS_KING_ZOG_DESC"
-	picture = "Portrait_CSA_Douglas_MacArthur.dds"
-	expire = "1965.1.1"
-	ideology = anarchism
-	traits = {
-		#
+	
+	create_country_leader = {
+		name = "John Nance Garner"
+		desc = "POLITICS_KING_ZOG_DESC"
+		picture = "Portrait_USA_John_Nance_Garner.dds"
+		expire = "1965.1.1"
+		ideology = conservatism
+		traits = {
+		}
 	}
-}
-create_country_leader = {
-	name = "Ira C. Eaker"
-	desc = "POLITICS_KING_ZOG_DESC"
-	picture = "Portrait_CSA_Douglas_MacArthur.dds"
-	expire = "1965.1.1"
-	ideology = nationalism
-	traits = {
-		#
+
+	create_country_leader = {
+		name = "Louis Jeremiah"
+		desc = "POLITICS_KING_ZOG_DESC"
+		picture = "Portrait_CSA_Douglas_MacArthur.dds"
+		expire = "1965.1.1"
+		ideology = anarchism
+		traits = {
+			#
+		}
 	}
-}
-create_country_leader = {
-	name = ""
-	desc = "POLITICS_KING_ZOG_DESC"
-	picture = "Portrait_CSA_Douglas_MacArthur.dds"
-	expire = "1965.1.1"
-	ideology = authoritarianism
-	traits = {
-		#
+	
+	create_country_leader = {
+		name = "Ira C. Eaker"
+		desc = "POLITICS_KING_ZOG_DESC"
+		picture = "Portrait_CSA_Douglas_MacArthur.dds"
+		expire = "1965.1.1"
+		ideology = nationalism
+		traits = {
+			#
+		}
 	}
-}
+	
+	create_country_leader = {
+		name = "Huey Long"
+		desc = "POLITICS_KING_ZOG_DESC"
+		picture = "Portrait_CSA_Huey_Long.dds"
+		expire = "1965.1.1"
+		ideology = authoritarianism
+		traits = {
+			#
+		}
+	}
+	
+	create_country_leader = {
+		name = "George Patton"
+		desc = "POLITICS_KING_ZOG_DESC"
+		picture = "Portrait_CSA_George_S_Patton.dds"
+		expire = "1965.1.1"
+		ideology = autocracy
+		traits = {
+			#
+		}
+	}
+	
+	create_field_marshal = {
+		name = "Huey Long"
+		picture = "Portrait_CSA_Huey_Long.dds"
+		traits = { defensive_doctrine }
+		skill = 3
+		attack_skill = 2
+		defense_skill = 4
+		planning_skill = 2
+		logistics_skill = 3
+	}
+	
+	create_corps_commander = {
+		name = "George S. Patton"
+		picture = "Portrait_CSA_George_S_Patton.dds"
+		traits = {  trickster armor_officer panzer_leader war_hero trait_reckless }
+		id = 11000
+		skill = 5
+		attack_skill = 7 
+		defense_skill = 3
+		planning_skill = 2
+		logistics_skill = 4
+	}
 
-create_field_marshal = {
-	name = "Huey Long"
-	picture = "Portrait_CSA_Huey_Long.dds"
-	traits = { defensive_doctrine }
-	skill = 3
-	attack_skill = 2
-	defense_skill = 4
-	planning_skill = 2
-	logistics_skill = 3
-}
+	create_corps_commander = {
+		name = "Mark Clark"
+		picture = "Portrait_CSA_Mark_W_Clark.dds"
+		traits = { infantry_officer trait_reckless }
+		skill = 4
 
-create_corps_commander = {
-	name = "Mark Clark"
-	picture = "Portrait_CSA_Mark_W_Clark.dds"
-	traits = { infantry_officer trait_reckless }
-	skill = 4
+		attack_skill = 5
+		defense_skill = 3
+		planning_skill = 2
+		logistics_skill = 3
+	}
 
-	attack_skill = 5
-	defense_skill = 3
-	planning_skill = 2
-	logistics_skill = 3
-}
+	create_corps_commander = {
+		name = "George B. Lee"
+		#picture = "Portrait_CSA_Mark_W_Clark.dds"
+		traits = { infantry_officer trait_reckless }
+		skill = 3
 
-create_corps_commander = {
-	name = "George B. Lee"
-	#picture = "Portrait_CSA_Mark_W_Clark.dds"
-	traits = { infantry_officer trait_reckless }
-	skill = 3
+		attack_skill = 4
+		defense_skill = 2
+		planning_skill = 3
+		logistics_skill = 2
+	}
 
-	attack_skill = 4
-	defense_skill = 2
-	planning_skill = 3
-	logistics_skill = 2
-}
+	create_corps_commander = {
+		name = "George Van Horn Moseley"
+		#picture = "Portrait_CSA_Mark_W_Clark.dds"
+		traits = {}
+		skill = 2
 
-create_corps_commander = {
-	name = "George Van Horn Moseley"
-	#picture = "Portrait_CSA_Mark_W_Clark.dds"
-	traits = {}
-	skill = 2
+		attack_skill = 1
+		defense_skill = 3
+		planning_skill = 1
+		logistics_skill = 3
+	}
 
-	attack_skill = 1
-	defense_skill = 3
-	planning_skill = 1
-	logistics_skill = 3
-}
+	create_corps_commander = {
+		name = "Thomas J. Jackson"
+		#picture = "Portrait_CSA_Mark_W_Clark.dds"
+		traits = { career_officer trait_cautious organizer inflexible_strategist}
+		skill = 3
 
-create_corps_commander = {
-	name = "Thomas J. Jackson"
-	#picture = "Portrait_CSA_Mark_W_Clark.dds"
-	traits = { career_officer trait_cautious organizer inflexible_strategist}
-	skill = 3
-
-	attack_skill = 4
-	defense_skill = 2
-	planning_skill = 3
-	logistics_skill = 2
-}
+		attack_skill = 4
+		defense_skill = 2
+		planning_skill = 3
+		logistics_skill = 2
+	}

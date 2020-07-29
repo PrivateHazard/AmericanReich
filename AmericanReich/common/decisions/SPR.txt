@@ -1,0 +1,1535 @@
+	SPR_preparing_for_the_civil_war = {
+		
+		SPR_civil_war = {
+
+			priority = 1
+
+			icon = revolt
+			
+			available = {
+				NOT = {
+					original_tag = SPR
+				}
+			}
+
+			days_mission_timeout = 315
+
+			activation = {
+				original_tag = SPR
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+
+			visible = {
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+
+			cancel_if_not_visible = yes
+			is_good = no
+			
+			complete_effect = {
+			}
+			
+			timeout_effect = {
+				country_event = {
+					id = spain.2
+				}
+				custom_effect_tooltip = SPR_civil_war_tooltip
+			}
+		}
+		
+		SPR_make_reforms = {
+
+			icon = ger_mefo_bills
+
+			available = {
+				NOT = {
+					has_country_flag = SPR_political_action
+					authoritarian < 0.12
+				}
+			}
+			
+			visible = {
+				tag = SPR
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			
+			fire_only_once = no
+			cancel_if_not_visible = yes
+			cost = 25
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 10
+					has_political_power > 25
+				}
+			}
+			
+			complete_effect = {
+				hidden_effect = {
+					set_country_flag = SPR_political_action
+				}
+			}
+			
+			remove_effect = {
+				hidden_effect = {
+					clr_country_flag = SPR_political_action
+				}
+				add_stability = 0.05
+				add_popularity = {
+					ideology = authoritarian
+					popularity = -0.02
+				}
+				add_days_mission_timeout = {
+					mission = SPR_civil_war
+					days = 28
+				}
+			}
+		}
+		
+		SPR_secure_liberals = {
+
+			icon = eng_puppet_usa
+
+			available = {
+				NOT = {
+					has_country_flag = SPR_political_action
+					liberal < 0.2
+					libertarian < 0.2
+				}
+			}
+			
+			visible = {
+				tag = SPR
+				has_completed_focus = SPR_secure_the_liberals
+				NOT = {
+					has_global_flag = SPA_civil_war
+					has_country_flag = SPR_secured_the_liberals
+				}
+			}
+			
+			fire_only_once = no
+			cancel_if_not_visible = yes
+			cost = 25
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 100
+			}
+			
+			complete_effect = {
+				hidden_effect = {
+					set_country_flag = SPR_political_action
+				}
+			}
+			
+			remove_effect = {
+				hidden_effect = {
+					clr_country_flag = SPR_political_action
+				}
+				set_temp_variable = { 
+					secure_liberals_temp = party_popularity@liberal
+				}
+				add_to_temp_variable = { 
+					secure_liberals_temp = party_popularity@libertarian
+				}
+				multiply_temp_variable = { 
+					secure_liberals_temp = 0.25
+				}
+				add_stability = secure_liberals_temp
+				custom_effect_tooltip = SPR_liberal_tooltip
+				custom_effect_tooltip = SPR_secure_support_tooltip
+				set_country_flag = SPR_secured_the_liberals
+				add_days_mission_timeout = {
+					mission = SPR_civil_war
+					days = 28
+				}
+			}
+		}
+		
+		SPR_secure_carlists = {
+
+			icon = generic_nationalism
+
+			available = {
+				NOT = {
+					has_country_flag = SPR_political_action
+					autocratic < 0.15
+				}
+			}
+			
+			visible = {
+				tag = SPR
+				has_completed_focus = SPR_secure_the_carlists
+				NOT = {
+					has_global_flag = SPA_civil_war
+					has_country_flag = SPR_secured_the_carlists
+				}
+			}
+			
+			fire_only_once = no
+			cancel_if_not_visible = yes
+			cost = 25
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 100
+			}
+			
+			complete_effect = {
+				hidden_effect = {
+					set_country_flag = SPR_political_action
+				}
+			}
+			
+			remove_effect = {
+				hidden_effect = {
+					clr_country_flag = SPR_political_action
+				}
+				set_temp_variable = { 
+					secure_carlists_temp = party_popularity@autocratic
+				}
+				multiply_temp_variable = { 
+					secure_carlists_temp = 0.5
+				}
+				add_stability = secure_carlists_temp
+				custom_effect_tooltip = SPR_carlist_tooltip
+				custom_effect_tooltip = SPR_secure_support_tooltip
+				set_country_flag = SPR_secured_the_carlists
+				add_days_mission_timeout = {
+					mission = SPR_civil_war
+					days = 28
+				}
+			}
+		}
+		
+		SPR_talk_reforms = {
+
+			icon = eng_propaganda_campaigns
+
+			available = {
+				NOT = {
+					has_country_flag = SPR_political_action
+				}
+			}
+			
+			visible = {
+				tag = SPR
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			
+			fire_only_once = no
+			cancel_if_not_visible = yes
+			cost = 15
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 5
+				modifier = {
+					factor = 10
+					has_political_power > 15
+				}
+			}
+			
+			complete_effect = {
+				hidden_effect = {
+					set_country_flag = SPR_political_action
+				}
+			}
+			
+			remove_effect = {
+				hidden_effect = {
+					clr_country_flag = SPR_political_action
+				}
+				add_stability = -0.02
+				add_popularity = {
+					ideology = authoritarian
+					popularity = 0.01
+				}
+				add_days_mission_timeout = {
+					mission = SPR_civil_war
+					days = 28
+				}
+			}
+		}
+		
+		SPR_ally_liberals = {
+
+			icon = eng_puppet_usa
+
+			available = {
+				NOT = {
+					has_country_flag = SPR_political_action
+				}
+			}
+			
+			visible = {
+				tag = SPR
+				has_completed_focus = SPR_negotiate_with_the_republicans
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			
+			fire_only_once = no
+			cancel_if_not_visible = yes
+			cost = 15
+			days_remove = 35
+			
+			ai_will_do = {
+				base = 10
+				modifier = {
+					factor = 5
+					has_political_power > 15
+				}
+				modifier = {
+					factor = 0
+					has_country_flag = SPR_secured_the_liberals
+				}
+			}
+			
+			complete_effect = {
+				hidden_effect = {
+					set_country_flag = SPR_political_action
+				}
+			}
+			
+			remove_effect = {
+				hidden_effect = {
+					clr_country_flag = SPR_political_action
+				}
+				add_popularity = {
+					ideology = liberal
+					popularity = 0.02
+				}
+				add_popularity = {
+					ideology = libertarian
+					popularity = 0.02
+				}
+				add_popularity = {
+					ideology = authoritarian
+					popularity = 0.01
+				}
+				add_days_mission_timeout = {
+					mission = SPR_civil_war
+					days = 28
+				}
+			}
+		}
+		
+		SPR_ally_carlists = {
+
+			icon = generic_nationalism
+
+			available = {
+				NOT = {
+					has_country_flag = SPR_political_action
+				}
+			}
+			
+			visible = {
+				tag = SPR
+				has_completed_focus = SPR_negotiate_with_the_carlists
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			
+			fire_only_once = no
+			cancel_if_not_visible = yes
+			cost = 15
+			days_remove = 35
+			
+			ai_will_do = {
+				base = 10
+				modifier = {
+					factor = 5
+					has_political_power > 15
+				}
+				modifier = {
+					factor = 0
+					has_country_flag = SPR_secured_the_carlists
+				}
+			}
+			
+			complete_effect = {
+				hidden_effect = {
+					set_country_flag = SPR_political_action
+				}
+			}
+			
+			remove_effect = {
+				hidden_effect = {
+					clr_country_flag = SPR_political_action
+				}
+				add_popularity = {
+					ideology = autocratic
+					popularity = 0.02
+				}
+				add_popularity = {
+					ideology = authoritarian
+					popularity = 0.01
+				}
+				add_days_mission_timeout = {
+					mission = SPR_civil_war
+					days = 28
+				}
+			}
+		}
+		
+		SPR_strike_busting = {
+
+			icon = generic_political_rally
+
+			available = {
+				NOT = {
+					has_country_flag = SPR_political_action
+				}
+				has_idea = SPR_strikes
+			}
+			
+			visible = {
+				tag = SPR
+				has_completed_focus = SPR_strike_busting
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			
+			fire_only_once = no
+			cancel_if_not_visible = yes
+			cost = 10
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 100
+			}
+			
+			complete_effect = {
+				hidden_effect = {
+					set_country_flag = SPR_political_action
+				}
+			}
+			
+			remove_effect = {
+				hidden_effect = {
+					clr_country_flag = SPR_political_action
+				}
+				remove_ideas = SPR_strikes
+				add_days_mission_timeout = {
+					mission = SPR_civil_war
+					days = 28
+				}
+			}
+		}
+		
+		SPR_raid_republicans = {
+
+			icon = generic_ignite_civil_war
+
+			available = {
+				NOT = {
+					has_country_flag = SPR_political_action
+				}
+			}
+			
+			visible = {
+				tag = SPR
+				OR = {
+					NOT = {
+						has_completed_focus = SPR_negotiate_with_the_republicans
+						has_global_flag = SPA_civil_war
+					}
+				}
+			}
+			
+			fire_only_once = no
+			cancel_if_not_visible = yes
+			cost = 10
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 10
+					has_political_power > 10
+				}
+			}
+			
+			complete_effect = {
+				hidden_effect = {
+					set_country_flag = SPR_political_action
+				}
+			}
+			
+			remove_effect = {
+				hidden_effect = {
+					clr_country_flag = SPR_political_action
+				}
+				add_popularity = {
+					ideology = liberal
+					popularity = -0.02
+				}
+				add_popularity = {
+					ideology = libertarian
+					popularity = -0.02
+				}
+				add_popularity = {
+					ideology = authoritarian
+					popularity = 0.02
+				}
+				add_days_mission_timeout = {
+					mission = SPR_civil_war
+					days = 28
+				}
+			}
+		}
+		
+		SPR_silence_socialists = {
+
+			icon = generic_ignite_civil_war
+
+			available = {
+				NOT = {
+					has_country_flag = SPR_political_action
+				}
+			}
+			
+			visible = {
+				tag = SPR
+				NOT = {
+					has_global_flag = SPA_civil_war
+				}
+			}
+			
+			fire_only_once = no
+			cancel_if_not_visible = yes
+			cost = 10
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 10
+					has_political_power > 10
+				}
+			}
+			
+			complete_effect = {
+				hidden_effect = {
+					set_country_flag = SPR_political_action
+				}
+			}
+			
+			remove_effect = {
+				hidden_effect = {
+					clr_country_flag = SPR_political_action
+				}
+				add_popularity = {
+					ideology = syndicalist
+					popularity = -0.01
+				}
+				add_popularity = {
+					ideology = totalist
+					popularity = -0.01
+				}
+				add_popularity = {
+					ideology = anarchist
+					popularity = -0.01
+				}
+				add_popularity = {
+					ideology = authoritarian
+					popularity = 0.01
+				}
+				add_days_mission_timeout = {
+					mission = SPR_civil_war
+					days = 28
+				}
+			}
+		}
+		
+		SPR_cancel_communion = {
+
+			icon = generic_ignite_civil_war
+
+			available = {
+				NOT = {
+					has_country_flag = SPR_political_action
+				}
+			}
+			
+			visible = {
+				tag = SPR
+				OR = {
+					NOT = {
+						has_completed_focus = SPR_negotiate_with_the_carlists
+						has_global_flag = SPA_civil_war
+					}
+				}
+			}
+			
+			fire_only_once = no
+			cancel_if_not_visible = yes
+			cost = 10
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 10
+					has_political_power > 10
+				}
+			}
+			
+			complete_effect = {
+				hidden_effect = {
+					set_country_flag = SPR_political_action
+				}
+			}
+			
+			remove_effect = {
+				hidden_effect = {
+					clr_country_flag = SPR_political_action
+				}
+				add_stability = -0.01
+				add_popularity = {
+					ideology = autocratic
+					popularity = -0.025
+				}
+				add_popularity = {
+					ideology = authoritarian
+					popularity = 0.01
+				}
+				add_days_mission_timeout = {
+					mission = SPR_civil_war
+					days = 28
+				}
+			}
+		}
+	}
+	
+	SPA_saving_spain = {
+	
+		SPR_increase_mobilization = {
+	
+			icon = ger_military_buildup
+			
+			fire_only_once = no
+
+			allowed = {
+				OR = {
+					original_tag = SPR
+					original_tag = SPC
+					original_tag = SPL
+					original_tag = SPK
+					original_tag = SPN
+				}
+			}
+			
+			visible = {
+				NOT = {
+					has_global_flag = SPA_civil_war_over
+				}
+				OR = {
+					NOT = {
+						has_idea = partial_economic_mobilisation
+						has_idea = war_economy
+						has_idea = tot_economic_mobilisation
+					}
+				}
+			}
+
+			available = {
+				has_global_flag = SPA_civil_war
+				if = {
+					limit = {
+						has_idea = civilian_economy
+					}
+					has_war_support > 0.15
+				}
+				else_if = {
+					limit = {
+						has_idea = low_economic_mobilisation
+					}
+					has_war_support > 0.25
+				}
+			}
+
+			cost = 75
+			days_remove = 35
+			
+			remove_effect = {
+				if = {
+					limit = {
+						has_idea = low_economic_mobilisation
+					}
+					swap_ideas = {
+						remove_idea = low_economic_mobilisation
+						add_idea = partial_economic_mobilisation
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = civilian_economy
+					}
+					swap_ideas = {
+						remove_idea = civilian_economy
+						add_idea = low_economic_mobilisation
+					}
+				}
+			}
+			
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		
+		SPR_purchase_arms = {
+
+			icon = generic_nationalism
+
+			available = {
+				NOT = {
+					has_country_flag = SPR_arming
+				}
+			}
+			
+			visible = {
+				tag = SPR
+				has_completed_focus = SPR_purchase_arms
+				NOT = {
+					has_global_flag = SPA_civil_war_over
+				}
+			}
+			
+			fire_only_once = no
+			cost = 50
+			days_remove = 60
+			
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 10
+					has_political_power > 60
+				}
+			}
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+			}
+			
+			complete_effect = {
+				hidden_effect = {
+					set_country_flag = SPR_arming
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 500
+					producer = SPR
+				}
+			}
+			
+			remove_effect = {
+				hidden_effect = {
+					clr_country_flag = SPR_arming
+				}
+			}
+		}
+		
+		SPR_focus_attacks_on_spr = {
+	
+			icon = generic_political_discourse
+			
+			fire_only_once = no
+
+			allowed = {
+				OR = {
+					original_tag = SPN
+					original_tag = SPC
+					original_tag = SPL
+					original_tag = SPK
+				}
+			}
+			
+			visible = {
+				NOT = {
+					has_global_flag = SPA_civil_war_over
+				}
+				country_exists = SPN
+			}
+
+			available = {
+				ROOT = {
+					has_war_with = SPN
+				}
+				NOT = {
+					has_idea = SPR_focus_on_SPN
+				}
+			}
+
+			cost = 25
+			
+			complete_effect = {
+				add_timed_idea = {
+					idea = SPR_focus_on_SPR
+					days = 90
+				}
+			}
+			
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		
+		SPR_focus_attacks_on_spc = {
+	
+			icon = generic_political_discourse
+			
+			fire_only_once = no
+
+			allowed = {
+				OR = {
+					original_tag = SPR
+					original_tag = SPL
+					original_tag = SPK
+					original_tag = SPN
+				}
+			}
+			
+			visible = {
+				NOT = {
+					has_global_flag = SPA_civil_war_over
+				}
+				country_exists = SPC
+			}
+
+			available = {
+				ROOT = {
+					has_war_with = SPC
+				}
+				NOT = {
+					has_idea = SPR_focus_on_SPC
+				}
+			}
+
+			cost = 25
+			
+			complete_effect = {
+				add_timed_idea = {
+					idea = SPR_focus_on_SPC
+					days = 90
+				}
+			}
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		SPR_focus_attacks_on_spl = {
+	
+			icon = generic_political_discourse
+			
+			fire_only_once = no
+
+			allowed = {
+				OR = {
+					original_tag = SPR
+					original_tag = SPC
+					original_tag = SPK
+					original_tag = SPN
+				}
+			}
+			
+			visible = {
+				NOT = {
+					has_global_flag = SPA_civil_war_over
+				}
+				country_exists = SPL
+			}
+
+			available = {
+				ROOT = {
+					has_war_with = SPL
+				}
+				NOT = {
+					has_idea = SPR_focus_on_SPL
+				}
+			}
+
+			cost = 25
+			
+			complete_effect = {
+				add_timed_idea = {
+					idea = SPR_focus_on_SPL
+					days = 90
+				}
+			}
+			
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		
+		SPR_focus_attacks_on_spk = {
+	
+			icon = generic_political_discourse
+			
+			fire_only_once = no
+
+			allowed = {
+				OR = {
+					original_tag = SPR
+					original_tag = SPC
+					original_tag = SPL
+					original_tag = SPK
+					original_tag = SPN
+				}
+			}
+			
+			visible = {
+				NOT = {
+					has_global_flag = SPA_civil_war_over
+				}
+				country_exists = SPK
+			}
+
+			available = {
+				ROOT = {
+					has_war_with = SPK
+				}
+				NOT = {
+					has_idea = SPR_focus_on_SPK
+				}
+			}
+
+			cost = 25
+			
+			complete_effect = {
+				add_timed_idea = {
+					idea = SPR_focus_on_SPK
+					days = 90
+				}
+			}
+			
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		
+		SPR_focus_attacks_on_spn = {
+	
+			icon = generic_political_discourse
+			
+			fire_only_once = no
+
+			allowed = {
+				OR = {
+					original_tag = SPR
+					original_tag = SPC
+					original_tag = SPL
+					original_tag = SPK
+				}
+			}
+			
+			visible = {
+				NOT = {
+					has_global_flag = SPA_civil_war_over
+				}
+				country_exists = SPN
+			}
+
+			available = {
+				ROOT = {
+					has_war_with = SPN
+				}
+				NOT = {
+					has_idea = SPR_focus_on_SPN
+				}
+			}
+
+			cost = 25
+			
+			complete_effect = {
+				add_timed_idea = {
+					idea = SPR_focus_on_SPN
+					days = 90
+				}
+			}
+			
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		
+		SPR_raise_militias = {
+
+			icon = generic_prepare_civil_war
+			
+			allowed = {
+				OR = {
+					original_tag = SPR
+					original_tag = SPC
+					original_tag = SPL
+					original_tag = SPK
+					original_tag = SPN
+				}
+			}
+
+			available = {
+				NOT = {
+					has_country_flag = SPR_raising_militia
+				}
+			}
+			
+			visible = {
+				NOT = {
+					has_global_flag = SPA_civil_war_over
+				}
+			}
+			
+			fire_only_once = no
+			cancel_if_not_visible = yes
+			cost = 25
+			days_remove = 35
+			days_re_enable = 70
+			
+			ai_will_do = {
+				factor = 2
+			}
+			
+			complete_effect = {
+				hidden_effect = {
+					set_country_flag = SPR_raising_militia
+				}
+			}
+			
+			remove_effect = {
+				hidden_effect = {
+					clr_country_flag = SPR_raising_militia
+				}
+				custom_effect_tooltip = SPR_raise_militia_tooltip
+				hidden_effect = {
+					random_owned_controlled_state = {
+						limit = {
+							is_in_home_area = yes
+						}
+						create_unit = {
+							division = "name = \"1st Emergency Reserves\" division_template = \"Defence Brigade\"  start_experience_factor = 0.2"
+							allow_spawning_on_enemy_provs = yes
+							owner = ROOT
+						}
+					}
+				}
+			}
+		}
+		
+		SPL_SPC_truce_conclusion = {
+
+			icon = eng_trade_unions_support
+			priority = 2
+			war_with_on_timeout = SPL
+
+			allowed = {
+				OR = {
+					tag = SPC
+					tag = SPL
+				}
+			}
+
+			available = {
+				OR = {
+					NOT = {
+						country_exists = SPL
+						country_exists = SPC
+					}
+				}
+			}
+
+			fire_only_once = yes
+
+			days_mission_timeout = 210
+
+			is_good = no
+
+			cancel_if_not_visible = yes
+
+			activation = {
+				has_global_flag = SPL_SPC_truce
+			}
+
+			visible = {
+				has_global_flag = SPA_civil_war
+			}
+
+			timeout_effect = {
+				clr_global_flag = SPL_SPC_truce
+				if = {
+					limit = {
+						tag = SPC
+					}
+					effect_tooltip = {
+						SPL = {
+							country_event = {
+								id = spain.5
+							}
+						}
+						declare_war_on = {
+							target = SPL
+							type = civil_war
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							tag = SPL
+						}
+						country_event = {
+							id = spain.5
+						}
+					}
+					effect_tooltip = {
+						SPC = {
+							declare_war_on = {
+								target = SPL
+								type = civil_war
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		SPK_SPN_truce_conclusion = {
+
+			icon = eng_trade_unions_support
+			priority = 2
+			war_with_on_timeout = SPK
+
+			allowed = {
+				OR = {
+					tag = SPK
+					tag = SPN
+				}
+			}
+
+			available = {
+				hidden_trigger = { 
+					always = no 
+				}
+			}
+
+			fire_only_once = yes
+
+			days_mission_timeout = 210
+
+			is_good = no
+
+			cancel_if_not_visible = yes
+
+			activation = {
+				has_global_flag = SPK_SPN_truce
+			}
+
+			visible = {
+				has_global_flag = SPA_civil_war
+			}
+
+			timeout_effect = {
+				clr_global_flag = SPK_SPN_truce
+				if = {
+					limit = {
+						tag = SPN
+					}
+					effect_tooltip = {
+						SPK = {
+							country_event = {
+								id = spain.11
+							}
+						}
+						declare_war_on = {
+							target = SPK
+							type = civil_war
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							tag = SPK
+						}
+						country_event = {
+							id = spain.11
+						}
+					}
+					effect_tooltip = {
+						SPN = {
+							declare_war_on = {
+								target = SPK
+								type = civil_war
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		SPR_preparing_offensive = {
+
+			icon = hol_draw_up_staff_plans
+			priority = 1
+
+			allowed = {
+				OR = {
+					tag = SPR
+					tag = SPK
+					tag = SPN
+					tag = SPC
+					tag = SPL
+				}
+			}
+
+			available = {
+				hidden_trigger = { always = no }
+			}
+
+			fire_only_once = yes
+
+			days_mission_timeout = 105
+
+			is_good = no
+
+			cancel_if_not_visible = yes
+
+			activation = {
+				always = no
+			}
+
+			visible = {
+				has_global_flag = SPA_civil_war
+				NOT = { 
+					has_global_flag = SPA_civil_war_over 
+				}
+				has_country_flag = SPR_preparing_offensive_in_progress_flag
+			}
+
+			timeout_effect = {
+				clr_country_flag = SPR_preparing_offensive_in_progress_flag
+			}
+		}
+		
+		SPA_plan_offensive_in_state = {
+		
+			icon = hol_draw_up_staff_plans
+
+			allowed = {
+				OR = {
+					tag = SPR
+					tag = SPK
+					tag = SPN
+					tag = SPC
+					tag = SPL
+				}
+			}
+
+			available = {
+				NOT = {
+					has_country_flag = SPR_preparing_offensive_in_progress_flag
+				}
+				FROM = {
+					has_state_flag = SPR_unplanned_offensive_flag
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+					any_neighbor_state = {
+						is_controlled_by = ROOT
+					}
+				}
+			}
+
+			state_target = yes
+			on_map_mode = map_only
+
+			target_trigger = {
+				FROM = {
+					has_state_flag = SPR_unplanned_offensive_flag
+				}
+			}
+			
+			highlight_state_targets = {
+				state = FROM 
+			}
+			
+			ai_will_do = {
+				factor = 10
+			}
+
+			cost = 0
+
+			fire_only_once = yes
+
+			days_remove = 14
+
+			modifier = {
+			}
+
+			visible = {
+				OR = {
+					tag = SPR
+					tag = SPK
+					tag = SPN
+					tag = SPC
+					tag = SPL
+				}
+			}
+
+			complete_effect = {
+				activate_mission = SPR_preparing_offensive
+				set_country_flag = SPR_preparing_offensive_in_progress_flag
+			}
+
+			remove_effect = {
+				clr_country_flag = SPR_unplanned_offensive_flag
+				FROM = {
+					remove_province_modifier = {
+						static_modifiers = { 
+							unplanned_offensive 
+						}
+						province = {
+							all_provinces = yes
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	SPA_constitutional_convention = {
+		SPR_constitutional_countdown = {
+
+			icon = generic_break_treaty
+			priority = 1
+
+			allowed = {
+				tag = SPR
+			}
+
+			available = {
+				has_completed_focus = SPR_the_constitutional_convention
+			}
+
+			fire_only_once = yes
+
+			days_mission_timeout = 700
+
+			is_good = no
+
+			cancel_if_not_visible = yes
+
+			activation = {
+				always = no
+			}
+
+			visible = {
+			}
+
+			timeout_effect = {
+				add_stability = -0.25	
+				activate_mission = SPR_constitutional_countdown
+			}
+			
+			complete_effect = {    
+               add_political_power = 50
+			}
+		}
+	}
+	
+	SPR_arm_the_loyalists = {
+		SPR_arm_nationalists = {
+
+			icon = generic_nationalism
+
+			available = {
+				NOT = {
+					has_country_flag = SPR_arming
+				}
+			}
+			
+			visible = {
+				tag = SPR
+				has_completed_focus = SPR_arm_the_loyalists
+				NOT = {
+					has_global_flag = SPA_civil_war_over
+				}
+			}
+			
+			fire_only_once = no
+			cancel_if_not_visible = yes
+			days_remove = 70
+			
+			ai_will_do = {
+				factor = 2
+			}
+			
+			complete_effect = {
+				hidden_effect = {
+					set_country_flag = SPR_arming
+				}
+			}
+			
+			remove_effect = {
+				hidden_effect = {
+					clr_country_flag = SPR_arming
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 100
+					producer = SPR
+				}
+			}
+		}
+	}
+
+	economy_decisions = {
+		SPR_black_friday_recovery = {
+
+			icon = ger_mefo_bills
+			priority = 1
+
+			available = {
+			}
+			
+			visible = {
+				tag = SPR
+				OR = {
+					has_completed_focus = SPR_continue_recovery
+					has_completed_focus = SPR_begin_economic_recovery
+				}
+				custom_trigger_tooltip = {
+					tooltip = SPR_black_friday_tooltip		
+					OR = {
+						has_idea = SPR_black_friday
+						has_idea = SPR_black_friday1
+						has_idea = SPR_black_friday2
+					}
+				}
+			}
+			
+			fire_only_once = no
+			cancel_if_not_visible = yes
+			cost = 75
+			days_remove = 140
+			
+			ai_will_do = {
+				factor = 10
+			}
+			
+			modifier = {
+				political_power_gain = -0.05
+			}
+			
+			remove_effect = {
+				if = {
+					limit = {
+						has_idea = SPR_black_friday2
+					}
+					remove_ideas = SPR_black_friday2
+				}
+				if = {
+					limit = {
+						has_idea = SPR_black_friday1
+					}
+					swap_ideas = {
+						remove_idea = SPR_black_friday1
+						add_idea = SPR_black_friday2
+					}
+				}
+				if = {
+					limit = {
+						has_idea = SPR_black_friday
+					}
+					swap_ideas = {
+						remove_idea = SPR_black_friday
+						add_idea = SPR_black_friday1
+					}
+				}
+			}
+		}
+	}
+	
+	SPR_french_integration = {
+		SPR_integrate_state = {
+		
+			icon = generic_nationalism
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			available = {
+				FROM = {
+					is_claimed_by = ROOT
+				}
+			}
+
+			state_target = yes
+			on_map_mode = map_and_decisions_view
+			target_array = controlled_states
+
+			target_trigger = {
+				FROM = {
+					NOT = {
+						is_core_of = ROOT
+					}
+					FROM = {
+						is_claimed_by = ROOT
+					}
+				}
+			}
+			
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 10
+					OR = {
+						political_power_daily > 0.8
+						has_political_power > 100
+					}
+				}
+			}
+
+			cost = 50
+
+			fire_only_once = yes
+
+			days_remove = 60
+
+			modifier = {
+				political_power_gain = -0.2
+			}
+
+			visible = {
+			}
+
+			complete_effect = {
+
+			}
+
+			remove_effect = {
+				FROM = {
+					add_core_of = ROOT
+					remove_claim_by = ROOT
+				}
+			}
+		}
+	}

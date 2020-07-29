@@ -1,144 +1,464 @@
-﻿capital = 41
+﻿	capital = 41
 
-oob = "SPR_1936"
+	oob = "SPR_1936"
 
-set_research_slots = 3
+	set_research_slots = 3
+	set_stability = 0.42
+	set_war_support = 0.18
 
-set_technology = {
-	infantry_weapons = 1
-	infantry_weapons1 = 1
-	tech_recon = 1
-	tech_support = 1		
-	tech_engineers = 1
-	tech_mountaineers = 1
-	gw_artillery = 1
-	early_fighter = 1
-	early_bomber = 1
-	naval_bomber1 = 1
-	early_submarine = 1
-	early_destroyer = 1
-	basic_destroyer = 1
-	early_light_cruiser = 1
-	early_heavy_cruiser = 1
-	basic_heavy_cruiser = 1
-	early_battleship = 1
-	transport = 1
-}
+	set_technology = {
+		infantry_weapons = 1
+		infantry_weapons1 = 1
+		tech_recon = 1
+		tech_support = 1		
+		tech_engineers = 1
+		tech_mountaineers = 1
+		gw_artillery = 1
+		early_fighter = 1
+		early_bomber = 1
+		naval_bomber1 = 1
+		early_submarine = 1
+		early_destroyer = 1
+		basic_destroyer = 1
+		early_light_cruiser = 1
+		early_heavy_cruiser = 1
+		basic_heavy_cruiser = 1
+		early_battleship = 1
+		transport = 1
+	}
 
 	set_politics = {
-	
-		ruling_party = liberal
+		ruling_party = authoritarian
 		last_election = "1933.2.16"
 		election_frequency = 36
-		elections_allowed = yes
+		elections_allowed = no
 	}
 
 	set_popularities = {
-		liberal = 42
+		liberal = 16
+		libertarian = 16
+		socialist = 4
+		conservative = 9
+		populist = 12
+		anarchist = 7
+		syndicalist = 10
+		totalist = 3
+		authoritarian = 12
+		autocratic = 11
+	}
+	
+	country_event = {
+		id = spain.1
+		days = 1
+	}
+	
+	country_event = {
+		id = spain.9
+		days = 121
+	}
+	
+	add_ideas = {
+		#Ministers
+		SPA_miguel_primo_de_rivera
+		SPA_jose_calvo_sotelo
+		SPA_eduardo_callejo_de_la_cuesta
+		SPA_jose_maria_peman
+		#National Spirits
+		SPR_the_permanent_temporary_dictatorship
+		SPR_political_fracturing
+		SPR_fall_from_grace
+		#Laws
+		low_work_hours
+		lower_minimum_wage
+		lower_unemployment_benefits
+		lower_female_service
+		lower_safety
+		low_education
+		low_police
+		multi_religion
+		medium_voting
+		#Developments
+		low_poverty
+		medium_society
+	}
+
+	set_convoys = 50
+
+	create_country_leader = {
+		name = "José Díaz"
+		desc = "POLITICS_JOSE_DIAZ_DESC"
+		picture = "Portrait_Spain_Jose_Diaz.dds"
+		expire = "1965.1.1"
+		ideology = syndicalism
+		traits = {
+			#
+		}
+	}
+
+	create_country_leader = {
+		name = "Francisco Franco"
+		desc = "POLITICS_FRANCISCO_FRANCO_DESC"
+		picture = "Portrait_Spain_Francisco_Franco.dds"
+		expire = "1965.1.1"
+		ideology = populism
+		traits = {
+			#
+		}
+	}
+
+	create_country_leader = {
+		name = "Alfonso XIII"
+		desc = "POLITICS_ALEJANDRO_LERROUX_DESC"
+		picture = "Portrait_Alfonso_XIII.dds"
+		expire = "1965.1.1"
+		ideology = liberalism
+		traits = {
+			#
+		}
+	}
+	
+	create_country_leader = {
+		name = "Alfonso XIII"
+		desc = "POLITICS_ALEJANDRO_LERROUX_DESC"
+		picture = "Portrait_Alfonso_XIII.dds"
+		expire = "1965.1.1"
+		ideology = libertarianism
+		traits = {
+			#
+		}
+	}
+	
+	create_country_leader = {
+		name = "Alfonso XIII"
+		desc = "POLITICS_ALEJANDRO_LERROUX_DESC"
+		picture = "Portrait_Alfonso_XIII.dds"
+		expire = "1965.1.1"
+		ideology = authoritarianism
+		traits = {
+			#
+		}
+	}
+
+	create_country_leader = {
+		name = "Alfonso XIII"
+		desc = "POLITICS_ALEJANDRO_LERROUX_DESC"
+		picture = "Portrait_Alfonso_XIII.dds"
+		expire = "1965.1.1"
+		ideology = socialism
+		traits = {
+			#
+		}
+	}
+
+	create_country_leader = {
+		name = "Alfonso XIII"
+		desc = "POLITICS_ALEJANDRO_LERROUX_DESC"
+		picture = "Portrait_Alfonso_XIII.dds"
+		expire = "1965.1.1"
+		ideology = conservatism
+		traits = {
+			#
+		}
+	}
+	
+	create_country_leader = {
+		name = "Javier I"
+		desc = "POLITICS_ALEJANDRO_LERROUX_DESC"
+		picture = "Portrait_Javier_I.tga"
+		expire = "1965.1.1"
+		ideology = autocracy
+		traits = {
+			#
+		}
+	}
+
+	if = {
+		limit = {
+			NOT = {
+				has_dlc = "La Resistance"
+			}
+		}
+		create_field_marshal = {
+			name = "José Asensio Torrado"
+			id = 1101
+			portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
+			traits = { organisational_leader defensive_doctrine }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		create_corps_commander = {
+			name = "Vicente Rojo Lluch"
+			id = 1102
+			gfx = "GFX_portrait_SPR_vicente_rojo_lluch"
+			traits = { brilliant_strategist trait_SPR_republican_loyalties }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
 		
-		socialist = 13
+		create_corps_commander = {
+			name = "José Miaja"
+			id = 1103
+			gfx = "GFX_portrait_SPR_jose_miaja"
+			traits = { infantry_leader trait_SPR_republican_loyalties }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
 		
-		conservative = 7
+		create_field_marshal = {
+			name = "Manuel Fal Conde"
+			id = 1119
+			gfx = "GFX_portrait_SPA_manuel_fal_conde"
+			traits = { trait_SPA_carlist_loyalties }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+
+		create_field_marshal = {
+			name = "José Asensio Torrado"
+			id = 1101
+			gfx = "GFX_portrait_SPR_jose_asensio_torrado"
+			traits = { career_officer infantry_leader trait_SPR_republican_loyalties }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 1
+		}
 		
-		populist = 9
+		# Republican leaders - Stalinist Communist
 		
-		anarchist = 13
+		create_field_marshal = { # Becomes Field Marshal at SCW start
+			name = "Valentín González"
+			id = 1104
+			gfx = "GFX_portrait_SPR_valentin_gonzalez"
+			traits = { harsh_leader trait_SPR_anti_stalinist_loyalties }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
 		
-		syndicalist = 14
+		create_corps_commander = {
+			name = "Juan Modesto"
+			id = 1105
+			gfx = "GFX_portrait_SPR_juan_modesto"
+			traits = { trait_mountaineer trait_SPR_anti_stalinist_loyalties }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 3
+		}
 		
-		authoritarian = 2
+		create_corps_commander = {
+			name = "Antonio Cordón García"
+			id = 1106
+			gfx = "GFX_portrait_SPR_antonio_cordon_garcia"
+			traits = { infantry_leader trait_SPR_anti_stalinist_loyalties }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 1
+		}
+		
+		# Republican leaders - Independent Communist
+		
+		create_corps_commander = {
+			name = "János Gálicz"
+			id = 1107
+			gfx = "GFX_portrait_SPR_janos_galicz"
+			traits = { trait_reckless trait_SPR_anti_stalinist_loyalties }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+		
+		# Nationalists leaders - Francoists
+		
+		create_field_marshal = {
+			name = "Francisco Franco"
+			id = 1108
+			gfx = "GFX_portrait_spain_francisco_franco"
+			traits = { organisational_leader logistics_wizard expert_delegator trait_SPA_nationalist_sympathies }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		
+		create_corps_commander = {
+			name = "Mohamed Meziane"
+			id = 1109
+			gfx = "GFX_portrait_SPA_mohamed_meziane"
+			traits = { harsh_leader career_officer trait_SPA_nationalist_sympathies }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		
+		create_corps_commander = { # Could fit for all 3 factions
+			name = "Gonzalo Queipo de Llano"
+			id = 1110
+			gfx = "GFX_portrait_SPA_gonzalo_queipo_de_llano"
+			traits = { infantry_officer trait_SPA_nationalist_sympathies }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		
+		# Nationalists leaders - Fascists
+		
+		create_field_marshal = {
+			name = "Emilio Mola"
+			id = 1111
+			gfx = "GFX_portrait_SPA_emilio_mola"
+			traits = { organisational_leader trait_cautious thorough_planner trait_SPA_falangist_loyalties }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 2
+		}
+		
+		create_corps_commander = {
+			name = "Juan Yagüe"
+			id = 1112
+			gfx = "GFX_portrait_SPA_juan_yague"
+			traits = { brilliant_strategist trait_reckless trait_SPA_falangist_loyalties }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		
+		create_corps_commander = {
+			name = "Agustín Muñoz Grandes"
+			id = 1113
+			gfx = "GFX_portrait_SPA_augustin_muynoz_grandes"
+			traits = { infantry_officer trait_SPA_falangist_loyalties }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		
+		# Nationalists leaders - Carlists
+		
+		create_corps_commander = {
+			name = "José Enrique Varela"
+			id = 1114
+			gfx = "GFX_portrait_SPA_jose_enrique_varela"
+			traits = { organizer infantry_leader trait_SPA_carlist_loyalties }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		
+		create_corps_commander = {
+			name = "Miguel Cabanellas"
+			id = 1115
+			gfx = "GFX_portrait_SPA_miguel_cabanellas"
+			traits = { cavalry_officer old_guard trait_SPA_carlist_loyalties }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		
+		create_corps_commander = {
+			name = "José Millán Astray"
+			id = 1116
+			gfx = "GFX_portrait_SPA_jose_millan_astray"
+			traits = { war_hero trait_reckless trait_SPA_carlist_loyalties }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		
+		# Naval Leaders - Republicans
+		
+		create_navy_leader = {
+			name = "Miguel Buiza Fernández-Palacios"
+			id = 1117
+			gfx = "GFX_portrait_SPR_miguel_buiza_fernandez_palacios"
+			traits = { craven }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+		
+		# Naval Leaders - Nationalists
+		
+		create_navy_leader = {
+			name = "Luis Carrero Blanco"
+			id = 1118
+			gfx = "GFX_portrait_SPA_luis_carrero_blanco"
+			traits = { seawolf trait_SPA_nationalist_sympathies }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 1
+		}
 	}
 
-set_convoys = 150
-set_stability = 0.5
 
-create_country_leader = {
-	name = "José Díaz"
-	desc = "POLITICS_JOSE_DIAZ_DESC"
-	picture = "Portrait_Spain_Jose_Diaz.dds"
-	expire = "1965.1.1"
-	ideology = anarchism
-	traits = {
-		#
+	### Ship Variants ###
+
+	create_equipment_variant = {
+		name = "C Class"
+		type = submarine_1
+		upgrades = {
+			ship_reliability_upgrade = 1
+			sub_engine_upgrade = 1
+			sub_stealth_upgrade = 1
+			sub_torpedo_upgrade = 1
+		}
 	}
-}
 
-create_country_leader = {
-	name = "Francisco Franco"
-	desc = "POLITICS_FRANCISCO_FRANCO_DESC"
-	picture = "Portrait_Spain_Francisco_Franco.dds"
-	expire = "1965.1.1"
-	ideology = populism
-	traits = {
-		#
+	create_equipment_variant = {
+		name = "Príncipe Alfonso Class"
+		type = light_cruiser_1
+		upgrades = {
+			ship_reliability_upgrade = 1
+			ship_engine_upgrade = 1
+			ship_gun_upgrade = 1
+			ship_anti_air_upgrade = 1
+		}
 	}
-}
-
-create_country_leader = {
-	name = "Alfonso XIII"
-	desc = "POLITICS_ALEJANDRO_LERROUX_DESC"
-	picture = "Portrait_Alfonso_XIII.dds"
-	expire = "1965.1.1"
-	ideology = liberalism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Alfonso XIII"
-	desc = "POLITICS_ALEJANDRO_LERROUX_DESC"
-	picture = "Portrait_Alfonso_XIII.dds"
-	expire = "1965.1.1"
-	ideology = socialism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Alfonso XIII"
-	desc = "POLITICS_ALEJANDRO_LERROUX_DESC"
-	picture = "Portrait_Alfonso_XIII"
-	expire = "1965.1.1"
-	ideology = conservatism
-	traits = {
-		#
-	}
-}
-
-create_field_marshal = {
-	name = "José Asensio Torrado"
-	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
-	traits = { defensive_doctrine }
-	skill = 2
-    attack_skill = 1
-    defense_skill = 3
-    planning_skill = 2
-    logistics_skill = 1
-}
-
-
-### Ship Variants ###
-
-create_equipment_variant = {
-	name = "C Class"
-	type = submarine_1
-	upgrades = {
-		ship_reliability_upgrade = 1
-		sub_engine_upgrade = 1
-		sub_stealth_upgrade = 1
-		sub_torpedo_upgrade = 1
-	}
-}
-
-create_equipment_variant = {
-	name = "Príncipe Alfonso Class"
-	type = light_cruiser_1
-	upgrades = {
-		ship_reliability_upgrade = 1
-		ship_engine_upgrade = 1
-		ship_gun_upgrade = 1
-		ship_anti_air_upgrade = 1
-	}
-}

@@ -342,7 +342,7 @@ foreign_politics = {
 	JAP_war_with_qing = {
 
 		icon = decision_infiltrate_state
-
+		
 		available = {
 			OR = {
 				has_political_power > 45
@@ -350,18 +350,24 @@ foreign_politics = {
 			}
 			country_exists = CHI
 		}
+		
 		visible = {
 			has_completed_focus = JAP_theyellowbloodspilt
 		}
+		
+		will_lead_to_war_with = CHI
 		fire_only_once = yes
 		days_remove = 180
+		
 		ai_will_do = {
 			factor = 10
 		}
+		
 		modifier = {
 			political_power_cost = 0.25
 			war_support_weekly = 0.002
 		}
+		
 		remove_effect = {
 			declare_war_on = {
 				target = CHI
@@ -369,6 +375,7 @@ foreign_politics = {
 			}
         }
 	}
+	
 	JAP_war_with_ma = {
 
 		icon = decision_infiltrate_state
@@ -380,18 +387,24 @@ foreign_politics = {
 			}
 			country_exists = XSM
 		}
+		
 		visible = {
 			has_completed_focus = JAP_endthewarlords
 		}
+		
+		will_lead_to_war_with = XSM
 		fire_only_once = yes
 		days_remove = 180
+		
 		ai_will_do = {
 			factor = 10
 		}
+		
 		modifier = {
 			political_power_cost = 0.25
 			war_support_weekly = 0.002
 		}
+		
 		remove_effect = {
 			declare_war_on = {
 				target = XSM
@@ -399,6 +412,7 @@ foreign_politics = {
 			}
         }
 	}
+	
 	JAP_war_with_yunnan = {
 
 		icon = decision_infiltrate_state
@@ -410,18 +424,24 @@ foreign_politics = {
 			}
 			country_exists = YUN
 		}
+		
 		visible = {
 			has_completed_focus = JAP_endthewarlords
 		}
+		
+		will_lead_to_war_with = YUN
 		fire_only_once = yes
 		days_remove = 180
+		
 		ai_will_do = {
 			factor = 10
 		}
+		
 		modifier = {
 			political_power_cost = 0.25
 			war_support_weekly = 0.002
 		}
+		
 		remove_effect = {
 			declare_war_on = {
 				target = YUN

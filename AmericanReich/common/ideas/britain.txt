@@ -19,8 +19,10 @@ ideas = {
 			modifier = {
 				political_power_gain = -0.6
 				stability_factor = -0.2
+				stability_weekly = -0.001
 			}
 		}
+		
 		ENG_political_instability1 = {
 			
 			allowed = {
@@ -38,8 +40,10 @@ ideas = {
 			modifier = {
 				political_power_gain = -0.45
 				stability_factor = -0.15
+				stability_weekly = -0.001
 			}
 		}
+		
 		ENG_political_instability2 = {
 			
 			allowed = {
@@ -57,8 +61,10 @@ ideas = {
 			modifier = {
 				political_power_gain = -0.3
 				stability_factor = -0.1
+				stability_weekly = -0.001
 			}
 		}
+		
 		ENG_political_instability3 = {
 			
 			allowed = {
@@ -76,9 +82,13 @@ ideas = {
 			modifier = {
 				political_power_gain = -0.15
 				stability_factor = -0.05
+				stability_weekly = -0.001
 			}
 		}
+		
 		ENG_monarchists_purged = {
+		
+			picture = generic_king_handled
 			
 			allowed = {
 				always = no
@@ -96,7 +106,10 @@ ideas = {
 				authoritarian_drift = -0.05
 			}
 		}
+		
 		ENG_workers_liberation = {
+		
+			picture = por_iberian_workers_united
 			
 			allowed = {
 				always = no
@@ -113,7 +126,30 @@ ideas = {
 				industrial_capacity_dockyard = 0.1
 			}
 		}
+		
+		ENG_workers_liberation1 = {
+		
+			picture = por_iberian_workers_united
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				industrial_capacity_factory = 0.2
+				industrial_capacity_dockyard = 0.2
+			}
+		}
+		
 		ENG_english_socialism = {
+		
+			picture = generic_fascism_drift_bonus
 			
 			allowed = {
 				always = no
@@ -127,11 +163,37 @@ ideas = {
 			
 			modifier = {
 				political_power_gain = 0.05
+				stability_factor = 0.025
 				industrial_capacity_factory = 0.05
 				industrial_capacity_dockyard = 0.05
 			}
 		}
+		
+		ENG_english_socialism1 = {
+		
+			picture = generic_fascism_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				political_power_gain = 0.1
+				stability_factor = 0.05
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+			}
+		}
+		
 		ENG_return_of_the_monarchy = {
+		
+			picture = ast_abandon_the_westminster_system
 			
 			allowed = {
 				always = no
@@ -148,7 +210,30 @@ ideas = {
 				stability_factor = 0.05
 			}
 		}
+		
+		ENG_return_of_the_monarchy1 = {
+		
+			picture = ast_abandon_the_westminster_system
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				political_power_gain = 0.2
+				stability_factor = 0.1
+			}
+		}
+		
 		ENG_embracing_the_king = {
+		
+			picture = generic_monarchist_uprising
 			
 			allowed = {
 				always = no
@@ -164,7 +249,10 @@ ideas = {
 				stability_weekly = 0.002
 			}
 		}
+		
 		ENG_decentralized_economy = {
+		
+			picture = generic_local_self_management
 			
 			allowed = {
 				always = no
@@ -177,10 +265,14 @@ ideas = {
 			}
 			
 			modifier = {
-				production_factory_efficiency_gain_factor = 0.1
+				line_change_production_efficiency_factor = 0.1
+				production_factory_start_efficiency_factor = 0.1
 			}
 		}
+		
 		ENG_decentralized_economy1 = {
+		
+			picture = generic_local_self_management
 			
 			allowed = {
 				always = no
@@ -193,14 +285,16 @@ ideas = {
 			}
 			
 			modifier = {
-				production_factory_efficiency_gain_factor = 0.1
-				local_building_slots_factor = 0.1
-				production_speed_buildings_factor = 0.05
-				production_speed_infrastructure_factor = 0.05
-				production_speed_industrial_complex_factor = 0.05
+				line_change_production_efficiency_factor = 0.1
+				production_factory_start_efficiency_factor = 0.1
+				production_speed_infrastructure_factor = 0.15
+				production_speed_industrial_complex_factor = 0.15
 			}
 		}
+		
 		ENG_decentralized_economy2 = {
+		
+			picture = generic_local_self_management
 			
 			allowed = {
 				always = no
@@ -213,15 +307,41 @@ ideas = {
 			}
 			
 			modifier = {
-				production_factory_efficiency_gain_factor = 0.1
-				local_building_slots_factor = 0.1
-				production_speed_buildings_factor = 0.05
-				production_speed_infrastructure_factor = 0.1
-				production_speed_industrial_complex_factor = 0.05
-				production_speed_arms_factory_factor = 0.1
+				line_change_production_efficiency_factor = 0.1
+				production_factory_start_efficiency_factor = 0.1
+				production_speed_infrastructure_factor = 0.15
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_arms_factory_factor = 0.15
 			}
 		}
+		
 		ENG_decentralized_economy3 = {
+		
+			picture = generic_local_self_management
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				line_change_production_efficiency_factor = 0.1
+				production_factory_start_efficiency_factor = 0.1
+				production_speed_infrastructure_factor = 0.15
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_arms_factory_factor = 0.15
+				local_building_slots_factor = 0.2
+			}
+		}
+		
+		ENG_centralized_economy = {
+		
+			picture = generic_central_management
 			
 			allowed = {
 				always = no
@@ -235,31 +355,12 @@ ideas = {
 			
 			modifier = {
 				production_factory_efficiency_gain_factor = 0.1
-				local_building_slots_factor = 0.2
-				production_speed_buildings_factor = 0.1
-				production_speed_infrastructure_factor = 0.1
-				production_speed_industrial_complex_factor = 0.05
-				production_speed_arms_factory_factor = 0.1
 			}
 		}
-		ENG_centralized_economy = {
-			
-			allowed = {
-				always = no
-			}
-			
-			removal_cost = -1
-			
-			allowed_civil_war = {
-				always = yes
-			}
-			
-			modifier = {
-				production_factory_max_efficiency_factor = 0.05
-				line_change_production_efficiency_factor = 0.05
-			}
-		}
+		
 		ENG_centralized_economy1 = {
+		
+			picture = generic_central_management
 			
 			allowed = {
 				always = no
@@ -272,12 +373,15 @@ ideas = {
 			}
 			
 			modifier = {
-				production_factory_max_efficiency_factor = 0.1
-				line_change_production_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.1
 				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
 			}
 		}
+		
 		ENG_centralized_economy2 = {
+		
+			picture = generic_central_management
 			
 			allowed = {
 				always = no
@@ -290,16 +394,16 @@ ideas = {
 			}
 			
 			modifier = {
-				production_factory_max_efficiency_factor = 0.1
-				line_change_production_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.1
 				industrial_capacity_factory = 0.05
-				production_speed_arms_factory_factor = 0.1
-				production_speed_industrial_complex_factor = 0.1
-				production_speed_dockyard_factor = 0.1
+				industrial_capacity_dockyard = 0.05
+				production_speed_buildings_factor = 0.1
 			}
 		}
 		
 		ENG_civilian_focus = {
+		
+			picture = generic_foreign_capital
 			
 			allowed = {
 				always = no
@@ -312,10 +416,13 @@ ideas = {
 			}
 			
 			modifier = {
-				production_speed_industrial_complex_factor = 0.1
+				production_speed_buildings_factor = 0.05
 			}
 		}
+		
 		ENG_military_focus = {
+		
+			picture = FRA_national_mobilization_focus
 			
 			allowed = {
 				always = no
@@ -328,10 +435,14 @@ ideas = {
 			}
 			
 			modifier = {
-				production_speed_arms_factory_factor = 0.1
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
 			}
 		}
+		
 		ENG_national_food_budget = {
+		
+			picture = generic_goods_red_bonus
 			
 			allowed = {
 				always = no
@@ -351,10 +462,12 @@ ideas = {
 			
 			modifier = {
 				consumer_goods_factor = -0.05
-				industrial_capacity_factory = 0.1
 			}
 		}
+		
 		ENG_cheating_on_exports = {
+		
+			picture = can_wartime_prices_and_trade_board
 			
 			allowed = {
 				always = no
@@ -373,7 +486,10 @@ ideas = {
 				min_export = -0.1
 			}
 		}
+		
 		ENG_school_of_industry = {
+		
+			picture = jap_supremacy_of_technology
 			
 			allowed = {
 				always = no
@@ -395,7 +511,10 @@ ideas = {
 			modifier = {
 			}
 		}
+		
 		ENG_schools_of_economy = {
+		
+			picture = fra_market_dynamism
 			
 			allowed = {
 				always = no
@@ -411,17 +530,16 @@ ideas = {
 			}
 			
 			research_bonus = {
-				industry = 0.05
-				electronics = 0.05
-				excavation_tech = 0.05
-				synth_resources = 0.05
-				construction_tech = 0.05
 			}
 			
 			modifier = {
+				research_speed_factor = 0.025
 			}
 		}
+		
 		ENG_progressive_spirit = {
+		
+			picture = jap_supremacy_of_will
 			
 			allowed = {
 				always = no
@@ -440,10 +558,13 @@ ideas = {
 			}
 			
 			modifier = {
-				research_speed_factor = 0.07
+				research_speed_factor = 0.075
 			}
 		}
+		
 		ENG_revolutionary_spirit = {
+		
+			picture = mex_revolutionary_army
 			
 			allowed = {
 				always = no
@@ -466,7 +587,10 @@ ideas = {
 				land_reinforce_rate = 0.1
 			}
 		}
+		
 		ENG_anti_air_corps = {
+		
+			picture = usa_magic
 			
 			allowed = {
 				always = no
@@ -493,7 +617,10 @@ ideas = {
 			modifier = {
 			}
 		}
+		
 		ENG_pilot_training = {
+		
+			picture = generic_air_bonus
 			
 			allowed = {
 				always = no
@@ -523,7 +650,10 @@ ideas = {
 				experience_gain_air_factor = 0.1
 			}
 		}
+		
 		ENG_expanding_our_airports = {
+		
+			picture = air_support_focus
 			
 			allowed = {
 				always = no
@@ -549,7 +679,10 @@ ideas = {
 				production_speed_air_base_factor = 0.15
 			}
 		}
+		
 		ENG_ground_support = {
+		
+			picture = combined_bomber_offensive
 			
 			allowed = {
 				always = no
@@ -574,7 +707,10 @@ ideas = {
 				air_cas_present_factor = 0.1
 			}
 		}
+		
 		ENG_control_the_skies = {
+		
+			picture = generic_air_research
 			
 			allowed = {
 				always = no
@@ -599,7 +735,10 @@ ideas = {
 				army_bonus_air_superiority_factor = 0.1
 			}
 		}
+		
 		ENG_quality_of_aircraft = {
+		
+			picture = generic_air_payment
 			
 			allowed = {
 				always = no
@@ -618,17 +757,21 @@ ideas = {
 			}
 			
 			equipment_bonus = {
-				air_equipment = {
+				light_fighter = {
 					air_agility = 0.1
-					reliability = 0.05
-					build_cost_ic = 0.05 
+				}
+				cat_heavy_fighter = {
+					air_agility = 0.1
 				}
 			}
 			
 			modifier = {
 			}
 		}
+		
 		ENG_quantity_of_aircraft = {
+		
+			picture = generic_bomber_production_diverted
 			
 			allowed = {
 				always = no
@@ -647,16 +790,21 @@ ideas = {
 			}
 			
 			equipment_bonus = {
-				air_equipment = {
-					reliability = -0.05
-					build_cost_ic = -0.15 
+				light_fighter = {
+					build_cost_ic = -0.1
+				}
+				cat_heavy_fighter = {
+					build_cost_ic = -0.1
 				}
 			}
 			
 			modifier = {
 			}
 		}
+		
 		ENG_revolutionary_militia = {
+		
+			picture = generic_manpower_bonus
 			
 			allowed = {
 				always = no
@@ -684,7 +832,10 @@ ideas = {
 				army_org_factor = -0.2
 			}
 		}
+		
 		ENG_revolutionary_militia1 = {
+		
+			picture = generic_manpower_bonus
 			
 			allowed = {
 				always = no
@@ -712,7 +863,10 @@ ideas = {
 				army_org_factor = -0.15
 			}
 		}
+		
 		ENG_revolutionary_militia2 = {
+		
+			picture = generic_manpower_bonus
 			
 			allowed = {
 				always = no
@@ -740,7 +894,10 @@ ideas = {
 				army_org_factor = -0.1
 			}
 		}
+		
 		ENG_revolutionary_militia3 = {
+		
+			picture = generic_manpower_bonus
 			
 			allowed = {
 				always = no
@@ -769,7 +926,10 @@ ideas = {
 				army_org_factor = -0.1
 			}
 		}
+		
 		ENG_revolutionary_militia4 = {
+		
+			picture = generic_manpower_bonus
 			
 			allowed = {
 				always = no
@@ -797,7 +957,10 @@ ideas = {
 				army_org_factor = -0.05
 			}
 		}
+		
 		ENG_revolutionary_militia5 = {
+		
+			picture = generic_manpower_bonus
 			
 			allowed = {
 				always = no
@@ -824,7 +987,10 @@ ideas = {
 				army_morale_factor = 0.15
 			}
 		}
+		
 		ENG_professional_army = {
+		
+			picture = eng_imperial_conscription
 			
 			allowed = {
 				always = no
@@ -851,7 +1017,10 @@ ideas = {
 				army_org_factor = -0.1
 			}
 		}
+		
 		ENG_professional_army1 = {
+		
+			picture = eng_imperial_conscription
 			
 			allowed = {
 				always = no
@@ -878,7 +1047,10 @@ ideas = {
 				army_attack_factor = 0.1
 			}
 		}
+		
 		ENG_professional_army2 = {
+			
+			picture = eng_imperial_conscription
 			
 			allowed = {
 				always = no
@@ -904,7 +1076,10 @@ ideas = {
 				army_attack_factor = 0.1
 			}
 		}
+		
 		ENG_superior_firepower = {
+		
+			picture = FRA_national_mobilization_focus
 			
 			allowed = {
 				always = no
@@ -925,16 +1100,21 @@ ideas = {
 			equipment_bonus = {
 				artillery = {
 					soft_attack = 0.1
+					instant = yes
 				}
 				infantry_weapons = {
 					soft_attack = 0.1
+					instant = yes
 				}
 			}
 			
 			modifier = {
 			}
 		}
+		
 		ENG_mass_production = {
+		
+			picture = man_five_year_plan_industry
 			
 			allowed = {
 				always = no
@@ -955,16 +1135,21 @@ ideas = {
 			equipment_bonus = {
 				artillery = {
 					build_cost_ic = -0.1
+					instant = yes
 				}
 				infantry_weapons = {
 					build_cost_ic = -0.1
+					instant = yes
 				}
 			}
 			
 			modifier = {
 			}
 		}
+		
 		ENG_for_the_revolution = {
+		
+			picture = generic_war_preparation
 			
 			allowed = {
 				always = no
@@ -990,7 +1175,10 @@ ideas = {
 				conscription = 0.015
 			}
 		}
+		
 		ENG_for_the_revolution1 = {
+		
+			picture = generic_war_preparation
 			
 			allowed = {
 				always = no
@@ -1017,7 +1205,10 @@ ideas = {
 				army_org_factor = 0.05
 			}
 		}
+		
 		ENG_female_soldiers = {
+		
+			picture = por_volunteers_in_the_war2
 			
 			allowed = {
 				always = no
@@ -1042,7 +1233,10 @@ ideas = {
 				conscription_factor = 0.1
 			}
 		}
+		
 		ENG_cheifs_of_staff_committee = {
+		
+			picture = eng_chiefs_of_staff_committee
 			
 			allowed = {
 				always = no
@@ -1069,7 +1263,10 @@ ideas = {
 				command_power_gain = 0.1
 			}
 		}
+		
 		ENG_cheifs_of_staff_committee1 = {
+		
+			picture = eng_chiefs_of_staff_committee
 			
 			allowed = {
 				always = no
@@ -1097,7 +1294,10 @@ ideas = {
 				special_forces_cap = 0.1
 			}
 		}
+		
 		ENG_victory_on_the_home_front = {
+		
+			picture = generic_production_bonus
 			
 			allowed = {
 				always = no
@@ -1124,7 +1324,10 @@ ideas = {
 				industrial_capacity_dockyard = 0.1
 			}
 		}
+		
 		ENG_victory_on_the_home_front1 = {
+		
+			picture = generic_production_bonus
 			
 			allowed = {
 				always = no
@@ -1153,7 +1356,10 @@ ideas = {
 				conversion_cost_mil_to_civ_factor = -0.3
 			}
 		}
+		
 		ENG_women_in_the_workforce = {
+		
+			picture = FRA_scw_intervention_republicans_focus
 			
 			allowed = {
 				always = no
@@ -1178,7 +1384,10 @@ ideas = {
 				conscription = 0.03
 			}
 		}
+		
 		ENG_home_defence = {
+		
+			picture = ast_volunteer_defence_corps
 			
 			allowed = {
 				always = no
@@ -1199,19 +1408,25 @@ ideas = {
 			equipment_bonus = {
 				infantry_weapons = {
 					build_cost_ic = -0.1
+					instant = yes
 				}
 				support_tech = {
 					build_cost_ic = -0.1
+					instant = yes
 				}
 				artillery = {
 					build_cost_ic = -0.1
+					instant = yes
 				}
 			}
 			
 			modifier = {
 			}
 		}
+		
 		ENG_fortress_britain = {
+		
+			picture = generic_pp_unity_bonus
 			
 			allowed = {
 				always = no
@@ -1237,7 +1452,10 @@ ideas = {
 				production_speed_coastal_bunker_factor = 0.25
 			}
 		}
+		
 		ENG_bletchley_park_operations = {
+		
+			picture = SOV_scientist_defect
 			
 			allowed = {
 				always = no
@@ -1252,20 +1470,20 @@ ideas = {
 			available = {
 			}
 			
-			research_bonus = {
-				encryption_tech = 0.15
-				decryption_tech = 0.15
-			}
-			
 			equipment_bonus = {
 			}
 			
 			modifier = {
-				encryption_factor = 0.005
-				decryption_factor = 0.005
+				civilian_intel_factor = 0.05
+				army_intel_factor = 0.05
+				navy_intel_factor = 0.05
+				airforce_intel_factor = 0.05
 			}
 		}
+		
 		ENG_anti_liberalism = {
+		
+			picture = spr_crush_the_revolution
 			
 			allowed = {
 				always = no
@@ -1290,7 +1508,10 @@ ideas = {
 				justify_war_goal_time = -0.25
 			}
 		}
+		
 		ENG_controlling_the_trade_unions = {
+		
+			picture = FRA_matignon_agreements
 			
 			allowed = {
 				always = no
@@ -1312,9 +1533,102 @@ ideas = {
 			}
 			
 			modifier = {
+				political_power_gain = 0.1
 				production_factory_efficiency_gain_factor = -0.1
 				industrial_capacity_factory = -0.1
 				industrial_capacity_dockyard = -0.1
+			}
+		}
+		
+		ENG_trade_union_congress = {
+		
+			picture = FRA_scw_intervention_republicans_focus
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			available = {
+			}
+			
+			research_bonus = {
+			}
+			
+			equipment_bonus = {
+			}
+			
+			modifier = {
+				political_power_gain = -0.05
+				production_factory_efficiency_gain_factor = 0.05
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+		
+		ENG_trade_union_congress1 = {
+		
+			picture = FRA_scw_intervention_republicans_focus
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			available = {
+			}
+			
+			research_bonus = {
+			}
+			
+			equipment_bonus = {
+			}
+			
+			modifier = {
+				political_power_gain = -0.1
+				production_factory_efficiency_gain_factor = 0.1
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+			}
+		}
+		
+		ENG_anglican_unions = {
+		
+			picture = generic_production_bonus
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			available = {
+			}
+			
+			research_bonus = {
+			}
+			
+			equipment_bonus = {
+			}
+			
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
 			}
 		}
 	}
@@ -1332,7 +1646,7 @@ ideas = {
 			
 			traits = {
 				totalist_trait
-				hog_militant_socialist
+				hog_militant_revolutionary
 			}
 	
 			do_effect = {
@@ -2318,6 +2632,7 @@ ideas = {
 			}
 		}
 	}
+	
 	industrial_concern = {
 				
 		aioc = {
@@ -2335,14 +2650,12 @@ ideas = {
 			traits = { industrial_concern }
 			
 			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
 			}
 
 			ai_will_do = {
 				factor = 2
-				modifier = {
-					has_idea_with_trait = silent_workhorse
-					factor = 10
-				}
 			}
 		}
 		
@@ -2361,6 +2674,7 @@ ideas = {
 			traits = { electronics_concern }
 			
 			modifier = {
+				production_speed_radar_station_factor = 0.15
 			}
 		}
 		

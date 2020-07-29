@@ -148,6 +148,56 @@ units = {
 		start_experience_factor = 0.2
 
 	}
+	division= {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 43
+		}
+		location = 3957
+		division_template = "National Guard Division"
+		start_experience_factor = 0.2
+
+	}
+	division= {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 43
+		}
+		location = 3957
+		division_template = "National Guard Division"
+		start_experience_factor = 0.2
+
+	}
+	division= {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 43
+		}
+		location = 3957
+		division_template = "National Guard Division"
+		start_experience_factor = 0.2
+
+	}
+	division= {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 43
+		}
+		location = 3957
+		division_template = "National Guard Division"
+		start_experience_factor = 0.2
+
+	}
+	division= {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 43
+		}
+		location = 3957
+		division_template = "National Guard Division"
+		start_experience_factor = 0.2
+
+	}
 }
 	
 	
@@ -282,13 +332,18 @@ instant_effect = {
 
 	add_equipment_production = {
 		equipment = {
-			type = cv_fighter_equipment_0
+			type = fighter_equipment_0
 			creator = "USA" 
 		}
 		requested_factories = 1
 		progress = 0.15
 		efficiency = 50
 	}
-
+	
+	add_equipment_to_stockpile = {
+		type = infantry_equipment
+		amount = 4000
+		producer = USA
+	}
 }
 #####################

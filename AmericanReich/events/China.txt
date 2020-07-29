@@ -1,0 +1,77 @@
+﻿	add_namespace = china
+
+	#The Great Qing
+	country_event = {
+		id = china.1
+		title = china.1.t
+		desc = china.1.desc
+		picture = GFX_report_event_chinese_soldiers_fighting
+		
+		is_triggered_only = yes
+		
+		option = { #Long live the Qing!
+			name = china.1.a
+			ai_chance = { 
+				factor = 1 
+			}
+		}
+	}
+	
+	#Black Friday Hits China
+	country_event = {
+		id = china.2
+		title = china.2.t
+		desc = china.2.desc
+		picture = GFX_report_event_generic_rally2
+		
+		fire_only_once = yes
+		
+		trigger = {
+			original_tag = CHI
+			has_global_flag = Black_Friday
+		}
+		
+		option = { #Uh oh...
+			name = china.2.a
+			ai_chance = { 
+				factor = 1 
+			}
+			add_stability = -0.1
+			add_political = -100
+			add_timed_idea = {
+				idea = GER_black_friday_default
+				days = 480
+			}
+			hidden_effect = {
+				country_event = {
+					id = china.3
+					days = 21
+				}
+			}
+		}
+	}
+	
+	#The Imperial Shattering
+	country_event = {
+		id = china.3
+		title = china.3.t
+		desc = china.3.desc
+		picture = GFX_report_event_chinese_soldiers
+		
+		is_triggered_only = yes
+		
+		option = { #Uh oh...
+			name = china.3.a
+			ai_chance = { 
+				factor = 1 
+			}
+			add_stability = -0.4
+		}
+		immediate = {
+			hidden_effect = {
+				release = GXC
+				release = YUN
+				release = XSM
+			}
+		}
+	}

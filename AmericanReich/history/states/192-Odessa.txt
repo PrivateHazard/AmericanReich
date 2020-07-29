@@ -4,29 +4,23 @@ state={
 	name="STATE_192"
 	manpower = 1469986
 	
-	state_category = city
+	state_category = large_city
 
 	history={
 		owner = UKR
 		victory_points = {
-			11670 10 
+			11670 20 
 		}
 		buildings = {
-			infrastructure = 5
-			industrial_complex = 2
+			infrastructure = 6
+			industrial_complex = 3
 			air_base = 6
 			11670 ={
 				naval_base = 3
 				coastal_bunker = 1
 			}
 		}
-		add_core_of = SOV
 		add_core_of = UKR
-		1939.1.1 = {
-			buildings = {
-				industrial_complex = 3
-			}
-		}
 	}
 
 	provinces={

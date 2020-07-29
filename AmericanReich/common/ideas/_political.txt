@@ -1,0 +1,464 @@
+	ideas = {
+		party_laws = {
+			law = yes
+			
+			single_party = {
+
+				removal_cost = -1
+				cost = 100
+				level = 3
+				picture = FRA_matignon_agreements
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = 0.1
+				}
+			}
+			
+			controlled_party = {
+
+				removal_cost = -1
+				cost = 100
+				level = 2
+				picture = FRA_scw_intervention_republicans_focus
+				default = yes
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = 0.05
+					stability_factor = 0.025
+				}
+			}
+			
+			multi_party = {
+
+				removal_cost = -1
+				cost = 100
+				level = 1
+				picture = chi_war_of_resistance3
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					stability_factor = 0.05
+				}
+			}
+		}
+		
+		religious_laws = {
+			law = yes
+			
+			single_religion = {
+
+				removal_cost = -1
+				cost = 100
+				level = 4
+				picture = generic_monarchist_uprising
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					stability_factor = 0.05
+					political_power_gain = -0.1
+				}
+			}
+			
+			multi_religion = {
+
+				removal_cost = -1
+				cost = 100
+				level = 3
+				picture = generic_victors_of_ww1
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					stability_factor = 0.025
+					political_power_gain = -0.05
+				}
+			}
+			
+			free_religion = {
+
+				removal_cost = -1
+				cost = 100
+				level = 2
+				picture = generic_morale_bonus
+				default = yes
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					stability_factor = -0.025
+					political_power_gain = 0.05
+				}
+			}
+			
+			no_religion = {
+
+				removal_cost = -1
+				cost = 100
+				level = 1
+				picture = FRA_matignon_agreements
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					stability_factor = -0.05
+					political_power_gain = 0.1
+				}
+			}
+		}
+		
+		press_laws = {
+			law = yes
+			
+			free_press = {
+
+				removal_cost = -1
+				cost = 100
+				level = 3
+				picture = generic_democratic_drift_bonus
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					stability_factor = 0.025
+				}
+			}
+			
+			censored_press = {
+
+				removal_cost = -1
+				cost = 100
+				level = 2
+				picture = FRA_scw_intervention_nationalists_focus
+				default = yes
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = 0.05
+				}
+			}
+			
+			state_press = {
+
+				removal_cost = -1
+				cost = 100
+				level = 1
+				picture = FRA_national_mobilization_focus
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					stability_factor = -0.025
+					political_power_gain = 0.1
+				}
+			}
+		}
+		
+		immigration_laws = {
+			law = yes
+			
+			lower_immigration = {
+
+				removal_cost = -1
+				cost = 100
+				level = 5
+				picture = generic_wall_line
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = 0.1
+				}
+			}
+			
+			low_immigration = {
+
+				allowed_civil_war = {
+				}
+
+				removal_cost = -1
+				cost = 100
+				level = 4
+				picture = por_hydroelectric_power
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					MONTHLY_POPULATION = 0.1
+				}
+			}
+			
+			medium_immigration = {
+				
+				allowed_civil_war = {
+				}
+
+				removal_cost = -1
+				cost = 100
+				level = 3
+				picture = prc_low_popular_support
+				default = yes
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					MONTHLY_POPULATION = 0.25
+					political_power_gain = -0.05
+				}
+			}
+			
+			high_immigration = {
+
+				allowed_civil_war = {
+				}
+
+				removal_cost = -1
+				cost = 100
+				level = 2
+				picture = prc_low_popular_support2
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					MONTHLY_POPULATION = 0.5
+					political_power_gain = -0.1
+				}
+			}
+			
+			higher_immigration = {
+
+				allowed_civil_war = {
+				}
+
+				removal_cost = -1
+				cost = 100
+				level = 1
+				picture = prc_low_popular_support3
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					MONTHLY_POPULATION = 1
+					political_power_gain = -0.15
+				}
+			}
+		}
+		
+		union_laws = {
+			law = yes
+			
+			no_unions = {
+
+				removal_cost = -1
+				cost = 100
+				level = 5
+				picture = FRA_matignon_agreements
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					industrial_capacity_factory = 0.1
+					industrial_capacity_dockyard = 0.1
+					stability_factor = -0.025
+				}
+			}
+		
+			state_unions = {
+
+				removal_cost = -1
+				cost = 100
+				level = 4
+				picture = generic_volunteer_expedition_bonus
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					industrial_capacity_factory = 0.05
+					industrial_capacity_dockyard = 0.05
+				}
+			}
+			
+			non_political_unions = {
+
+				removal_cost = -1
+				cost = 100
+				level = 3
+				picture = FRA_scw_intervention_republicans_focus
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					industrial_capacity_factory = -0.05
+					industrial_capacity_dockyard = -0.05
+					stability_factor = 0.025
+				}
+			}
+			
+			all_unions = {
+
+				removal_cost = -1
+				cost = 100
+				level = 2
+				picture = generic_production_bonus
+				default = yes
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					industrial_capacity_factory = -0.1
+					industrial_capacity_dockyard = -0.1
+					stability_factor = 0.05
+				}
+			}
+			
+			union_control = {
+
+				removal_cost = -1
+				cost = 100
+				level = 1
+				picture = chi_war_of_resistance3
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					industrial_capacity_factory = -0.15
+					industrial_capacity_dockyard = -0.15
+					stability_factor = 0.075
+				}
+			}
+		}
+		
+		voting_laws = {
+			law = yes
+			
+			lower_voting = {
+
+				removal_cost = -1
+				cost = 100
+				level = 5
+				picture = FRA_matignon_agreements
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = 0.15
+					stability_factor = -0.075
+				}
+			}
+			
+			low_voting = {
+
+				removal_cost = -1
+				cost = 100
+				level = 4
+				picture = generic_intel_bonus
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = 0.1
+					stability_factor = -0.05
+				}
+			}
+			
+			medium_voting = {
+
+				removal_cost = -1
+				cost = 100
+				level = 3
+				picture = generic_democratic_drift_bonus
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = 0.05
+					stability_factor = -0.025
+				}
+			}
+			
+			high_voting = {
+
+				removal_cost = -1
+				cost = 100
+				level = 2
+				picture = FRA_scw_intervention_republicans_focus
+				default = yes
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+				}
+			}
+			
+			higher_voting = {
+
+				removal_cost = -1
+				cost = 100
+				level = 1
+				picture = generic_volunteer_expedition_bonus
+				
+				available = {
+					always = no
+				}
+				
+				modifier = {
+					political_power_gain = -0.05
+					stability_factor = 0.025
+				}
+			}
+		}
+	}

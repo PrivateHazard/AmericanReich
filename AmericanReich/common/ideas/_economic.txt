@@ -1,220 +1,187 @@
-ideas = {
+	ideas = {
 
-	economy = { 
-		law = yes
-		undisturbed_isolation = {
-			
-			
-			allowed = {
-				always = no
-			}
-			removal_cost = -1
-			level = 6
-		
-			modifier = {
-				consumer_goods_factor = 0.4
-				production_speed_industrial_complex_factor = -0.5
-				production_speed_arms_factory_factor = -0.5
-				production_speed_dockyard_factor = -0.5
-				conversion_cost_civ_to_mil_factor = 0.5
-				conversion_cost_mil_to_civ_factor = 0.5
-				max_fuel_factor = -0.45
-				fuel_gain_factor = -0.6
-				mobilization_speed = -0.5
-			}
-			
-			allowed_to_remove = {
-				OR = {
-					has_war_support > 0.4
-					has_war = yes
-					has_completed_focus = USA_thegiantawakes
+		economy = { 
+			law = yes
+			undisturbed_isolation = {
+				
+				allowed = {
+					always = no
 				}
-			}
+				removal_cost = -1
+				level = 6
 			
-			cancel_if_invalid = no
-		}
-		
-		isolation = {
-			
-			
-			
-			allowed = {
-				always = no
-			}
-			removal_cost = -1
-			level = 6
-			
-			modifier = {
-				consumer_goods_factor = 0.3
-				production_speed_industrial_complex_factor = -0.4
-				production_speed_arms_factory_factor = -0.4
-				production_speed_dockyard_factor = -0.4
-				conversion_cost_civ_to_mil_factor= 0.4
-				conversion_cost_mil_to_civ_factor = 0.4
-				generate_wargoal_tension = 1.00
-				join_faction_tension = 0.20
-				send_volunteers_tension = 0.20
-				guarantee_tension = 0.5
-				max_fuel_factor = -0.35
-				fuel_gain_factor = -0.5
-				mobilization_speed = -0.4
-			}
-			allowed_to_remove = {
-				OR = {
-					has_war_support > 0.75
-					has_war = yes
-					has_completed_focus = USA_limited_intervention					
-				}
-			}
-			
-			cancel_if_invalid = no
-		}
-		
-		civilian_economy = {
-			
-		
-			cost = 100
-			removal_cost = -1
-			level = 5
-			
-			modifier = {
-				consumer_goods_factor = 0.25
-				production_speed_industrial_complex_factor = -0.3
-				production_speed_arms_factory_factor = -0.3
-				conversion_cost_civ_to_mil_factor= 0.3
-				conversion_cost_mil_to_civ_factor = 0.3
-				max_fuel_factor = -0.25
-				fuel_gain_factor = -0.4
-				mobilization_speed = -0.3
-			}
-			
-			default = yes
-			
-			cancel_if_invalid = no
-		}
-		
-		low_economic_mobilisation = {
-			
-			available = {
-				has_war_support > 0.15	
-			}
-			on_add = {
-				if = {
-					limit = {
-						tag = USA
-						has_completed_focus = USA_limited_intervention
-						has_defensive_war = no
-					}
-					USA_congress_large_opposition = yes
-				}
-			}
-			
-			cost = 100
-			removal_cost = -1
-			level = 4
-			
-			modifier = {
-				consumer_goods_factor = 0.2
-				production_speed_industrial_complex_factor = -0.1
-				production_speed_arms_factory_factor = -0.1
-				fuel_gain_factor = -0.25
-				mobilization_speed = -0.1
-			}
-			
-			cancel_if_invalid = no
-
-			ai_will_do = {
-   				factor = 2
-
-   				modifier = {
-					factor = 20
-					
-					is_major = yes
-				}
 				modifier = {
-					has_war_support > 0.25
-					factor = 0 #don't even look at it if you could be taking partial mob
+					consumer_goods_factor = 0.4
+					production_speed_arms_factory_factor = -0.5
+					production_speed_dockyard_factor = -0.5
+					conversion_cost_civ_to_mil_factor = 0.5
+					conversion_cost_mil_to_civ_factor = -0.5
+					max_fuel_factor = -0.45
+					fuel_gain_factor = -0.6
+					mobilization_speed = -0.25
 				}
-				modifier = {
-					tag = ENG
-					has_war = no
-					date < 1937.6.1
-					factor = 0
-				}
-   			}
-		}
-		
-		partial_economic_mobilisation = {
-			
-			available = {
-				has_war_support > 0.25
-
-				if = {
-					limit = {
-						original_tag = HUN
-						has_dlc = "Death or Dishonor"
-					}
+				
+				allowed_to_remove = {
 					OR = {
-						has_completed_focus = HUN_secret_rearmament
-						NOT = { has_idea = HUN_treaty_of_triannon }
+						has_war_support > 0.4
+						has_war = yes
+						has_completed_focus = USA_thegiantawakes
 					}
 				}
-				if = {
-					limit = {
-						has_completed_focus = USA_limited_intervention
-						has_defensive_war = no
+				
+				cancel_if_invalid = no
+			}
+			
+			isolation = {
+				
+				
+				
+				allowed = {
+					always = no
+				}
+				removal_cost = -1
+				level = 6
+				
+				modifier = {
+					consumer_goods_factor = 0.3
+					production_speed_arms_factory_factor = -0.4
+					production_speed_dockyard_factor = -0.4
+					conversion_cost_civ_to_mil_factor= 0.4
+					conversion_cost_mil_to_civ_factor = -0.4
+					max_fuel_factor = -0.35
+					fuel_gain_factor = -0.5
+					mobilization_speed = -0.2
+				}
+				allowed_to_remove = {
+					OR = {
+						has_war_support > 0.75
+						has_war = yes
+						has_completed_focus = USA_limited_intervention					
 					}
+				}
+				
+				cancel_if_invalid = no
+			}
+			
+			civilian_economy = {
+			
+				cost = 100
+				removal_cost = -1
+				level = 5
+				
+				modifier = {
+					consumer_goods_factor = 0.25
+					production_speed_arms_factory_factor = -0.3
+					production_speed_dockyard_factor = -0.3
+					conversion_cost_civ_to_mil_factor= 0.3
+					conversion_cost_mil_to_civ_factor = -0.3
+					max_fuel_factor = -0.25
+					fuel_gain_factor = -0.4
+					mobilization_speed = -0.15
+				}
+				
+				default = yes
+				
+				cancel_if_invalid = no
+			}
+			
+			low_economic_mobilisation = {
+				
+				available = {
+					has_war_support > 0.15	
+				}
+				
+				cost = 100
+				removal_cost = -1
+				level = 4
+				
+				modifier = {
+					consumer_goods_factor = 0.2
+					production_speed_arms_factory_factor = -0.1
+					production_speed_dockyard_factor = -0.1
+					conversion_cost_civ_to_mil_factor= 0.1
+					conversion_cost_mil_to_civ_factor = -0.1
+					fuel_gain_factor = -0.25
+					mobilization_speed = -0.05
+				}
+				
+				cancel_if_invalid = no
+
+				ai_will_do = {
+					factor = 2
+
+					modifier = {
+						factor = 20
+						
+						is_major = yes
+					}
+				}
+			}
+			
+			partial_economic_mobilisation = {
+				
+				available = {
+					has_war_support > 0.25
+
+					if = {
+						limit = {
+							original_tag = HUN
+							has_dlc = "Death or Dishonor"
+						}
+						OR = {
+							has_completed_focus = HUN_secret_rearmament
+							NOT = { has_idea = HUN_treaty_of_triannon }
+						}
+					}
+					if = {
+						limit = {
+							has_completed_focus = USA_limited_intervention
+							has_defensive_war = no
+						}
+						has_war_support > 0.5
+						congress_high_support_trigger = yes
+					}
+				}
+
+				cost = 100
+				removal_cost = -1
+				level = 3
+				
+				modifier = {
+					consumer_goods_factor = 0.15
+					production_speed_industrial_complex_factor = -0.1
+					conversion_cost_civ_to_mil_factor= -0.1
+					conversion_cost_mil_to_civ_factor = 0.1
+					fuel_gain_factor = -0.1
+					mobilization_speed = 0.05
+				}
+				
+				cancel_if_invalid = no
+				on_add = {
+					if = {
+						limit = {
+							tag = USA
+							has_completed_focus = USA_limited_intervention
+							has_defensive_war = no
+						}
+						USA_congress_large_opposition = yes
+					}
+				}
+				ai_will_do = {
+					factor = 2
+
+					modifier = {
+						factor = 20
+						
+						is_major = yes
+					}
+				}
+			}
+			
+			war_economy = {
+				
+				available = {
 					has_war_support > 0.5
-					congress_high_support_trigger = yes
-				}
-			}
-
-			cost = 100
-			removal_cost = -1
-			level = 3
-			
-			modifier = {
-				consumer_goods_factor = 0.15
-				production_speed_arms_factory_factor = 0.1
-				conversion_cost_civ_to_mil_factor= -0.1
-				conversion_cost_mil_to_civ_factor = -0.1
-				fuel_gain_factor = -0.1
-				mobilization_speed = 0.1
-			}
-			
-			cancel_if_invalid = no
-			on_add = {
-				if = {
-					limit = {
-						tag = USA
-						has_completed_focus = USA_limited_intervention
-						has_defensive_war = no
-					}
-					USA_congress_large_opposition = yes
-				}
-			}
-			ai_will_do = {
-   				factor = 2
-
-   				modifier = {
-					factor = 20
-					
-					is_major = yes
-				}
-   			}
-		}
-		
-		war_economy = {
-			
-			
-			available = {
-				has_war_support > 0.5
-				OR = {
-					has_government = populist
-					has_government = nationalist
-					has_government = anarchist
-					has_government = totalist
-					custom_trigger_tooltip = { tooltip = or_clarification_tooltip always = no }
 					AND = {
 						has_war = yes
 						any_enemy_country = {
@@ -223,560 +190,749 @@ ideas = {
 								ratio > 0.4
 							}
 						}
-					}
+					}		
 				}
-
-				if = {
-					limit = {
-						original_tag = HUN
-						has_dlc = "Death or Dishonor"
-					}
-					NOT = { has_idea = HUN_treaty_of_triannon }
-				}
-				if = {
-					limit = {
-						has_completed_focus = USA_limited_intervention
-						has_defensive_war = no
-					}
-					has_war_support > 0.75
-					congress_high_support_trigger = yes
-				}		
-			}
-		
-			cost = 100
-			removal_cost = -1
-			level = 2
 			
-			modifier = {
-				consumer_goods_factor = 0.1
-				production_speed_arms_factory_factor = 0.2
-				conversion_cost_civ_to_mil_factor= -0.2
-				conversion_cost_mil_to_civ_factor = -0.2
-				mobilization_speed = 0.2
-			}
-			
-			cancel_if_invalid = no
-			on_add = {
-				if = {
-					limit = {
-						tag = USA
-						has_completed_focus = USA_limited_intervention
-						has_defensive_war = no
-					}
-					USA_congress_large_opposition = yes
-				}
-			}
-			ai_will_do = {
-   				factor = 5
-
+				cost = 100
+				removal_cost = -1
+				level = 2
+				
 				modifier = {
-					#High prio on production
-					factor = 20
-					manpower_per_military_factory >  1000
+					consumer_goods_factor = 0.1
+					production_speed_industrial_complex_factor = -0.2
+					conversion_cost_civ_to_mil_factor= -0.2
+					conversion_cost_mil_to_civ_factor = 0.2
+					mobilization_speed = 0.1
 				}
-   			}
+				
+				cancel_if_invalid = no
+				ai_will_do = {
+					factor = 5
+
+					modifier = {
+						#High prio on production
+						factor = 20
+						manpower_per_military_factory >  1000
+					}
+				}
+			}
+			
+			tot_economic_mobilisation = {
+				
+				available = {
+					has_war = yes
+					has_war_support > 0.8
+					any_enemy_country = {
+						ic_ratio = { 
+							tag = ROOT 
+							ratio > 0.5
+						}
+					}
+				}
+				ai_will_do = {
+					factor = 1
+
+					modifier = {
+						factor = 25
+						#Prio this if nation has a lot of manpower compared to MIC
+						manpower_per_military_factory > 15000
+					}
+
+					modifier = {
+						#Block  unless nation has a lot of manpower
+						factor = 0
+						manpower_per_military_factory <  7000
+					}
+				}
+				
+				cost = 100
+				removal_cost = -1
+				level = 1
+				
+				modifier = {
+					conscription = -0.03
+					consumer_goods_factor = 0.05
+					production_speed_industrial_complex_factor = -0.3
+					conversion_cost_civ_to_mil_factor= -0.3
+					conversion_cost_mil_to_civ_factor = 0.3
+					mobilization_speed = 0.15
+				}
+				cancel_if_invalid = no
+			}
 		}
 		
-		tot_economic_mobilisation = {
-			
-			
-			available = {
-				has_war = yes
-				has_war_support > 0.8
-				any_enemy_country = {
-					ic_ratio = { 
-						tag = ROOT 
-						ratio > 0.5
-					}
-				}
-			}
-			ai_will_do = {
-   				factor = 1
+		trade_laws = { 
+			law = yes
 
+			free_trade = {
+							
+				cost = 100
+				removal_cost = -1
+				level = 4
+				
 				modifier = {
-					factor = 25
-					#Prio this if nation has a lot of manpower compared to MIC
-					manpower_per_military_factory > 15000
+					min_export = 0.8
+					industrial_capacity_factory = 0.15
+					industrial_capacity_dockyard = 0.15
+					production_speed_buildings_factor = 0.15
+					research_speed_factor = 0.10
+					civilian_intel_to_others = 40.0
+					navy_intel_to_others = 20.0
 				}
+				
+				cancel_if_invalid = no
 
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			
+			export_focus = {
+				
+				available = {
+				}
+				
+				
+				cost = 100
+				removal_cost = -1
+				level = 3
+				
 				modifier = {
-					#Block  unless nation has a lot of manpower
-					factor = 0
-					manpower_per_military_factory <  7000
+					min_export = 0.5
+					industrial_capacity_factory = 0.1
+					industrial_capacity_dockyard = 0.1
+					production_speed_buildings_factor = 0.1
+					research_speed_factor = 0.05
+					civilian_intel_to_others = 20.0
+					navy_intel_to_others = 10.0
 				}
-   			}
-			
-			cost = 100
-			removal_cost = -1
-			level = 1
-			
-			modifier = {
-				conscription = -0.03
-				production_speed_arms_factory_factor = 0.3
-				conversion_cost_civ_to_mil_factor= -0.3
-				conversion_cost_mil_to_civ_factor = -0.3
-				mobilization_speed = 0.3
-			}
-			
-			cancel_if_invalid = no
-			}
-		}
-	
-	trade_laws = { 
-		law = yes
+				
+				default = yes
+				
+				cancel_if_invalid = no
 
-		free_trade = {
+				ai_will_do = {
+					factor = 1
+
+					modifier = {
+						factor = 0
 						
-			cost = 100
-			removal_cost = -1
-			level = 4
-			
-			modifier = {
-				min_export = 0.8
-				industrial_capacity_factory = 0.15
-				industrial_capacity_dockyard = 0.15
-				production_speed_buildings_factor = 0.15
-				research_speed_factor = 0.10
-				civilian_intel_to_others = 40.0
-				navy_intel_to_others = 20.0
-			}
-			
-			cancel_if_invalid = no
+						is_major = no
+						has_war = no
+						is_in_faction = no
+						OR = {
+							# portugal and sweden are special tungsten snowflakes
+							tag = POR
+							tag = SWE
 
-			ai_will_do = {
-   				factor = 1
-   			}
-		}
-		
-		export_focus = {
-			
-			available = {
-			}
-			
-			
-			cost = 100
-			removal_cost = -1
-			level = 3
-			
-			modifier = {
-				min_export = 0.5
-				industrial_capacity_factory = 0.1
-				industrial_capacity_dockyard = 0.1
-				production_speed_buildings_factor = 0.1
-				research_speed_factor = 0.05
-				civilian_intel_to_others = 20.0
-				navy_intel_to_others = 10.0
-			}
-			
-			default = yes
-			
-			cancel_if_invalid = no
-
-			ai_will_do = {
-   				factor = 1
-
-				modifier = {
-					factor = 0
-					
-					is_major = no
-					has_war = no
-					is_in_faction = no
-					OR = {
-						# portugal and sweden are special tungsten snowflakes
-						tag = POR
-						tag = SWE
-
-						# Iraq & Iran are special oil snowflakes
-						tag = PER
-						tag = IRQ
+							# Iraq & Iran are special oil snowflakes
+							tag = PER
+							tag = IRQ
+						}
 					}
 				}
-   			}
-		}
-		
-		limited_exports = {
+			}
 			
-			
-			available = {
-				OR = {
-					AND = {
-						has_government = conservative
-						has_government = libertarian
-						has_government = liberal
-						has_government = socialist
-						has_war = yes
-						any_enemy_country = {
-							ic_ratio = { 
-								tag = ROOT 
-								ratio > 0.2
+			limited_exports = {
+				
+				
+				available = {
+					OR = {
+						AND = {
+							has_government = conservative
+							has_government = libertarian
+							has_government = liberal
+							has_government = socialist
+							has_war = yes
+							any_enemy_country = {
+								ic_ratio = { 
+									tag = ROOT 
+									ratio > 0.2
+								}
+							}
+						}
+						AND = {
+							NOT = { 
+							has_government = conservative
+							has_government = libertarian
+							has_government = liberal
+							has_government = socialist
+							}
+							OR = {
+								has_idea = partial_economic_mobilisation
+								has_idea = war_economy
+								has_idea = tot_economic_mobilisation
 							}
 						}
 					}
-					AND = {
-						NOT = { 
-						has_government = conservative
-						has_government = libertarian
-						has_government = liberal
-						has_government = socialist
-						}
-						OR = {
-							has_idea = partial_economic_mobilisation
-							has_idea = war_economy
-							has_idea = tot_economic_mobilisation
-						}
+				}
+			
+				cost = 100
+				removal_cost = -1
+				level = 2
+				
+				modifier = {
+					min_export = 0.25
+					industrial_capacity_factory = 0.05
+					industrial_capacity_dockyard = 0.05
+					production_speed_buildings_factor = 0.05
+					research_speed_factor = 0.01
+					civilian_intel_to_others = 10
+					navy_intel_to_others = 5
+				}
+				
+				cancel_if_invalid = no
+
+				ai_will_do = {
+					factor = 1
+
+					modifier = {
+						factor = 0
+						
+						is_major = no
+						is_in_faction = yes
+						has_war = yes
+					}
+
+					# minors not at war should want to get the bonuses from free trade
+					modifier = {
+						factor = 0
+						
+						is_major = no
+						has_war = no
 					}
 				}
 			}
-		
-			cost = 100
-			removal_cost = -1
-			level = 2
 			
-			modifier = {
-				min_export = 0.25
-				industrial_capacity_factory = 0.05
-				industrial_capacity_dockyard = 0.05
-				production_speed_buildings_factor = 0.05
-				research_speed_factor = 0.01
-				civilian_intel_to_others = 10
-				navy_intel_to_others = 5
-			}
-			
-			cancel_if_invalid = no
-
-			ai_will_do = {
-   				factor = 1
-
-   				modifier = {
-					factor = 0
-					
-					is_major = no
-					is_in_faction = yes
+			closed_economy = {
+				
+				
+				available = {
 					has_war = yes
-				}
-
-				# minors not at war should want to get the bonuses from free trade
-				modifier = {
-					factor = 0
-					
-					is_major = no
-					has_war = no
-				}
-   			}
-		}
-		
-		closed_economy = {
-			
-			
-			available = {
-				has_war = yes
-				OR = { 
-					has_government = populist
-					has_government = nationalist
-					has_government = anarchist
-					has_government = totalist
-				}
-				OR = {
-					has_idea = war_economy
-					has_idea = tot_economic_mobilisation
-				}
-			}
-			
-			cost = 100
-			removal_cost = -1
-			level = 1
-			
-			
-			modifier = {
-				min_export = 0
-			}
-			
-			on_add = {
-				custom_effect_tooltip = closed_economy_TT
-			}
-			
-			cancel_if_invalid = no
-
-			ai_will_do = {
-   				factor = 1
-
-   				modifier = {
-					factor = 0
-					
-					is_major = no
-					is_in_faction = yes
-					has_war = yes
-				}
-
-				# minors not at war should want to get the bonuses from free trade
-				modifier = {
-					factor = 0
-					
-					is_major = no
-					has_war = no
-				}
-   			}
-		}
-	}
-	
-	tax_laws = {
-	 law = yes
-	lower_taxes = {
-
-			removal_cost = -1
-			cost = 100
-			level = 5
-			
-			modifier = {
-				consumer_goods_factor = 0.05
-				political_power_gain = -0.05
-				production_speed_infrastructure_factor = -0.1
-				conversion_cost_civ_to_mil_factor = 0.1
-			}
-		}
-		low_taxes = {
-
-			allowed_civil_war = {
-			}
-
-			removal_cost = -1
-			cost = 100
-			level = 4
-			
-			modifier = {
-				consumer_goods_factor = 0.1
-				production_speed_infrastructure_factor = 0.05
-				conversion_cost_civ_to_mil_factor = -0.05
-			}
-		}
-		medium_taxes = {
-			
-			allowed_civil_war = {
-			}
-
-			removal_cost = -1
-			cost = 100
-			level = 3
-			default = yes
-			
-			modifier = {
-				consumer_goods_factor = 0.15
-				political_power_gain = 0.05
-				production_speed_infrastructure_factor = 0.1
-				production_speed_air_base_factor = 0.05
-				conversion_cost_civ_to_mil_factor = -0.1
-				industry_repair_factor = 0.1
-				production_speed_arms_factory_factor = 0.05
-				research_speed_factor = 0.01
-			}
-		}
-		high_taxes = {
-			
-
-			allowed_civil_war = {
-			}
-
-			removal_cost = -1
-			cost = 100
-			level = 2
-			
-			modifier = {
-				consumer_goods_factor = 0.2
-				political_power_gain = 0.1
-				production_speed_infrastructure_factor = 0.2
-				production_speed_air_base_factor = 0.1
-				conversion_cost_civ_to_mil_factor = -0.2
-				industry_repair_factor = 0.25
-				production_speed_arms_factory_factor = 0.1
-				research_speed_factor = 0.03
-			}
-			
-			allowed_to_remove = {
-				if = {
-					limit = {
-						original_tag = USA
+					OR = { 
+						has_government = populist
+						has_government = nationalist
+						has_government = anarchist
+						has_government = totalist
 					}
 					OR = {
-						has_completed_focus = USA_repealregulations
-						has_completed_focus = USA_federalhousing
-						has_completed_focus = USA_accumulatedwealthtax
+						has_idea = war_economy
+						has_idea = tot_economic_mobilisation
+					}
+				}
+				
+				cost = 100
+				removal_cost = -1
+				level = 1
+				
+				
+				modifier = {
+					min_export = 0
+				}
+				
+				cancel_if_invalid = no
+
+				ai_will_do = {
+					factor = 1
+
+					modifier = {
+						factor = 0
+						
+						is_major = no
+						is_in_faction = yes
+						has_war = yes
+					}
+
+					# minors not at war should want to get the bonuses from free trade
+					modifier = {
+						factor = 0
+						
+						is_major = no
+						has_war = no
 					}
 				}
 			}
 		}
-		higher_taxes = {
+		
+		tax_laws = {
+			law = yes
+			lower_taxes = {
 
-			allowed_civil_war = {
+				removal_cost = -1
+				cost = 100
+				level = 5
+				picture = FRA_matignon_agreements
+				
+				available = {
+					political_power_daily > 0.1
+				}
+				
+				modifier = {
+					consumer_goods_factor = 0.05
+					political_power_gain = -0.1
+					conversion_cost_mil_to_civ_factor = -0.2
+					production_speed_industrial_complex_factor = 0.2
+				}
+				
+				ai_will_do = {
+					factor = 5
+
+					modifier = {
+						factor = 0
+						has_war = yes
+					}
+				}
 			}
-
-			removal_cost = -1
-			cost = 100
-			level = 1
 			
-			modifier = {
-				consumer_goods_factor = 0.25
-				political_power_gain = 0.15
-				production_speed_infrastructure_factor = 0.3
-				production_speed_air_base_factor = 0.15
-				conversion_cost_civ_to_mil_factor = -0.3
-				industry_repair_factor = 0.4
-				production_speed_arms_factory_factor = 0.15
-				research_speed_factor = 0.05
+			low_taxes = {
+
+				removal_cost = -1
+				cost = 100
+				level = 4
+				picture = generic_foreign_capital
+				
+				available = {
+					political_power_daily > 0.05
+				}
+				
+				modifier = {
+					consumer_goods_factor = 0.1
+					political_power_gain = -0.05
+					conversion_cost_mil_to_civ_factor = -0.1
+					production_speed_industrial_complex_factor = 0.1
+				}
+				
+				ai_will_do = {
+					factor = 5
+
+					modifier = {
+						factor = 0
+						has_war = yes
+					}
+				}
+			}
+			
+			medium_taxes = {
+
+				removal_cost = -1
+				cost = 100
+				level = 3
+				picture = ger_mefo_bills
+				default = yes
+				
+				modifier = {
+					consumer_goods_factor = 0.15
+				}
+				
+				ai_will_do = {
+					factor = 2
+
+					modifier = {
+						factor = 100
+						has_war = yes
+					}
+					
+					modifier = {
+						factor = 200
+						has_war = no
+						OR = {
+							has_idea = high_taxes
+							has_idea = higher_taxes
+						}
+
+					}
+				}
+			}
+			
+			high_taxes = {
+
+				removal_cost = -1
+				cost = 100
+				level = 2
+				picture = generic_central_management
+				
+				modifier = {
+					consumer_goods_factor = 0.2
+					political_power_gain = 0.05
+					conversion_cost_civ_to_mil_factor = -0.1
+					production_speed_arms_factory_factor = 0.1
+					production_speed_dockyard_factor = 0.1
+				}
+				
+				allowed_to_remove = {
+					if = {
+						limit = {
+							original_tag = USA
+						}
+						OR = {
+							has_completed_focus = USA_repealregulations
+							has_completed_focus = USA_federalhousing
+							has_completed_focus = USA_accumulatedwealthtax
+						}
+					}
+				}
+				
+				ai_will_do = {
+					factor = 0
+
+					modifier = {
+						factor = 200
+						has_war = yes
+					}
+					
+					modifier = {
+						factor = 300
+						has_war = no
+						OR = {
+							has_idea = higher_taxes
+						}
+
+					}
+				}
+			}
+			
+			higher_taxes = {
+
+				removal_cost = -1
+				cost = 100
+				level = 1
+				picture = ger_mefo_bills_payment
+				
+				modifier = {
+					consumer_goods_factor = 0.25
+					political_power_gain = 0.1
+					conversion_cost_civ_to_mil_factor = -0.2
+					production_speed_arms_factory_factor = 0.2
+					production_speed_dockyard_factor = 0.2
+				}
+				
+				ai_will_do = {
+					factor = 0
+
+					modifier = {
+						factor = 5
+						has_war = yes
+					}
+				}
+			}
+		}
+		
+		work_hour_laws = {
+			law = yes
+			
+			lower_work_hours = {
+
+				removal_cost = -1
+				cost = 100
+				level = 5
+				picture = man_five_year_plan_industry
+				
+				available = {
+				}
+				
+				modifier = {
+					stability_factor = -0.05
+					industrial_capacity_factory = 0.1
+					industrial_capacity_dockyard = 0.1
+				}
+				
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			
+			low_work_hours = {
+
+				removal_cost = -1
+				cost = 100
+				level = 4
+				picture = man_five_year_plan_industry
+				
+				available = {
+				}
+				
+				modifier = {
+					stability_factor = -0.025
+					industrial_capacity_factory = 0.05
+					industrial_capacity_dockyard = 0.05
+				}
+				
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			
+			medium_work_hours = {
+
+				removal_cost = -1
+				cost = 100
+				level = 3
+				picture = man_five_year_plan_industry
+				default = yes
+				
+				available = {
+				}
+				
+				modifier = {
+				}
+				
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			
+			high_work_hours = {
+
+				removal_cost = -1
+				cost = 100
+				level = 2
+				picture = man_five_year_plan_industry
+				
+				available = {
+				}
+				
+				modifier = {
+					stability_factor = 0.025
+					industrial_capacity_factory = -0.05
+					industrial_capacity_dockyard = -0.05
+				}
+				
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			
+			higher_work_hours = {
+
+				removal_cost = -1
+				cost = 100
+				level = 2
+				picture = man_five_year_plan_industry
+				
+				available = {
+				}
+				
+				modifier = {
+					stability_factor = 0.05
+					industrial_capacity_factory = -0.1
+					industrial_capacity_dockyard = -0.1
+				}
+				
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+		
+		minimum_wage_laws = {
+			law = yes
+			
+			lower_minimum_wage = {
+
+				removal_cost = -1
+				cost = 100
+				level = 5
+				picture = prc_the_long_march2
+				
+				available = {
+					political_power_daily > 0.1
+				}
+				
+				modifier = {
+					political_power_gain = -0.1
+					line_change_production_efficiency_factor = 0.1
+					production_factory_start_efficiency_factor = 0.1
+				}
+				
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			
+			low_minimum_wage = {
+
+				removal_cost = -1
+				cost = 100
+				level = 4
+				picture = prc_the_long_march
+				
+				available = {
+					political_power_daily > 0.05
+				}
+				
+				modifier = {
+					political_power_gain = -0.05
+					line_change_production_efficiency_factor = 0.05
+					production_factory_start_efficiency_factor = 0.05
+				}
+				
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			
+			medium_minimum_wage = {
+
+				removal_cost = -1
+				cost = 100
+				level = 3
+				picture = prc_low_popular_support
+				default = yes
+				
+				available = {
+				}
+				
+				modifier = {
+				}
+				
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			
+			high_minimum_wage = {
+
+				removal_cost = -1
+				cost = 100
+				level = 2
+				picture = prc_low_popular_support2
+				
+				available = {
+					political_power_daily > 0.05
+				}
+				
+				modifier = {
+					political_power_gain = 0.05
+					line_change_production_efficiency_factor = -0.05
+					production_factory_start_efficiency_factor = -0.05
+				}
+				
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			
+			higher_minimum_wage = {
+
+				removal_cost = -1
+				cost = 100
+				level = 1
+				picture = prc_low_popular_support3
+				
+				available = {
+				}
+				
+				modifier = {
+					political_power_gain = 0.1
+					line_change_production_efficiency_factor = -0.1
+					production_factory_start_efficiency_factor = -0.1
+				}
+				
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+		
+		unemployment_benefits_laws = {
+			law = yes
+			lower_unemployment_benefits = {
+
+				removal_cost = -1
+				cost = 100
+				level = 5
+				picture = chi_hyper_inflation
+				
+				available = {
+				}
+				
+				modifier = {
+					stability_factor = -0.05
+					production_speed_buildings_factor = 0.1
+				}
+				
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			
+			low_unemployment_benefits = {
+
+				removal_cost = -1
+				cost = 100
+				level = 4
+				picture = chi_hyper_inflation2
+				
+				available = {
+				}
+				
+				modifier = {
+					stability_factor = -0.025
+					production_speed_buildings_factor = 0.05
+				}
+				
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			
+			medium_unemployment_benefits = {
+
+				removal_cost = -1
+				cost = 100
+				level = 3
+				picture = chi_hyper_inflation3
+				default = yes
+				
+				available = {
+				}
+				
+				modifier = {
+				}
+				
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			
+			high_unemployment_benefits = {
+
+				removal_cost = -1
+				cost = 100
+				level = 2
+				picture = chi_hyper_inflation4
+				
+				available = {
+				}
+				
+				modifier = {
+					stability_factor = 0.025
+					production_speed_buildings_factor = -0.05
+				}
+				
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			
+			higher_unemployment_benefits = {
+
+				removal_cost = -1
+				cost = 100
+				level = 1
+				picture = chi_hyper_inflation5
+				
+				available = {
+				}
+				
+				modifier = {
+					stability_factor = 0.05
+					production_speed_buildings_factor = -0.1
+				}
+				
+				ai_will_do = {
+					factor = 1
+				}
 			}
 		}
 	}
-	
-	immigration_laws = {
-	 law = yes
-	lower_immigration = {
-
-			removal_cost = -1
-			cost = 100
-			level = 5
-			
-			modifier = {
-				political_power_gain = 0.1
-			}
-		}
-		low_immigration = {
-
-			allowed_civil_war = {
-			}
-
-			removal_cost = -1
-			cost = 100
-			level = 4
-			
-			modifier = {
-				MONTHLY_POPULATION = 0.1
-			}
-		}
-		medium_immigration = {
-			
-			allowed_civil_war = {
-			}
-
-			removal_cost = -1
-			cost = 100
-			level = 3
-			default = yes
-			
-			modifier = {
-				MONTHLY_POPULATION = 0.25
-				political_power_gain = -0.05
-			}
-		}
-		high_immigration = {
-			
-
-			allowed_civil_war = {
-			}
-
-			removal_cost = -1
-			cost = 100
-			level = 2
-			
-			modifier = {
-				MONTHLY_POPULATION = 0.5
-				political_power_gain = -0.1
-			}
-		}
-		higher_immigration = {
-
-			allowed_civil_war = {
-			}
-
-			removal_cost = -1
-			cost = 100
-			level = 1
-			
-			modifier = {
-				MONTHLY_POPULATION = 1
-				political_power_gain = -0.15
-			}
-		}
-	}
-	police_laws = {
-	law = yes
-	lower_police = {
-
-			removal_cost = -1
-			cost = 100
-			level = 5
-			
-			modifier = {
-				political_power_gain = 0.15
-				stability_factor = 0.1
-				enemy_partisan_effect = 0.1
-				encryption_factor = -0.01
-				decryption_factor = -0.005
-				resistance_target  = 2
-			}
-		}
-		low_police = {
-
-			allowed_civil_war = {
-			}
-
-			removal_cost = -1
-			cost = 100
-			level = 4
-			
-			modifier = {
-				political_power_gain = 0.1
-				encryption_factor = -0.005
-				stability_factor = 0.05
-				resistance_target  = 1
-			}
-		}
-		medium_police = {
-			
-			allowed_civil_war = {
-			}
-
-			removal_cost = -1
-			cost = 100
-			level = 3
-			default = yes
-			
-			modifier = {
-				political_power_gain = 0.05
-			}
-		}
-		high_police = {
-			
-
-			allowed_civil_war = {
-			}
-
-			removal_cost = -1
-			cost = 100
-			level = 2
-			
-			modifier = {
-				political_power_gain = -0.05
-				encryption_factor = 0.01
-				decryption_factor = 0.005
-				stability_factor = -0.05
-				resistance_target  = -1
-			}
-		}
-		higher_police = {
-
-			allowed_civil_war = {
-			}
-
-			removal_cost = -1
-			cost = 100
-			level = 1
-			
-			modifier = {
-				political_power_gain = -0.1
-				encryption_factor = 0.02
-				decryption_factor = 0.01
-				stability_factor = -0.1
-				resistance_target  = -2
-			}
-		}
-	}
-}

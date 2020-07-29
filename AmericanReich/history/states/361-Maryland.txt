@@ -21,15 +21,22 @@ state={
 			air_base = 6
 			6984 = {
 				naval_base = 2
-
 			}
 			3957 = {
 				naval_base = 1
-
+				bunker = 10
+			}
+			11892 = {
+				bunker = 10
+			}
+			6929 = {
+				bunker = 10
+			}
+			6823 = {
+				bunker = 10
 			}
 		}
 		add_core_of = USA
-
 	}
 
 	provinces={

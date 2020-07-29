@@ -1,0 +1,25 @@
+state={
+	id=827
+	name="STATE_827"
+	resources={
+		aluminium=8
+	}
+	
+	state_category = town
+
+	history={
+		owner = ITA
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 1
+			arms_factory = 1
+		}
+		add_core_of = ITA
+	}
+
+	provinces={
+		628 9613
+	}
+	manpower=400000
+	buildings_max_level_factor=1.000
+}

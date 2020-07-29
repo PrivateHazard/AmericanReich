@@ -1,0 +1,545 @@
+	ideas = {
+		academic_development = {
+			law = yes
+			
+			lower_academic = {
+
+				removal_cost = -1
+				level = 5
+				picture = jap_duplicate_research
+				
+				modifier = {
+					research_speed_factor = -0.2
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			low_academic = {
+
+				removal_cost = -1
+				level = 4
+				picture = jap_duplicate_research
+				
+				modifier = {
+					research_speed_factor = -0.15
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			medium_academic = {
+
+				removal_cost = -1
+				level = 3
+				picture = jap_supremacy_of_technology
+				default = yes
+				
+				modifier = {
+					research_speed_factor = -0.1
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			high_academic = {
+
+				removal_cost = -1
+				level = 2
+				picture = jap_supremacy_of_technology
+				
+				modifier = {
+					research_speed_factor = -0.05
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			higher_academic = {
+
+				removal_cost = -1
+				level = 1
+				picture = jap_supremacy_of_will
+				
+				modifier = {
+					custom_modifier_tooltip = higher_academic_tooltip
+				}
+				
+				available = {
+					always = no
+				}
+			}
+		}
+		
+		farming_development = {
+			law = yes
+			
+			lower_farming = {
+
+				removal_cost = -1
+				level = 5
+				picture = generic_local_self_management
+				
+				modifier = {
+					MONTHLY_POPULATION = -0.8
+					production_speed_buildings_factor = -0.2
+					industrial_capacity_factory = -0.2
+					industrial_capacity_dockyard = -0.2
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			low_farming = {
+
+				removal_cost = -1
+				level = 4
+				picture = generic_central_management
+				
+				modifier = {
+					MONTHLY_POPULATION = -0.6
+					production_speed_buildings_factor = -0.15
+					industrial_capacity_factory = -0.15
+					industrial_capacity_dockyard = -0.15
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			medium_farming = {
+
+				removal_cost = -1
+				level = 3
+				picture = FRA_motorized_focus
+				default = yes
+				
+				modifier = {
+					MONTHLY_POPULATION = -0.4
+					production_speed_buildings_factor = -0.1
+					industrial_capacity_factory = -0.1
+					industrial_capacity_dockyard = -0.1
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			high_farming = {
+
+				removal_cost = -1
+				level = 2
+				picture = man_five_year_plan_tank
+				
+				modifier = {
+					MONTHLY_POPULATION = -0.2
+					production_speed_buildings_factor = -0.05
+					industrial_capacity_factory = -0.05
+					industrial_capacity_dockyard = -0.05
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			higher_farming = {
+
+				removal_cost = -1
+				level = 1
+				picture = ast_all_in
+				
+				modifier = {
+					custom_modifier_tooltip = higher_farming_tooltip
+				}
+				
+				available = {
+					always = no
+				}
+			}
+		}
+		
+		poverty_development = {
+			law = yes
+			
+			lower_poverty = {
+
+				removal_cost = -1
+				level = 5
+				picture = usa_great_depression_3
+				
+				modifier = {
+					stability_factor = -0.2
+					production_speed_buildings_factor = -0.1
+					industrial_capacity_factory = -0.1
+					industrial_capacity_dockyard = -0.1
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			low_poverty = {
+
+				removal_cost = -1
+				level = 4
+				picture = usa_great_depression_2
+				
+				modifier = {
+					stability_factor = -0.15
+					production_speed_buildings_factor = -0.075
+					industrial_capacity_factory = -0.075
+					industrial_capacity_dockyard = -0.075
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			medium_poverty = {
+
+				removal_cost = -1
+				level = 3
+				picture = usa_great_depression
+				default = yes
+				
+				modifier = {
+					stability_factor = -0.1
+					production_speed_buildings_factor = -0.05
+					industrial_capacity_factory = -0.05
+					industrial_capacity_dockyard = -0.05
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			high_poverty = {
+
+				removal_cost = -1
+				level = 2
+				picture = ger_mefo_bills
+				
+				modifier = {
+					stability_factor = -0.05
+					production_speed_buildings_factor = -0.025
+					industrial_capacity_factory = -0.025
+					industrial_capacity_dockyard = -0.025
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			higher_poverty = {
+
+				removal_cost = -1
+				level = 1
+				picture = rom_carol_ii_hedonist
+				
+				modifier = {
+					custom_modifier_tooltip = higher_poverty_tooltip
+				}
+				
+				available = {
+					always = no
+				}
+			}
+		}
+		
+		industry_development = {
+			law = yes
+			
+			lower_industry = {
+
+				removal_cost = -1
+				level = 5
+				picture = generic_production_bonus
+				
+				modifier = {
+					production_speed_buildings_factor = -0.2
+					industrial_capacity_factory = -0.2
+					industrial_capacity_dockyard = -0.2
+					local_resources_factor = -0.2
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			low_industry = {
+
+				removal_cost = -1
+				level = 4
+				picture = generic_war_preparation
+				
+				modifier = {
+					production_speed_buildings_factor = -0.15
+					industrial_capacity_factory = -0.15
+					industrial_capacity_dockyard = -0.15
+					local_resources_factor = -0.15
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			medium_industry = {
+
+				removal_cost = -1
+				level = 3
+				picture = generic_exploit_mines
+				default = yes
+				
+				modifier = {
+					production_speed_buildings_factor = -0.1
+					industrial_capacity_factory = -0.1
+					industrial_capacity_dockyard = -0.1
+					local_resources_factor = -0.1
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			high_industry = {
+
+				removal_cost = -1
+				level = 2
+				picture = por_hydroelectric_power
+				
+				modifier = {
+					production_speed_buildings_factor = -0.05
+					industrial_capacity_factory = -0.05
+					industrial_capacity_dockyard = -0.05
+					local_resources_factor = -0.05
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			higher_industry = {
+
+				removal_cost = -1
+				level = 1
+				picture = man_five_year_plan_industry
+				
+				modifier = {
+					custom_modifier_tooltip = higher_industry_tooltip
+				}
+				
+				available = {
+					always = no
+				}
+			}
+		}
+		
+		army_development = {
+			law = yes
+			
+			lower_army = {
+
+				removal_cost = -1
+				level = 5
+				picture = prc_low_popular_support3
+				
+				modifier = {
+					conscription_factor = 0.2
+					training_time_army_factor = -0.2
+					army_org_factor = -0.2
+					army_defence_factor = -0.2
+					army_attack_factor = -0.2
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			low_army = {
+
+				removal_cost = -1
+				level = 4
+				picture = tfv_can_conscription_crisis
+				
+				modifier = {
+					conscription_factor = 0.15
+					training_time_army_factor = -0.15
+					army_org_factor = -0.15
+					army_defence_factor = -0.15
+					army_attack_factor = -0.15
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			medium_army = {
+
+				removal_cost = -1
+				level = 3
+				picture = chi_army_corruption3
+				default = yes
+				
+				modifier = {
+					conscription_factor = 0.1
+					training_time_army_factor = -0.1
+					army_org_factor = -0.1
+					army_defence_factor = -0.1
+					army_attack_factor = -0.1
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			high_army = {
+
+				removal_cost = -1
+				level = 2
+				picture = chi_war_of_resistance
+				
+				modifier = {
+					conscription_factor = 0.05
+					training_time_army_factor = -0.05
+					army_org_factor = -0.05
+					army_defence_factor = -0.05
+					army_attack_factor = -0.05
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			higher_army = {
+
+				removal_cost = -1
+				level = 1
+				picture = general_staff
+				
+				modifier = {
+					custom_modifier_tooltip = higher_army_tooltip
+				}
+				
+				available = {
+					always = no
+				}
+			}
+		}
+		
+		society_development = {
+			law = yes
+			
+			lower_society = {
+
+				removal_cost = -1
+				level = 5
+				picture = generic_volunteer_expedition_bonus
+				
+				modifier = {
+					army_core_defence_factor = 0.2
+					army_core_attack_factor = 0.2
+					political_power_gain = -0.2
+					production_factory_max_efficiency_factor = -0.2
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			low_society = {
+
+				removal_cost = -1
+				level = 4
+				picture = trotskyite_plot_purged
+				
+				modifier = {
+					army_core_defence_factor = 0.15
+					army_core_attack_factor = 0.15
+					political_power_gain = -0.15
+					production_factory_max_efficiency_factor = -0.15
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			medium_society = {
+
+				removal_cost = -1
+				level = 3
+				picture = generic_agrarian_reform
+				
+				modifier = {
+					army_core_defence_factor = 0.1
+					army_core_attack_factor = 0.1
+					political_power_gain = -0.1
+					production_factory_max_efficiency_factor = -0.1
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			high_society = {
+
+				removal_cost = -1
+				level = 2
+				picture = man_five_year_plan_industry
+				default = yes
+				
+				modifier = {
+					army_core_defence_factor = 0.05
+					army_core_attack_factor = 0.05
+					political_power_gain = -0.05
+					production_factory_max_efficiency_factor = -0.05
+				}
+				
+				available = {
+					always = no
+				}
+			}
+			
+			higher_society = {
+
+				removal_cost = -1
+				level = 1
+				picture = generic_political_support
+				
+				modifier = {
+					custom_modifier_tooltip = higher_army_tooltip
+				}
+				
+				available = {
+					always = no
+				}
+			}
+		}
+	}

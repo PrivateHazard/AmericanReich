@@ -1,0 +1,105 @@
+	economy_decisions = {
+		GER_uneasy_market = {
+
+			priority = 1
+
+			icon = ger_mefo_bills
+			
+			available = {
+				NOT = {
+					original_tag = GER
+				}
+			}
+
+			days_mission_timeout = 80
+			fire_only_once = yes
+
+			activation = {
+				original_tag = GER
+			}
+
+			visible = {
+				NOT = {
+					has_global_flag = Black_Friday
+				}
+			}
+			
+			is_good = no
+			
+			timeout_effect = {
+				if = {
+					limit = {
+						has_idea = GER_fix_the_market
+					}
+					remove_ideas = GER_fix_the_market
+				}
+				country_event = {
+					id = germany.2
+				}
+				hidden_effect = {
+					if = {
+						limit = {
+							has_completed_focus = GER_promisethepeopleemergencyaid
+						}
+						country_event = {
+							id = germany.4
+							days = 3
+						}
+					}
+					if = {
+						limit = {
+							has_completed_focus = GER_theshadowplan
+						}
+						country_event = {
+							id = germany.3
+							days = 3
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	political_actions = {
+	}
+
+	foreign_politics = {
+		GER_war_with_FRA = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = FRA
+			}
+			
+			visible = {
+				has_completed_focus = GER_endthethreat
+			}
+			
+			will_lead_to_war_with = FRA
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+			}
+			
+			modifier = {
+				political_power_cost = 0.1
+			}
+			
+			complete_effect = {
+				add_threat = 0.05
+			}
+			
+			remove_effect = {
+				declare_war_on = {
+					target = FRA
+					type = annex_everything
+				}
+			}
+		}
+	}

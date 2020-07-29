@@ -1,0 +1,19 @@
+CSA_propaganda_ministry = {
+	picture = decision_category_usa_honor_the_confederacy
+		
+	allowed = {
+		tag = CSA
+	}
+	visible = {
+		has_completed_focus = CSA_ministryofpropaganda
+	}
+}
+
+CSA_integration = {
+	allowed = {
+		tag = CSA
+	}
+	visible = {
+		has_completed_focus = CSA_integrate_the_states
+	}
+}

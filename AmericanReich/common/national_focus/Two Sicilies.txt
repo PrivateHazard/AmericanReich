@@ -1,0 +1,18 @@
+focus_tree = {
+	id = SCI
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = SCI
+		}
+	}
+	continuous_focus_position = { x = 50 y = 1600 }
+	
+	#Politics
+	#Economics
+	#Foreign Policy
+	#Armed Forces
+	#Navy
+	#Air
+}

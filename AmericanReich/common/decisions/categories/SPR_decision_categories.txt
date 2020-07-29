@@ -1,0 +1,82 @@
+	SPR_preparing_for_the_civil_war = {
+
+		icon = spr_the_inevitable_civil_war
+		
+		priority = 3
+		
+		allowed = {
+			original_tag = SPR
+		}
+	}
+	
+	SPR_french_integration = {
+
+		icon = generic_monarchism
+		
+		priority = 3
+		
+		allowed = {
+			original_tag = SPR
+		}
+		
+		visible = {
+			has_completed_focus = SPR_integrate_the_french
+		}
+		
+	}
+	
+	SPA_constitutional_convention = {
+
+		icon = generic_political_actions
+		
+		priority = 3
+		
+		allowed = {
+			original_tag = SPR
+		}
+		
+		visible = {
+			has_global_flag = SPA_civil_war_over
+		}
+	}
+
+	SPA_saving_spain = {
+	
+		icon = spr_civil_war_offensives
+		
+		priority = 3
+		
+		allowed = {
+			OR = {
+				original_tag = SPR
+				original_tag = SPL
+				original_tag = SPC
+				original_tag = SPK
+				original_tag = SPN
+			}
+		}
+		
+		visible = {
+			has_global_flag = SPA_civil_war
+			NOT = {
+				has_global_flag = SPA_civil_war_over
+			}
+			if = {
+				limit = {
+					original_tag = SPR
+				}
+				has_completed_focus = SPR_save_the_kingdom
+			}
+		}
+	}
+
+	SPR_arm_the_loyalists = {
+
+		icon = hol_war_on_pacifism
+		
+		priority = 2
+		
+		allowed = {
+			original_tag = SPR
+		}
+	}

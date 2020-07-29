@@ -1,0 +1,105 @@
+	# befriend
+	# conquer
+	# antagonize
+	# build_ship
+	# build_army
+	# unit_ratio
+	# build_building
+	# research_tech
+	# garrison
+	# protect
+	# influence
+	# contain
+	# area_priority
+	# building_target
+
+	CSA_anti_armor = {
+		enable = {
+			original_tag = CSA
+			ai_wants_divisions > 5 #Decreasing the amount of motorized the AI wants
+			
+			any_enemy_country = {
+				ROOT = {
+					estimated_intel_max_armor = {
+						tag = PREV
+						value > 25
+					}
+				}
+			}
+		}
+		abort = {
+			ai_wants_divisions < 6 #Decreasing the amount of motorized the AI wants
+		}
+
+		ai_strategy = {
+			type = role_ratio
+			id = anti_armor
+			value = 15
+		}
+	}
+
+	CSA_armored_production = {
+		enable = {
+			date > 1939.1.1
+			original_tag = CSA
+			ai_wants_divisions > 24 #Decreasing the amount of tanks the AI wants
+		}
+		abort = {
+			ai_wants_divisions < 25 #Decreasing the amount of tanks the AI wants
+		}
+
+		ai_strategy = {
+			type = role_ratio
+			id = armor
+			value = 10
+		}
+	}
+	
+	CSA_spanish_civil_war = {
+		enable = {
+			original_tag = CSA
+			OR = {
+				has_government = authoritarian
+				has_government = populist
+				has_government = nationalist
+			}
+			country_exists = SPN
+			has_global_flag = SPA_civil_war
+		}
+		
+		abort = {	
+			SPN = {
+				exists = no
+			}
+		}
+		
+		ai_strategy = {
+			type = befriend
+			id = "SPN"			
+			value = 200
+		}	
+		ai_strategy = {
+			type = support
+			id = "SPN"			
+			value = 200
+		}
+		ai_strategy = {
+			type = send_volunteers_desire
+			id = "SPN"			
+			value = 200
+		}	
+	}
+
+	CSA_wants_civ = {
+		enable = {
+			tag = CSA
+			date < 1938.1.1
+			has_war = no
+		}
+		abort_when_not_enabled = yes
+		ai_strategy = {
+			type = building_target
+			id = industrial_complex
+			value = 65
+		}
+	}

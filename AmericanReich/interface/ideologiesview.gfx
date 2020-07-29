@@ -1,0 +1,61 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_ideology_totalist_group"
+		texturefile = "gfx//interface//ideologies//totalist_group.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ideology_syndicalist_group"
+		texturefile = "gfx//interface//ideologies//syndicalist_group.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ideology_anarchist_group"
+		texturefile = "gfx//interface//ideologies//anarchist_group.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ideology_marketist_group"
+		texturefile = "gfx//interface//ideologies//marketist_group.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ideology_socialist_group"
+		texturefile = "gfx//interface//ideologies//socialist_group.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ideology_liberal_group"
+		texturefile = "gfx//interface//ideologies//liberal_group.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ideology_libertarian_group"
+		texturefile = "gfx//interface//ideologies//libertarian_group.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ideology_conservative_group"
+		texturefile = "gfx//interface//ideologies//conservative_group.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ideology_authoritarian_group"
+		texturefile = "gfx//interface//ideologies//authoritarian_group.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ideology_autocratic_group"
+		texturefile = "gfx//interface//ideologies//autocratic_group.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ideology_populist_group"
+		texturefile = "gfx//interface//ideologies//populist_group.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ideology_nationalist_group"
+		texturefile = "gfx//interface//ideologies//nationalist_group.dds"
+	}
+}

@@ -1,0 +1,129 @@
+	# befriend
+	# conquer
+	# antagonize
+	# build_ship
+	# build_army
+	# unit_ratio
+	# build_building
+	# research_tech
+	# garrison
+	# protect
+	# influence
+	
+	SPR_hates_SPC = {
+		enable = {
+			original_tag = SPR
+			country_exists = SPC
+		}
+		abort = {
+			NOT = { 
+				country_exists = SPC 
+			}
+			has_global_flag = SPA_civil_war_over
+		}
+		
+		ai_strategy = {
+			type = antagonize
+			id = "SPC"
+			value = 100
+		}
+	}
+	
+	SPR_hates_SPL = {
+		enable = {
+			original_tag = SPR
+			country_exists = SPL
+		}
+		abort = {
+			NOT = { 
+				country_exists = SPL 
+			}
+			has_global_flag = SPA_civil_war_over
+		}
+		
+		ai_strategy = {
+			type = antagonize
+			id = "SPL"
+			value = 100
+		}
+	}
+	
+	SPR_hates_SPK = {
+		enable = {
+			original_tag = SPR
+			country_exists = SPK
+		}
+		abort = {
+			NOT = { 
+				country_exists = SPK 
+			}
+			has_global_flag = SPA_civil_war_over
+		}
+		
+		ai_strategy = {
+			type = antagonize
+			id = "SPK"
+			value = 100
+		}
+	}
+	
+	SPR_hates_SPN = {
+		enable = {
+			original_tag = SPR
+			country_exists = SPN
+		}
+		abort = {
+			NOT = { 
+				country_exists = SPN 
+			}
+			has_global_flag = SPA_civil_war_over
+		}
+		
+		ai_strategy = {
+			type = antagonize
+			id = "SPN"
+			value = 100
+		}
+	}
+	
+	SPR_ignore_POR = {
+		enable = {
+			tag = SPR
+			country_exists = POR
+		}
+		abort = {
+			OR = {
+				NOT = { 
+					country_exists = POR 
+				}
+				has_global_flag = SPA_civil_war_over
+			}
+		}
+		
+		ai_strategy = {
+			type = ignore
+			id = "POR"
+			value = 100
+		}
+	}
+	
+	SPR_ignore_FRA = {
+		enable = {
+			tag = SPR
+			country_exists = FRA
+		}
+		abort = {
+			OR = {
+				NOT = { 
+					country_exists = FRA 
+				}
+				has_global_flag = SPA_civil_war_over
+			}
+		}
+		
+		ai_strategy = {
+			type = ignore
+			id = "FRA"
+			value = 100
+		}
+	}

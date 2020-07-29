@@ -38,149 +38,221 @@ division_template = {
 
 # Richmond
 
-units = {
-division = {
-		name = "Dixiemen"
-		location = 7552
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+	units = {
+		division = {
+			name = "Dixiemen"
+			location = 7552
+			division_template = "Infantry Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Dixiemen"
-		location = 7552
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Dixiemen"
+			location = 7552
+			division_template = "Infantry Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Dixiemen"
-		location = 7552
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Dixiemen"
+			location = 7552
+			division_template = "Infantry Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Dixiemen"
-		location = 7552
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Dixiemen"
+			location = 7552
+			division_template = "Infantry Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Dixiemen"
-		location = 7552
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Dixiemen"
+			location = 7552
+			division_template = "Infantry Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Dixiemen"
-		location = 7552
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Dixiemen"
+			location = 7552
+			division_template = "Infantry Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Dixiemen"
-		location = 7552
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Dixiemen"
+			location = 7552
+			division_template = "Infantry Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Dixiemen"
-		location = 7552
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Dixiemen"
+			location = 7552
+			division_template = "Infantry Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Dixiemen"
-		location = 7552
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Dixiemen"
+			location = 7552
+			division_template = "Infantry Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Dixiemen"
-		location = 7552
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Dixiemen"
+			location = 7552
+			division_template = "Infantry Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Dixiemen"
-		location = 7552
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Dixiemen"
+			location = 7552
+			division_template = "Infantry Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Dixiemen"
-		location = 7552
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Dixiemen"
+			location = 7552
+			division_template = "Infantry Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Dixiemen"
-		location = 7552
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Dixiemen"
+			location = 7552
+			division_template = "Infantry Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Dixiemen"
-		location = 7552
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Dixiemen"
+			location = 7552
+			division_template = "Infantry Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Dixiemen"
-		location = 7552
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Dixiemen"
+			location = 7552
+			division_template = "Infantry Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Dixiemen"
-		location = 7552
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Dixiemen"
+			location = 7552
+			division_template = "Infantry Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Dixiemen"
-		location = 7552
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Dixiemen"
+			location = 7552
+			division_template = "Infantry Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Dixiemen"
-		location = 7552
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Dixiemen"
+			location = 7552
+			division_template = "Infantry Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Dixiemen"
-		location = 7552
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Dixiemen"
+			location = 7552
+			division_template = "Infantry Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Dixiemen"
-		location = 7552
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Dixiemen"
+			location = 7552
+			division_template = "Infantry Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Dixiemen"
-		location = 7552
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Dixiemen"
+			location = 7552
+			division_template = "Infantry Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Flood Letters"
-		location = 7552
-		division_template = "Barrel Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Flood Letters"
+			location = 7552
+			division_template = "Barrel Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Flood Letters"
-		location = 7552
-		division_template = "Barrel Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Flood Letters"
+			location = 7552
+			division_template = "Barrel Division"
+			start_experience_factor = 0.3
 		}
-division = {
-		name = "Flood Letters"
-		location = 7552
-		division_template = "Barrel Division"
-		start_experience_factor = 0.3
+		division = {
+			name = "Flood Letters"
+			location = 7552
+			division_template = "Barrel Division"
+			start_experience_factor = 0.3
 		}
-}
+	}
+	
+	air_wings = {
+		371 = { 
+			# 20th Pursuit Group 
+			fighter_equipment_0 =  {
+				owner = "CSA" 
+				amount = 200
+			}
+			fighter_equipment_1 =  {
+				owner = "CSA" 
+				amount = 200
+			}
+			# 3rd Attack Group 
+			CAS_equipment_1 = {
+				owner = "CSA" 
+				amount = 200
+			}
+		}
+	}
+	
+	instant_effect = {
+		
+		add_equipment_production = {
+			equipment = {
+				type = infantry_equipment_1
+				creator = "CSA"
+			}
+			requested_factories = 2
+			progress = 0.1
+			efficiency = 50
+		}
+
+		add_equipment_production = {
+			equipment = {
+				type = support_equipment_1
+				creator = "CSA" 
+			}
+			requested_factories = 1
+			progress = 0.3
+			efficiency = 50
+		}
+
+		add_equipment_production = {
+			equipment = {
+				type = artillery_equipment_1
+				creator = "CSA" 
+			}
+			requested_factories = 1
+			progress = 0.3
+			efficiency = 50
+		}
+		
+		add_equipment_production = {
+			equipment = {
+				type = light_tank_equipment_2
+				creator = "CSA" 
+			}
+			requested_factories = 1
+			progress = 0.3
+			efficiency = 50
+		}
+
+		add_equipment_production = {
+			equipment = {
+				type = fighter_equipment_1
+				creator = "CSA" 
+			}
+			requested_factories = 1
+			progress = 0.15
+			efficiency = 50
+		}
+	}

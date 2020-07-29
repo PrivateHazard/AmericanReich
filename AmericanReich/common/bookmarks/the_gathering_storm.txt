@@ -45,11 +45,17 @@ bookmarks = {
 			}
 		}
 		"CSA"={
-			history = ""
+			history = "CSA_GATHERING_STORM_DESC"
 			ideology = populist
 			ideas = {
+				CSA_segregation
+				CSA_protection_act
+				CSA_bill_of_rights
 			}	
 			focuses = {
+				CSA_themarchonthesupremecourt
+				CSA_thesouthshallriseagain
+				CSA_deal_with_the_north
 			}		
 		}
 		"FRA"={
@@ -67,11 +73,16 @@ bookmarks = {
 		}
 		"ENG"={
 			history = "ENG_GATHERING_STORM_DESC"
-			ideology = nationalist
+			ideology = authoritarian
 			ideas = {
-				stiff_upper_lip
+				ENG_political_instability
+				ENG_revolutionary_militia
+				ENG_trade_union_congress
 			}
 			focuses = {
+				ENG_liberationoftheworkers
+				ENG_returnofthemonarchy
+				ENG_triumphofenglishsocialism
 			}
 		}
 		"JAP"={
@@ -84,16 +95,36 @@ bookmarks = {
 		}
 		"SOV"={
 			history = "SOV_GATHERING_STORM_DESC"
-			ideology = socialist
+			ideology = authoritarian
 			ideas = {
+				SOV_republican_resistance
+				SOV_divided_military
+				SOV_brain_drain
 			}
 			focuses = {
+				SOV_preservethetsardom
+				SOV_an_indecisive_conclususion
+				SOV_endthetsardom
 			}	
 		}
 
 
-		# minors from DLC ####
-		"CHI" = {
+		# Minors #
+		
+		"AST" = {
+			minor = yes
+			history = ""
+			ideology = libertarian
+			ideas = {
+				AST_imperial_legacy
+				AST_memories_of_gallipoli
+				AST_great_depression
+			}
+			focuses = {
+			}
+		}
+		
+		"ITA" = {
 			minor = yes
 			history = ""
 			ideology = authoritarian
@@ -102,11 +133,27 @@ bookmarks = {
 			focuses = {
 			}
 		}
-
-		"AST" = {
+		
+		"SPR" = {
 			minor = yes
 			history = ""
-			ideology = libertarian
+			ideology = authoritarian
+			ideas = {
+				SPR_the_permanent_temporary_dictatorship
+				SPR_political_fracturing
+				SPR_fall_from_grace
+			}
+			focuses = {
+				SPR_save_the_kingdom
+				SPR_take_back_the_rif
+				SPR_claim_the_french_throne
+			}
+		}
+		
+		"CHI" = {
+			minor = yes
+			history = ""
+			ideology = authoritarian
 			ideas = {
 			}
 			focuses = {

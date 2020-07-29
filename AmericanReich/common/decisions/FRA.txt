@@ -1,0 +1,331 @@
+	economy_decisions = {
+	}
+	political_actions = {
+	}
+
+	foreign_politics = {
+		FRA_war_with_SPR = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				political_power_daily > 0.1
+				OR = {
+					country_exists = SPR
+					country_exists = POR
+					country_exists = SPL
+				}
+			}
+			
+			visible = {
+				has_completed_focus = FRA_unite_iberia
+			}
+			
+			will_lead_to_war_with = SPR
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+			}
+			
+			modifier = {
+				political_power_cost = 0.1
+			}
+			
+			complete_effect = {
+				add_threat = 0.05
+			}
+			
+			remove_effect = {
+				add_threat = 0.05
+				if = {
+					limtit = {
+						country_exists = SPL
+					}
+					declare_war_on = {
+						target = SPL
+						type = annex_everything
+					}
+				}
+				if = {
+					limtit = {
+						country_exists = SPC
+					}
+					declare_war_on = {
+						target = SPC
+						type = annex_everything
+					}
+				}
+				if = {
+					limtit = {
+						country_exists = POR
+					}
+					declare_war_on = {
+						target = POR
+						type = annex_everything
+					}
+				}
+			}
+		}
+		
+		FRA_war_with_GER = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = GER
+			}
+			
+			visible = {
+				has_completed_focus = FRA_bringdownthehun
+			}
+			
+			will_lead_to_war_with = GER
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+			}
+			
+			modifier = {
+				political_power_cost = 0.1
+			}
+			
+			complete_effect = {
+				add_threat = 0.05
+			}
+			
+			remove_effect = {
+				declare_war_on = {
+					target = GER
+					type = annex_everything
+				}
+			}
+		}
+		
+		FRA_war_with_AUS = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = AUS
+			}
+			
+			visible = {
+				has_completed_focus = FRA_bringdownthehun
+			}
+			
+			will_lead_to_war_with = AUS
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+			}
+			
+			modifier = {
+				political_power_cost = 0.1
+			}
+			
+			complete_effect = {
+				add_threat = 0.05
+			}
+			
+			remove_effect = {
+				declare_war_on = {
+					target = AUS
+					type = annex_everything
+				}
+			}
+		}
+		
+		FRA_war_with_BEL = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = BEL
+			}
+			
+			visible = {
+				has_completed_focus = FRA_around_the_hindenburg_line
+			}
+			
+			will_lead_to_war_with = BEL
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+			}
+			
+			modifier = {
+				political_power_cost = 0.1
+			}
+			
+			complete_effect = {
+				add_threat = 0.05
+			}
+			
+			remove_effect = {
+				declare_war_on = {
+					target = BEL
+					type = annex_everything
+				}
+			}
+		}
+		
+		FRA_war_with_HOL = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = HOL
+			}
+			
+			visible = {
+				has_completed_focus = FRA_around_the_hindenburg_line
+			}
+			
+			will_lead_to_war_with = HOL
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+			}
+			
+			modifier = {
+				political_power_cost = 0.1
+			}
+			
+			complete_effect = {
+				add_threat = 0.05
+			}
+			
+			remove_effect = {
+				declare_war_on = {
+					target = HOL
+					type = annex_everything
+				}
+			}
+		}
+		
+		FRA_war_with_LUX = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = LUX
+			}
+			
+			visible = {
+				has_completed_focus = FRA_around_the_hindenburg_line
+			}
+			
+			will_lead_to_war_with = LUX
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+			}
+			
+			modifier = {
+				political_power_cost = 0.1
+			}
+			
+			complete_effect = {
+				add_threat = 0.05
+			}
+			
+			remove_effect = {
+				declare_war_on = {
+					target = LUX
+					type = annex_everything
+				}
+			}
+		}
+		
+		FRA_unite_italy = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				OR = {
+					political_power_daily > 0.1
+				}
+				OR = {
+					country_exists = ITA
+					country_exists = SCI
+					country_exists = PAP
+				}
+			}
+			
+			visible = {
+				has_completed_focus = FRA_uniteitaly
+			}
+			
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+			}
+			
+			modifier = {
+				political_power_cost = 0.1
+			}
+			
+			complete_effect = {
+				add_threat = 0.05
+			}
+			
+			remove_effect = {
+				if = {
+					limtit = {
+						country_exists = ITA
+					}
+					declare_war_on = {
+						target = ITA
+						type = annex_everything
+					}
+				}
+				if = {
+					limtit = {
+						country_exists = SCI
+					}
+					declare_war_on = {
+						target = SCI
+						type = annex_everything
+					}
+				}
+				if = {
+					limtit = {
+						country_exists = PAP
+					}
+					declare_war_on = {
+						target = PAP
+						type = annex_everything
+					}
+				}
+			}
+		}
+	}

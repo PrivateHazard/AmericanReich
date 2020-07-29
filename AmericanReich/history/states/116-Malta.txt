@@ -5,7 +5,7 @@ state=
 	manpower = 241621
 	state_category = small_island
 	history= {
-		owner = MED
+		owner = ITA
 		victory_points = {
 			12003 5 
 		}
@@ -17,7 +17,7 @@ state=
 				coastal_bunker = 1
 			}
 		}
-		add_core_of = MED
+		add_core_of = ITA
 	}
 	provinces= { 12003 }
 }

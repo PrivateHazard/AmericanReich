@@ -9,6 +9,9 @@
 # trade = yes/no
 
 opinion_modifiers = {
+	similar_ideology = {
+		value = 20 
+	}
 
 	hostile_status = { #special used for civil wars that are on hold and blocks faction stuff
 		value = -100
@@ -221,8 +224,7 @@ opinion_modifiers = {
 		value = 1
 	}
 	
-	puppet_opinion = 
-	{
+	puppet_opinion = {
 		value = 50
 	}
 

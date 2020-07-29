@@ -1,8 +1,10 @@
 propaganda_efforts = {
 	icon = generic_propaganda
 
-	visible = {
-
+	visible = {	
+		NOT = {
+			tag = CSA
+		}
 	}
 }
 MTG_naval_treaties = {
@@ -30,6 +32,9 @@ war_measures = {
 	icon = generic_propaganda
 
 	visible = {
+		NOT = {
+			tag = CSA
+		}
 		has_war = yes
 	}
 }
@@ -49,6 +54,15 @@ prestigious_projects = {
 
 foreign_politics = {
 	icon = generic_political_actions
+	
+	visible = {
+		if = {
+			limit = {
+				tag = CSA
+			}
+			has_completed_focus = CSA_globaldiplomacy
+		}
+	}
 }
 
 political_actions = {

@@ -1,0 +1,237 @@
+	# befriend
+	# conquer
+	# antagonize
+	# build_ship
+	# build_army
+	# unit_ratio
+	# build_building
+	# research_tech
+	# garrison
+	# protect
+	# influence
+
+	SOV_armored_production = {
+		enable = {
+			original_tag = SOV
+			ai_wants_divisions > 12 #Decreasing the amount of tanks the AI wants
+		}
+		abort = {
+			ai_wants_divisions < 13 #Decreasing the amount of tanks the AI wants
+		}
+
+		ai_strategy = {
+			type = role_ratio
+			id = armor
+			value = 2
+		}
+	}
+
+	SOV_wants_civ = {
+		enable = {
+			tag = SOV
+			date < 1938.1.1
+			has_war = no
+		}
+		abort_when_not_enabled = yes
+		ai_strategy = {
+			type = building_target
+			id = industrial_complex
+			value = 65
+		}
+	}
+
+	SOV_italian_civil_war_ITA = {
+		enable = {
+			original_tag = SOV
+			OR = {
+				has_government = conservative
+				has_government = socialist
+				has_government = libertarian
+				has_government = liberal
+				has_government = authoritarian
+			}
+			country_exists = ITA
+			has_global_flag = ITA_civil_war
+		}
+		
+		abort = {	
+			ITA = {
+				exists = no
+			}
+		}
+		
+		ai_strategy = {
+			type = befriend
+			id = "ITA"			
+			value = 200
+		}	
+		ai_strategy = {
+			type = support
+			id = "ITA"			
+			value = 200
+		}
+		ai_strategy = {
+			type = send_volunteers_desire
+			id = "ITA"			
+			value = 200
+		}	
+	}
+	
+	SOV_italian_civil_war_SCI = {
+		enable = {
+			original_tag = SOV
+			OR = {
+				has_government = autocratic
+				has_government = populist
+			}
+			country_exists = SCI
+			has_global_flag = ITA_civil_war
+		}
+		
+		abort = {	
+			SCI = {
+				exists = no
+			}
+		}
+		
+		ai_strategy = {
+			type = befriend
+			id = "SCI"			
+			value = 200
+		}	
+		ai_strategy = {
+			type = support
+			id = "SCI"			
+			value = 200
+		}
+		ai_strategy = {
+			type = send_volunteers_desire
+			id = "SCI"			
+			value = 200
+		}	
+	}
+
+	SOV_spanish_civil_war_SPL = {
+		enable = {
+			original_tag = SOV
+			OR = {
+				has_government = conservative
+				has_government = socialist
+				has_government = libertarian
+				has_government = liberal
+			}
+			country_exists = SPL
+			has_global_flag = SPA_civil_war
+		}
+		
+		abort = {	
+			SPL = {
+				exists = no
+			}
+		}
+		
+		ai_strategy = {
+			type = befriend
+			id = "SPL"			
+			value = 200
+		}	
+		ai_strategy = {
+			type = support
+			id = "SPL"			
+			value = 200
+		}
+		ai_strategy = {
+			type = send_volunteers_desire
+			id = "SPL"			
+			value = 200
+		}	
+	}
+	
+	SOV_spanish_civil_war_SPR = {
+		enable = {
+			original_tag = SOV
+			OR = {
+				has_government = autocratic
+				has_government = authoritarian
+				has_government = populist
+			}
+			country_exists = SPC
+			has_global_flag = SPA_civil_war
+		}
+		
+		abort = {	
+			SPR = {
+				exists = no
+			}
+		}
+		
+		ai_strategy = {
+			type = befriend
+			id = "SPR"			
+			value = 200
+		}	
+		ai_strategy = {
+			type = support
+			id = "SPR"			
+			value = 200
+		}
+		ai_strategy = {
+			type = send_volunteers_desire
+			id = "SPR"			
+			value = 200
+		}	
+	}
+	
+	SOV_avoid_MON = {
+		enable = {
+			tag = SOV
+			country_exists = MON
+		}
+		abort = {
+			NOT = { 
+				country_exists = MON 
+			}
+		}
+		
+		ai_strategy = {
+			type = ignore
+			id = "MON"
+			value = 100
+		}
+	}
+	
+	SOV_avoid_XSM = {
+		enable = {
+			tag = SOV
+			country_exists = XSM
+		}
+		abort = {
+			NOT = { 
+				country_exists = XSM 
+			}
+		}
+		
+		ai_strategy = {
+			type = ignore
+			id = "XSM"
+			value = 100
+		}
+	}
+	
+	SOV_avoid_AFG = {
+		enable = {
+			tag = SOV
+			country_exists = AFG
+		}
+		abort = {
+			NOT = { 
+				country_exists = AFG 
+			}
+		}
+		
+		ai_strategy = {
+			type = ignore
+			id = "AFG"
+			value = 100
+		}
+	}

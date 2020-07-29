@@ -1,0 +1,131 @@
+	economy_decisions = {
+	}
+	
+	political_actions = {
+	}
+
+	foreign_politics = {
+		ENG_join_FRA = {
+
+			icon = decision_generic_nationalism
+
+			available = {
+				is_in_faction = no
+				OR = {
+					has_government = syndicalist
+					has_government = totalist
+					has_government = anarchist
+					has_government = marketist
+					has_government = nationalist
+					has_government = socialist
+				}
+				FRA = {
+					is_in_faction = yes
+					is_faction_leader = yes
+					country_exists = FRA
+				}
+			}
+			
+			visible = {
+				has_completed_focus = ENG_britainontheworldstage
+			}
+			
+			fire_only_once = yes
+			
+			ai_will_do = {
+				factor = 10
+			}
+			
+			complete_effect = {
+				FRA = {
+					country_event = {
+						id = generic.2
+						days = 1
+					}
+				}
+			}
+		}
+		
+		ENG_join_CSA = {
+
+			icon = decision_generic_nationalism
+
+			available = {
+				is_in_faction = no
+				NOT = {
+					OR = {
+						has_government = syndicalist
+						has_government = totalist
+						has_government = anarchist
+						has_government = marketist
+					}
+				}
+				CSA = {
+					is_in_faction = yes
+					is_faction_leader = yes
+					country_exists = CSA
+				}
+			}
+			
+			visible = {
+				has_completed_focus = ENG_britainontheworldstage
+			}
+			
+			fire_only_once = yes
+			
+			ai_will_do = {
+				factor = 10
+			}
+			
+			complete_effect = {
+				CSA = {
+					country_event = {
+						id = generic.2
+						days = 1
+					}
+				}
+			}
+		}
+		
+		ENG_war_with_IRE = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = IRE
+			}
+			
+			visible = {
+				OR = {
+					has_completed_focus = ENG_war
+					has_country_flag = ENG_IRE_rejected
+				}
+			}
+			
+			will_lead_to_war_with = IRE
+			fire_only_once = yes
+			days_remove = 35
+			
+			ai_will_do = {
+				factor = 10
+			}
+			
+			modifier = {
+				political_power_cost = 0.1
+			}
+			
+			complete_effect = {
+				add_threat = 0.02
+			}
+			
+			remove_effect = {
+				declare_war_on = {
+					target = IRE
+					type = annex_everything
+				}
+			}
+		}
+	}

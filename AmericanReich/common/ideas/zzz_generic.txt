@@ -192,7 +192,7 @@ ideas = {
 			picture = generic_communism_drift_bonus
 			
 			modifier = {
-				communism_drift = 0.1
+				totalist_drift = 0.1
 				communism_acceptance = 85
 			}
 		}
@@ -212,7 +212,7 @@ ideas = {
 			picture = generic_democratic_drift_bonus
 			
 			modifier = {
-				democratic_drift = 0.1
+				liberal_drift = 0.1
 				democratic_acceptance = 85
 			}
 		}
@@ -230,7 +230,7 @@ ideas = {
 			picture = generic_pp_unity_bonus
 			
 			modifier = {
-				neutrality_drift = 0.1
+				authoritarian_drift = 0.1
 				neutrality_acceptance = 85
 			}
 		}
@@ -283,7 +283,7 @@ ideas = {
 			picture = generic_communism_drift_bonus
 			
 			modifier = {
-				communism_drift = 0.1
+				totalist_drift = 0.1
 			}
 		}
 		# from decision
@@ -303,7 +303,7 @@ ideas = {
 			picture = generic_communism_drift_bonus
 			
 			modifier = {
-				communism_drift = 0.1
+				totalist_drift = 0.1
 				research_speed_factor = 0.035
 			}
 		}
@@ -323,7 +323,7 @@ ideas = {
 			picture = generic_fascism_drift_bonus
 			
 			modifier = {
-				fascism_drift = 0.1
+				populist_drift = 0.1
 				experience_gain_army = 0.1
 			}
 		}
@@ -344,7 +344,7 @@ ideas = {
 			picture = generic_democratic_drift_bonus
 			
 			modifier = {
-				democratic_drift = 0.1
+				liberal_drift = 0.1
 				stability_factor = 0.1
 			}
 		}
@@ -363,7 +363,7 @@ ideas = {
 			picture = generic_pp_unity_bonus
 			
 			modifier = {
-				neutrality_drift = 0.1
+				authoritarian_drift = 0.1
 				mobilization_speed = 0.15
 			}
 		}
@@ -533,10 +533,6 @@ ideas = {
 
 			picture = generic_pp_unity_bonus
 	
-			rule = {
-				can_create_factions = yes
-			}
-	
 			modifier = {
 				war_support_factor = 0.05
 				army_core_attack_factor = 0.1
@@ -702,7 +698,7 @@ ideas = {
 			}
 
 			modifier = {
-				communism_drift = -0.05
+				totalist_drift = -0.05
 			}
 		}
 
@@ -721,7 +717,7 @@ ideas = {
 			}
 
 			modifier = {
-				fascism_drift = -0.05
+				populist_drift = -0.05
 			}
 		}
 

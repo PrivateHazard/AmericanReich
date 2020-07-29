@@ -1,0 +1,824 @@
+	CSA_propaganda_ministry = {
+		CSA_war_propaganda_against_warmonger = {
+
+			icon = generic_prepare_civil_war
+
+			available = {
+				political_power_daily > 0.1
+				NOT = { has_country_flag = war_propaganda_campaign_running }
+				FROM = {
+					OR = {
+						is_justifying_wargoal_against = ROOT
+						AND = {
+							has_war_with = ROOT
+							is_neighbor_of = ROOT
+						}
+						has_offensive_war = yes
+					}
+				}
+			}
+
+			visible = {
+				tag = CSA
+				FROM = {
+					NOT = { is_in_faction_with = ROOT }
+					OR = {
+						is_justifying_wargoal_against = ROOT
+						AND = {
+							is_neighbor_of = ROOT
+							OR = {
+								has_war_with = ROOT
+								AND = {
+									NOT = { has_government = ROOT }
+									has_offensive_war = yes
+									has_added_tension_amount > 5
+								}
+							}
+						}
+						AND = {
+							NOT = { is_neighbor_of = ROOT }
+							OR = {
+								has_offensive_war_with = ROOT
+								AND = {
+									NOT = { has_government = ROOT }
+									has_offensive_war = yes
+									has_added_tension_amount > 30
+								}
+							}
+						}
+					}
+				}
+			}
+
+			target_trigger = {
+				FROM = {
+					NOT = { is_in_faction_with = ROOT }
+					OR = {
+						is_justifying_wargoal_against = ROOT
+						AND = {
+							is_neighbor_of = ROOT
+							OR = {
+								has_war_with = ROOT
+								AND = {
+									NOT = { has_government = ROOT }
+									has_offensive_war = yes
+									has_added_tension_amount > 5
+								}
+							}
+						}
+						AND = {
+							NOT = { is_neighbor_of = ROOT }
+							OR = {
+								has_offensive_war_with = ROOT
+								AND = {
+									NOT = { has_government = ROOT }
+									has_offensive_war = yes
+									has_added_tension_amount > 30
+								}
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						FROM = {
+							is_neighbor_of = ROOT
+						}
+						set_temp_variable = { war_propaganda_cost = 50 }
+					}
+				}
+			}
+
+			days_remove = 90
+			days_re_enable = 180
+
+			fire_only_once = yes
+
+			cost = var:war_propaganda_cost?75
+
+			modifier = {
+				political_power_gain = -0.01
+				war_support_weekly = 0.002
+			}
+
+			complete_effect = {
+				set_country_flag = war_propaganda_campaign_running
+			}
+			
+			remove_effect = {
+				clr_country_flag = war_propaganda_campaign_running
+			}
+
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 0
+					has_war_support > 0.9
+				}
+			}
+		}
+		
+		CSA_efficiency_effort = {
+
+			icon = decision_ger_military_buildup
+
+			available = {
+				political_power_daily > 0.1
+			}
+			
+			visible = {
+				has_completed_focus = CSA_aradioineveryhome
+			}
+		
+			fire_only_once = no
+			days_remove = 90
+			days_re_enable = 45
+			cost = 50
+			
+			ai_will_do = {
+				factor = 1
+			}
+			
+			modifier = {
+				political_power_cost = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		
+		CSA_emergency_factory_conversion = {
+
+			icon = generic_industry
+
+			available = {
+				num_of_civilian_factories > 5 #Change this if amount of factories change
+				has_defensive_war = yes
+				has_offensive_war = no		
+			}
+
+			visible = {
+				has_completed_focus = CSA_aradioineveryhome
+			}
+
+			fire_only_once = no
+			days_re_enable = 90
+			cost = 100
+
+			complete_effect = {
+				replace_civ_with_arms_factories = yes
+				add_war_support = -0.05
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		CSA_desperate_defense = {
+
+			icon = generic_prepare_civil_war
+
+			available = {
+				surrender_progress > 0.5
+			}
+
+			visible = {
+				surrender_progress > 0
+				has_completed_focus = CSA_aradioineveryhome
+			}
+
+			fire_only_once = no
+
+			days_remove = 45
+			days_re_enable = 360
+
+			cost = 50
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					surrender_progress > 0.6
+					factor = 10
+				}
+			}
+
+			modifier = {
+				defence = 0.2
+				dig_in_speed_factor = 0.5
+			}
+		}
+
+		CSA_forced_war_bonds = {
+
+			icon = generic_industry
+
+			allowed = {
+				tag = CSA
+			}
+
+			available = {
+				has_war = yes
+			}
+			
+			visible = {
+				has_completed_focus = CSA_aradioineveryhome
+			}
+
+			fire_only_once = no
+			days_remove = 180
+			cost = 75
+
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					has_political_power < 100
+					factor = 0 #use as pp dump
+				}
+			}
+			
+			complete_effect = {
+				add_stability = -0.05
+			}
+		}
+		
+		CSA_populist_propaganda = {
+
+			icon = generic_nationalism
+
+			allowed = {
+				tag = CSA
+			}
+
+			available = {
+				has_war = yes
+			}
+			
+			visible = {
+				has_completed_focus = CSA_propopulistpropaganda
+			}
+
+			fire_only_once = no
+			days_remove = 180
+			days_re_enable = 90
+			cost = 100
+
+			modifier = {
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					surrender_progress > 0.2
+					factor = 10 #use as pp dump
+				}
+			}
+		}
+		
+		CSA_anti_american_propaganda = {
+
+			icon = generic_civil_support
+
+			allowed = {
+				tag = CSA
+			}
+
+			available = {
+				has_war_with = USA
+			}
+			
+			visible = {
+				has_completed_focus = CSA_antiamericanpropaganda
+			}
+
+			fire_only_once = no
+			days_remove = 180
+			days_re_enable = 90
+			cost = 100
+
+			modifier = {
+				targeted_modifier = { 
+					tag = USA
+					attack_bonus_against = 0.1 
+					defense_bonus_against = 0.1
+				}
+			}
+
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					surrender_progress > 0.2
+					factor = 10 #use as pp dump
+				}
+			}
+		}
+		
+		CSA_anti_german_propaganda = {
+
+			icon = generic_civil_support
+
+			allowed = {
+				tag = CSA
+			}
+
+			available = {
+				has_war_with = GER
+			}
+			
+			visible = {
+				has_completed_focus = CSA_antigermanpropaganda
+			}
+
+			fire_only_once = no
+			days_remove = 180
+			days_re_enable = 90
+			cost = 100
+
+			modifier = {
+				targeted_modifier = { 
+					tag = GER
+					attack_bonus_against = 0.1 
+					defense_bonus_against = 0.1
+				}
+			}
+
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					surrender_progress > 0.2
+					factor = 10 #use as pp dump
+				}
+			}
+		}
+	}
+
+	political_actions = {
+		CSA_congress = {
+
+			priority = 1
+
+			icon = eng_puppet_usa
+			
+			available = {
+				NOT = {
+					original_tag = CSA
+				}
+			}
+
+			days_mission_timeout = 30
+
+			activation = {
+				original_tag = CSA
+				NOT = {
+					has_country_flag = CSA_congress_postponed
+				}
+			}
+
+			visible = {
+				NOT = {
+					has_country_flag = CSA_congress_postponed
+				}
+			}
+
+			cancel_if_not_visible = yes
+			is_good = no
+			fixed_random_seed = no
+
+			complete_effect = {
+			}
+			
+			timeout_effect = {
+				if = {
+					limit = {
+						has_country_flag = CSA_proposed_a_bill
+					}
+					clr_country_flag = CSA_proposed_a_bill
+					add_stability = 0.02
+				}
+				else = {
+					effect_tooltip = {
+						country_event = { 
+							id = csa.19
+						}
+					}
+					hidden_effect = {
+						random_list = {
+							25 = {
+								country_event = { 
+									id = csa.19
+								}
+							}
+							25 = {
+								country_event = { 
+									id = csa.20
+								}
+							}
+							25 = {
+								country_event = { 
+									id = csa.21
+								}
+							}
+							25 = {
+								country_event = { 
+									id = csa.22
+								}
+							}
+						}
+					}
+				}
+				hidden_effect = {
+					activate_mission = CSA_congress
+				}
+			}
+		}
+		
+		CSA_propose_a_bill = {
+
+			icon = decision_generic_break_treaty
+
+			available = {
+				NOT = {
+					has_country_flag = CSA_proposed_a_bill
+				}
+			}
+			
+			visible = {
+				tag = CSA
+				NOT = {
+					has_country_flag = CSA_congress_postponed
+				}
+			}
+			
+			fire_only_once = no
+			cancel_if_not_visible = yes
+			cost = 40
+			
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 10
+					has_political_power > 60
+				}
+			}
+			
+			complete_effect = {
+				set_country_flag = CSA_proposed_a_bill
+			}
+		}
+	}
+
+	foreign_support = {
+	}
+
+	economy_decisions = {
+		CSA_economic_reforms = {
+			priority = 1
+
+			icon = decision_generic_break_treaty
+
+			available = {
+				OR = {
+					has_idea = CSA_black_friday
+					has_idea = CSA_black_friday1
+					has_idea = CSA_black_friday2
+				}
+			}
+			
+			visible = {
+				tag = CSA
+				has_completed_focus = CSA_continueeconomicreforms
+				OR = {
+					has_idea = CSA_black_friday
+					has_idea = CSA_black_friday1
+					has_idea = CSA_black_friday2
+				}
+			}
+			
+			fire_only_once = no
+			cancel_if_not_visible = yes
+			cost = 100
+			days_remove = 70
+			
+			ai_will_do = {
+				factor = 1000
+			}
+			
+			modifier = {
+				political_power_gain = -0.1
+			}
+			
+			remove_effect = {
+				if = {
+					limit = {
+						has_idea = CSA_black_friday2
+					}
+					remove_ideas = CSA_black_friday2
+				}
+				if = {
+					limit = {
+						has_idea = CSA_black_friday1
+					}
+					swap_ideas = {
+						remove_idea = CSA_black_friday1
+						add_idea = CSA_black_friday2
+					}
+				}
+				if = {
+					limit = {
+						has_idea = CSA_black_friday
+					}
+					swap_ideas = {
+						remove_idea = CSA_black_friday
+						add_idea = CSA_black_friday1
+					}
+				}
+			}
+		}
+	}
+
+	foreign_politics = {
+		CSA_enter_the_fray = {
+
+			icon = generic_prepare_civil_war
+
+			available = {
+				has_war = yes
+			}
+			
+			visible = {
+				has_completed_focus = CSA_globaldiplomacy
+			}
+			
+			fire_only_once = no
+			cost = 100
+			days_remove = 180
+			
+			ai_will_do = {
+				factor = 1
+			}
+			
+			modifier = {
+				conscription = 0.0155
+				mobilization_speed = 0.1
+			}
+		}
+		
+		CSA_war_with_MEX = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = MEX
+			}
+			
+			visible = {
+				has_completed_focus = CSA_takeoutthemexicanos
+			}
+			
+			will_lead_to_war_with = MEX
+			fire_only_once = yes
+			days_remove = 70
+			
+			ai_will_do = {
+				factor = 10
+			}
+			
+			modifier = {
+				political_power_cost = 0.1
+			}
+			
+			remove_effect = {
+				declare_war_on = {
+					target = MEX
+					type = annex_everything
+				}
+			}
+		}
+		
+		CSA_war_with_USA = {
+
+			icon = decision_infiltrate_state
+
+			available = {
+				OR = {
+					political_power_daily > 0.1
+				}
+				country_exists = USA
+			}
+			
+			visible = {
+				has_completed_focus = CSA_deal_with_the_north
+			}
+			
+			will_lead_to_war_with = USA
+			fire_only_once = yes
+			days_remove = 70
+			
+			ai_will_do = {
+				factor = 10
+			}
+			
+			modifier = {
+				political_power_cost = 0.1
+			}
+			
+			remove_effect = {
+				declare_war_on = {
+					target = USA
+					type = annex_everything
+				}
+			}
+		}
+		
+		CSA_invite_tag_to_faction = {
+	
+			icon = generic_political_discourse
+			
+			fire_only_once = no
+			
+			days_re_enable = 120
+
+			allowed = {
+				original_tag = CSA
+			}
+			
+			visible = {
+				is_in_faction = yes
+				is_faction_leader = yes
+			}
+			
+			target_root_trigger = {
+				OR = {
+					has_completed_focus = CSA_diplomacyincentralamerica
+					has_completed_focus = CSA_diplomacyinthecaribbean
+					has_completed_focus = CSA_diplomacyineurope
+				}
+			}
+
+			target_trigger = {
+				FROM = {
+					NOT = { is_in_faction_with = ROOT }
+					OR = {
+						tag = NIC
+						tag = GUA
+						tag = HON
+						tag = COS
+						tag = ELS
+						tag = HAI
+						tag = DOM
+						tag = IRE
+					}
+				}
+			}
+
+			available = {
+				OR = {
+					has_opinion = {
+						target = FROM
+						value > 19
+					}
+					FROM = {
+						has_opinion = {
+							target = ROOT
+							value > 19
+						}
+					}
+				}
+				FROM = {
+					is_in_faction = no
+					is_subject = no
+				}
+				if = {
+					limit = {
+						FROM = {
+							OR = {
+								tag = NIC
+								tag = GUA
+								tag = HON
+								tag = COS
+								tag = ELS
+							}
+						}
+					}
+					has_completed_focus = CSA_diplomacyincentralamerica
+				}
+				if = {
+					limit = {
+						FROM = {
+							OR = {
+								tag = DOM
+								tag = HAI
+							}
+						}
+					}
+					has_completed_focus = CSA_diplomacyinthecaribbean
+				}
+				if = {
+					limit = {
+						FROM = {
+							OR = {
+								tag = IRE
+							}
+						}
+					}
+					has_completed_focus = CSA_diplomacyineurope
+				}
+			}
+
+			cost = 25
+			
+			complete_effect = {
+				FROM = {
+					country_event = {
+						id = generic.5
+					}				
+				}
+			}
+			
+			ai_will_do = {
+				factor = 100
+			}
+		}
+	}
+	
+	CSA_integration = {
+		CSA_integrate_state = {
+		
+			icon = generic_nationalism
+
+			allowed = {
+				original_tag = CSA
+			}
+
+			available = {
+				FROM = {
+					compliance > 50
+					OR = {
+						is_island_state = yes
+						any_neighbor_state = {
+							is_core_of = ROOT
+						}
+					}
+				}
+			}
+
+			state_target = yes
+
+			on_map_mode = map_only
+
+			target_array = controlled_states
+
+			target_trigger = {
+				has_completed_focus = CSA_integrate_the_states
+				FROM = {
+					NOT = {
+						is_core_of = ROOT
+					}
+					OR = {
+						is_island_state = yes
+						any_neighbor_state = {
+							is_core_of = ROOT
+						}
+					}
+					OR = {
+						NOT = {
+							is_owned_by = ROOT
+						}
+					}
+					compliance > 35
+				}
+			}
+
+			cost = 50
+
+			fire_only_once = yes
+
+			days_remove = 90
+
+			modifier = {
+				political_power_gain = -0.1
+			}
+
+			visible = {
+				tag = CSA
+				always = yes
+			}
+
+			complete_effect = {
+
+			}
+
+			remove_effect = {
+				FROM = {
+					add_core_of = ROOT
+				}
+				transfer_state = FROM
+			}
+		}
+	}

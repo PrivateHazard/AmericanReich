@@ -61,7 +61,7 @@
  PRODUCTION_SHIPS_BUTTON_DISABLED:0 "Ships are §RNot invented§!!"
  PRODUCTION_SHIPS_BUTTON_NO_DEPLOY_DISABLED:0 "We have §RNo ports§!!"
  PRODUCTION_SHIPS_BUTTON_NO_FACTORIES_DISABLED:0 "We have §RNo dockyards§!!"
- PRODUCTION_CONSUMER_GOODS_VALUE:0 "$VALUE$"
+ PRODUCTION_CONSUMER_GOODS_VALUE:0 "$VALUE|Y$"
  PRODUCTION_CONSUMER_GOODS:0 "Consumer Goods"
  PRODUCTION_CONSUMER_GOODS_LABEL:0 "§HConsumer Goods§!"
  PRODUCTION_CONSUMER_GOODS_DESC:1 "With our current Economic Policy, the people expect $PERCENTAGE|H0%$ of our number of Civilian and Military Factories to produce Consumer Goods. This need is filled by Civilian Factories only, leaving us with $OPERATIONAL|H$ factories where $TRADE_USABLE|H$ can be used for trade."

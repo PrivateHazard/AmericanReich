@@ -8,186 +8,188 @@ focus_tree = {
 		}
 	}
 	continuous_focus_position = { x = 50 y = 2200 }
-	#Focus for Asian Unity
+
+	#Politics
 	focus = {
-		id = JAP_asianunity
-		icon = GFX_goal_generic_alliance
-		x = 79
-		y = 12
+		id = JAP_riseofthemasses
+		icon = GFX_focus_YUG_pan_slavic_congress
+		x = 14
+		y = 1
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { 
-			focus = JAP_claimthemandate 
-			focus = JAP_protectorsofasia 
-		}
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			has_country_flag = JAP_rise_of_the_masses
+		}
 		completion_reward = {
-			add_stability = 0.1
+			country_event = {
+				id = japan.5
+			}
 		}
 	}
-
-	#Focus for Protectors of Asia
+	
+	#Focus for Defense of Democracy
 	focus = {
-		id = JAP_protectorsofasia
-		icon = GFX_goal_generic_defence
-		x = 77
-		y = 11
+		id = JAP_defenseofdemocracy
+		icon = GFX_goal_support_democracy
+		x = 3
+		y = 2
 		cost = 5
 		available_if_capitulated = yes
-		prerequisite = { focus = JAP_alliedrecruitment }
-		mutually_exclusive = { focus = JAP_claimthemandate }
+		prerequisite = { focus = JAP_riseofthemasses }
+		mutually_exclusive = { focus = JAP_theendofdemocracy }
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			has_country_flag = JAP_the_bill_passed
 		}
 		completion_reward = {
-			add_political_power = 120
-		}
-	}
-
-	#Focus for Pacific Mandate
-	focus = {
-		id = JAP_pacificmandate
-		icon = GFX_focus_chi_mission_to_the_us
-		x = 71
-		y = 5
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_unityinthepacific }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Asian Co-Prosperity Sphere
-	focus = {
-		id = JAP_asiancoprosperitysphere
-		icon = GFX_goal_anschluss
-		x = 69
-		y = 7
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_tokyoconference }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Zaibatsu Resources
-	focus = {
-		id = JAP_zaibatsuresources
-		icon = GFX_goal_generic_construction2
-		x = 7
-		y = 15
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_bureaucratization }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_resource = {
-				type = steel
-				amount = 24
-				state = 533
-			}
-			533 = {
-				add_extra_state_shared_building_slots = 1
-			}
-			add_resource = {
-				type = aluminium
-				amount = 24
-				state = 531
-			}
-			531 = {
-				add_extra_state_shared_building_slots = 1
-			}
-			add_resource = {
-				type = steel
-				amount = 24
-				state = 535
-			}
-			535 = {
-				add_extra_state_shared_building_slots = 1
+			country_event = {
+				id = japan.7
 			}
 		}
 	}
-
-	#Focus for Zaibatsu Research
+	
+	#Focus for Freedom in Economics
 	focus = {
-		id = JAP_zaibatsuresearch
-		icon = GFX_goal_generic_scientific_exchange
-		x = 9
-		y = 16
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = JAP_zaibatsuproductionplants 
-		}
-		prerequisite = { 
-			focus = JAP_zaibatsuresources 
-		}
-		prerequisite = { 
-			focus = JAP_zaibatsuconstruction 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = JAP_zaibatsu_cooperation1
-				add_idea = JAP_zaibatsu_cooperation2
-			}
-		}
-	}
-
-	#Focus for Zaibatsu Construction
-	focus = {
-		id = JAP_zaibatsuconstruction
-		icon = GFX_goal_generic_construction
-		x = 9
-		y = 15
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_bureaucratization }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			528 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-			530 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	#Focus for Prod the Bear
-	focus = {
-		id = JAP_prodthebear
-		icon = GFX_focus_eng_expose_the_belly_of_the_bear
-		x = 84
+		id = JAP_freedomineconomics
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 4
 		y = 4
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = JAP_hokushinron }
+		prerequisite = { focus = JAP_revisetheconstitution }
+		mutually_exclusive = { 
+			focus = JAP_maintainthestatusquo 
+		}
+		mutually_exclusive = { 
+			focus = JAP_socialfreedom 
+		}
+		mutually_exclusive = { 
+			focus = JAP_freetheworkers 
+		}
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			has_government = libertarian
+		}
 	}
 
+	#Focus for Social Freedom
+	focus = {
+		id = JAP_socialfreedom
+		icon = GFX_goal_support_democracy
+		x = 2
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_revisetheconstitution }
+		mutually_exclusive = { 
+			focus = JAP_freedomineconomics 
+		}
+		mutually_exclusive = { 
+			focus = JAP_maintainthestatusquo 
+		}
+		mutually_exclusive = { 
+			focus = JAP_ 
+		}
+		mutually_exclusive = { 
+			focus = JAP_freetheworkers 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government = liberal
+		}
+	}
+
+	#Focus for Maintain the Status Quo
+	focus = {
+		id = JAP_maintainthestatusquo
+		icon = GFX_goal_generic_defence
+		x = 6
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_revisetheconstitution }
+		mutually_exclusive = { 
+			focus = JAP_freedomineconomics 
+		}
+		mutually_exclusive = { 
+			focus = JAP_socialfreedom 
+		}
+		mutually_exclusive = { 
+			focus = JAP_freetheworkers 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government = conservative
+		}
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.05
+		}
+	}
+
+	#Focus for Free the Workers
+	focus = {
+		id = JAP_freetheworkers
+		icon = GFX_goal_generic_war_with_comintern
+		x = 0
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_revisetheconstitution }
+		mutually_exclusive = { 
+			focus = JAP_freedomineconomics 
+		}
+		mutually_exclusive = { 
+			focus = JAP_socialfreedom 
+		}
+		mutually_exclusive = { 
+			focus = JAP_maintainthestatusquo 
+		}
+		mutually_exclusive = { 
+			focus = JAP_ 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government = socialist
+		}
+	}
+
+	#Focus for The End of Democracy
+	focus = {
+		id = JAP_theendofdemocracy
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = 25
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_riseofthemasses }
+		mutually_exclusive = { focus = JAP_defenseofdemocracy }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_country_flag = JAP_the_bill_failed
+		}
+		completion_reward = {
+			country_event = {
+				id = japan.6
+			}
+		}
+	}
+	
 	#Focus for The People's Republic
 	focus = {
 		id = JAP_thepeoplesrepublic
@@ -205,97 +207,21 @@ focus_tree = {
 			has_country_flag = JAP_the_coup_succeeded
 		}
 	}
-
-	#Focus for Bureaucratization
+	
+	#Focus for End of an Era
 	focus = {
-		id = JAP_bureaucratization
-		icon = GFX_focus_jap_zaibatsu
-		x = 9
-		y = 14
+		id = JAP_endofanera
+		icon = GFX_focus_generic_join_comintern
+		x = 20
+		y = 5
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = JAP_reformtheeconomy }
-		mutually_exclusive = { 
-			focus = JAP_liberalization
-		}
-		mutually_exclusive = { 
-			focus = JAP_nationalization 
-		}
+		prerequisite = { focus = JAP_thepeoplesrepublic }
 		ai_will_do = {
 			factor = 1
 		}
-		completion_reward = {
-			add_political_power = -100
-			swap_ideas = {
-				remove_idea = JAP_zaibatsu
-				add_idea = JAP_zaibatsu_cooperation
-			}
-		}
 	}
-
-	#Focus for Reform the Economy
-	focus = {
-		id = JAP_reformtheeconomy
-		icon = GFX_goal_generic_production
-		x = 16
-		y = 13
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_nipponrd }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				category = industry
-			}
-		}
-	}
-
-	#Focus for Resource Revitalization
-	focus = {
-		id = JAP_resourcerevitalization
-		icon = GFX_goal_generic_construction2
-		x = 17
-		y = 12
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_nipponrd }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				category = excavation_tech
-			}
-		}
-	}
-
-	#Focus for Electronic Investments
-	focus = {
-		id = JAP_electronicinvestments
-		icon = GFX_goal_generic_radar
-		x = 15
-		y = 12
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_nipponrd }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				category = electronics
-			}
-		}
-	}
-
+	
 	#Focus for A Liberal Market
 	focus = {
 		id = JAP_aliberalmarket
@@ -363,426 +289,6 @@ focus_tree = {
 		prerequisite = { focus = JAP_efficiencyandindustry }
 		ai_will_do = {
 			factor = 1
-		}
-	}
-
-	#Focus for Japanese Revanchism
-	focus = {
-		id = JAP_japaneserevanchism
-		icon = GFX_goal_generic_attack_allies
-		x = 17
-		y = 9
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_socialisteducation }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Efficiency and Industry
-	focus = {
-		id = JAP_efficiencyandindustry
-		icon = GFX_goal_generic_construction2
-		x = 27
-		y = 8
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_rightsoftheworker }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Claim the Mandate
-	focus = {
-		id = JAP_claimthemandate
-		icon = GFX_focus_man_claim_the_mandate_of_heaven
-		x = 81
-		y = 11
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_alliedrecruitment }
-		mutually_exclusive = { focus = JAP_protectorsofasia }
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			always = no
-		}
-		completion_reward = {
-			custom_effect_tooltip = unfinished_tooltip
-		}
-	}
-
-	#Focus for Join the Entente
-	focus = {
-		id = JAP_jointheentente
-		icon = GFX_focus_attack_australia
-		x = 69
-		y = 5
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_unityinthepacific }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Korean Development
-	focus = {
-		id = JAP_koreandevelopment
-		icon = GFX_goal_generic_construct_infrastructure
-		x = 77
-		y = 9
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_projectkorea }
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			525 = {
-				is_fully_controlled_by = JAP
-			}
-			527 = {
-				is_fully_controlled_by = JAP
-			}
-		}
-		completion_reward = {
-			add_political_power = 25
-			527 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			525 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	#Focus for Chinese Investment
-	focus = {
-		id = JAP_chineseinvestment
-		icon = GFX_focus_mex_privatisation
-		x = 81
-		y = 9
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_thechinesegamble }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_political_power = 50
-			MAN = {
-				add_offsite_building = { 
-					type = arms_factory 
-					level = 3
-				}
-			}
-		}
-	}
-
-	#Focus for Project China
-	focus = {
-		id = JAP_projectchina
-		icon = GFX_focus_chi_one_china_policy
-		x = 81
-		y = 7
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_endthewarlords }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_political_power = 50
-			unlock_decision_category_tooltip = JAP_project_china
-		}
-	}
-
-	#Focus for Support the Qing
-	focus = {
-		id = JAP_supporttheqing
-		icon = GFX_goal_unknown
-		x = 77
-		y = 4
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = JAP_balancedapproach 
-			focus = JAP_nanshinron 
-		}
-		mutually_exclusive = { focus = JAP_bloodontheyangtze }
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			always = no
-		}
-		completion_reward = {
-			custom_effect_tooltip = unfinished_tooltip
-		}
-	}
-
-	#Focus for Arm the Fengtian
-	focus = {
-		id = JAP_armthefengtian
-		icon = GFX_focus_jap_manchurian_project
-		x = 81
-		y = 4
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = JAP_hokushinron 
-			focus = JAP_balancedapproach 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			MAN = {
-				country_event = {
-					id = japan.9
-				}
-			}
-		}
-	}
-
-	#Focus for Hokushinron
-	focus = {
-		id = JAP_hokushinron
-		icon = GFX_goal_generic_army_doctrines
-		x = 86
-		y = 3
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_expandtheempire }
-		mutually_exclusive = { 
-			focus = JAP_balancedapproach 
-		}
-		mutually_exclusive = { 
-			focus = JAP_nanshinron 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			always = no
-			NOT = {
-				is_subject = yes
-			}
-		}
-		completion_reward = {
-			add_ideas = JAP_hokushinron
-		}
-	}
-
-	#Focus for The Chinese Gamble
-	focus = {
-		id = JAP_thechinesegamble
-		icon = GFX_focus_jap_cast_the_die
-		x = 81
-		y = 8
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_projectchina }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			add_political_power = 50
-			MAN = {
-				add_stability = 0.1
-				add_political_power = 100
-			}
-		}
-	}
-
-	#Focus for A Question of Autonomy
-	focus = {
-		id = JAP_aquestionofautonomy
-		icon = GFX_focus_eng_move_to_secure_the_dominions
-		x = 77
-		y = 8
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_projectkorea }
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			525 = {
-				is_fully_controlled_by = JAP
-			}
-			527 = {
-				is_fully_controlled_by = JAP
-			}
-		}
-		completion_reward = {
-			add_political_power = 25
-			527 = {
-				add_extra_state_shared_building_slots = 2
-			}
-			525 = {
-				add_extra_state_shared_building_slots = 2
-			}
-		}
-	}
-
-	#Focus for End the Warlords
-	focus = {
-		id = JAP_endthewarlords
-		icon = GFX_goal_generic_territory_or_war
-		x = 79
-		y = 6
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = JAP_theyellowbloodspilt 
-			focus = JAP_bloodontheyangtze 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			unlock_decision_tooltip = JAP_war_with_ma
-			unlock_decision_tooltip = JAP_war_with_yunnan
-		}
-	}
-
-	#Focus for Balanced Approach
-	focus = {
-		id = JAP_balancedapproach
-		icon = GFX_goal_generic_neutrality_focus
-		x = 79
-		y = 3
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_expandtheempire }
-		mutually_exclusive = { 
-			focus = JAP_nanshinron 
-		}
-		mutually_exclusive = { 
-			focus = JAP_hokushinron 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			NOT = {
-				is_subject = yes
-			}
-		}
-		completion_reward = {
-			add_ideas = JAP_balanced_approach
-		}
-	}
-
-	#Focus for Reeducation
-	focus = {
-		id = JAP_reeducation
-		icon = GFX_focus_generic_socialist_science
-		x = 87
-		y = 6
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_theonlyoption }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Eastern Unity
-	focus = {
-		id = JAP_easternunity
-		icon = GFX_goal_generic_alliance
-		x = 86
-		y = 7
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = JAP_striketherussians 
-			focus = JAP_reeducation 
-			focus = JAP_redcooperation 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for The Only Option
-	focus = {
-		id = JAP_theonlyoption
-		icon = GFX_goal_generic_war_with_comintern
-		x = 87
-		y = 5
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_dealwiththeleftists }
-		mutually_exclusive = { focus = JAP_leftistunity }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Leftist Unity
-	focus = {
-		id = JAP_leftistunity
-		icon = GFX_focus_generic_join_comintern
-		x = 89
-		y = 5
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_dealwiththeleftists }
-		mutually_exclusive = { focus = JAP_theonlyoption }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Deal with the Leftists
-	focus = {
-		id = JAP_dealwiththeleftists
-		icon = GFX_goal_generic_dangerous_deal
-		x = 88
-		y = 4
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_hokushinron }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Rise of the Masses
-	focus = {
-		id = JAP_riseofthemasses
-		icon = GFX_focus_YUG_pan_slavic_congress
-		x = 14
-		y = 1
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			has_country_flag = JAP_rise_of_the_masses
-		}
-		completion_reward = {
-			country_event = {
-				id = japan.5
-			}
 		}
 	}
 
@@ -882,166 +388,6 @@ focus_tree = {
 					cv_fighter2 = 1 
 				} 
 			}
-		}
-	}
-
-	#Focus for Freedom in Economics
-	focus = {
-		id = JAP_freedomineconomics
-		icon = GFX_goal_generic_positive_trade_relations
-		x = 4
-		y = 4
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_revisetheconstitution }
-		mutually_exclusive = { 
-			focus = JAP_maintainthestatusquo 
-		}
-		mutually_exclusive = { 
-			focus = JAP_socialfreedom 
-		}
-		mutually_exclusive = { 
-			focus = JAP_freetheworkers 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			has_government = libertarian
-		}
-	}
-
-	#Focus for Social Freedom
-	focus = {
-		id = JAP_socialfreedom
-		icon = GFX_goal_support_democracy
-		x = 2
-		y = 4
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_revisetheconstitution }
-		mutually_exclusive = { 
-			focus = JAP_freedomineconomics 
-		}
-		mutually_exclusive = { 
-			focus = JAP_maintainthestatusquo 
-		}
-		mutually_exclusive = { 
-			focus = JAP_ 
-		}
-		mutually_exclusive = { 
-			focus = JAP_freetheworkers 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			has_government = liberal
-		}
-	}
-
-	#Focus for Maintain the Status Quo
-	focus = {
-		id = JAP_maintainthestatusquo
-		icon = GFX_goal_generic_defence
-		x = 6
-		y = 4
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_revisetheconstitution }
-		mutually_exclusive = { 
-			focus = JAP_freedomineconomics 
-		}
-		mutually_exclusive = { 
-			focus = JAP_socialfreedom 
-		}
-		mutually_exclusive = { 
-			focus = JAP_freetheworkers 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			has_government = conservative
-		}
-		completion_reward = {
-			add_political_power = 50
-			add_stability = 0.05
-		}
-	}
-
-	#Focus for Defense of Democracy
-	focus = {
-		id = JAP_defenseofdemocracy
-		icon = GFX_goal_support_democracy
-		x = 3
-		y = 2
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_riseofthemasses }
-		mutually_exclusive = { focus = JAP_theendofdemocracy }
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			has_country_flag = JAP_the_bill_passed
-		}
-		completion_reward = {
-			country_event = {
-				id = japan.7
-			}
-		}
-	}
-
-	#Focus for The End of Democracy
-	focus = {
-		id = JAP_theendofdemocracy
-		icon = GFX_focus_generic_strike_at_democracy2
-		x = 25
-		y = 2
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_riseofthemasses }
-		mutually_exclusive = { focus = JAP_defenseofdemocracy }
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			has_country_flag = JAP_the_bill_failed
-		}
-		completion_reward = {
-			country_event = {
-				id = japan.6
-			}
-		}
-	}
-
-	#Focus for Free the Workers
-	focus = {
-		id = JAP_freetheworkers
-		icon = GFX_goal_generic_war_with_comintern
-		x = 0
-		y = 4
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_revisetheconstitution }
-		mutually_exclusive = { 
-			focus = JAP_freedomineconomics 
-		}
-		mutually_exclusive = { 
-			focus = JAP_socialfreedom 
-		}
-		mutually_exclusive = { 
-			focus = JAP_maintainthestatusquo 
-		}
-		mutually_exclusive = { 
-			focus = JAP_ 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			has_government = socialist
 		}
 	}
 
@@ -1553,20 +899,6 @@ focus_tree = {
 		}
 	}
 
-	#Focus for End of an Era
-	focus = {
-		id = JAP_endofanera
-		icon = GFX_focus_generic_join_comintern
-		x = 20
-		y = 5
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_thepeoplesrepublic }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
 	#Focus for Secure the Navy
 	focus = {
 		id = JAP_securethenavy
@@ -1788,8 +1120,132 @@ focus_tree = {
 			factor = 1
 		}
 	}
+	
+	#Focus for Rights of the Worker
+	focus = {
+		id = JAP_rightsoftheworker
+		icon = GFX_goal_generic_forceful_treaty
+		x = 27
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_nationalizetheunions }
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-	#Focus for Begin Land Reforms
+	#Focus for Promote Corporatism
+	focus = {
+		id = JAP_promotecorporatism
+		icon = GFX_goal_generic_production
+		x = 23
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_liberalizedsyndicalism }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Nationalize the Unions
+	focus = {
+		id = JAP_nationalizetheunions
+		icon = GFX_goal_generic_production2
+		x = 27
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_showarestoration }
+		mutually_exclusive = { 
+			focus = JAP_constitutionalaristocracy 
+		}
+		mutually_exclusive = { 
+			focus = JAP_modernshogunate 
+		}
+		mutually_exclusive = { 
+			focus = JAP_militarycentralization 
+		}
+		mutually_exclusive = { 
+			focus = JAP_ 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Socialist Education
+	focus = {
+		id = JAP_socialisteducation
+		icon = GFX_focus_generic_socialist_science
+		x = 17
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_purgetheliberals }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Farming Subsidies
+	focus = {
+		id = JAP_farmingsubsidies
+		icon = GFX_goal_generic_production
+		x = 21
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_agrarianrepublic }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Dispersed Unions
+	focus = {
+		id = JAP_dispersedunions
+		icon = GFX_goal_generic_construct_civilian
+		x = 21
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_farmingsubsidies }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Farming Focus
+	focus = {
+		id = JAP_farmingfocus
+		icon = GFX_focus_generic_industry_1
+		x = 21
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_dispersedunions }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Preserve Liberty
+	focus = {
+		id = JAP_preserveliberty
+		icon = GFX_goal_support_democracy
+		x = 23
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_promotecorporatism }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Economics
 	focus = {
 		id = JAP_beginlandreforms
 		icon = GFX_goal_generic_construct_civilian
@@ -1815,29 +1271,194 @@ focus_tree = {
 			remove_ideas = JAP_poor_land_reform
 		}
 	}
-
-	#Focus for Secure the Military
+	
+	#Focus for Bureaucratization
 	focus = {
-		id = JAP_securethemilitary
-		icon = GFX_goal_generic_alliance
-		x = 12
-		y = 9
-		cost = 5
+		id = JAP_bureaucratization
+		icon = GFX_focus_jap_zaibatsu
+		x = 9
+		y = 14
+		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { 
-			focus = JAP_securethenavy 
+		prerequisite = { focus = JAP_reformtheeconomy }
+		mutually_exclusive = { 
+			focus = JAP_liberalization
 		}
-		prerequisite = { 
-			focus = JAP_securetheairforce 
-		}
-		prerequisite = { 
-			focus = JAP_securethearmy 
+		mutually_exclusive = { 
+			focus = JAP_nationalization 
 		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			remove_ideas = JAP_disorganized_military
+			add_political_power = -100
+			swap_ideas = {
+				remove_idea = JAP_zaibatsu
+				add_idea = JAP_zaibatsu_cooperation
+			}
+		}
+	}
+
+	#Focus for Reform the Economy
+	focus = {
+		id = JAP_reformtheeconomy
+		icon = GFX_goal_generic_production
+		x = 16
+		y = 13
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_nipponrd }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = industry
+			}
+		}
+	}
+
+	#Focus for Resource Revitalization
+	focus = {
+		id = JAP_resourcerevitalization
+		icon = GFX_goal_generic_construction2
+		x = 17
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_nipponrd }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = excavation_tech
+			}
+		}
+	}
+
+	#Focus for Electronic Investments
+	focus = {
+		id = JAP_electronicinvestments
+		icon = GFX_goal_generic_radar
+		x = 15
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_nipponrd }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = electronics
+			}
+		}
+	}
+	
+	#Focus for Zaibatsu Resources
+	focus = {
+		id = JAP_zaibatsuresources
+		icon = GFX_goal_generic_construction2
+		x = 7
+		y = 15
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_bureaucratization }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_resource = {
+				type = steel
+				amount = 24
+				state = 533
+			}
+			533 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			add_resource = {
+				type = aluminium
+				amount = 24
+				state = 531
+			}
+			531 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			add_resource = {
+				type = steel
+				amount = 24
+				state = 535
+			}
+			535 = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	#Focus for Zaibatsu Research
+	focus = {
+		id = JAP_zaibatsuresearch
+		icon = GFX_goal_generic_scientific_exchange
+		x = 9
+		y = 16
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = JAP_zaibatsuproductionplants 
+		}
+		prerequisite = { 
+			focus = JAP_zaibatsuresources 
+		}
+		prerequisite = { 
+			focus = JAP_zaibatsuconstruction 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = JAP_zaibatsu_cooperation1
+				add_idea = JAP_zaibatsu_cooperation2
+			}
+		}
+	}
+
+	#Focus for Zaibatsu Construction
+	focus = {
+		id = JAP_zaibatsuconstruction
+		icon = GFX_goal_generic_construction
+		x = 9
+		y = 15
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_bureaucratization }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			528 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			530 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -1980,130 +1601,6 @@ focus_tree = {
 				has_completed_focus = JAP_freedomineconomics
 				has_completed_focus = JAP_constitutionalaristocracy
 			}
-		}
-	}
-
-	#Focus for Rights of the Worker
-	focus = {
-		id = JAP_rightsoftheworker
-		icon = GFX_goal_generic_forceful_treaty
-		x = 27
-		y = 7
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_nationalizetheunions }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Promote Corporatism
-	focus = {
-		id = JAP_promotecorporatism
-		icon = GFX_goal_generic_production
-		x = 23
-		y = 7
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_liberalizedsyndicalism }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Nationalize the Unions
-	focus = {
-		id = JAP_nationalizetheunions
-		icon = GFX_goal_generic_production2
-		x = 27
-		y = 6
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_showarestoration }
-		mutually_exclusive = { 
-			focus = JAP_constitutionalaristocracy 
-		}
-		mutually_exclusive = { 
-			focus = JAP_modernshogunate 
-		}
-		mutually_exclusive = { 
-			focus = JAP_militarycentralization 
-		}
-		mutually_exclusive = { 
-			focus = JAP_ 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Socialist Education
-	focus = {
-		id = JAP_socialisteducation
-		icon = GFX_focus_generic_socialist_science
-		x = 17
-		y = 8
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_purgetheliberals }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Farming Subsidies
-	focus = {
-		id = JAP_farmingsubsidies
-		icon = GFX_goal_generic_production
-		x = 21
-		y = 7
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_agrarianrepublic }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Dispersed Unions
-	focus = {
-		id = JAP_dispersedunions
-		icon = GFX_goal_generic_construct_civilian
-		x = 21
-		y = 8
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_farmingsubsidies }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Farming Focus
-	focus = {
-		id = JAP_farmingfocus
-		icon = GFX_focus_generic_industry_1
-		x = 21
-		y = 9
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_dispersedunions }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Preserve Liberty
-	focus = {
-		id = JAP_preserveliberty
-		icon = GFX_goal_support_democracy
-		x = 23
-		y = 8
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = JAP_promotecorporatism }
-		ai_will_do = {
-			factor = 1
 		}
 	}
 
@@ -4686,7 +4183,7 @@ focus_tree = {
 		}
 	}
 
-	#Focus for Status of the Sun
+	#Foreign Policy
 	focus = {
 		id = JAP_statusofthesun
 		icon = GFX_focus_jap_pacific_guardian
@@ -4952,6 +4449,485 @@ focus_tree = {
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = JAP_prodthebear }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#Focus for Japanese Revanchism
+	focus = {
+		id = JAP_japaneserevanchism
+		icon = GFX_goal_generic_attack_allies
+		x = 17
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_socialisteducation }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Efficiency and Industry
+	focus = {
+		id = JAP_efficiencyandindustry
+		icon = GFX_goal_generic_construction2
+		x = 27
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_rightsoftheworker }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Claim the Mandate
+	focus = {
+		id = JAP_claimthemandate
+		icon = GFX_focus_man_claim_the_mandate_of_heaven
+		x = 81
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_alliedrecruitment }
+		mutually_exclusive = { focus = JAP_protectorsofasia }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = unfinished_tooltip
+		}
+	}
+
+	#Focus for Join the Entente
+	focus = {
+		id = JAP_jointheentente
+		icon = GFX_focus_attack_australia
+		x = 69
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_unityinthepacific }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Korean Development
+	focus = {
+		id = JAP_koreandevelopment
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 77
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_projectkorea }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			525 = {
+				is_fully_controlled_by = JAP
+			}
+			527 = {
+				is_fully_controlled_by = JAP
+			}
+		}
+		completion_reward = {
+			add_political_power = 25
+			527 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			525 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Focus for Chinese Investment
+	focus = {
+		id = JAP_chineseinvestment
+		icon = GFX_focus_mex_privatisation
+		x = 81
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_thechinesegamble }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 50
+			MAN = {
+				add_offsite_building = { 
+					type = arms_factory 
+					level = 3
+				}
+			}
+		}
+	}
+
+	#Focus for Project China
+	focus = {
+		id = JAP_projectchina
+		icon = GFX_focus_chi_one_china_policy
+		x = 81
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_endthewarlords }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 50
+			unlock_decision_category_tooltip = JAP_project_china
+		}
+	}
+
+	#Focus for Support the Qing
+	focus = {
+		id = JAP_supporttheqing
+		icon = GFX_goal_unknown
+		x = 77
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = JAP_balancedapproach 
+			focus = JAP_nanshinron 
+		}
+		mutually_exclusive = { focus = JAP_bloodontheyangtze }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = unfinished_tooltip
+		}
+	}
+
+	#Focus for Arm the Fengtian
+	focus = {
+		id = JAP_armthefengtian
+		icon = GFX_focus_jap_manchurian_project
+		x = 81
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = JAP_hokushinron 
+			focus = JAP_balancedapproach 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			MAN = {
+				country_event = {
+					id = japan.9
+				}
+			}
+		}
+	}
+
+	#Focus for Hokushinron
+	focus = {
+		id = JAP_hokushinron
+		icon = GFX_goal_generic_army_doctrines
+		x = 86
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_expandtheempire }
+		mutually_exclusive = { 
+			focus = JAP_balancedapproach 
+		}
+		mutually_exclusive = { 
+			focus = JAP_nanshinron 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			always = no
+			NOT = {
+				is_subject = yes
+			}
+		}
+		completion_reward = {
+			add_ideas = JAP_hokushinron
+		}
+	}
+
+	#Focus for The Chinese Gamble
+	focus = {
+		id = JAP_thechinesegamble
+		icon = GFX_focus_jap_cast_the_die
+		x = 81
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_projectchina }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 50
+			MAN = {
+				add_stability = 0.1
+				add_political_power = 100
+			}
+		}
+	}
+
+	#Focus for A Question of Autonomy
+	focus = {
+		id = JAP_aquestionofautonomy
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		x = 77
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_projectkorea }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			525 = {
+				is_fully_controlled_by = JAP
+			}
+			527 = {
+				is_fully_controlled_by = JAP
+			}
+		}
+		completion_reward = {
+			add_political_power = 25
+			527 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			525 = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+
+	#Focus for End the Warlords
+	focus = {
+		id = JAP_endthewarlords
+		icon = GFX_goal_generic_territory_or_war
+		x = 79
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = JAP_theyellowbloodspilt 
+			focus = JAP_bloodontheyangtze 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			unlock_decision_tooltip = JAP_war_with_ma
+			unlock_decision_tooltip = JAP_war_with_yunnan
+		}
+	}
+
+	#Focus for Balanced Approach
+	focus = {
+		id = JAP_balancedapproach
+		icon = GFX_goal_generic_neutrality_focus
+		x = 79
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_expandtheempire }
+		mutually_exclusive = { 
+			focus = JAP_nanshinron 
+		}
+		mutually_exclusive = { 
+			focus = JAP_hokushinron 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				is_subject = yes
+			}
+		}
+		completion_reward = {
+			add_ideas = JAP_balanced_approach
+		}
+	}
+
+	#Focus for Reeducation
+	focus = {
+		id = JAP_reeducation
+		icon = GFX_focus_generic_socialist_science
+		x = 87
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_theonlyoption }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Eastern Unity
+	focus = {
+		id = JAP_easternunity
+		icon = GFX_goal_generic_alliance
+		x = 86
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = JAP_striketherussians 
+			focus = JAP_reeducation 
+			focus = JAP_redcooperation 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Only Option
+	focus = {
+		id = JAP_theonlyoption
+		icon = GFX_goal_generic_war_with_comintern
+		x = 87
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_dealwiththeleftists }
+		mutually_exclusive = { focus = JAP_leftistunity }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Leftist Unity
+	focus = {
+		id = JAP_leftistunity
+		icon = GFX_focus_generic_join_comintern
+		x = 89
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_dealwiththeleftists }
+		mutually_exclusive = { focus = JAP_theonlyoption }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Deal with the Leftists
+	focus = {
+		id = JAP_dealwiththeleftists
+		icon = GFX_goal_generic_dangerous_deal
+		x = 88
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_hokushinron }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#Focus for Asian Unity
+	focus = {
+		id = JAP_asianunity
+		icon = GFX_goal_generic_alliance
+		x = 79
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = JAP_claimthemandate 
+			focus = JAP_protectorsofasia 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Protectors of Asia
+	focus = {
+		id = JAP_protectorsofasia
+		icon = GFX_goal_generic_defence
+		x = 77
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_alliedrecruitment }
+		mutually_exclusive = { focus = JAP_claimthemandate }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+
+	#Focus for Pacific Mandate
+	focus = {
+		id = JAP_pacificmandate
+		icon = GFX_focus_chi_mission_to_the_us
+		x = 71
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_unityinthepacific }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Asian Co-Prosperity Sphere
+	focus = {
+		id = JAP_asiancoprosperitysphere
+		icon = GFX_goal_anschluss
+		x = 69
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_tokyoconference }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#Focus for Prod the Bear
+	focus = {
+		id = JAP_prodthebear
+		icon = GFX_focus_eng_expose_the_belly_of_the_bear
+		x = 84
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = JAP_hokushinron }
 		ai_will_do = {
 			factor = 1
 		}

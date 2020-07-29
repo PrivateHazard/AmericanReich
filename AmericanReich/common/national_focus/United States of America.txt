@@ -1666,6 +1666,7 @@ focus_tree = {
 		cost = 8
 		relative_position_id = USA_spavictory
 		available_if_capitulated = yes
+		continue_if_invalid = yes
 		prerequisite = { 
 			focus = USA_democraticsocialism 
 		}
@@ -2317,7 +2318,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construction
 		x = 12
 		y = 0
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
@@ -2339,11 +2340,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = USA_a_new_economy
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				category = industry
-			}
 			unlock_decision_tooltip = infrastructure_building_slot
 		}
 	}
@@ -2352,7 +2348,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_civ_factory
 		x = -2
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_aneweconomy
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -2424,37 +2420,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			random_owned_controlled_state = {
-				limit = {
-					is_core_of = USA
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
 			unlock_decision_tooltip = civilian_factory_commission
 		}
 	}
@@ -2463,7 +2428,7 @@ focus_tree = {
 		icon = GFX_goal_generic_production2
 		x = 0
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_civilianfocus
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -2481,7 +2446,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_infrastructure
 		x = 0
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_automobileinvestments
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -2628,7 +2593,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construction2
 		x = 0
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_improvedhighways
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -2646,7 +2611,7 @@ focus_tree = {
 		icon = GFX_goal_generic_consumer_goods
 		x = -1
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_taxregulationbureau
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -2671,7 +2636,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_mil_factory
 		x = 2
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_aneweconomy
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -2698,7 +2663,7 @@ focus_tree = {
 		icon = GFX_goal_generic_build_tank
 		x = 0
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_militaryfocus
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -2770,37 +2735,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			random_owned_controlled_state = {
-				limit = {
-					is_core_of = USA
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
 		}
 	}
 	focus = {
@@ -2808,7 +2742,7 @@ focus_tree = {
 		icon = GFX_goal_generic_production
 		x = 0
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_limitedrearmament
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -2818,68 +2752,37 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-				random_owned_controlled_state = {
-					limit = {
-						is_core_of = USA
-						free_building_slots = {
-							building = dockyard
-							size > 1
-							include_locked = yes
-						}
-						OR = {
-							is_in_home_area = yes
-							NOT = {
-								owner = {
-									any_owned_state = {
-										free_building_slots = {
-											building = arms_factory
-											size > 1
-											include_locked = yes
-										}
-										is_in_home_area = yes
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = USA
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 1
+										include_locked = yes
 									}
+									is_in_home_area = yes
 								}
 							}
 						}
 					}
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = dockyard
-						level = 2
-						instant_build = yes
-					}
 				}
-				random_owned_controlled_state = {
-					limit = {
-						is_core_of = USA
-						free_building_slots = {
-							building = dockyard
-							size > 0
-							include_locked = yes
-						}
-						OR = {
-							is_in_home_area = yes
-							NOT = {
-								owner = {
-									any_owned_state = {
-										free_building_slots = {
-											building = arms_factory
-											size > 0
-											include_locked = yes
-										}
-										is_in_home_area = yes
-									}
-								}
-							}
-						}
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = dockyard
-						level = 1
-						instant_build = yes
-					}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
 				}
+			}
 			random_owned_controlled_state = {
 				limit = {
 					is_core_of = USA
@@ -2911,37 +2814,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			random_owned_controlled_state = {
-				limit = {
-					is_core_of = USA
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
 		}
 	}
 	focus = {
@@ -2949,7 +2821,7 @@ focus_tree = {
 		icon = GFX_focus_generic_the_giant_wakes
 		x = 0
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_expandusace
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -2971,7 +2843,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_civilian
 		x = 1
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_taxregulationbureau
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -2999,7 +2871,7 @@ focus_tree = {
 		icon = GFX_focus_research
 		x = 0
 		y = 2
-		cost = 10
+		cost = 8
 		relative_position_id = USA_taxregulationbureau
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -3018,7 +2890,7 @@ focus_tree = {
 		icon = GFX_focus_generic_concessions
 		x = 0
 		y = 2
-		cost = 10
+		cost = 8
 		relative_position_id = USA_aneweconomy
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -3064,7 +2936,7 @@ focus_tree = {
 		icon = GFX_goal_generic_intelligence_exchange
 		x = 0
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_canadianinvestments
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -3083,7 +2955,7 @@ focus_tree = {
 		icon = GFX_goal_generic_national_unity
 		x = 0
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_subsidizeindustry
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -3126,7 +2998,7 @@ focus_tree = {
 		icon = GFX_focus_generic_combined_arms
 		x = 9
 		y = 1
-		cost = 10
+		cost = 5
 		relative_position_id = USA_consolidatethepentagon
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -3137,7 +3009,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_tech_bonus = {
-				bonus = 1
+				bonus = 0.55
 				uses = 2
 				category = land_doctrine
 			}
@@ -3531,7 +3403,7 @@ focus_tree = {
 		icon = GFX_goal_generic_air_doctrine
 		x = 3
 		y = 1
-		cost = 10
+		cost = 5
 		relative_position_id = USA_consolidatethepentagon
 		available_if_capitulated = yes
 		prerequisite = { 
@@ -3542,7 +3414,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_tech_bonus = {
-				bonus = 1
+				bonus = 0.55
 				uses = 2
 				category = air_doctrine
 			}
@@ -4271,7 +4143,7 @@ focus_tree = {
 		icon = GFX_focus_generic_military_academy
 		x = 2
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_backinbusiness
 		available_if_capitulated = yes
 		prerequisite = {
@@ -4293,7 +4165,7 @@ focus_tree = {
 		icon = GFX_focus_generic_the_giant_wakes
 		x = -1
 		y = 2
-		cost = 10
+		cost = 8
 		relative_position_id = USA_neutralityact
 		available_if_capitulated = yes
 		prerequisite = {
@@ -4337,7 +4209,7 @@ focus_tree = {
 		icon = GFX_focus_spr_torchbearers_of_tomorrow
 		x = 0
 		y = 2
-		cost = 10
+		cost = 8
 		relative_position_id = USA_exportdemocracy
 		available_if_capitulated = yes
 		prerequisite = {
@@ -4358,7 +4230,7 @@ focus_tree = {
 		icon = GFX_goal_generic_territory_or_war
 		x = -2
 		y = 1
-		cost = 10
+		cost = 8
 		relative_position_id = USA_backinbusiness
 		available_if_capitulated = yes
 		prerequisite = {
@@ -4382,7 +4254,7 @@ focus_tree = {
 		icon = GFX_goal_generic_propaganda
 		x = 1
 		y = 2
-		cost = 10
+		cost = 8
 		relative_position_id = USA_limitedinterventioncommittee
 		available_if_capitulated = yes
 		prerequisite = {
@@ -4397,7 +4269,7 @@ focus_tree = {
 		icon = GFX_goal_generic_position_armies
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		relative_position_id = USA_limitedinterventioncommittee
 		available_if_capitulated = yes
 		prerequisite = {
@@ -4412,7 +4284,7 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		x = 0
 		y = 2
-		cost = 10
+		cost = 8
 		relative_position_id = USA_warplans
 		available_if_capitulated = yes
 		prerequisite = {
@@ -4430,7 +4302,7 @@ focus_tree = {
 		icon = GFX_goal_generic_major_war
 		x = 0
 		y = 2
-		cost = 10
+		cost = 8
 		relative_position_id = USA_enterthefray
 		available_if_capitulated = yes
 		prerequisite = {
@@ -4449,7 +4321,7 @@ focus_tree = {
 		icon = GFX_goal_generic_military_sphere
 		x = 0
 		y = 2
-		cost = 10
+		cost = 8
 		relative_position_id = USA_thelighthouse
 		available_if_capitulated = yes
 		prerequisite = {
@@ -4493,7 +4365,7 @@ focus_tree = {
 		icon = GFX_focus_usa_honor_the_confederacy
 		x = 0
 		y = 1
-		cost = 5
+		cost = 10
 		relative_position_id = USA_interventinintheamericas
 		available_if_capitulated = yes
 		prerequisite = {

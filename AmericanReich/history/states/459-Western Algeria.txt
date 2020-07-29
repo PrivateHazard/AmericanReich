@@ -10,7 +10,7 @@ state={
 	}
 
 	history={
-		owner = MED
+		owner = FRA
 		
 		victory_points = {
 			1145 5 
@@ -28,7 +28,6 @@ state={
 				naval_base = 6
 			}
 		}
-		add_core_of = MED
 	}
 
 	provinces={

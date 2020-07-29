@@ -117,8 +117,8 @@ ideas = {
 			picture = can_defence_of_canada_regulations_democratic
 			
 			modifier = {
-				communism_drift = -0.01
-				fascism_drift = -0.01
+				totalist_drift = -0.01
+				populist_drift = -0.01
 				foreign_subversive_activites = -0.50
 			}
 		}
@@ -138,8 +138,8 @@ ideas = {
 			picture = can_defence_of_canada_regulations_fascism
 			
 			modifier = {
-				democratic_drift = -0.01
-				communism_drift = -0.01
+				liberal_drift = -0.01
+				totalist_drift = -0.01
 				foreign_subversive_activites = -0.50
 			}
 		}
@@ -159,8 +159,8 @@ ideas = {
 			picture = can_defence_of_canada_regulations_communism
 			
 			modifier = {
-				democratic_drift = -0.01
-				fascism_drift = -0.01
+				liberal_drift = -0.01
+				populist_drift = -0.01
 				foreign_subversive_activites = -0.50
 			}
 		}
@@ -393,8 +393,8 @@ ideas = {
 			picture = generic_fascism_drift_bonus
 
 			modifier = {
-				democratic_drift = -0.1
-				fascism_drift = 0.2
+				liberal_drift = -0.1
+				populist_drift = 0.2
 			}
 		}
 
@@ -412,8 +412,8 @@ ideas = {
 			picture = generic_fascism_drift_bonus
 
 			modifier = {
-				democratic_drift = -0.1
-				fascism_drift = 0.2
+				liberal_drift = -0.1
+				populist_drift = 0.2
 				war_support_factor = 0.05
 				conscription = 0.02
 			}
@@ -433,8 +433,8 @@ ideas = {
 			picture = generic_fascism_drift_bonus
 
 			modifier = {
-				democratic_drift = -0.1
-				fascism_drift = 0.2
+				liberal_drift = -0.1
+				populist_drift = 0.2
 				war_support_factor = 0.05
 				conscription = 0.02
 				send_volunteer_divisions_required = -1
@@ -456,8 +456,8 @@ ideas = {
 			picture = generic_communism_drift_bonus
 
 			modifier = {
-				democratic_drift = -0.1
-				communism_drift = 0.2
+				liberal_drift = -0.1
+				totalist_drift = 0.2
 			}
 		}
 
@@ -475,8 +475,8 @@ ideas = {
 			picture = generic_communism_drift_bonus
 
 			modifier = {
-				democratic_drift = -0.1
-				communism_drift = 0.2
+				liberal_drift = -0.1
+				totalist_drift = 0.2
 				industrial_capacity_factory = 0.02
 				industrial_capacity_dockyard = 0.02
 			}
@@ -498,8 +498,8 @@ ideas = {
 			rule = { can_send_volunteers = yes }
 
 			modifier = {
-				democratic_drift = -0.1
-				communism_drift = 0.2
+				liberal_drift = -0.1
+				totalist_drift = 0.2
 				industrial_capacity_factory = 0.04
 				industrial_capacity_dockyard = 0.04
 				subversive_activites_upkeep = -0.5
